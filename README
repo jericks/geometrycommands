@@ -26,6 +26,9 @@ true
 >>> echo "POINT (0 0)" | geom buffer -d 10 | geom contains -other "POINT (25 25)"
 false
 
+Buffer a point, get coordinates, draw coordinates to image, and open the image 
+>>> echo "POINT (10 10)" | geom buffer -d 5 | geom coordinates | geom draw && open image.png
+
 List available geometry commands:
 >>> geom list
 list
