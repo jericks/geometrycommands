@@ -6,6 +6,7 @@ import com.vividsolutions.jts.awt.ShapeWriter;
 import com.vividsolutions.jts.geom.Coordinate;
 import com.vividsolutions.jts.geom.Envelope;
 import com.vividsolutions.jts.geom.Geometry;
+import com.vividsolutions.jts.geom.Lineal;
 import java.awt.AlphaComposite;
 import java.awt.BasicStroke;
 import java.awt.Color;
@@ -22,21 +23,34 @@ import org.geometrycommands.DrawCommand.DrawOptions;
 import org.kohsuke.args4j.Option;
 
 /**
- *
- * @author jericks
+ * A Command to draw the input Geometry to an image File
+ * @author Jared Erickson
  */
 public class DrawCommand extends GeometryCommand<DrawOptions> {
 
+    /**
+     * Get the command name
+     * @return The command name
+     */
     @Override
     public String getName() {
         return "draw";
     }
 
+    /**
+     * Get a new DrawOptions
+     * @return A new DrawOptions
+     */
     @Override
     public DrawOptions getOptions() {
         return new DrawOptions();
     }
 
+    /**
+     * Get a java.awt.Color from a String 
+     * @param value A String value
+     * @return The java.awt.Color
+     */
     private Color getColor(String value) {
         String[] parts = value.split(",");
         int r = Integer.parseInt(parts[0]);
@@ -45,6 +59,11 @@ public class DrawCommand extends GeometryCommand<DrawOptions> {
         return new Color(r, g, b);
     }
 
+    /**
+     * Draw the input Geometry to an image File
+     * @param geometry The input Geometry
+     * @param options The DrawOptions
+     */
     @Override
     public void processGeometry(Geometry geometry, DrawOptions options) throws Exception {
 
@@ -63,9 +82,9 @@ public class DrawCommand extends GeometryCommand<DrawOptions> {
         Color fillColor = getColor(options.getFillColor());
 
         String shape = options.getShape();
-        double markerSize = 8;
+        double markerSize = options.getMarkerSize();
         PointShapeFactory pointShapeFactory;
-        if (shape.equalsIgnoreCase("cirlce")) {
+        if (shape.equalsIgnoreCase("circle")) {
             pointShapeFactory = new PointShapeFactory.Circle(markerSize);
         } else if (shape.equalsIgnoreCase("cross")) {
             pointShapeFactory = new PointShapeFactory.Cross(markerSize);
@@ -90,7 +109,7 @@ public class DrawCommand extends GeometryCommand<DrawOptions> {
                 double imageY = ((env.getMaxY() - coord.y) / env.getHeight()) * imageHeight;
                 point.setLocation(imageX, imageY);
             }
-        });
+        }, pointShapeFactory);
 
         Composite strokeComposite = g2d.getComposite();
         Composite fillComposite = AlphaComposite.getInstance(AlphaComposite.SRC_OVER, opacity);
@@ -98,9 +117,11 @@ public class DrawCommand extends GeometryCommand<DrawOptions> {
         Shape shp = shapeWriter.toShape(geometry);
         g2d.setComposite(fillComposite);
         // Fill
-        g2d.setComposite(fillComposite);
-        g2d.setColor(fillColor);
-        g2d.fill(shp);
+        if (!(geometry instanceof Lineal)) {
+            g2d.setComposite(fillComposite);
+            g2d.setColor(fillColor);
+            g2d.fill(shp);
+        }
         // Stroke
         g2d.setComposite(strokeComposite);
         g2d.setStroke(new BasicStroke(strokeWidth));
@@ -134,92 +155,183 @@ public class DrawCommand extends GeometryCommand<DrawOptions> {
         out.close();
     }
 
+    /**
+     * The DrawOptions
+     */
     public static class DrawOptions extends GeometryOptions {
 
-        @Option(name = "-w", required = false)
+        /**
+         * The image width
+         */
+        @Option(name = "-w", usage = "The image width", required = false)
         private int width = 400;
 
-        @Option(name = "-h", required = false)
+        /**
+         * The image height
+         */
+        @Option(name = "-h", usage = "The image height", required = false)
         private int height = 400;
 
-        @Option(name = "-file", required = false)
-        private File file;
+        /**
+         * The output File
+         */
+        @Option(name = "-file", usage = "The output File", required = false)
+        private File file = new File("image.png");
 
-        @Option(name = "-background", required = false)
+        /**
+         * The background Color
+         */
+        @Option(name = "-background", usage = "The background color", required = false)
         private String backgroundColor = "255,255,255";
 
-        @Option(name = "-stroke", required = false)
+        /**
+         * The stroke Color
+         */
+        @Option(name = "-stroke", usage = "The stroke Color", required = false)
         private String strokeColor = "99,99,99";
 
-        @Option(name = "-fill", required = false)
+        /**
+         * The fill Color
+         */
+        @Option(name = "-fill", usage = "The fill Color", required = false)
         private String fillColor = "206,206,206";
 
-        @Option(name = "-shape", required = false)
+        /**
+         * The marker shape
+         */
+        @Option(name = "-shape", usage = "The marker shape (circle, square, ect..)", required = false)
         private String shape = "circle";
 
-        @Option(name = "-markerSize", required = false)
-        private double markerSize;
+        /**
+         * The marker size
+         */
+        @Option(name = "-markerSize", usage = "The marker size", required = false)
+        private double markerSize = 8;
 
+        /**
+         * Get the output File
+         * @return The output File
+         */
         public File getFile() {
             return file;
         }
 
+        /**
+         * Set the output File
+         * @param file The output File
+         */
         public void setFile(File file) {
             this.file = file;
         }
 
+        /**
+         * Get the marker size
+         * @return The marker size
+         */
         public double getMarkerSize() {
             return markerSize;
         }
 
+        /**
+         * Set the marker size
+         * @param markerSize The marker size
+         */
         public void setMarkerSize(double markerSize) {
             this.markerSize = markerSize;
         }
 
+        /**
+         * Get the image height
+         * @return The image height
+         */
         public int getHeight() {
             return height;
         }
 
+        /**
+         * Set the image height
+         * @param height The image height
+         */
         public void setHeight(int height) {
             this.height = height;
         }
 
+        /**
+         * Get the image width
+         * @return The image width
+         */
         public int getWidth() {
             return width;
         }
 
+        /**
+         * Set the image width
+         * @param width The image width
+         */
         public void setWidth(int width) {
             this.width = width;
         }
 
+        /**
+         * Get the background Color
+         * @return The background Color
+         */
         public String getBackgroundColor() {
             return backgroundColor;
         }
 
+        /**
+         * Set the background Color
+         * @param backgroundColor The background Color
+         */
         public void setBackgroundColor(String backgroundColor) {
             this.backgroundColor = backgroundColor;
         }
 
+        /**
+         * Get the fill Color
+         * @return The fill Color
+         */
         public String getFillColor() {
             return fillColor;
         }
 
+        /**
+         * Set the fill Color
+         * @param fillColor The fill Color
+         */
         public void setFillColor(String fillColor) {
             this.fillColor = fillColor;
         }
 
+        /**
+         * Get the stroke Color
+         * @return The stroke Color
+         */
         public String getStrokeColor() {
             return strokeColor;
         }
 
+        /**
+         * Set the stroke Color
+         * @param strokeColor The stroke Color
+         */
         public void setStrokeColor(String strokeColor) {
             this.strokeColor = strokeColor;
         }
 
+        /**
+         * Get the marker shape
+         * @return The marker shape
+         */
         public String getShape() {
             return shape;
         }
 
+        /**
+         * Set the marker shape
+         * @param shape The marker shape
+         */
         public void setShape(String shape) {
             this.shape = shape;
         }
