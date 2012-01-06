@@ -4,6 +4,7 @@ org.geometrycommands.BufferCommand
 org.geometrycommands.CentroidCommand
 org.geometrycommands.ContainsCommand
 org.geometrycommands.ConvexHullCommand
+org.geometrycommands.CoordinatesCommand
 org.geometrycommands.CoveredByCommand
 org.geometrycommands.CoversCommand
 org.geometrycommands.CrossesCommand
