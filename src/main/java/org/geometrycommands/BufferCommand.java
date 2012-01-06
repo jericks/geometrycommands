@@ -1,6 +1,7 @@
 package org.geometrycommands;
 
 import com.vividsolutions.jts.geom.Geometry;
+import com.vividsolutions.jts.operation.buffer.BufferOp;
 import com.vividsolutions.jts.operation.buffer.BufferParameters;
 import org.geometrycommands.BufferCommand.BufferOptions;
 import org.kohsuke.args4j.Option;
@@ -46,7 +47,15 @@ public class BufferCommand extends GeometryCommand<BufferOptions> {
         } else {
             capStyle = BufferParameters.CAP_ROUND;
         }
-        Geometry bufferedGeometry = geometry.buffer(options.getDistance(), options.getQuadrantSegements(), capStyle);
+        
+        BufferParameters params = new BufferParameters();
+        params.setSingleSided(options.isSingleSided());
+        params.setQuadrantSegments(options.getQuadrantSegements());
+        params.setEndCapStyle(capStyle);
+        
+        BufferOp bufferOp = new BufferOp(geometry, params);
+        Geometry bufferedGeometry = bufferOp.getResultGeometry(options.getDistance());
+
         System.out.println(writeGeoemtry(bufferedGeometry, options));
     }
 
@@ -54,7 +63,7 @@ public class BufferCommand extends GeometryCommand<BufferOptions> {
      * Options for the BufferCommand
      */
     public static class BufferOptions extends GeometryOptions {
-            
+
         /**
          * The buffer distance
          */
@@ -72,6 +81,12 @@ public class BufferCommand extends GeometryCommand<BufferOptions> {
          */
         @Option(name = "-endCapStyle", usage = "The end cap style (round, flat/butt, square)", required = false)
         private String endCapStyle = "round";
+
+        /**
+         * The flag for whether the buffer should be single sided
+         */
+        @Option(name = "-singleSided", usage = "The flag for whether the buffer should be single sided", required = false)
+        private boolean singleSided;
 
         /**
          * Get the buffer distance
@@ -119,6 +134,22 @@ public class BufferCommand extends GeometryCommand<BufferOptions> {
          */
         public void setQuadrantSegements(int quadrantSegements) {
             this.quadrantSegements = quadrantSegements;
+        }
+
+        /**
+         * Get the flag for whether the buffer should be single sided
+         * @return The flag for whether the buffer should be single sided
+         */
+        public boolean isSingleSided() {
+            return singleSided;
+        }
+
+        /**
+         * Set the flag for whether the buffer should be single sided
+         * @param singleSided The flag for whether the buffer should be single sided
+         */
+        public void setSingleSided(boolean singleSided) {
+            this.singleSided = singleSided;
         }
     }
 }
