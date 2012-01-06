@@ -2,6 +2,7 @@ package org.geometrycommands;
 
 /**
  * The base interface for all Commands.
+ * @param <T> The Options
  * @author Jared Erickson
  */
 public interface Command<T extends Options> {
