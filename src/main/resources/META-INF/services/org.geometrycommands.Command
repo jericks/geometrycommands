@@ -9,6 +9,7 @@ org.geometrycommands.CoveredByCommand
 org.geometrycommands.CoversCommand
 org.geometrycommands.CrossesCommand
 org.geometrycommands.DelaunayTriangulationCommand
+org.geometrycommands.DensifyCommand
 org.geometrycommands.DrawCommand
 org.geometrycommands.DifferenceCommand
 org.geometrycommands.DisjointCommand
