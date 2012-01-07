@@ -5,6 +5,8 @@ org.geometrycommands.CentroidCommand
 org.geometrycommands.ContainsCommand
 org.geometrycommands.ConvexHullCommand
 org.geometrycommands.CoordinatesCommand
+org.geometrycommands.CountGeometriesCommand
+org.geometrycommands.CountPointsCommand
 org.geometrycommands.CoveredByCommand
 org.geometrycommands.CoversCommand
 org.geometrycommands.CrossesCommand
@@ -16,6 +18,9 @@ org.geometrycommands.DisjointCommand
 org.geometrycommands.DistanceCommand
 org.geometrycommands.EnvelopeCommand
 org.geometrycommands.IntersectionCommand
+org.geometrycommands.GeometryTypeCommand
+org.geometrycommands.GetGeometryCommand
+org.geometrycommands.InteriorPointCommand
 org.geometrycommands.MinimumBoundingCircleCommand
 org.geometrycommands.MinimumClearanceCommand
 org.geometrycommands.MinimumDiameterCommand
