@@ -22,4 +22,5 @@ org.geometrycommands.MinimumDiameterCommand
 org.geometrycommands.MinimumRectangleCommand
 org.geometrycommands.OctagonalEnvelopeCommand
 org.geometrycommands.RandomCommand
+org.geometrycommands.SimplifyCommand
 org.geometrycommands.VoronoiDiagramCommand
