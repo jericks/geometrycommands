@@ -1,5 +1,6 @@
 org.geometrycommands.ListCommand
 org.geometrycommands.AreaCommand
+org.geometrycommands.BoundaryCommand
 org.geometrycommands.BufferCommand
 org.geometrycommands.CentroidCommand
 org.geometrycommands.ContainsCommand
@@ -17,7 +18,14 @@ org.geometrycommands.DifferenceCommand
 org.geometrycommands.DisjointCommand
 org.geometrycommands.DistanceCommand
 org.geometrycommands.EnvelopeCommand
+org.geometrycommands.EqualsCommand
 org.geometrycommands.IntersectionCommand
+org.geometrycommands.IntersectsCommand
+org.geometrycommands.IsEmptyCommand
+org.geometrycommands.IsRectangleCommand
+org.geometrycommands.IsSimpleCommand
+org.geometrycommands.IsValidCommand
+org.geometrycommands.IsWithDistanceCommand
 org.geometrycommands.GeometryTypeCommand
 org.geometrycommands.GetGeometryCommand
 org.geometrycommands.InteriorPointCommand
@@ -25,6 +33,7 @@ org.geometrycommands.MinimumBoundingCircleCommand
 org.geometrycommands.MinimumClearanceCommand
 org.geometrycommands.MinimumDiameterCommand
 org.geometrycommands.MinimumRectangleCommand
+org.geometrycommands.NormalizeCommand
 org.geometrycommands.OctagonalEnvelopeCommand
 org.geometrycommands.RandomCommand
 org.geometrycommands.SimplifyCommand
