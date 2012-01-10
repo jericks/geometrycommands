@@ -37,4 +37,7 @@ org.geometrycommands.NormalizeCommand
 org.geometrycommands.OctagonalEnvelopeCommand
 org.geometrycommands.RandomCommand
 org.geometrycommands.SimplifyCommand
+org.geometrycommands.TouchesCommand
+org.geometrycommands.UnionCommand
 org.geometrycommands.VoronoiDiagramCommand
+org.geometrycommands.WithinCommand
