@@ -35,8 +35,12 @@ org.geometrycommands.MinimumDiameterCommand
 org.geometrycommands.MinimumRectangleCommand
 org.geometrycommands.NormalizeCommand
 org.geometrycommands.OctagonalEnvelopeCommand
+org.geometrycommands.OverlapsCommand
 org.geometrycommands.RandomCommand
+org.geometrycommands.RelateCommand
+org.geometrycommands.ReverseCommand
 org.geometrycommands.SimplifyCommand
+org.geometrycommands.SymDifferenceCommand
 org.geometrycommands.TouchesCommand
 org.geometrycommands.UnionCommand
 org.geometrycommands.VoronoiDiagramCommand
