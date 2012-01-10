@@ -5,7 +5,7 @@ import org.geometrycommands.IsWithDistanceCommand.IsWithDistanceOptions;
 import org.kohsuke.args4j.Option;
 
 /**
- * Calculate the intersection between two geometries.
+ * A Command to determine if the input Geometry is with the given distance of the other Geometry.
  * @author Jared Erickson
  */
 public class IsWithDistanceCommand extends OtherGeometryCommand<IsWithDistanceOptions> {
@@ -29,7 +29,7 @@ public class IsWithDistanceCommand extends OtherGeometryCommand<IsWithDistanceOp
     }
 
     /**
-     * Calculate the intersection between the two geometries
+     * Determine if the input Geometry is with the given distance of the other Geometry.
      * @param geometry The input Geometry
      * @param other The other Geometry
      * @param options The IsWithDistanceOptions
