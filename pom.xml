@@ -60,7 +60,7 @@
                 <configuration>
                     <descriptors>
                         <descriptor>src/assembly/dir.xml</descriptor>
-                        <!--<descriptor>src/assembly/zip.xml</descriptor>-->
+                        <descriptor>src/assembly/zip.xml</descriptor>
                     </descriptors>
                 </configuration>
                 <executions>
