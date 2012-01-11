@@ -36,6 +36,7 @@ org.geometrycommands.MinimumRectangleCommand
 org.geometrycommands.NormalizeCommand
 org.geometrycommands.OctagonalEnvelopeCommand
 org.geometrycommands.OverlapsCommand
+org.geometrycommands.ProjectCommand
 org.geometrycommands.RandomCommand
 org.geometrycommands.RelateCommand
 org.geometrycommands.ReverseCommand
