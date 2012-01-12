@@ -42,6 +42,7 @@ org.geometrycommands.RelateCommand
 org.geometrycommands.ReverseCommand
 org.geometrycommands.SimplifyCommand
 org.geometrycommands.SymDifferenceCommand
+org.geometrycommands.TextCommand
 org.geometrycommands.TouchesCommand
 org.geometrycommands.UnionCommand
 org.geometrycommands.VoronoiDiagramCommand
