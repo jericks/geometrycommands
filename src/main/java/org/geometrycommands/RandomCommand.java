@@ -3,6 +3,7 @@ package org.geometrycommands;
 import com.vividsolutions.jts.geom.Geometry;
 import com.vividsolutions.jts.geom.Polygonal;
 import com.vividsolutions.jts.shape.random.RandomPointsBuilder;
+import com.vividsolutions.jts.shape.random.RandomPointsInGridBuilder;
 import org.geometrycommands.RandomCommand.RandomCommandOptions;
 import org.kohsuke.args4j.Option;
 
@@ -44,10 +45,23 @@ public class RandomCommand extends GeometryCommand<RandomCommandOptions> {
         if (!(geometry instanceof Polygonal)) {
             throw new IllegalArgumentException("Geometry must be a Polygon or MultiPolygon!");
         }
-        RandomPointsBuilder builder = new RandomPointsBuilder();
-        builder.setExtent(geometry);
-        builder.setNumPoints(options.getNumber());
-        Geometry randomGeometry = builder.getGeometry();
+        Geometry randomGeometry;
+        if (options.isGridded()) {
+            RandomPointsInGridBuilder builder = new RandomPointsInGridBuilder();
+            builder.setExtent(geometry.getEnvelopeInternal());
+            builder.setNumPoints(options.getNumber());
+            builder.setConstrainedToCircle(options.isConstrainedToCircle());
+            if (!Double.isNaN(options.getGutterFraction())) {
+                builder.setGutterFraction(options.getGutterFraction());
+            }
+            randomGeometry = builder.getGeometry();
+        } else {
+            RandomPointsBuilder builder = new RandomPointsBuilder();
+            builder.setExtent(geometry);
+            builder.setNumPoints(options.getNumber());
+            randomGeometry = builder.getGeometry();
+        }
+
         System.out.println(writeGeoemtry(randomGeometry, options));
     }
 
@@ -63,6 +77,24 @@ public class RandomCommand extends GeometryCommand<RandomCommandOptions> {
         private int number;
 
         /**
+         * The flag for whether the random points should be gridded.
+         */
+        @Option(name = "-gridded", usage = "The flag for whether the random points should be gridded.", required = false)
+        private boolean gridded;
+
+        /**
+         * The flag for whether the random points should be constrained to a circle when gridded.
+         */
+        @Option(name = "-constrainedToCircle", usage = "The flag for whether the random points should be constrained to a circle when gridded.", required = false)
+        private boolean constrainedToCircle;
+
+        /**
+         * The gutter distance or padding for random points when gridded.
+         */
+        @Option(name = "-gutterFraction", usage = "The gutter distance or padding for random points when gridded.", required = false)
+        private double gutterFraction = Double.NaN;
+
+        /**
          * Get the number of points
          * @return The number of points
          */
@@ -76,6 +108,30 @@ public class RandomCommand extends GeometryCommand<RandomCommandOptions> {
          */
         public void setNumber(int number) {
             this.number = number;
+        }
+
+        public boolean isConstrainedToCircle() {
+            return constrainedToCircle;
+        }
+
+        public void setConstrainedToCircle(boolean constrainedToCircle) {
+            this.constrainedToCircle = constrainedToCircle;
+        }
+
+        public boolean isGridded() {
+            return gridded;
+        }
+
+        public void setGridded(boolean gridded) {
+            this.gridded = gridded;
+        }
+
+        public double getGutterFraction() {
+            return gutterFraction;
+        }
+
+        public void setGutterFraction(double gutterFraction) {
+            this.gutterFraction = gutterFraction;
         }
     }
 }
