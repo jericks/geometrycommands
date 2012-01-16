@@ -38,12 +38,17 @@ org.geometrycommands.OctagonalEnvelopeCommand
 org.geometrycommands.OverlapsCommand
 org.geometrycommands.ProjectCommand
 org.geometrycommands.RandomCommand
+org.geometrycommands.ReflectCommand
 org.geometrycommands.RelateCommand
 org.geometrycommands.ReverseCommand
+org.geometrycommands.RotateCommand
+org.geometrycommands.ScaleCommand
+org.geometrycommands.ShearCommand
 org.geometrycommands.SimplifyCommand
 org.geometrycommands.SymDifferenceCommand
 org.geometrycommands.TextCommand
 org.geometrycommands.TouchesCommand
+org.geometrycommands.TranslateCommand
 org.geometrycommands.UnionCommand
 org.geometrycommands.VoronoiDiagramCommand
 org.geometrycommands.WithinCommand
