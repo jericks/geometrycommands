@@ -26,6 +26,7 @@ org.geometrycommands.IsRectangleCommand
 org.geometrycommands.IsSimpleCommand
 org.geometrycommands.IsValidCommand
 org.geometrycommands.IsWithDistanceCommand
+org.geometrycommands.KochSnowflakeCommand
 org.geometrycommands.GeometryTypeCommand
 org.geometrycommands.GetGeometryCommand
 org.geometrycommands.InteriorPointCommand
@@ -44,6 +45,7 @@ org.geometrycommands.ReverseCommand
 org.geometrycommands.RotateCommand
 org.geometrycommands.ScaleCommand
 org.geometrycommands.ShearCommand
+org.geometrycommands.SierpinskiCarpetCommand
 org.geometrycommands.SimplifyCommand
 org.geometrycommands.SymDifferenceCommand
 org.geometrycommands.TextCommand
