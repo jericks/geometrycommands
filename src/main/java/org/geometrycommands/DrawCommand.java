@@ -17,7 +17,6 @@ import java.awt.geom.Point2D;
 import java.awt.image.BufferedImage;
 import java.io.File;
 import java.io.FileOutputStream;
-import java.io.IOException;
 import javax.imageio.ImageIO;
 import org.geometrycommands.DrawCommand.DrawOptions;
 import org.kohsuke.args4j.Option;
@@ -128,9 +127,7 @@ public class DrawCommand extends GeometryCommand<DrawOptions> {
         g2d.setColor(strokeColor);
         g2d.draw(shp);
 
-        boolean drawCoordinates = true;
-
-        if (drawCoordinates) {
+        if (options.isDrawingCoordinates()) {
             g2d.setStroke(new BasicStroke(strokeWidth));
             Coordinate[] coords = geometry.getCoordinates();
             for (Coordinate c : coords) {
@@ -207,6 +204,28 @@ public class DrawCommand extends GeometryCommand<DrawOptions> {
          */
         @Option(name = "-markerSize", usage = "The marker size", required = false)
         private double markerSize = 8;
+
+        /**
+         * The flag for drawing coordinates or not
+         */
+        @Option(name = "-drawCoords", usage = "The flag for drawing coordinates or not", required = false)
+        private boolean drawingCoordinates;
+
+        /**
+         * Get the flag for drawing coordinates or not
+         * @return The flag for drawing coordinates or not
+         */
+        public boolean isDrawingCoordinates() {
+            return drawingCoordinates;
+        }
+
+        /**
+         * Set the flag for drawing coordinates or not
+         * @param drawingCoordinates The flag for drawing coordinates or not
+         */
+        public void setDrawingCoordinates(boolean drawingCoordinates) {
+            this.drawingCoordinates = drawingCoordinates;
+        }
 
         /**
          * Get the output File
