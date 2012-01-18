@@ -42,7 +42,7 @@ public class KochSnowflakeCommand extends GeometryCommand<KochSnowflakeOptions> 
         builder.setExtent(geometry.getEnvelopeInternal());
         builder.setNumPoints(options.getNumberOfPoints());
         Geometry outputGeometry = builder.getGeometry();
-        System.out.println(writeGeoemtry(outputGeometry, options));
+        System.out.println(writeGeometry(outputGeometry, options));
     }
 
     /**

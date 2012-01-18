@@ -38,6 +38,6 @@ public class VoronoiDiagramCommand extends GeometryCommand<GeometryOptions> {
         VoronoiDiagramBuilder builder = new VoronoiDiagramBuilder();
         builder.setSites(geometry);
         Geometry outputGeometry = builder.getDiagram(geometry.getFactory());
-        System.out.println(writeGeoemtry(outputGeometry, options));
+        System.out.println(writeGeometry(outputGeometry, options));
     }
 }

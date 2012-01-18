@@ -62,7 +62,7 @@ public class RandomCommand extends GeometryCommand<RandomCommandOptions> {
             randomGeometry = builder.getGeometry();
         }
 
-        System.out.println(writeGeoemtry(randomGeometry, options));
+        System.out.println(writeGeometry(randomGeometry, options));
     }
 
     /**

@@ -42,7 +42,7 @@ public class EnvelopeCommand extends GeometryCommand<EnvelopeOptions> {
             env.expandBy(options.getExpandBy());
         }
         Geometry outputGeometry = geometry.getFactory().toGeometry(env);
-        System.out.println(writeGeoemtry(outputGeometry, options));
+        System.out.println(writeGeometry(outputGeometry, options));
     }
 
     /**

@@ -49,7 +49,7 @@ public class SimplifyCommand extends GeometryCommand<SimplifyOptions> {
         } else {
             throw new IllegalArgumentException("Unknown simplifier algorithm!");
         }
-        System.out.println(writeGeoemtry(outputGeometry, options));
+        System.out.println(writeGeometry(outputGeometry, options));
     }
 
     /**

@@ -38,7 +38,7 @@ public class ShearCommand extends GeometryCommand<ShearOptions> {
     @Override
     protected void processGeometry(Geometry geometry, ShearOptions options) throws Exception {
         Geometry shearGeometry = AffineTransformation.shearInstance(options.getX(), options.getY()).transform(geometry);
-        System.out.println(writeGeoemtry(shearGeometry, options));
+        System.out.println(writeGeometry(shearGeometry, options));
     }
 
     /**

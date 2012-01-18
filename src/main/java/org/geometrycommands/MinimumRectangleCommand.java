@@ -37,6 +37,6 @@ public class MinimumRectangleCommand extends GeometryCommand<GeometryOptions> {
     protected void processGeometry(Geometry geometry, GeometryOptions options) throws Exception {
         MinimumDiameter minimumDiameter = new MinimumDiameter(geometry);
         Geometry outputGeometry = minimumDiameter.getMinimumRectangle();
-        System.out.println(writeGeoemtry(outputGeometry, options));
+        System.out.println(writeGeometry(outputGeometry, options));
     }
 }

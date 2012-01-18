@@ -37,6 +37,6 @@ public class MinimumClearanceCommand extends GeometryCommand<GeometryOptions> {
     protected void processGeometry(Geometry geometry, GeometryOptions options) throws Exception {
         MinimumClearance minimumClearance = new MinimumClearance(geometry);
         Geometry outputGeometry = minimumClearance.getLine();
-        System.out.println(writeGeoemtry(outputGeometry, options));
+        System.out.println(writeGeometry(outputGeometry, options));
     }
 }

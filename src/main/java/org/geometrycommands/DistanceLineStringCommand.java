@@ -44,6 +44,6 @@ public class DistanceLineStringCommand extends OtherGeometryCommand<OtherGeometr
         Coordinate[] coords = op.nearestPoints();
         GeometryFactory factory = new GeometryFactory();
         LineString line = factory.createLineString(coords);
-        System.out.println(writeGeoemtry(line, options));
+        System.out.println(writeGeometry(line, options));
     }
 }

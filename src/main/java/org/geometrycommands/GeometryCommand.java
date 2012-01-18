@@ -66,7 +66,7 @@ public abstract class GeometryCommand<T extends GeometryOptions> implements Comm
      * @return The Geometry encoded as a String
      * @throws Exception if an error occurs
      */
-    protected String writeGeoemtry(Geometry geometry, T options) throws Exception {
+    protected String writeGeometry(Geometry geometry, T options) throws Exception {
         return geometry.toText();
     }
 

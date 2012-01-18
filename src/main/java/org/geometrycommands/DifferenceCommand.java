@@ -36,6 +36,6 @@ public class DifferenceCommand extends OtherGeometryCommand<OtherGeometryOptions
     @Override
     protected void processGeometries(Geometry geometry, Geometry other, OtherGeometryOptions options) throws Exception {
         Geometry differenceGeometry = geometry.difference(other);
-        System.out.println(writeGeoemtry(differenceGeometry, options));
+        System.out.println(writeGeometry(differenceGeometry, options));
     }
 }

@@ -44,7 +44,7 @@ public class ScaleCommand extends GeometryCommand<ScaleOptions> {
             transformation = AffineTransformation.scaleInstance(options.getXScale(), options.getYScale());
         }
         Geometry scaledGeometry = transformation.transform(geometry);
-        System.out.println(writeGeoemtry(scaledGeometry, options));
+        System.out.println(writeGeometry(scaledGeometry, options));
     }
 
     /**

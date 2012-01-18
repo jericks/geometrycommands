@@ -48,7 +48,7 @@ public class DelaunayTriangulationCommand extends GeometryCommand<DelaunayTriang
             builder.setSites(geometry);
             outputGeometry = builder.getTriangles(geometry.getFactory());
         }
-        System.out.println(writeGeoemtry(outputGeometry, options));
+        System.out.println(writeGeometry(outputGeometry, options));
     }
 
     /**

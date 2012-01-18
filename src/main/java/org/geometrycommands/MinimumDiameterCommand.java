@@ -37,6 +37,6 @@ public class MinimumDiameterCommand extends GeometryCommand<GeometryOptions> {
     protected void processGeometry(Geometry geometry, GeometryOptions options) throws Exception {
         MinimumDiameter minimumDiameter = new MinimumDiameter(geometry);
         Geometry outputGeometry = minimumDiameter.getDiameter();
-        System.out.println(writeGeoemtry(outputGeometry, options));
+        System.out.println(writeGeometry(outputGeometry, options));
     }
 }

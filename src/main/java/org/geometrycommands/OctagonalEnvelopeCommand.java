@@ -37,6 +37,6 @@ public class OctagonalEnvelopeCommand extends GeometryCommand<GeometryOptions> {
     protected void processGeometry(Geometry geometry, GeometryOptions options) throws Exception {
         OctagonalEnvelope octagonalEnvelope = new OctagonalEnvelope(geometry);
         Geometry outputGeometry = octagonalEnvelope.toGeometry(geometry.getFactory());
-        System.out.println(writeGeoemtry(outputGeometry, options));
+        System.out.println(writeGeometry(outputGeometry, options));
     }
 }

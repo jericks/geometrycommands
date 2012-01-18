@@ -36,6 +36,6 @@ public class SymDifferenceCommand extends OtherGeometryCommand<OtherGeometryOpti
     @Override
     protected void processGeometries(Geometry geometry, Geometry other, OtherGeometryOptions options) throws Exception {
         Geometry symDifferenceGeometry = geometry.symDifference(other);
-        System.out.println(writeGeoemtry(symDifferenceGeometry, options));
+        System.out.println(writeGeometry(symDifferenceGeometry, options));
     }
 }

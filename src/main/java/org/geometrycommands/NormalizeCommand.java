@@ -35,6 +35,6 @@ public class NormalizeCommand extends GeometryCommand<GeometryOptions> {
     @Override
     protected void processGeometry(Geometry geometry, GeometryOptions options) throws Exception {
         Geometry outputGeometry = geometry.norm();
-        System.out.println(writeGeoemtry(outputGeometry, options));
+        System.out.println(writeGeometry(outputGeometry, options));
     }
 }

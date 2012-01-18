@@ -37,7 +37,7 @@ public class GetGeometryCommand extends GeometryCommand<GetGeometryCommandOption
     @Override
     protected void processGeometry(Geometry geometry, GetGeometryCommandOptions options) throws Exception {
         Geometry outputGeometry = geometry.getGeometryN(options.getIndex());
-        System.out.println(writeGeoemtry(outputGeometry, options));
+        System.out.println(writeGeometry(outputGeometry, options));
     }
     
     /**

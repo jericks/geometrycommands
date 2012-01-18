@@ -36,6 +36,6 @@ public class UnionCommand extends OtherGeometryCommand<OtherGeometryOptions> {
     @Override
     public void processGeometries(Geometry geometry, Geometry other, OtherGeometryOptions options) throws Exception {
         Geometry unionedGeometry = geometry.union(other);
-        System.out.println(writeGeoemtry(unionedGeometry, options));
+        System.out.println(writeGeometry(unionedGeometry, options));
     }
 }

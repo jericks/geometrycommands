@@ -38,7 +38,7 @@ public class DensifyCommand extends GeometryCommand<DensifyOptions> {
     @Override
     protected void processGeometry(Geometry geometry, DensifyOptions options) throws Exception {
         Geometry outputGeometry = Densifier.densify(geometry, options.getDistanceTolerance());
-        System.out.println(writeGeoemtry(outputGeometry, options));
+        System.out.println(writeGeometry(outputGeometry, options));
     }
 
     /**

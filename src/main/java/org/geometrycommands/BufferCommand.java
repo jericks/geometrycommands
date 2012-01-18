@@ -56,7 +56,7 @@ public class BufferCommand extends GeometryCommand<BufferOptions> {
         BufferOp bufferOp = new BufferOp(geometry, params);
         Geometry bufferedGeometry = bufferOp.getResultGeometry(options.getDistance());
 
-        System.out.println(writeGeoemtry(bufferedGeometry, options));
+        System.out.println(writeGeometry(bufferedGeometry, options));
     }
 
     /**

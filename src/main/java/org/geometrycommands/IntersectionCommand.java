@@ -36,6 +36,6 @@ public class IntersectionCommand extends OtherGeometryCommand<OtherGeometryOptio
     @Override
     public void processGeometries(Geometry geometry, Geometry other, OtherGeometryOptions options) throws Exception {
         Geometry differenceGeometry = geometry.intersection(other);
-        System.out.println(writeGeoemtry(differenceGeometry, options));
+        System.out.println(writeGeometry(differenceGeometry, options));
     }
 }

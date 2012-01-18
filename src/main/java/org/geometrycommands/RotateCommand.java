@@ -54,7 +54,7 @@ public class RotateCommand extends GeometryCommand<RotateOptions> {
             throw new IllegalArgumentException("Illegal combination of arguments (theta | theta,x,y | sinTheta, cosTheta, x, y | sinTheta, cosTheta");
         }
         Geometry rotatedGeometry = transformation.transform(geometry);
-        System.out.println(writeGeoemtry(rotatedGeometry, options));
+        System.out.println(writeGeometry(rotatedGeometry, options));
     }
 
     /**

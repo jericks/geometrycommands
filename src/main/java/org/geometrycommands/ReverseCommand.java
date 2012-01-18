@@ -34,6 +34,6 @@ public class ReverseCommand extends GeometryCommand<GeometryOptions> {
      */
     @Override
     protected void processGeometry(Geometry geometry, GeometryOptions options) throws Exception {
-        System.out.println(writeGeoemtry(geometry.reverse(), options));
+        System.out.println(writeGeometry(geometry.reverse(), options));
     }
 }

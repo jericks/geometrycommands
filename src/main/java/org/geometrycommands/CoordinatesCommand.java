@@ -37,6 +37,6 @@ public class CoordinatesCommand extends GeometryCommand<GeometryOptions> {
     protected void processGeometry(Geometry geometry, GeometryOptions options) throws Exception {
         Coordinate[] coords = geometry.getCoordinates();
         Geometry outputGeometry = geometry.getFactory().createMultiPoint(coords);
-        System.out.println(writeGeoemtry(outputGeometry, options));
+        System.out.println(writeGeometry(outputGeometry, options));
     }
 }

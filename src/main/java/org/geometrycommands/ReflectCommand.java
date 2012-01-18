@@ -44,7 +44,7 @@ public class ReflectCommand extends GeometryCommand<ReflectOptions> {
             transformation = AffineTransformation.reflectionInstance(options.getX0(), options.getY0());
         }
         Geometry reflectedGeometry = transformation.transform(geometry);
-        System.out.println(writeGeoemtry(reflectedGeometry, options));
+        System.out.println(writeGeometry(reflectedGeometry, options));
     }
 
     /**

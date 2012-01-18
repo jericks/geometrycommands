@@ -75,7 +75,7 @@ public class ProjectCommand extends GeometryCommand<ProjectOptions> {
 
         CoordinateTransform transform = ctFactory.createTransform(sourceCrs, targetCrs);
         Geometry projectedGeometry = transformGeometry(transform, geometry);
-        System.out.println(writeGeoemtry(projectedGeometry, options));
+        System.out.println(writeGeometry(projectedGeometry, options));
     }
 
     private boolean isName(String projString) {

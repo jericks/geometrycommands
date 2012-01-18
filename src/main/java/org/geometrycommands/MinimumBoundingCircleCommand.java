@@ -37,6 +37,6 @@ public class MinimumBoundingCircleCommand extends GeometryCommand<GeometryOption
     protected void processGeometry(Geometry geometry, GeometryOptions options) throws Exception {
         MinimumBoundingCircle circle = new MinimumBoundingCircle(geometry);
         Geometry outputGeometry = circle.getCircle();
-        System.out.println(writeGeoemtry(outputGeometry, options));
+        System.out.println(writeGeometry(outputGeometry, options));
     }
 }

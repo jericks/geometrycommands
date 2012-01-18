@@ -38,7 +38,7 @@ public class TranslateCommand extends GeometryCommand<TranslateOptions> {
     @Override
     protected void processGeometry(Geometry geometry, TranslateOptions options) throws Exception {
         Geometry translatedGeometry = AffineTransformation.translationInstance(options.getX(), options.getY()).transform(geometry);
-        System.out.println(writeGeoemtry(translatedGeometry, options));
+        System.out.println(writeGeometry(translatedGeometry, options));
     }
 
     /**
