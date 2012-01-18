@@ -15,8 +15,10 @@ org.geometrycommands.DelaunayTriangulationCommand
 org.geometrycommands.DensifyCommand
 org.geometrycommands.DrawCommand
 org.geometrycommands.DifferenceCommand
+org.geometrycommands.DiscreteHausdorffDistanceCommand
 org.geometrycommands.DisjointCommand
 org.geometrycommands.DistanceCommand
+org.geometrycommands.DistanceLineStringCommand
 org.geometrycommands.EnvelopeCommand
 org.geometrycommands.EqualsCommand
 org.geometrycommands.IntersectionCommand
@@ -46,6 +48,7 @@ org.geometrycommands.RotateCommand
 org.geometrycommands.ScaleCommand
 org.geometrycommands.ShearCommand
 org.geometrycommands.SierpinskiCarpetCommand
+org.geometrycommands.SimilarityCommand
 org.geometrycommands.SimplifyCommand
 org.geometrycommands.SymDifferenceCommand
 org.geometrycommands.TextCommand
