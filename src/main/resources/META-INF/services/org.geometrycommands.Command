@@ -21,6 +21,8 @@ org.geometrycommands.DistanceCommand
 org.geometrycommands.DistanceLineStringCommand
 org.geometrycommands.EnvelopeCommand
 org.geometrycommands.EqualsCommand
+org.geometrycommands.InteriorPointCommand
+org.geometrycommands.InterpolatePointCommand
 org.geometrycommands.IntersectionCommand
 org.geometrycommands.IntersectsCommand
 org.geometrycommands.IsEmptyCommand
@@ -29,9 +31,9 @@ org.geometrycommands.IsSimpleCommand
 org.geometrycommands.IsValidCommand
 org.geometrycommands.IsWithDistanceCommand
 org.geometrycommands.KochSnowflakeCommand
+org.geometrycommands.LocatePointCommand
 org.geometrycommands.GeometryTypeCommand
 org.geometrycommands.GetGeometryCommand
-org.geometrycommands.InteriorPointCommand
 org.geometrycommands.MinimumBoundingCircleCommand
 org.geometrycommands.MinimumClearanceCommand
 org.geometrycommands.MinimumDiameterCommand
@@ -39,6 +41,7 @@ org.geometrycommands.MinimumRectangleCommand
 org.geometrycommands.NormalizeCommand
 org.geometrycommands.OctagonalEnvelopeCommand
 org.geometrycommands.OverlapsCommand
+org.geometrycommands.PlacePointCommand
 org.geometrycommands.ProjectCommand
 org.geometrycommands.RandomCommand
 org.geometrycommands.ReflectCommand
@@ -50,6 +53,7 @@ org.geometrycommands.ShearCommand
 org.geometrycommands.SierpinskiCarpetCommand
 org.geometrycommands.SimilarityCommand
 org.geometrycommands.SimplifyCommand
+org.geometrycommands.SubLineCommand
 org.geometrycommands.SymDifferenceCommand
 org.geometrycommands.TextCommand
 org.geometrycommands.TouchesCommand
