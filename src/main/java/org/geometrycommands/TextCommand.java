@@ -3,6 +3,8 @@ package org.geometrycommands;
 import com.vividsolutions.jts.awt.FontGlyphReader;
 import com.vividsolutions.jts.geom.Geometry;
 import com.vividsolutions.jts.geom.GeometryFactory;
+import java.io.Reader;
+import java.io.Writer;
 import org.geometrycommands.TextCommand.TextOptions;
 import org.kohsuke.args4j.Option;
 
@@ -33,13 +35,15 @@ public class TextCommand implements Command<TextOptions> {
     /**
      * Create a Polygon Geometry from the text and Font.
      * @param options The TextOptions
+     * @param reader The java.io.Reader
+     * @param writer The java.io.Writer 
      * @throws Exception if an error occurs
      */
     @Override
-    public void execute(TextOptions options) throws Exception {
+    public void execute(TextOptions options, Reader reader, Writer writer) throws Exception {
         GeometryFactory factory = new GeometryFactory();
         Geometry geometry = FontGlyphReader.read(options.getText(), options.getFontName(), options.getPointSize(), factory);
-        System.out.println(geometry.toText());
+        writer.write(geometry.toText());
     }
 
     /**

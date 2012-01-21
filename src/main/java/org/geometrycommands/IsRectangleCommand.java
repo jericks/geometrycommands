@@ -1,6 +1,8 @@
 package org.geometrycommands;
 
 import com.vividsolutions.jts.geom.Geometry;
+import java.io.Reader;
+import java.io.Writer;
 
 /**
  * A Command that determines if the input Geometry is a rectangle or not.
@@ -29,13 +31,14 @@ public class IsRectangleCommand extends GeometryCommand<GeometryOptions> {
     /**
      * Determine if the input Geometry is a rectangle or not.
      * @param geometry The input Geometry
-     * @param other The other Geometry
      * @param options The GeometryOptions
+     * @param reader The java.io.Reader
+     * @param writer The java.io.Writer
      * @throws Exception if an error occurs
      */
     @Override
-    public void processGeometry(Geometry geometry, GeometryOptions options) throws Exception {
+    protected void processGeometry(Geometry geometry, GeometryOptions options, Reader reader, Writer writer) throws Exception {
         boolean rectangle = geometry.isRectangle();
-        System.out.println(rectangle);
+        writer.write(String.valueOf(rectangle));
     }
 }

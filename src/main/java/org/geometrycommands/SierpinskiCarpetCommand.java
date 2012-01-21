@@ -3,6 +3,8 @@ package org.geometrycommands;
 import com.vividsolutions.jts.geom.Geometry;
 import com.vividsolutions.jts.geom.GeometryFactory;
 import com.vividsolutions.jts.shape.fractal.SierpinskiCarpetBuilder;
+import java.io.Reader;
+import java.io.Writer;
 import org.geometrycommands.SierpinskiCarpetCommand.SierpinskiCarpetOptions;
 import org.kohsuke.args4j.Option;
 
@@ -34,15 +36,17 @@ public class SierpinskiCarpetCommand extends GeometryCommand<SierpinskiCarpetOpt
      * Create a Sierpinski carpet as a Geometry.
      * @param geometry The input Geometry
      * @param options The KochSnowflakeOptions
+     * @param reader The java.io.Reader
+     * @param writer The java.io.Writer
      * @throws Exception if an error occurs
      */
     @Override
-    protected void processGeometry(Geometry geometry, SierpinskiCarpetOptions options) throws Exception {
+    protected void processGeometry(Geometry geometry, SierpinskiCarpetOptions options, Reader reader, Writer writer) throws Exception {
         SierpinskiCarpetBuilder builder = new SierpinskiCarpetBuilder(new GeometryFactory());
         builder.setExtent(geometry.getEnvelopeInternal());
         builder.setNumPoints(options.getNumberOfPoints());
         Geometry outputGeometry = builder.getGeometry();
-        System.out.println(writeGeometry(outputGeometry, options));
+        writer.write(writeGeometry(outputGeometry, options));
     }
 
     /**

@@ -1,6 +1,8 @@
 package org.geometrycommands;
 
 import com.vividsolutions.jts.geom.Geometry;
+import java.io.Reader;
+import java.io.Writer;
 import org.geometrycommands.IsWithDistanceCommand.IsWithDistanceOptions;
 import org.kohsuke.args4j.Option;
 
@@ -33,12 +35,14 @@ public class IsWithDistanceCommand extends OtherGeometryCommand<IsWithDistanceOp
      * @param geometry The input Geometry
      * @param other The other Geometry
      * @param options The IsWithDistanceOptions
+     * @param reader The java.io.Reader
+     * @param writer The java.io.Writer
      * @throws Exception if an error occurs
      */
     @Override
-    public void processGeometries(Geometry geometry, Geometry other, IsWithDistanceOptions options) throws Exception {
+    protected void processGeometries(Geometry geometry, Geometry other, IsWithDistanceOptions options, Reader reader, Writer writer) throws Exception {
         boolean isWithDistance = geometry.isWithinDistance(other, options.getDistance());
-        System.out.println(isWithDistance);
+        writer.write(String.valueOf(isWithDistance));
     }
 
     /**

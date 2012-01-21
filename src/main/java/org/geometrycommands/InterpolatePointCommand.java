@@ -6,6 +6,8 @@ import com.vividsolutions.jts.geom.GeometryFactory;
 import com.vividsolutions.jts.geom.Lineal;
 import com.vividsolutions.jts.geom.Point;
 import com.vividsolutions.jts.linearref.LengthIndexedLine;
+import java.io.Reader;
+import java.io.Writer;
 import org.geometrycommands.InterpolatePointCommand.InterpolatePointOptions;
 import org.kohsuke.args4j.Option;
 
@@ -39,10 +41,12 @@ public class InterpolatePointCommand extends GeometryCommand<InterpolatePointOpt
      * a percentage position along the Geometry.
      * @param geometry The input Geometry
      * @param options The GeometryOptions
+     * @param reader The java.io.Reader
+     * @param writer The java.io.Writer
      * @throws Exception if an error occurs
      */
     @Override
-    protected void processGeometry(Geometry geometry, InterpolatePointOptions options) throws Exception {
+    protected void processGeometry(Geometry geometry, InterpolatePointOptions options, Reader reader, Writer writer) throws Exception {
         if (!(geometry instanceof Lineal)) {
             throw new IllegalArgumentException("The input geometry a LineString or a MultiLineString!");
         }
@@ -51,7 +55,7 @@ public class InterpolatePointCommand extends GeometryCommand<InterpolatePointOpt
         Coordinate coord = indexedLine.extractPoint(options.getPosition() * length);
         GeometryFactory factory = new GeometryFactory();
         Point point = factory.createPoint(coord);
-        System.out.println(writeGeometry(point, options));
+        writer.write(writeGeometry(point, options));
     }
 
     /**

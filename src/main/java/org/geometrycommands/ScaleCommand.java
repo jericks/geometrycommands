@@ -2,6 +2,8 @@ package org.geometrycommands;
 
 import com.vividsolutions.jts.geom.Geometry;
 import com.vividsolutions.jts.geom.util.AffineTransformation;
+import java.io.Reader;
+import java.io.Writer;
 import org.geometrycommands.ScaleCommand.ScaleOptions;
 import org.kohsuke.args4j.Option;
 
@@ -33,10 +35,12 @@ public class ScaleCommand extends GeometryCommand<ScaleOptions> {
      * Perform the scale affine transformation on the input Geometry.
      * @param geometry The input Geometry
      * @param options The ScaleOptions
+     * @param reader The java.io.Reader
+     * @param writer The java.io.Writer
      * @throws Exception if an error occurs
      */
     @Override
-    protected void processGeometry(Geometry geometry, ScaleOptions options) throws Exception {
+    protected void processGeometry(Geometry geometry, ScaleOptions options, Reader reader, Writer writer) throws Exception {
         AffineTransformation transformation;
         if (!Double.isNaN(options.getX()) && !Double.isNaN(options.getY())) {
             transformation = AffineTransformation.scaleInstance(options.getXScale(), options.getYScale(), options.getX(), options.getY());
@@ -44,7 +48,7 @@ public class ScaleCommand extends GeometryCommand<ScaleOptions> {
             transformation = AffineTransformation.scaleInstance(options.getXScale(), options.getYScale());
         }
         Geometry scaledGeometry = transformation.transform(geometry);
-        System.out.println(writeGeometry(scaledGeometry, options));
+        writer.write(writeGeometry(scaledGeometry, options));
     }
 
     /**

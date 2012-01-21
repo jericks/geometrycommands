@@ -3,6 +3,8 @@ package org.geometrycommands;
 import com.vividsolutions.jts.geom.Geometry;
 import com.vividsolutions.jts.geom.Lineal;
 import com.vividsolutions.jts.linearref.LengthIndexedLine;
+import java.io.Reader;
+import java.io.Writer;
 import org.geometrycommands.SubLineCommand.SubLineOptions;
 import org.kohsuke.args4j.Option;
 
@@ -34,10 +36,12 @@ public class SubLineCommand extends GeometryCommand<SubLineOptions> {
      * Extract a sub-line from a linear Geometry.
      * @param geometry The input Geometry
      * @param options The GeometryOptions
+     * @param reader The java.io.Reader
+     * @param writer The java.io.Writer
      * @throws Exception if an error occurs
      */
     @Override
-    protected void processGeometry(Geometry geometry, SubLineOptions options) throws Exception {
+    protected void processGeometry(Geometry geometry, SubLineOptions options, Reader reader, Writer writer) throws Exception {
         if (!(geometry instanceof Lineal)) {
             throw new IllegalArgumentException("The input geometry a LineString or a MultiLineString!");
         }
@@ -47,7 +51,7 @@ public class SubLineCommand extends GeometryCommand<SubLineOptions> {
         LengthIndexedLine indexedLine = new LengthIndexedLine(geometry);
         double length = geometry.getLength();
         Geometry subLine = indexedLine.extractLine(options.getStartPosition() * length, options.getEndPosition() * length);
-        System.out.println(writeGeometry(subLine, options));
+        writer.write(writeGeometry(subLine, options));
     }
 
     /**

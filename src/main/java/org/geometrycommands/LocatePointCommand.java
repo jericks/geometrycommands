@@ -4,6 +4,8 @@ import com.vividsolutions.jts.geom.Geometry;
 import com.vividsolutions.jts.geom.Lineal;
 import com.vividsolutions.jts.geom.Point;
 import com.vividsolutions.jts.linearref.LengthIndexedLine;
+import java.io.Reader;
+import java.io.Writer;
 
 /**
  * A Command to locate the position of a Point on the input linear Geometry as a percentage of the distance.
@@ -34,10 +36,12 @@ public class LocatePointCommand extends OtherGeometryCommand<OtherGeometryOption
      * @param geometry The input Geometry
      * @param other The other Geometry
      * @param options The OtherGeometryOptions
+     * @param reader The java.io.Reader
+     * @param writer The java.io.Writer
      * @throws Exception if an error occurs
      */
     @Override
-    protected void processGeometries(Geometry geometry, Geometry other, OtherGeometryOptions options) throws Exception {
+    protected void processGeometries(Geometry geometry, Geometry other, OtherGeometryOptions options, Reader reader, Writer writer) throws Exception {
         
         Point point = null;
         Geometry line = null;
@@ -61,7 +65,7 @@ public class LocatePointCommand extends OtherGeometryCommand<OtherGeometryOption
         double position = indexedLine.indexOf(point.getCoordinate());
         double length = line.getLength();
         double percentAlong = position / length;
-        System.out.println(percentAlong);
+        writer.write(String.valueOf(percentAlong));
     }
 
 }

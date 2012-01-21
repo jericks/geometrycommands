@@ -20,7 +20,7 @@ public class Options {
      */
     @Option(name = "--help", usage = "Print help message", required = false)
     private boolean help;
-
+    
     /**
      * Get the Command name
      * @return The Command name

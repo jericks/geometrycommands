@@ -1,6 +1,8 @@
 package org.geometrycommands;
 
 import com.vividsolutions.jts.geom.Geometry;
+import java.io.Reader;
+import java.io.Writer;
 import org.geometrycommands.RelateCommand.RelateOptions;
 import org.kohsuke.args4j.Option;
 
@@ -36,16 +38,18 @@ public class RelateCommand extends OtherGeometryCommand<RelateOptions> {
      * @param geometry The input geometry
      * @param other The other geometry
      * @param options The RelateOptions
+     * @param reader The java.io.Reader
+     * @param writer The java.io.Writer 
      * @throws Exception if an error occurs
      */
     @Override
-    protected void processGeometries(Geometry geometry, Geometry other, RelateOptions options) throws Exception {
+    protected void processGeometries(Geometry geometry, Geometry other, RelateOptions options, Reader reader, Writer writer) throws Exception {
         if (options.getIntersectionMatrix() != null) {
             boolean related = geometry.relate(other, options.getIntersectionMatrix());
-            System.out.println(related);
+            writer.write(String.valueOf(related));
         } else {
             String matrix = geometry.relate(other).toString();
-            System.out.println(matrix);
+            writer.write(matrix);
         }
     }
 

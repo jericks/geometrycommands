@@ -1,8 +1,11 @@
 package org.geometrycommands;
 
+import java.io.InputStreamReader;
+import java.io.OutputStreamWriter;
+import java.io.Reader;
+import java.io.Writer;
 import java.util.ServiceLoader;
 import org.kohsuke.args4j.CmdLineParser;
-import org.kohsuke.args4j.ExampleMode;
 
 /**
  * The command line application
@@ -59,7 +62,12 @@ public class App {
                 cmdLineParser.printUsage(System.out);
             } else {
                 // If there are no errors, execute the command
-                command.execute(options);
+                Reader reader = new InputStreamReader(System.in);
+                Writer writer = new OutputStreamWriter(System.out);
+                command.execute(options, reader, writer);
+                // Add a new line character and flush
+                writer.write(System.getProperty("line.separator"));
+                writer.flush();
             }
         } catch (Exception e) {
             // Print help for the command (if required options are not present)

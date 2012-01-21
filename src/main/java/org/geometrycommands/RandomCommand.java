@@ -4,6 +4,8 @@ import com.vividsolutions.jts.geom.Geometry;
 import com.vividsolutions.jts.geom.Polygonal;
 import com.vividsolutions.jts.shape.random.RandomPointsBuilder;
 import com.vividsolutions.jts.shape.random.RandomPointsInGridBuilder;
+import java.io.Reader;
+import java.io.Writer;
 import org.geometrycommands.RandomCommand.RandomCommandOptions;
 import org.kohsuke.args4j.Option;
 
@@ -35,10 +37,12 @@ public class RandomCommand extends GeometryCommand<RandomCommandOptions> {
      * Generate random Points inside the input Geometry or Envelope
      * @param geometry The input Geometry 
      * @param options The RandomCommandOptions
+     * @param reader The java.io.Reader
+     * @param writer The java.io.Writer
      * @throws Exception if an error occurs
      */
     @Override
-    protected void processGeometry(Geometry geometry, RandomCommandOptions options) throws Exception {
+    protected void processGeometry(Geometry geometry, RandomCommandOptions options, Reader reader, Writer writer) throws Exception {
         if (!(geometry instanceof Polygonal)) {
             geometry = geometry.getEnvelope();
         }
@@ -62,7 +66,7 @@ public class RandomCommand extends GeometryCommand<RandomCommandOptions> {
             randomGeometry = builder.getGeometry();
         }
 
-        System.out.println(writeGeometry(randomGeometry, options));
+        writer.write(writeGeometry(randomGeometry, options));
     }
 
     /**
@@ -110,26 +114,50 @@ public class RandomCommand extends GeometryCommand<RandomCommandOptions> {
             this.number = number;
         }
 
+        /**
+         * Get the flag for whether the random points should be constrained to a circle when gridded.
+         * @return The flag for whether the random points should be constrained to a circle when gridded.
+         */
         public boolean isConstrainedToCircle() {
             return constrainedToCircle;
         }
 
+        /**
+         * Set the flag for whether the random points should be constrained to a circle when gridded.
+         * @param constrainedToCircle The flag for whether the random points should be constrained to a circle when gridded.
+         */
         public void setConstrainedToCircle(boolean constrainedToCircle) {
             this.constrainedToCircle = constrainedToCircle;
         }
 
+        /**
+         * Get the flag for whether the random points should be gridded.
+         * @return The flag for whether the random points should be gridded.
+         */
         public boolean isGridded() {
             return gridded;
         }
 
+        /**
+         * Set the flag for whether the random points should be gridded.
+         * @param gridded The flag for whether the random points should be gridded.
+         */
         public void setGridded(boolean gridded) {
             this.gridded = gridded;
         }
 
+        /**
+         * Get the gutter distance or padding for random points when gridded.
+         * @return The gutter distance or padding for random points when gridded.
+         */
         public double getGutterFraction() {
             return gutterFraction;
         }
 
+        /**
+         * Set the gutter distance or padding for random points when gridded.
+         * @param gutterFraction The gutter distance or padding for random points when gridded.
+         */
         public void setGutterFraction(double gutterFraction) {
             this.gutterFraction = gutterFraction;
         }

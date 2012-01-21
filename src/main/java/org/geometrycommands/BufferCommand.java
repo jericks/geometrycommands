@@ -3,6 +3,8 @@ package org.geometrycommands;
 import com.vividsolutions.jts.geom.Geometry;
 import com.vividsolutions.jts.operation.buffer.BufferOp;
 import com.vividsolutions.jts.operation.buffer.BufferParameters;
+import java.io.Reader;
+import java.io.Writer;
 import org.geometrycommands.BufferCommand.BufferOptions;
 import org.kohsuke.args4j.Option;
 
@@ -34,10 +36,12 @@ public class BufferCommand extends GeometryCommand<BufferOptions> {
      * Buffer a Geometry by a distance.
      * @param geometry The Geometry
      * @param options The BufferOptions
+     * @param reader The java.io.Reader
+     * @param writer The java.io.Writer
      * @throws Exception if an error occurs
      */
     @Override
-    protected void processGeometry(Geometry geometry, BufferOptions options) throws Exception {
+    protected void processGeometry(Geometry geometry, BufferOptions options, Reader reader, Writer writer) throws Exception {
         int capStyle;
         if (options.getEndCapStyle().equalsIgnoreCase("butt")
                 || options.getEndCapStyle().equalsIgnoreCase("flat")) {
@@ -56,7 +60,7 @@ public class BufferCommand extends GeometryCommand<BufferOptions> {
         BufferOp bufferOp = new BufferOp(geometry, params);
         Geometry bufferedGeometry = bufferOp.getResultGeometry(options.getDistance());
 
-        System.out.println(writeGeometry(bufferedGeometry, options));
+        writer.write(writeGeometry(bufferedGeometry, options));
     }
 
     /**

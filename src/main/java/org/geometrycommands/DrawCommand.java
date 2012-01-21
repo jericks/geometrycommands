@@ -17,6 +17,8 @@ import java.awt.geom.Point2D;
 import java.awt.image.BufferedImage;
 import java.io.File;
 import java.io.FileOutputStream;
+import java.io.Reader;
+import java.io.Writer;
 import javax.imageio.ImageIO;
 import org.geometrycommands.DrawCommand.DrawOptions;
 import org.kohsuke.args4j.Option;
@@ -62,9 +64,11 @@ public class DrawCommand extends GeometryCommand<DrawOptions> {
      * Draw the input Geometry to an image File
      * @param geometry The input Geometry
      * @param options The DrawOptions
+     * @param reader The java.io.Reader
+     * @param writer The java.io.Writer 
      */
     @Override
-    public void processGeometry(Geometry geometry, DrawOptions options) throws Exception {
+    protected void processGeometry(Geometry geometry, DrawOptions options, Reader reader, Writer writer) throws Exception {
 
         final int imageWidth = options.getWidth();
         final int imageHeight = options.getHeight();

@@ -1,6 +1,8 @@
 package org.geometrycommands;
 
 import com.vividsolutions.jts.geom.Geometry;
+import java.io.Reader;
+import java.io.Writer;
 
 /**
  * A Command for calculating the symetric difference between two Geometries
@@ -31,11 +33,13 @@ public class SymDifferenceCommand extends OtherGeometryCommand<OtherGeometryOpti
      * @param geometry The input Geometry
      * @param other The other Geometry
      * @param options The OtherGeometryOptions
+     * @param reader The java.io.Reader
+     * @param writer The java.io.Writer
      * @throws Exception if an error occurs
      */
     @Override
-    protected void processGeometries(Geometry geometry, Geometry other, OtherGeometryOptions options) throws Exception {
+    protected void processGeometries(Geometry geometry, Geometry other, OtherGeometryOptions options, Reader reader, Writer writer) throws Exception {
         Geometry symDifferenceGeometry = geometry.symDifference(other);
-        System.out.println(writeGeometry(symDifferenceGeometry, options));
+        writer.write(writeGeometry(symDifferenceGeometry, options));
     }
 }

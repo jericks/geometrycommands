@@ -11,6 +11,8 @@ import com.vividsolutions.jts.geom.MultiPoint;
 import com.vividsolutions.jts.geom.MultiPolygon;
 import com.vividsolutions.jts.geom.Point;
 import com.vividsolutions.jts.geom.Polygon;
+import java.io.Reader;
+import java.io.Writer;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
@@ -50,10 +52,12 @@ public class ProjectCommand extends GeometryCommand<ProjectOptions> {
      * Project the input Geometry from one coordinate system to another
      * @param geometry The Geometry
      * @param options The ProjectOptions
+     * @param reader The java.io.Reader
+     * @param writer The java.io.Writer
      * @throws Exception if an error occurs
      */
     @Override
-    protected void processGeometry(Geometry geometry, ProjectOptions options) throws Exception {
+    protected void processGeometry(Geometry geometry, ProjectOptions options, Reader reader, Writer writer) throws Exception {
 
         CoordinateTransformFactory ctFactory = new CoordinateTransformFactory();
         CRSFactory csFactory = new CRSFactory();
@@ -75,7 +79,7 @@ public class ProjectCommand extends GeometryCommand<ProjectOptions> {
 
         CoordinateTransform transform = ctFactory.createTransform(sourceCrs, targetCrs);
         Geometry projectedGeometry = transformGeometry(transform, geometry);
-        System.out.println(writeGeometry(projectedGeometry, options));
+        writer.write(writeGeometry(projectedGeometry, options));
     }
 
     private boolean isName(String projString) {

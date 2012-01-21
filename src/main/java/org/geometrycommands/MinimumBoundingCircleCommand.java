@@ -2,6 +2,8 @@ package org.geometrycommands;
 
 import com.vividsolutions.jts.algorithm.MinimumBoundingCircle;
 import com.vividsolutions.jts.geom.Geometry;
+import java.io.Reader;
+import java.io.Writer;
 
 /**
  * Calculate the minimum bounding circle of the input Geometry.
@@ -31,12 +33,14 @@ public class MinimumBoundingCircleCommand extends GeometryCommand<GeometryOption
      * Calculate the minimum bounding circle of the input Geometry.
      * @param geometry The input Geometry
      * @param options The GeometryOptions
+     * @param reader The java.io.Reader
+     * @param writer The java.io.Writer
      * @throws Exception if an error occurs
      */
     @Override
-    protected void processGeometry(Geometry geometry, GeometryOptions options) throws Exception {
+    protected void processGeometry(Geometry geometry, GeometryOptions options, Reader reader, Writer writer) throws Exception {
         MinimumBoundingCircle circle = new MinimumBoundingCircle(geometry);
         Geometry outputGeometry = circle.getCircle();
-        System.out.println(writeGeometry(outputGeometry, options));
+        writer.write(writeGeometry(outputGeometry, options));
     }
 }

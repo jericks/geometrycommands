@@ -4,6 +4,8 @@ import com.vividsolutions.jts.algorithm.match.AreaSimilarityMeasure;
 import com.vividsolutions.jts.algorithm.match.HausdorffSimilarityMeasure;
 import com.vividsolutions.jts.algorithm.match.SimilarityMeasure;
 import com.vividsolutions.jts.geom.Geometry;
+import java.io.Reader;
+import java.io.Writer;
 import org.geometrycommands.SimilarityCommand.SimilarityOptions;
 import org.kohsuke.args4j.Option;
 
@@ -36,10 +38,12 @@ public class SimilarityCommand extends OtherGeometryCommand<SimilarityOptions> {
      * @param geometry The Geometry
      * @param other The other Geometry
      * @param options The SimilarityOptions
+     * @param reader The java.io.Reader
+     * @param writer The java.io.Writer
      * @throws Exception if an error occurs
      */
     @Override
-    protected void processGeometries(Geometry geometry, Geometry other, SimilarityOptions options) throws Exception {
+    protected void processGeometries(Geometry geometry, Geometry other, SimilarityOptions options, Reader reader, Writer writer) throws Exception {
         SimilarityMeasure similarityMeasure;
         if (options.getAlgorithm().equalsIgnoreCase("area") || options.getAlgorithm().equalsIgnoreCase("a")) {
             similarityMeasure = new AreaSimilarityMeasure();
@@ -49,7 +53,7 @@ public class SimilarityCommand extends OtherGeometryCommand<SimilarityOptions> {
             throw new IllegalArgumentException("Unknown similarity measure algorithm!");
         }
         double similarity = similarityMeasure.measure(geometry, other);
-        System.out.println(similarity);
+        writer.write(String.valueOf(similarity));
     }
 
     /**

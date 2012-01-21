@@ -1,6 +1,8 @@
 package org.geometrycommands;
 
 import com.vividsolutions.jts.geom.Geometry;
+import java.io.Reader;
+import java.io.Writer;
 
 /**
  * A Command to count the number of Geometries in the input Geometry
@@ -30,10 +32,12 @@ public class CountGeometriesCommand extends GeometryCommand<GeometryOptions> {
      * Count the number of Geometries in the input Geometry.
      * @param geometry The input Geometry
      * @param options The GeometryOptions
+     * @param reader The java.io.Reader
+     * @param writer The java.io.Writer
      * @throws Exception if an error occurs
      */
     @Override
-    protected void processGeometry(Geometry geometry, GeometryOptions options) throws Exception {
-        System.out.println(geometry.getNumGeometries());
+    protected void processGeometry(Geometry geometry, GeometryOptions options, Reader reader, Writer writer) throws Exception {
+        writer.write(geometry.getNumGeometries());
     }
 }

@@ -22,7 +22,9 @@ public interface Command<T extends Options> {
     /**
      * Execute this Command with the given Options
      * @param options The Options
+     * @param reader The java.io.Reader
+     * @param writer The java.io.Writer
      * @throws Exception if an error occurs 
      */
-    public void execute(T options) throws Exception;
+    public void execute(T options, java.io.Reader reader, java.io.Writer writer) throws Exception;
 }

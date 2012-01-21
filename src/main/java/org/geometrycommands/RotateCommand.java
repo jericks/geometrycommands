@@ -2,6 +2,8 @@ package org.geometrycommands;
 
 import com.vividsolutions.jts.geom.Geometry;
 import com.vividsolutions.jts.geom.util.AffineTransformation;
+import java.io.Reader;
+import java.io.Writer;
 import org.geometrycommands.RotateCommand.RotateOptions;
 import org.kohsuke.args4j.Option;
 
@@ -33,10 +35,12 @@ public class RotateCommand extends GeometryCommand<RotateOptions> {
      * Perform the rotate affine transformation on the input Geometry.
      * @param geometry The input Geometry
      * @param options The RotateOptions
+     * @param reader The java.io.Reader
+     * @param writer The java.io.Writer
      * @throws Exception if an error occurs
      */
     @Override
-    protected void processGeometry(Geometry geometry, RotateOptions options) throws Exception {
+    protected void processGeometry(Geometry geometry, RotateOptions options, Reader reader, Writer writer) throws Exception {
         AffineTransformation transformation = null;
         // theta, x, y
         if (!Double.isNaN(options.getTheta()) && !Double.isNaN(options.getX()) && !Double.isNaN(options.getY())) {
@@ -54,7 +58,7 @@ public class RotateCommand extends GeometryCommand<RotateOptions> {
             throw new IllegalArgumentException("Illegal combination of arguments (theta | theta,x,y | sinTheta, cosTheta, x, y | sinTheta, cosTheta");
         }
         Geometry rotatedGeometry = transformation.transform(geometry);
-        System.out.println(writeGeometry(rotatedGeometry, options));
+        writer.write(writeGeometry(rotatedGeometry, options));
     }
 
     /**

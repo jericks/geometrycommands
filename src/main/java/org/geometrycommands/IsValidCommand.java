@@ -2,6 +2,8 @@ package org.geometrycommands;
 
 import com.vividsolutions.jts.geom.Geometry;
 import com.vividsolutions.jts.operation.valid.IsValidOp;
+import java.io.Reader;
+import java.io.Writer;
 import org.geometrycommands.IsValidCommand.IsValidOptions;
 import org.kohsuke.args4j.Option;
 
@@ -32,17 +34,19 @@ public class IsValidCommand extends GeometryCommand<IsValidOptions> {
     /**
      * Determine if the input Geometry is valid or not.
      * @param geometry The input Geometry
-     * @param other The other Geometry
      * @param options The IsValidOptions
+     * @param reader The java.io.Reader
+     * @param writer The java.io.Writer 
      * @throws Exception if an error occurs
      */
     @Override
-    public void processGeometry(Geometry geometry, IsValidOptions options) throws Exception {
+    protected void processGeometry(Geometry geometry, IsValidOptions options, Reader reader, Writer writer) throws Exception {
         IsValidOp op = new IsValidOp(geometry);
         boolean valid = op.isValid();
-        System.out.println(valid);
         if (options.isShowingMessage()) {
-            System.out.println(op.getValidationError().getMessage());
+            writer.write(op.getValidationError().getMessage());
+        } else {
+            writer.write(String.valueOf(valid));
         }
     }
 

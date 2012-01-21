@@ -1,6 +1,8 @@
 package org.geometrycommands;
 
 import com.vividsolutions.jts.geom.Geometry;
+import java.io.Reader;
+import java.io.Writer;
 import org.geometrycommands.EqualsCommand.EqualsOptions;
 import org.kohsuke.args4j.Option;
 
@@ -33,10 +35,12 @@ public class EqualsCommand extends OtherGeometryCommand<EqualsOptions> {
      * @param geometry The input Geometry
      * @param other The other Geometry
      * @param options The EqualsOptions
+     * @param reader The java.io.Reader
+     * @param writer The java.io.Writer
      * @throws Exception if an error occurs
      */
     @Override
-    public void processGeometries(Geometry geometry, Geometry other, EqualsOptions options) throws Exception {
+    protected void processGeometries(Geometry geometry, Geometry other, EqualsOptions options, Reader reader, Writer writer) throws Exception {
         boolean equals;
         if (options.getType().equalsIgnoreCase("exact")) {
             if (options.getTolerance() > 0) {
@@ -51,9 +55,12 @@ public class EqualsCommand extends OtherGeometryCommand<EqualsOptions> {
         } else {
             equals = geometry.equals(other);
         }
-        System.out.println(equals);
+        writer.write(String.valueOf(equals));
     }
 
+    /**
+     * The EqualsOptions
+     */
     public static class EqualsOptions extends OtherGeometryOptions {
 
         /**

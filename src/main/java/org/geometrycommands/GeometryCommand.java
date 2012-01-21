@@ -5,9 +5,12 @@ import com.vividsolutions.jts.io.WKBReader;
 import com.vividsolutions.jts.io.WKTReader;
 import java.io.BufferedReader;
 import java.io.InputStreamReader;
+import java.io.Reader;
+import java.io.Writer;
 
 /**
  * The base class Command that deals with at least one Geometry
+ * @param <T> A GeometryOptions or subclass
  * @author Jared Erickson
  */
 public abstract class GeometryCommand<T extends GeometryOptions> implements Command<T> {
@@ -25,10 +28,12 @@ public abstract class GeometryCommand<T extends GeometryOptions> implements Comm
     /**
      * Execute the Command against at least one input Geometry
      * @param options The GeometryOptions
+     * @param reader The java.io.Reader
+     * @param writer The java.io.Writer
      * @throws Exception if an error occurs
      */
     @Override
-    public void execute(T options) throws Exception {
+    public void execute(T options, Reader reader, Writer writer) throws Exception {
         // Get Geometry from the GeometryOption
         Geometry geometry;
         if (options.getGeometry() != null && options.getGeometry().trim().length() > 0) {
@@ -45,7 +50,7 @@ public abstract class GeometryCommand<T extends GeometryOptions> implements Comm
             geometry = wktReader.read(text);
         }
         // Process the Geometry
-        processGeometry(geometry, options);
+        processGeometry(geometry, options, reader, writer);
     }
 
     /**
@@ -74,9 +79,11 @@ public abstract class GeometryCommand<T extends GeometryOptions> implements Comm
      * Process the input Geometry
      * @param geometry The input Geometry
      * @param options The GeometryOptions
+     * @param reader The java.io.Reader
+     * @param writer The java.io.Writer
      * @throws Exception if an error occurs
      */
-    protected abstract void processGeometry(Geometry geometry, T options) throws Exception;
+    protected abstract void processGeometry(Geometry geometry, T options, Reader reader, Writer writer) throws Exception;
 
     /**
      * Get the Command's name

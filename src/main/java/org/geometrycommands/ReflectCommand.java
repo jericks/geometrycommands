@@ -2,6 +2,8 @@ package org.geometrycommands;
 
 import com.vividsolutions.jts.geom.Geometry;
 import com.vividsolutions.jts.geom.util.AffineTransformation;
+import java.io.Reader;
+import java.io.Writer;
 import org.geometrycommands.ReflectCommand.ReflectOptions;
 import org.kohsuke.args4j.Option;
 
@@ -33,10 +35,12 @@ public class ReflectCommand extends GeometryCommand<ReflectOptions> {
      * Perform the reflect affine transformation on the input Geometry.
      * @param geometry The input Geometry
      * @param options The ReflectOptions
+     * @param reader The java.io.Reader
+     * @param writer The java.io.Writer
      * @throws Exception if an error occurs
      */
     @Override
-    protected void processGeometry(Geometry geometry, ReflectOptions options) throws Exception {
+    protected void processGeometry(Geometry geometry, ReflectOptions options, Reader reader, Writer writer) throws Exception {
         AffineTransformation transformation;
         if (!Double.isNaN(options.getX1()) && !Double.isNaN(options.getY1())) {
             transformation = AffineTransformation.reflectionInstance(options.getX0(), options.getY0(), options.getX1(), options.getY1());
@@ -44,7 +48,7 @@ public class ReflectCommand extends GeometryCommand<ReflectOptions> {
             transformation = AffineTransformation.reflectionInstance(options.getX0(), options.getY0());
         }
         Geometry reflectedGeometry = transformation.transform(geometry);
-        System.out.println(writeGeometry(reflectedGeometry, options));
+        writer.write(writeGeometry(reflectedGeometry, options));
     }
 
     /**

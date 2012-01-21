@@ -2,6 +2,8 @@ package org.geometrycommands;
 
 import com.vividsolutions.jts.densify.Densifier;
 import com.vividsolutions.jts.geom.Geometry;
+import java.io.Reader;
+import java.io.Writer;
 import org.geometrycommands.DensifyCommand.DensifyOptions;
 import org.kohsuke.args4j.Option;
 
@@ -33,12 +35,14 @@ public class DensifyCommand extends GeometryCommand<DensifyOptions> {
      * Densify the Geometry
      * @param geometry The input Geometry
      * @param options The DensifyOptions
+     * @param reader The java.io.Reader
+     * @param writer The java.io.Writer
      * @throws Exception if an error occurs
      */
     @Override
-    protected void processGeometry(Geometry geometry, DensifyOptions options) throws Exception {
+    protected void processGeometry(Geometry geometry, DensifyOptions options, Reader reader, Writer writer) throws Exception {
         Geometry outputGeometry = Densifier.densify(geometry, options.getDistanceTolerance());
-        System.out.println(writeGeometry(outputGeometry, options));
+        writer.write(writeGeometry(outputGeometry, options));
     }
 
     /**

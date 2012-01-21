@@ -2,6 +2,8 @@ package org.geometrycommands;
 
 import com.vividsolutions.jts.geom.Coordinate;
 import com.vividsolutions.jts.geom.Geometry;
+import java.io.Reader;
+import java.io.Writer;
 
 /**
  * A Command to get the Coordinates of the input Geometry.
@@ -31,12 +33,14 @@ public class CoordinatesCommand extends GeometryCommand<GeometryOptions> {
      * Get the coordinates of the input Geometry
      * @param geometry The input Geometry
      * @param options The GeometryOptions
+     * @param reader The java.io.Reader
+     * @param writer The java.io.Writer
      * @throws Exception if an error occurs
      */
     @Override
-    protected void processGeometry(Geometry geometry, GeometryOptions options) throws Exception {
+    protected void processGeometry(Geometry geometry, GeometryOptions options, Reader reader, Writer writer) throws Exception {
         Coordinate[] coords = geometry.getCoordinates();
         Geometry outputGeometry = geometry.getFactory().createMultiPoint(coords);
-        System.out.println(writeGeometry(outputGeometry, options));
+        writer.write(writeGeometry(outputGeometry, options));
     }
 }

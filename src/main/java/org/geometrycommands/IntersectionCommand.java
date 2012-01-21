@@ -1,6 +1,8 @@
 package org.geometrycommands;
 
 import com.vividsolutions.jts.geom.Geometry;
+import java.io.Reader;
+import java.io.Writer;
 
 /**
  * Calculate the intersection between two geometries.
@@ -31,11 +33,13 @@ public class IntersectionCommand extends OtherGeometryCommand<OtherGeometryOptio
      * @param geometry The input Geometry
      * @param other The other Geometry
      * @param options The OtherGeometryOptions
+     * @param reader The java.io.Reader
+     * @param writer The java.io.Writer 
      * @throws Exception if an error occurs
      */
     @Override
-    public void processGeometries(Geometry geometry, Geometry other, OtherGeometryOptions options) throws Exception {
+    protected void processGeometries(Geometry geometry, Geometry other, OtherGeometryOptions options, Reader reader, Writer writer) throws Exception {
         Geometry differenceGeometry = geometry.intersection(other);
-        System.out.println(writeGeometry(differenceGeometry, options));
+        writer.write(writeGeometry(differenceGeometry, options));
     }
 }

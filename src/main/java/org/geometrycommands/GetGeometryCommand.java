@@ -1,6 +1,8 @@
 package org.geometrycommands;
 
 import com.vividsolutions.jts.geom.Geometry;
+import java.io.Reader;
+import java.io.Writer;
 import org.geometrycommands.GetGeometryCommand.GetGeometryCommandOptions;
 import org.kohsuke.args4j.Option;
 
@@ -32,12 +34,14 @@ public class GetGeometryCommand extends GeometryCommand<GetGeometryCommandOption
      * Get a sub Geometry from the input Geometry.
      * @param geometry The input Geometry
      * @param options The GetGeometryCommandOptions
+     * @param reader The java.io.Reader
+     * @param writer The java.io.Writer
      * @throws Exception if an error occurs
      */
     @Override
-    protected void processGeometry(Geometry geometry, GetGeometryCommandOptions options) throws Exception {
+    protected void processGeometry(Geometry geometry, GetGeometryCommandOptions options, Reader reader, Writer writer) throws Exception {
         Geometry outputGeometry = geometry.getGeometryN(options.getIndex());
-        System.out.println(writeGeometry(outputGeometry, options));
+        writer.write(writeGeometry(outputGeometry, options));
     }
     
     /**
@@ -61,7 +65,7 @@ public class GetGeometryCommand extends GeometryCommand<GetGeometryCommandOption
         
         /**
          * Set the index number of the Geometry
-         * @param The index number of the Geometry
+         * @param index The index number of the Geometry
          */
         public void setIndex(int index) {
             this.index = index;

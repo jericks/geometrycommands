@@ -1,9 +1,10 @@
 package org.geometrycommands;
 
-import com.vividsolutions.jts.densify.Densifier;
 import com.vividsolutions.jts.geom.Geometry;
 import com.vividsolutions.jts.simplify.DouglasPeuckerSimplifier;
 import com.vividsolutions.jts.simplify.TopologyPreservingSimplifier;
+import java.io.Reader;
+import java.io.Writer;
 import org.geometrycommands.SimplifyCommand.SimplifyOptions;
 import org.kohsuke.args4j.Option;
 
@@ -35,10 +36,12 @@ public class SimplifyCommand extends GeometryCommand<SimplifyOptions> {
      * Densify the Geometry
      * @param geometry The input Geometry
      * @param options The SimplifyOptions
+     * @param reader The java.io.Reader
+     * @param writer The java.io.Writer
      * @throws Exception if an error occurs
      */
     @Override
-    protected void processGeometry(Geometry geometry, SimplifyOptions options) throws Exception {
+    protected void processGeometry(Geometry geometry, SimplifyOptions options, Reader reader, Writer writer) throws Exception {
         Geometry outputGeometry;
         if (options.getAlgorithm().equalsIgnoreCase("douglaspeucker")
                 || options.getAlgorithm().equalsIgnoreCase("dp")) {
@@ -49,7 +52,7 @@ public class SimplifyCommand extends GeometryCommand<SimplifyOptions> {
         } else {
             throw new IllegalArgumentException("Unknown simplifier algorithm!");
         }
-        System.out.println(writeGeometry(outputGeometry, options));
+        writer.write(writeGeometry(outputGeometry, options));
     }
 
     /**

@@ -2,6 +2,8 @@ package org.geometrycommands;
 
 import com.vividsolutions.jts.geom.Envelope;
 import com.vividsolutions.jts.geom.Geometry;
+import java.io.Reader;
+import java.io.Writer;
 import org.geometrycommands.EnvelopeCommand.EnvelopeOptions;
 import org.kohsuke.args4j.Option;
 
@@ -33,16 +35,18 @@ public class EnvelopeCommand extends GeometryCommand<EnvelopeOptions> {
      * Calculate the input Geometries Envelope
      * @param geometry The input Geometry
      * @param options The EnvelopeOptions
+     * @param reader The java.io.Reader
+     * @param writer The java.io.Writer
      * @throws Exception if an error occurs
      */
     @Override
-    protected void processGeometry(Geometry geometry, EnvelopeOptions options) throws Exception {
+    protected void processGeometry(Geometry geometry, EnvelopeOptions options, Reader reader, Writer writer) throws Exception {
         Envelope env = geometry.getEnvelopeInternal();
         if (options.getExpandBy() > 0) {
             env.expandBy(options.getExpandBy());
         }
         Geometry outputGeometry = geometry.getFactory().toGeometry(env);
-        System.out.println(writeGeometry(outputGeometry, options));
+        writer.write(writeGeometry(outputGeometry, options));
     }
 
     /**

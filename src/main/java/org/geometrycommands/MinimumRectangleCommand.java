@@ -2,6 +2,8 @@ package org.geometrycommands;
 
 import com.vividsolutions.jts.algorithm.MinimumDiameter;
 import com.vividsolutions.jts.geom.Geometry;
+import java.io.Reader;
+import java.io.Writer;
 
 /**
  * Calculate the minimum rectangle of the input Geometry.
@@ -31,12 +33,14 @@ public class MinimumRectangleCommand extends GeometryCommand<GeometryOptions> {
      * Calculate the minimum rectangle of the input Geometry.
      * @param geometry The input Geometry
      * @param options The GeometryOptions
+     * @param reader The java.io.Reader
+     * @param writer The java.io.Writer
      * @throws Exception if an error occurs
      */
     @Override
-    protected void processGeometry(Geometry geometry, GeometryOptions options) throws Exception {
+    protected void processGeometry(Geometry geometry, GeometryOptions options, Reader reader, Writer writer) throws Exception {
         MinimumDiameter minimumDiameter = new MinimumDiameter(geometry);
         Geometry outputGeometry = minimumDiameter.getMinimumRectangle();
-        System.out.println(writeGeometry(outputGeometry, options));
+        writer.write(writeGeometry(outputGeometry, options));
     }
 }

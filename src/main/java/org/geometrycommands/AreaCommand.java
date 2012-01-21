@@ -1,6 +1,8 @@
 package org.geometrycommands;
 
 import com.vividsolutions.jts.geom.Geometry;
+import java.io.Reader;
+import java.io.Writer;
 
 /**
  * Calculate the area of a Geometry
@@ -30,11 +32,13 @@ public class AreaCommand extends GeometryCommand<GeometryOptions> {
      * Calculate the area of a Geometry
      * @param geometry The Geometry
      * @param options The GeometryOptions
+     * @param reader The java.io.Reader
+     * @param writer The java.io.Writer
      * @throws Exception if an error occurs
      */
     @Override
-    protected void processGeometry(Geometry geometry, GeometryOptions options) throws Exception {
+    protected void processGeometry(Geometry geometry, GeometryOptions options, Reader reader, Writer writer) throws Exception {
         double distance = geometry.getArea();
-        System.out.println(distance);
+        writer.write(String.valueOf(distance));
     }
 }

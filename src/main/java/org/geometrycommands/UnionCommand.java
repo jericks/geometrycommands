@@ -1,6 +1,8 @@
 package org.geometrycommands;
 
 import com.vividsolutions.jts.geom.Geometry;
+import java.io.Reader;
+import java.io.Writer;
 
 /**
  * A Command to calculate the union of the input Geometry and the other Geometry.
@@ -31,11 +33,13 @@ public class UnionCommand extends OtherGeometryCommand<OtherGeometryOptions> {
      * @param geometry The input Geometry
      * @param other The other Geometry
      * @param options The OtherGeometryOptions
+     * @param reader The java.io.Reader
+     * @param writer The java.io.Writer
      * @throws Exception if an error occurs
      */
     @Override
-    public void processGeometries(Geometry geometry, Geometry other, OtherGeometryOptions options) throws Exception {
+    protected void processGeometries(Geometry geometry, Geometry other, OtherGeometryOptions options, Reader reader, Writer writer) throws Exception {
         Geometry unionedGeometry = geometry.union(other);
-        System.out.println(writeGeometry(unionedGeometry, options));
+        writer.write(writeGeometry(unionedGeometry, options));
     }
 }

@@ -3,6 +3,8 @@ package org.geometrycommands;
 import com.vividsolutions.jts.geom.Geometry;
 import com.vividsolutions.jts.triangulate.ConformingDelaunayTriangulationBuilder;
 import com.vividsolutions.jts.triangulate.DelaunayTriangulationBuilder;
+import java.io.Reader;
+import java.io.Writer;
 import org.geometrycommands.DelaunayTriangulationCommand.DelaunayTriangulationOptions;
 import org.kohsuke.args4j.Option;
 
@@ -34,10 +36,12 @@ public class DelaunayTriangulationCommand extends GeometryCommand<DelaunayTriang
      * Calculate a Delaunay Triangulation of the input Geometry
      * @param geometry The input Geometry
      * @param options The DelaunayTriangulationOptions
+     * @param reader The java.io.Reader
+     * @param writer The java.io.Writer 
      * @throws Exception if an error occurs
      */
     @Override
-    protected void processGeometry(Geometry geometry, DelaunayTriangulationOptions options) throws Exception {
+    protected void processGeometry(Geometry geometry, DelaunayTriangulationOptions options, Reader reader, Writer writer) throws Exception {
         Geometry outputGeometry;
         if (options.isConforming()) {
             ConformingDelaunayTriangulationBuilder builder = new ConformingDelaunayTriangulationBuilder();
@@ -48,7 +52,7 @@ public class DelaunayTriangulationCommand extends GeometryCommand<DelaunayTriang
             builder.setSites(geometry);
             outputGeometry = builder.getTriangles(geometry.getFactory());
         }
-        System.out.println(writeGeometry(outputGeometry, options));
+        writer.write(writeGeometry(outputGeometry, options));
     }
 
     /**

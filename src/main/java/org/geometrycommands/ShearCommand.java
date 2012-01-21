@@ -2,6 +2,8 @@ package org.geometrycommands;
 
 import com.vividsolutions.jts.geom.Geometry;
 import com.vividsolutions.jts.geom.util.AffineTransformation;
+import java.io.Reader;
+import java.io.Writer;
 import org.geometrycommands.ShearCommand.ShearOptions;
 import org.kohsuke.args4j.Option;
 
@@ -33,12 +35,14 @@ public class ShearCommand extends GeometryCommand<ShearOptions> {
      * Perform the shear affine transformation on the input Geometry.
      * @param geometry The input Geometry
      * @param options The ShearOptions
+     * @param reader The java.io.Reader
+     * @param writer The java.io.Writer
      * @throws Exception if an error occurs
      */
     @Override
-    protected void processGeometry(Geometry geometry, ShearOptions options) throws Exception {
+    protected void processGeometry(Geometry geometry, ShearOptions options, Reader reader, Writer writer) throws Exception {
         Geometry shearGeometry = AffineTransformation.shearInstance(options.getX(), options.getY()).transform(geometry);
-        System.out.println(writeGeometry(shearGeometry, options));
+        writer.write(writeGeometry(shearGeometry, options));
     }
 
     /**
