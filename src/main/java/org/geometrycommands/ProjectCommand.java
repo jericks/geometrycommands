@@ -62,8 +62,6 @@ public class ProjectCommand extends GeometryCommand<ProjectOptions> {
         CoordinateTransformFactory ctFactory = new CoordinateTransformFactory();
         CRSFactory csFactory = new CRSFactory();
 
-        // @TODO Also support createFromParameters
-        // CoordinateReferenceSystem WGS84 = csFactory.createFromParameters("WGS84","+title=long/lat:WGS84 +proj=longlat +ellps=WGS84 +datum=WGS84 +units=degrees");
         CoordinateReferenceSystem sourceCrs;
         if (isName(options.getSource())) {
             sourceCrs = csFactory.createFromName(options.getSource());

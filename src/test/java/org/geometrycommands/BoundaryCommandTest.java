@@ -7,10 +7,10 @@ import org.junit.Test;
 import static org.junit.Assert.assertEquals;
 
 /**
- * The CentroidCommand UnitTest
+ * The BoundaryCommand UnitTest
  * @author Jared Erickson
  */
-public class CentroidCommandTest {
+public class BoundaryCommandTest {
 
     @Test 
     public void execute() throws Exception {
@@ -22,8 +22,8 @@ public class CentroidCommandTest {
         Reader reader = new StringReader(inputGeometry);
         StringWriter writer = new StringWriter();
         
-        CentroidCommand command = new CentroidCommand();
+        BoundaryCommand command = new BoundaryCommand();
         command.execute(options, reader, writer);
-        assertEquals("POINT (5 5)", writer.getBuffer().toString());
+        assertEquals("LINEARRING (0 0, 0 10, 10 10, 10 0, 0 0)", writer.getBuffer().toString());
     }
 }

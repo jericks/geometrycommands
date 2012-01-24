@@ -1,6 +1,9 @@
 package org.geometrycommands;
 
+import com.vividsolutions.jts.geom.Coordinate;
 import com.vividsolutions.jts.geom.Geometry;
+import com.vividsolutions.jts.geom.GeometryFactory;
+import com.vividsolutions.jts.geom.Point;
 import com.vividsolutions.jts.operation.valid.IsValidOp;
 import java.io.Reader;
 import java.io.Writer;
@@ -43,10 +46,17 @@ public class IsValidCommand extends GeometryCommand<IsValidOptions> {
     protected void processGeometry(Geometry geometry, IsValidOptions options, Reader reader, Writer writer) throws Exception {
         IsValidOp op = new IsValidOp(geometry);
         boolean valid = op.isValid();
-        if (options.isShowingMessage()) {
+        if (options.getType().equalsIgnoreCase("msg") || options.getType().equalsIgnoreCase("message")) {
             writer.write(op.getValidationError().getMessage());
-        } else {
+        } else if (options.getType().equalsIgnoreCase("loc") || options.getType().equalsIgnoreCase("location")) {
+            Coordinate coord = op.getValidationError().getCoordinate();
+            GeometryFactory factory = new GeometryFactory();
+            Point point = factory.createPoint(coord);
+            writer.write(writeGeometry(point, options));
+        } else if (options.getType().equalsIgnoreCase("val") || options.getType().equalsIgnoreCase("validity")) {
             writer.write(String.valueOf(valid));
+        } else {
+            throw new IllegalArgumentException("Unknown type!");
         }
     }
 
@@ -56,25 +66,25 @@ public class IsValidCommand extends GeometryCommand<IsValidOptions> {
     public static class IsValidOptions extends GeometryOptions {
 
         /**
-         * The flag to show the validation error message.
+         * The flag to show the validation error message, the error location, or validity (msg, loc, or val).
          */
-        @Option(name = "-msg", usage = "The flag to show the validation error message.", required = false)
-        private boolean showingMessage;
+        @Option(name = "-t", usage = "The flag to show the validation error message, the error location, or validity (msg, loc, or val)", required = false)
+        private String type = "val";
 
         /**
-         * Get the flag to show the validation error message.
-         * @return The flag to show the validation error message.
+         * Get the flag to show the validation error message, the error location, or validity (msg, loc, or val).
+         * @return The flag to show the validation error message, the error location, or validity (msg, loc, or val).
          */
-        public boolean isShowingMessage() {
-            return showingMessage;
+        public String getType() {
+            return type;
         }
 
         /**
-         * Set the flag to show the validation error message.
-         * @param showingMessage The flag to show the validation error message.
+         * Set the flag to show the validation error message, the error location, or validity (msg, loc, or val).
+         * @param type The flag to show the validation error message, the error location, or validity (msg, loc, or val).
          */
-        public void setShowingMessage(boolean showingMessage) {
-            this.showingMessage = showingMessage;
+        public void setType(String type) {
+            this.type = type;
         }
     }
 }

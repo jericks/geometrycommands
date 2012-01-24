@@ -1,29 +1,34 @@
 package org.geometrycommands;
 
+import java.io.File;
 import java.io.Reader;
 import java.io.StringReader;
 import java.io.StringWriter;
+import org.geometrycommands.DrawCommand.DrawOptions;
 import org.junit.Test;
-import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.assertTrue;
 
 /**
- * The CentroidCommand UnitTest
+ * The DrawCommand UnitTest
  * @author Jared Erickson
  */
-public class CentroidCommandTest {
+public class DrawCommandTest {
 
     @Test 
     public void execute() throws Exception {
         
         String inputGeometry = "POLYGON ((0 0, 0 10, 10 10, 10 0, 0 0))";
-        GeometryOptions options = new GeometryOptions();
+        File file = File.createTempFile("image", ".png");
+        System.out.println(file);
+        DrawOptions options = new DrawOptions();
         options.setGeometry(inputGeometry);
+        options.setFile(file);
         
         Reader reader = new StringReader(inputGeometry);
         StringWriter writer = new StringWriter();
         
-        CentroidCommand command = new CentroidCommand();
+        DrawCommand command = new DrawCommand();
         command.execute(options, reader, writer);
-        assertEquals("POINT (5 5)", writer.getBuffer().toString());
+        assertTrue(file.exists());
     }
 }

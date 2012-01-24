@@ -39,7 +39,7 @@ public class OverlapsCommand extends OtherGeometryCommand<OtherGeometryOptions> 
      */
     @Override
     protected void processGeometries(Geometry geometry, Geometry other, OtherGeometryOptions options, Reader reader, Writer writer) throws Exception {
-        boolean contains = geometry.overlaps(other);
-        writer.write(String.valueOf(contains));
+        boolean overlaps = geometry.overlaps(other);
+        writer.write(String.valueOf(overlaps));
     }
 }

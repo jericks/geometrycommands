@@ -1,5 +1,6 @@
 package org.geometrycommands;
 
+import org.geometrycommands.InterpolatePointCommand.InterpolatePointOptions;
 import java.io.Reader;
 import java.io.StringReader;
 import java.io.StringWriter;
@@ -7,23 +8,24 @@ import org.junit.Test;
 import static org.junit.Assert.assertEquals;
 
 /**
- * The CentroidCommand UnitTest
+ * The InterpolatePointCommand UnitTest
  * @author Jared Erickson
  */
-public class CentroidCommandTest {
+public class InterpolatePointCommandTest {
 
     @Test 
     public void execute() throws Exception {
         
-        String inputGeometry = "POLYGON ((0 0, 0 10, 10 10, 10 0, 0 0))";
-        GeometryOptions options = new GeometryOptions();
+        String inputGeometry = "LINESTRING (0 0, 5 5, 10 10)";
+        InterpolatePointOptions options = new InterpolatePointOptions();
         options.setGeometry(inputGeometry);
+        options.setPosition(0.25);
         
         Reader reader = new StringReader(inputGeometry);
         StringWriter writer = new StringWriter();
         
-        CentroidCommand command = new CentroidCommand();
+        InterpolatePointCommand command = new InterpolatePointCommand();
         command.execute(options, reader, writer);
-        assertEquals("POINT (5 5)", writer.getBuffer().toString());
+        assertEquals("POINT (2.5 2.5)", writer.getBuffer().toString());
     }
 }

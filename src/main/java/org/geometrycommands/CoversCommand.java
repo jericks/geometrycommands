@@ -16,7 +16,7 @@ public class CoversCommand extends OtherGeometryCommand<OtherGeometryOptions> {
      */
     @Override
     public String getName() {
-        return "crosses";
+        return "covers";
     }
 
     /**
@@ -39,7 +39,7 @@ public class CoversCommand extends OtherGeometryCommand<OtherGeometryOptions> {
      */
     @Override
     protected void processGeometries(Geometry geometry, Geometry other, OtherGeometryOptions options, Reader reader, Writer writer) throws Exception {
-        boolean crosses = geometry.covers(other);
-        writer.write(String.valueOf(crosses));
+        boolean covers = geometry.covers(other);
+        writer.write(String.valueOf(covers));
     }
 }

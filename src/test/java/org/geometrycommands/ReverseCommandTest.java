@@ -7,23 +7,23 @@ import org.junit.Test;
 import static org.junit.Assert.assertEquals;
 
 /**
- * The CentroidCommand UnitTest
+ * The ReverseCommand UnitTest
  * @author Jared Erickson
  */
-public class CentroidCommandTest {
+public class ReverseCommandTest {
 
     @Test 
     public void execute() throws Exception {
         
-        String inputGeometry = "POLYGON ((0 0, 0 10, 10 10, 10 0, 0 0))";
+        String inputGeometry = "LINESTRING (0 0, 5 5, 10 10)";
         GeometryOptions options = new GeometryOptions();
         options.setGeometry(inputGeometry);
         
         Reader reader = new StringReader(inputGeometry);
         StringWriter writer = new StringWriter();
         
-        CentroidCommand command = new CentroidCommand();
+        ReverseCommand command = new ReverseCommand();
         command.execute(options, reader, writer);
-        assertEquals("POINT (5 5)", writer.getBuffer().toString());
+        assertEquals("LINESTRING (10 10, 5 5, 0 0)", writer.getBuffer().toString());
     }
 }

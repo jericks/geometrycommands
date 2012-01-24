@@ -6,14 +6,14 @@ import com.vividsolutions.jts.shape.random.RandomPointsBuilder;
 import com.vividsolutions.jts.shape.random.RandomPointsInGridBuilder;
 import java.io.Reader;
 import java.io.Writer;
-import org.geometrycommands.RandomCommand.RandomCommandOptions;
+import org.geometrycommands.RandomCommand.RandomOptions;
 import org.kohsuke.args4j.Option;
 
 /**
  * A Command that generates random Points inside the input Geometry or Envelope
  * @author Jared Erickson
  */
-public class RandomCommand extends GeometryCommand<RandomCommandOptions> {
+public class RandomCommand extends GeometryCommand<RandomOptions> {
 
     /**
      * Get the name of the Command
@@ -25,24 +25,24 @@ public class RandomCommand extends GeometryCommand<RandomCommandOptions> {
     }
 
     /**
-     * Get a new RandomCommandOptions
-     * @return The new RandomCommandOptions
+     * Get a new RandomOptions
+     * @return The new RandomOptions
      */
     @Override
-    public RandomCommandOptions getOptions() {
-        return new RandomCommandOptions();
+    public RandomOptions getOptions() {
+        return new RandomOptions();
     }
 
     /**
      * Generate random Points inside the input Geometry or Envelope
      * @param geometry The input Geometry 
-     * @param options The RandomCommandOptions
+     * @param options The RandomOptions
      * @param reader The java.io.Reader
      * @param writer The java.io.Writer
      * @throws Exception if an error occurs
      */
     @Override
-    protected void processGeometry(Geometry geometry, RandomCommandOptions options, Reader reader, Writer writer) throws Exception {
+    protected void processGeometry(Geometry geometry, RandomOptions options, Reader reader, Writer writer) throws Exception {
         if (!(geometry instanceof Polygonal)) {
             geometry = geometry.getEnvelope();
         }
@@ -70,9 +70,9 @@ public class RandomCommand extends GeometryCommand<RandomCommandOptions> {
     }
 
     /**
-     * The RandomCommandOptions
+     * The RandomOptions
      */
-    public static class RandomCommandOptions extends GeometryOptions {
+    public static class RandomOptions extends GeometryOptions {
 
         /**
          * The number of points

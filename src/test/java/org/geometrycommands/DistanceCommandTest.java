@@ -7,23 +7,25 @@ import org.junit.Test;
 import static org.junit.Assert.assertEquals;
 
 /**
- * The CentroidCommand UnitTest
+ * The DistanceCommand UnitTest
  * @author Jared Erickson
  */
-public class CentroidCommandTest {
+public class DistanceCommandTest {
 
-    @Test 
+    @Test
     public void execute() throws Exception {
-        
-        String inputGeometry = "POLYGON ((0 0, 0 10, 10 10, 10 0, 0 0))";
-        GeometryOptions options = new GeometryOptions();
+
+        String inputGeometry = "POINT (1 1)";
+        String otherGeometry = "POINT (20 23)";
+        OtherGeometryOptions options = new OtherGeometryOptions();
         options.setGeometry(inputGeometry);
-        
+        options.setOtherGeometry(otherGeometry);
+
         Reader reader = new StringReader(inputGeometry);
         StringWriter writer = new StringWriter();
-        
-        CentroidCommand command = new CentroidCommand();
+
+        DistanceCommand command = new DistanceCommand();
         command.execute(options, reader, writer);
-        assertEquals("POINT (5 5)", writer.getBuffer().toString());
+        assertEquals("29.068883707497267", writer.getBuffer().toString());
     }
 }

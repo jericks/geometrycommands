@@ -5,7 +5,7 @@ import java.io.Reader;
 import java.io.Writer;
 
 /**
- * A Command to get the geomtry type of the input Geometry
+ * A Command to get the geometry type of the input Geometry
  * @author Jared Erickson
  */
 public class GeometryTypeCommand extends GeometryCommand<GeometryOptions> {

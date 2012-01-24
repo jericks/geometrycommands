@@ -39,7 +39,7 @@ public class IntersectionCommand extends OtherGeometryCommand<OtherGeometryOptio
      */
     @Override
     protected void processGeometries(Geometry geometry, Geometry other, OtherGeometryOptions options, Reader reader, Writer writer) throws Exception {
-        Geometry differenceGeometry = geometry.intersection(other);
-        writer.write(writeGeometry(differenceGeometry, options));
+        Geometry intersectionGeometry = geometry.intersection(other);
+        writer.write(writeGeometry(intersectionGeometry, options));
     }
 }

@@ -38,6 +38,6 @@ public class CountPointsCommand extends GeometryCommand<GeometryOptions> {
      */
     @Override
     protected void processGeometry(Geometry geometry, GeometryOptions options, Reader reader, Writer writer) throws Exception {
-        writer.write(geometry.getNumPoints());
+        writer.write(String.valueOf(geometry.getNumPoints()));
     }
 }

@@ -29,7 +29,7 @@ org.geometrycommands.IsEmptyCommand
 org.geometrycommands.IsRectangleCommand
 org.geometrycommands.IsSimpleCommand
 org.geometrycommands.IsValidCommand
-org.geometrycommands.IsWithDistanceCommand
+org.geometrycommands.IsWithinDistanceCommand
 org.geometrycommands.KochSnowflakeCommand
 org.geometrycommands.LocatePointCommand
 org.geometrycommands.GeometryTypeCommand

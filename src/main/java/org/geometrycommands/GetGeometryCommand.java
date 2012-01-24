@@ -3,14 +3,14 @@ package org.geometrycommands;
 import com.vividsolutions.jts.geom.Geometry;
 import java.io.Reader;
 import java.io.Writer;
-import org.geometrycommands.GetGeometryCommand.GetGeometryCommandOptions;
+import org.geometrycommands.GetGeometryCommand.GetGeometryOptions;
 import org.kohsuke.args4j.Option;
 
 /**
  * A Command to get a sub Geometry from an input Geometry
  * @author Jared Erickson
  */
-public class GetGeometryCommand extends GeometryCommand<GetGeometryCommandOptions>{
+public class GetGeometryCommand extends GeometryCommand<GetGeometryOptions>{
     
     /**
      * Get the Command's name
@@ -22,32 +22,32 @@ public class GetGeometryCommand extends GeometryCommand<GetGeometryCommandOption
     }
 
     /**
-     * Get a new GetGeometryCommandOptions
-     * @return A new GetGeometryCommandOptions
+     * Get a new GetGeometryOptions
+     * @return A new GetGeometryOptions
      */
     @Override
-    public GetGeometryCommandOptions getOptions() {
-        return new GetGeometryCommandOptions();
+    public GetGeometryOptions getOptions() {
+        return new GetGeometryOptions();
     }
 
     /**
      * Get a sub Geometry from the input Geometry.
      * @param geometry The input Geometry
-     * @param options The GetGeometryCommandOptions
+     * @param options The GetGeometryOptions
      * @param reader The java.io.Reader
      * @param writer The java.io.Writer
      * @throws Exception if an error occurs
      */
     @Override
-    protected void processGeometry(Geometry geometry, GetGeometryCommandOptions options, Reader reader, Writer writer) throws Exception {
+    protected void processGeometry(Geometry geometry, GetGeometryOptions options, Reader reader, Writer writer) throws Exception {
         Geometry outputGeometry = geometry.getGeometryN(options.getIndex());
         writer.write(writeGeometry(outputGeometry, options));
     }
     
     /**
-     * The GetGeometryCommandOptions
+     * The GetGeometryOptions
      */
-    public static class GetGeometryCommandOptions extends GeometryOptions {
+    public static class GetGeometryOptions extends GeometryOptions {
         
         /**
          * The index number of the Geometry

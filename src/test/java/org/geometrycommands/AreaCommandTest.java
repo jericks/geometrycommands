@@ -1,17 +1,21 @@
+/*
+ * To change this template, choose Tools | Templates
+ * and open the template in the editor.
+ */
 package org.geometrycommands;
 
 import java.io.Reader;
 import java.io.StringReader;
 import java.io.StringWriter;
 import org.junit.Test;
-import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.*;
 
 /**
- * The CentroidCommand UnitTest
+ * The AreaCommand UnitTest
  * @author Jared Erickson
  */
-public class CentroidCommandTest {
-
+public class AreaCommandTest {
+    
     @Test 
     public void execute() throws Exception {
         
@@ -22,8 +26,8 @@ public class CentroidCommandTest {
         Reader reader = new StringReader(inputGeometry);
         StringWriter writer = new StringWriter();
         
-        CentroidCommand command = new CentroidCommand();
+        AreaCommand command = new AreaCommand();
         command.execute(options, reader, writer);
-        assertEquals("POINT (5 5)", writer.getBuffer().toString());
+        assertEquals("100.0", writer.getBuffer().toString());
     }
 }

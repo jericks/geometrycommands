@@ -1,29 +1,32 @@
 package org.geometrycommands;
 
 import java.io.Reader;
+import org.geometrycommands.SubLineCommand.SubLineOptions;
 import java.io.StringReader;
 import java.io.StringWriter;
 import org.junit.Test;
 import static org.junit.Assert.assertEquals;
 
 /**
- * The CentroidCommand UnitTest
+ * The SubLineCommand UnitTest
  * @author Jared Erickson
  */
-public class CentroidCommandTest {
+public class SubLineCommandTest {
 
     @Test 
     public void execute() throws Exception {
         
-        String inputGeometry = "POLYGON ((0 0, 0 10, 10 10, 10 0, 0 0))";
-        GeometryOptions options = new GeometryOptions();
+        String inputGeometry = "LINESTRING (0 0, 10 10, 20 20)";
+        SubLineOptions options = new SubLineOptions();
         options.setGeometry(inputGeometry);
+        options.setStartPosition(0.25);
+        options.setEndPosition(0.75);
         
         Reader reader = new StringReader(inputGeometry);
         StringWriter writer = new StringWriter();
         
-        CentroidCommand command = new CentroidCommand();
+        SubLineCommand command = new SubLineCommand();
         command.execute(options, reader, writer);
-        assertEquals("POINT (5 5)", writer.getBuffer().toString());
+        assertEquals("LINESTRING (5 5, 10 10, 15 15)", writer.getBuffer().toString());
     }
 }

@@ -42,15 +42,15 @@ public class EqualsCommand extends OtherGeometryCommand<EqualsOptions> {
     @Override
     protected void processGeometries(Geometry geometry, Geometry other, EqualsOptions options, Reader reader, Writer writer) throws Exception {
         boolean equals;
-        if (options.getType().equalsIgnoreCase("exact")) {
+        if (options.getType() != null && options.getType().equalsIgnoreCase("exact")) {
             if (options.getTolerance() > 0) {
                 equals = geometry.equalsExact(other, options.getTolerance());
             } else {
                 equals = geometry.equalsExact(other);
             }
-        } else if (options.getType().equalsIgnoreCase("norm")) {
+        } else if (options.getType() != null && options.getType().equalsIgnoreCase("norm")) {
             equals = geometry.equalsNorm(other);
-        } else if (options.getType().equalsIgnoreCase("topo")) {
+        } else if (options.getType() != null && options.getType().equalsIgnoreCase("topo")) {
             equals = geometry.equalsTopo(other);
         } else {
             equals = geometry.equals(other);

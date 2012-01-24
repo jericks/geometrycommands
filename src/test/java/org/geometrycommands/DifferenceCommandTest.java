@@ -7,23 +7,26 @@ import org.junit.Test;
 import static org.junit.Assert.assertEquals;
 
 /**
- * The CentroidCommand UnitTest
+ * The DifferenceCommand UnitTest
  * @author Jared Erickson
  */
-public class CentroidCommandTest {
+public class DifferenceCommandTest {
 
-    @Test 
+    @Test
     public void execute() throws Exception {
-        
+
         String inputGeometry = "POLYGON ((0 0, 0 10, 10 10, 10 0, 0 0))";
-        GeometryOptions options = new GeometryOptions();
+        String otherGeometry = "POLYGON ((5 5, 5 20, 20 20, 20 5, 5 5))";
+        OtherGeometryOptions options = new OtherGeometryOptions();
         options.setGeometry(inputGeometry);
-        
+        options.setOtherGeometry(otherGeometry);
+
         Reader reader = new StringReader(inputGeometry);
         StringWriter writer = new StringWriter();
-        
-        CentroidCommand command = new CentroidCommand();
+
+        DifferenceCommand command = new DifferenceCommand();
         command.execute(options, reader, writer);
-        assertEquals("POINT (5 5)", writer.getBuffer().toString());
+        assertEquals("POLYGON ((0 0, 0 10, 5 10, 5 5, 10 5, 10 0, 0 0))",
+                writer.getBuffer().toString());
     }
 }
