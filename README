@@ -13,7 +13,6 @@ Args4J:
 
 Examples:
 ---------
-
 Geometry input with -geom argument
 >>> geom buffer -geom "POINT (10 10)" -d 2
 
@@ -46,7 +45,7 @@ intersection
 
 Build
 -----
-Geometry Commands depends on the Java Topology Suite (JTS) and Proj4 and uses Maven as a build tool.
+Geometry Commands depends on the Java Topology Suite (JTS) and Proj4j and uses Maven as a build tool.
 Unfortunately, Proj4j is not in a Maven repository.  So, to build Geometry Commands you must first
 checkout Proj4j, build the jar, and install it in your local Maven repository.
 
