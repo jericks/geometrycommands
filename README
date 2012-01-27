@@ -1,19 +1,21 @@
 Geometry command line library.
 ==============================
-According to the Unix way, geometry is passed between various geom commands
-using Well Known Text (WKT).
+Geometry commands is a command line library for processing geometry that follows the unix philosophy. Each command does one thing well (buffer, centroid, envelope) by reading in a geometry, processing the geometry, and writing the geometry out as WKT.  Individual commands can be connected with unix pipes.  
 
 Libraries
 ---------
-JTS: http://tsusiatsoftware.net/jts/javadoc/com/vividsolutions/jts/geom/Geometry.html
-Proj4j: http://trac.osgeo.org/proj4j/
-Args4J: http://args4j.kohsuke.org/
+JTS: 
+    http://tsusiatsoftware.net/jts/javadoc/com/vividsolutions/jts/geom/Geometry.html
+Proj4j: 
+    http://trac.osgeo.org/proj4j/
+Args4J: 
+    http://args4j.kohsuke.org/
 
 Examples:
 ---------
 
-Geometry input with -g argument
->>> geom buffer -g "POINT (10 10)" -d 2
+Geometry input with -geom argument
+>>> geom buffer -geom "POINT (10 10)" -d 2
 
 Geometry input using Standard input stream
 >>> echo "POINT (10 10)" | geom buffer -d 20
