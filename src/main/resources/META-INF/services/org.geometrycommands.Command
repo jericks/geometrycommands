@@ -33,6 +33,7 @@ org.geometrycommands.IsWithinDistanceCommand
 org.geometrycommands.KochSnowflakeCommand
 org.geometrycommands.LocatePointCommand
 org.geometrycommands.GeometryTypeCommand
+org.geometrycommands.GridCommand
 org.geometrycommands.GetGeometryCommand
 org.geometrycommands.MinimumBoundingCircleCommand
 org.geometrycommands.MinimumClearanceCommand
