@@ -1,4 +1,6 @@
 org.geometrycommands.ListCommand
+org.geometrycommands.ArcCommand
+org.geometrycommands.ArcPolygonCommand
 org.geometrycommands.AreaCommand
 org.geometrycommands.BoundaryCommand
 org.geometrycommands.BufferCommand
@@ -14,6 +16,7 @@ org.geometrycommands.CrossesCommand
 org.geometrycommands.DelaunayTriangulationCommand
 org.geometrycommands.DensifyCommand
 org.geometrycommands.DrawCommand
+org.geometrycommands.EllipseCommand
 org.geometrycommands.DifferenceCommand
 org.geometrycommands.DiscreteHausdorffDistanceCommand
 org.geometrycommands.DisjointCommand
@@ -45,6 +48,7 @@ org.geometrycommands.OverlapsCommand
 org.geometrycommands.PlacePointCommand
 org.geometrycommands.ProjectCommand
 org.geometrycommands.RandomCommand
+org.geometrycommands.RectangleCommand
 org.geometrycommands.ReflectCommand
 org.geometrycommands.RelateCommand
 org.geometrycommands.ReverseCommand
@@ -54,7 +58,10 @@ org.geometrycommands.ShearCommand
 org.geometrycommands.SierpinskiCarpetCommand
 org.geometrycommands.SimilarityCommand
 org.geometrycommands.SimplifyCommand
+org.geometrycommands.SineStarCommand
+org.geometrycommands.SquircleCommand
 org.geometrycommands.SubLineCommand
+org.geometrycommands.SuperCircleCommand
 org.geometrycommands.SymDifferenceCommand
 org.geometrycommands.TextCommand
 org.geometrycommands.TouchesCommand
