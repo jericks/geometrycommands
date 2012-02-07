@@ -59,6 +59,7 @@ org.geometrycommands.SierpinskiCarpetCommand
 org.geometrycommands.SimilarityCommand
 org.geometrycommands.SimplifyCommand
 org.geometrycommands.SineStarCommand
+org.geometrycommands.SnapCommand
 org.geometrycommands.SquircleCommand
 org.geometrycommands.SubLineCommand
 org.geometrycommands.SuperCircleCommand
