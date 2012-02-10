@@ -34,6 +34,7 @@ org.geometrycommands.IsSimpleCommand
 org.geometrycommands.IsValidCommand
 org.geometrycommands.IsWithinDistanceCommand
 org.geometrycommands.KochSnowflakeCommand
+org.geometrycommands.LineMergeCommand
 org.geometrycommands.LocatePointCommand
 org.geometrycommands.GeometryTypeCommand
 org.geometrycommands.GridCommand
@@ -42,10 +43,12 @@ org.geometrycommands.MinimumBoundingCircleCommand
 org.geometrycommands.MinimumClearanceCommand
 org.geometrycommands.MinimumDiameterCommand
 org.geometrycommands.MinimumRectangleCommand
+org.geometrycommands.NodeCommand
 org.geometrycommands.NormalizeCommand
 org.geometrycommands.OctagonalEnvelopeCommand
 org.geometrycommands.OverlapsCommand
 org.geometrycommands.PlacePointCommand
+org.geometrycommands.PolygonizeCommand
 org.geometrycommands.ProjectCommand
 org.geometrycommands.RandomCommand
 org.geometrycommands.RectangleCommand
