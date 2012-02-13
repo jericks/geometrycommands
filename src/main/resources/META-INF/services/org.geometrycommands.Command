@@ -5,6 +5,7 @@ org.geometrycommands.AreaCommand
 org.geometrycommands.BoundaryCommand
 org.geometrycommands.BufferCommand
 org.geometrycommands.CentroidCommand
+org.geometrycommands.CombineCommand
 org.geometrycommands.ContainsCommand
 org.geometrycommands.ConvexHullCommand
 org.geometrycommands.CoordinatesCommand
@@ -16,6 +17,7 @@ org.geometrycommands.CrossesCommand
 org.geometrycommands.DelaunayTriangulationCommand
 org.geometrycommands.DensifyCommand
 org.geometrycommands.DrawCommand
+org.geometrycommands.DumpCommand
 org.geometrycommands.EllipseCommand
 org.geometrycommands.DifferenceCommand
 org.geometrycommands.DiscreteHausdorffDistanceCommand
