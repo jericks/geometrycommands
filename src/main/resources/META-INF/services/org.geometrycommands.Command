@@ -40,7 +40,9 @@ org.geometrycommands.LineMergeCommand
 org.geometrycommands.LocatePointCommand
 org.geometrycommands.GeometryTypeCommand
 org.geometrycommands.GridCommand
+org.geometrycommands.GetEndPointCommand
 org.geometrycommands.GetGeometryCommand
+org.geometrycommands.GetStartPointCommand
 org.geometrycommands.MinimumBoundingCircleCommand
 org.geometrycommands.MinimumClearanceCommand
 org.geometrycommands.MinimumDiameterCommand
