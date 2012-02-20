@@ -30,8 +30,10 @@ org.geometrycommands.InteriorPointCommand
 org.geometrycommands.InterpolatePointCommand
 org.geometrycommands.IntersectionCommand
 org.geometrycommands.IntersectsCommand
+org.geometrycommands.IsClosedCommand
 org.geometrycommands.IsEmptyCommand
 org.geometrycommands.IsRectangleCommand
+org.geometrycommands.IsRingCommand
 org.geometrycommands.IsSimpleCommand
 org.geometrycommands.IsValidCommand
 org.geometrycommands.IsWithinDistanceCommand
