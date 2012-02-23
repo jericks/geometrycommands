@@ -57,7 +57,11 @@ public class DrawCommand extends GeometryCommand<DrawOptions> {
         int r = Integer.parseInt(parts[0]);
         int g = Integer.parseInt(parts[1]);
         int b = Integer.parseInt(parts[2]);
-        return new Color(r, g, b);
+        int a = 255;
+        if (parts.length > 3) {
+            a = Integer.parseInt(parts[3]);
+        }
+        return new Color(r, g, b, a);
     }
 
     /**
@@ -195,7 +199,7 @@ public class DrawCommand extends GeometryCommand<DrawOptions> {
          * The fill Color
          */
         @Option(name = "-fill", usage = "The fill Color", required = false)
-        private String fillColor = "206,206,206";
+        private String fillColor = "206,206,206,100";
 
         /**
          * The marker shape
