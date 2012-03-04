@@ -54,6 +54,7 @@ org.geometrycommands.NormalizeCommand
 org.geometrycommands.OctagonalEnvelopeCommand
 org.geometrycommands.OverlapsCommand
 org.geometrycommands.PlacePointCommand
+org.geometrycommands.PointAtAngleCommand
 org.geometrycommands.PolygonizeCommand
 org.geometrycommands.ProjectCommand
 org.geometrycommands.RandomCommand
