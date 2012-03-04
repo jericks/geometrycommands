@@ -57,6 +57,7 @@ org.geometrycommands.PlacePointCommand
 org.geometrycommands.PolygonizeCommand
 org.geometrycommands.ProjectCommand
 org.geometrycommands.RandomCommand
+org.geometrycommands.RandomWalkCommand
 org.geometrycommands.RectangleCommand
 org.geometrycommands.ReflectCommand
 org.geometrycommands.RelateCommand
