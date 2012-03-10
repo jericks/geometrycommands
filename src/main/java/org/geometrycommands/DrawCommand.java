@@ -19,6 +19,7 @@ import java.io.File;
 import java.io.FileOutputStream;
 import java.io.Reader;
 import java.io.Writer;
+import java.net.URL;
 import javax.imageio.ImageIO;
 import org.geometrycommands.DrawCommand.DrawOptions;
 import org.kohsuke.args4j.Option;
@@ -82,8 +83,22 @@ public class DrawCommand extends GeometryCommand<DrawOptions> {
         g2d.setColor(getColor(options.getBackgroundColor()));
         g2d.fillRect(0, 0, imageWidth, imageHeight);
 
-        final Envelope env = geometry.getEnvelopeInternal();
-        env.expandBy(env.getWidth() * 0.1);
+        // Draw background image
+        if (options.getBackgroundImage() != null && options.getBackgroundImage().trim().length() > 0) {
+            String backgroundImagePath = options.getBackgroundImage().trim();
+            BufferedImage backgroundImage;
+            if (backgroundImagePath.startsWith("http")) {
+                URL url = new URL(backgroundImagePath);
+                backgroundImage = ImageIO.read(url);
+            }
+            else {
+                File file = new File(backgroundImagePath);
+                backgroundImage = ImageIO.read(file);
+            }
+            g2d.drawImage(backgroundImage, 0, 0, null);
+        }
+        
+        final Envelope env = getEnvelope(geometry, options);
 
         Color strokeColor = getColor(options.getStrokeColor());
         Color fillColor = getColor(options.getFillColor());
@@ -161,6 +176,29 @@ public class DrawCommand extends GeometryCommand<DrawOptions> {
     }
 
     /**
+     * Get an Envelope either from the Geometry or from the DrawOptions bounds property
+     * @param geometry The input Geometry
+     * @param options The DrawOptions
+     * @return An Envelope
+     */
+    private Envelope getEnvelope(Geometry geometry, DrawOptions options) {
+        Envelope env;
+        String bounds = options.getBounds();
+        if (bounds != null && bounds.split(",").length == 4) {
+            String[] parts = bounds.split(",");
+            double minX = Double.parseDouble(parts[0].trim());
+            double minY = Double.parseDouble(parts[1].trim());
+            double maxX = Double.parseDouble(parts[2].trim());
+            double maxY = Double.parseDouble(parts[3].trim());
+            env = new Envelope(minX, maxX, minY, maxY);
+        } else {
+            env = geometry.getEnvelopeInternal();
+            env.expandBy(env.getWidth() * 0.1);
+        }
+        return env;
+    }
+
+    /**
      * The DrawOptions
      */
     public static class DrawOptions extends GeometryOptions {
@@ -188,7 +226,13 @@ public class DrawCommand extends GeometryCommand<DrawOptions> {
          */
         @Option(name = "-background", usage = "The background color", required = false)
         private String backgroundColor = "255,255,255";
-
+        
+        /**
+         * The background image url or file
+         */
+        @Option(name = "-backgroundImage", usage = "The background image url or file", required = false)
+        private String backgroundImage;
+        
         /**
          * The stroke Color
          */
@@ -219,6 +263,37 @@ public class DrawCommand extends GeometryCommand<DrawOptions> {
         @Option(name = "-drawCoords", usage = "The flag for drawing coordinates or not", required = false)
         private boolean drawingCoordinates;
 
+        /**
+         * The geographical bounds (minx, miny, maxx, maxy)
+         */
+        @Option(name = "-bounds", usage = "The geographical bounds (minx, miny, maxx, maxy)", required = false)
+        private String bounds;
+
+        /**
+         * Get the geographical bounds (minx, miny, maxx, maxy)
+         * @return The geographical bounds (minx, miny, maxx, maxy)
+         */
+        public String getBounds() {
+            return bounds;
+        }
+
+        /**
+         * Set the geographical bounds (minx, miny, maxx, maxy)
+         * @param bounds The geographical bounds (minx, miny, maxx, maxy)
+         */
+        public void setBounds(String bounds) {
+            this.bounds = bounds;
+        }
+
+        public String getBackgroundImage() {
+            return backgroundImage;
+        }
+
+        public void setBackgroundImage(String backgroundImage) {
+            this.backgroundImage = backgroundImage;
+        }
+
+        
         /**
          * Get the flag for drawing coordinates or not
          * @return The flag for drawing coordinates or not
