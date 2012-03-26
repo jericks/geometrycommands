@@ -56,6 +56,7 @@ org.geometrycommands.OverlapsCommand
 org.geometrycommands.PlacePointCommand
 org.geometrycommands.PointAtAngleCommand
 org.geometrycommands.PolygonizeCommand
+org.geometrycommands.PrecisionReducerCommand
 org.geometrycommands.ProjectCommand
 org.geometrycommands.RandomCommand
 org.geometrycommands.RandomWalkCommand
