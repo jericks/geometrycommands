@@ -22,7 +22,13 @@ fi
 
 CLASSPATH=""
 for jar in `ls $LIBDIR`; do
-  CLASSPATH=$CLASSPATH:$LIBDIR/$jar
+  if [ "$CLASSPATH" == "" ]; then
+    CLASSPATH=$LIBDIR/$jar
+  else
+    CLASSPATH=$CLASSPATH:$LIBDIR/$jar
+  fi
 done
 
-$JAVA -cp $CLASSPATH org.geometrycommands.App "$@"
+echo $CLASSPATH
+
+"$JAVA" -cp $CLASSPATH org.geometrycommands.App "$@"
