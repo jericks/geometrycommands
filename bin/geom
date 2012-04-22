@@ -29,6 +29,4 @@ for jar in `ls $LIBDIR`; do
   fi
 done
 
-echo $CLASSPATH
-
 "$JAVA" -cp $CLASSPATH org.geometrycommands.App "$@"
