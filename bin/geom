@@ -29,4 +29,8 @@ for jar in `ls $LIBDIR`; do
   fi
 done
 
-"$JAVA" -cp $CLASSPATH org.geometrycommands.App "$@"
+if [[ $OSTYPE == cygwin ]]; then
+  "$JAVA" -cp `cygpath -wp $CLASSPATH` org.geometrycommands.App "$@"
+else 
+  "$JAVA" -cp $CLASSPATH org.geometrycommands.App "$@"
+fi
