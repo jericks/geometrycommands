@@ -11,7 +11,7 @@ public class OtherGeometryOptions extends GeometryOptions {
     /**
      * The other Geometry
      */
-    @Option(name = "-other", usage="The other geometry", required = true)
+    @Option(name = "-o", aliases = "--otherGeometry", usage="The other geometry", required = true)
     private String otherGeometry;
 
     /**

@@ -24,6 +24,15 @@ public class DelaunayTriangulationCommand extends GeometryCommand<DelaunayTriang
     }
 
     /**
+     * Get the description of what the Command does
+     * @return The description of what the Command does
+     */
+    @Override
+    public String getDescription() {
+        return "Generate a delaunay triangulation of the input geometry.";
+    }
+
+    /**
      * Get a new DelaunayTriangulationOptions
      * @return A new DelaunayTriangulationOptions
      */
@@ -63,7 +72,7 @@ public class DelaunayTriangulationCommand extends GeometryCommand<DelaunayTriang
         /**
          * The flag for whether to use conforming algorithm
          */
-        @Option(name = "-conforming", usage = "The flag for whether to use conforming algorithm", required = false)
+        @Option(name = "-c", aliases = "--conforming", usage = "The flag for whether to use conforming algorithm", required = false)
         private boolean conforming;
 
         /**

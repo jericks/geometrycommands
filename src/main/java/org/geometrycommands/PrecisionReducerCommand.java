@@ -24,6 +24,15 @@ public class PrecisionReducerCommand extends GeometryCommand<PrecisionReducerOpt
     }
 
     /**
+     * Get the description of what the Command does
+     * @return The description of what the Command does
+     */
+    @Override
+    public String getDescription() {
+        return "Reduce the precision of the input geometry.";
+    }
+
+    /**
      * Get the PrecisionReducerOptions
      * @return The PrecisionReducerOptions
      */
@@ -70,25 +79,25 @@ public class PrecisionReducerCommand extends GeometryCommand<PrecisionReducerOpt
         /**
          * The precision model type (FIXED, FLOATING, FLOATING_SINGLE)
          */
-        @Option(name = "-t", usage = "The precision model type (FIXED, FLOATING, FLOATING_SINGLE)", required = true)
+        @Option(name = "-t", aliases = "--type", usage = "The precision model type (FIXED, FLOATING, FLOATING_SINGLE)", required = true)
         private String precisionModelType;
 
         /**
          * The precision model scale when type is FLOATING
          */
-        @Option(name = "-s", usage = "The precision model scale when type is FLOATING", required = false)
+        @Option(name = "-s", aliases = "--scale", usage = "The precision model scale when type is FLOATING", required = false)
         private double precisionModelScale;
 
         /**
          * Whether the precision reducer operates pointwise 
          */
-        @Option(name = "-pointWise", usage = "Whether the precision reducer operates pointwise", required = false)
+        @Option(name = "-p", aliases = "--pointWise", usage = "Whether the precision reducer operates pointwise", required = false)
         private boolean pointwise = false;
 
         /**
          * Whether the precision reducer should remove collapsed geometry
          */
-        @Option(name = "-removeCollapsed", usage = "Whether the precision reducer should remove collapsed geometry", required = false)
+        @Option(name = "-r", aliases = "--removeCollapsed", usage = "Whether the precision reducer should remove collapsed geometry", required = false)
         private boolean removeCollapsed = false;
 
         /**

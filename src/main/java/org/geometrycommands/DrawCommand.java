@@ -40,6 +40,15 @@ public class DrawCommand extends GeometryCommand<DrawOptions> {
     }
 
     /**
+     * Get the description of what the Command does
+     * @return The description of what the Command does
+     */
+    @Override
+    public String getDescription() {
+        return "Draw the input geometry to an image file.";
+    }
+
+    /**
      * Get a new DrawOptions
      * @return A new DrawOptions
      */
@@ -206,67 +215,67 @@ public class DrawCommand extends GeometryCommand<DrawOptions> {
         /**
          * The image width
          */
-        @Option(name = "-w", usage = "The image width", required = false)
+        @Option(name = "-w", aliases = "--width", usage = "The image width", required = false)
         private int width = 400;
 
         /**
          * The image height
          */
-        @Option(name = "-h", usage = "The image height", required = false)
+        @Option(name = "-h", aliases = "--height", usage = "The image height", required = false)
         private int height = 400;
 
         /**
          * The output File
          */
-        @Option(name = "-file", usage = "The output File", required = false)
+        @Option(name = "-f", aliases = "--file", usage = "The output File", required = false)
         private File file = new File("image.png");
 
         /**
          * The background Color
          */
-        @Option(name = "-background", usage = "The background color", required = false)
+        @Option(name = "-b", aliases = "--background", usage = "The background color", required = false)
         private String backgroundColor = "255,255,255";
         
         /**
          * The background image url or file
          */
-        @Option(name = "-backgroundImage", usage = "The background image url or file", required = false)
+        @Option(name = "-i", aliases = "--backgroundImage", usage = "The background image url or file", required = false)
         private String backgroundImage;
         
         /**
          * The stroke Color
          */
-        @Option(name = "-stroke", usage = "The stroke Color", required = false)
+        @Option(name = "-s", aliases = "--stroke", usage = "The stroke Color", required = false)
         private String strokeColor = "99,99,99";
 
         /**
          * The fill Color
          */
-        @Option(name = "-fill", usage = "The fill Color", required = false)
+        @Option(name = "-l", aliases = "--fill", usage = "The fill Color", required = false)
         private String fillColor = "206,206,206,100";
 
         /**
          * The marker shape
          */
-        @Option(name = "-shape", usage = "The marker shape (circle, square, ect..)", required = false)
+        @Option(name = "-m", aliases = "--shape", usage = "The marker shape (circle, square, ect..)", required = false)
         private String shape = "circle";
 
         /**
          * The marker size
          */
-        @Option(name = "-markerSize", usage = "The marker size", required = false)
+        @Option(name = "-s", aliases = "--size", usage = "The marker size", required = false)
         private double markerSize = 8;
 
         /**
          * The flag for drawing coordinates or not
          */
-        @Option(name = "-drawCoords", usage = "The flag for drawing coordinates or not", required = false)
+        @Option(name = "-c", aliases = "--drawCoords", usage = "The flag for drawing coordinates or not", required = false)
         private boolean drawingCoordinates;
 
         /**
          * The geographical bounds (minx, miny, maxx, maxy)
          */
-        @Option(name = "-bounds", usage = "The geographical bounds (minx, miny, maxx, maxy)", required = false)
+        @Option(name = "-e", aliases = "--envelope", usage = "The geographical bounds (minx, miny, maxx, maxy)", required = false)
         private String bounds;
 
         /**

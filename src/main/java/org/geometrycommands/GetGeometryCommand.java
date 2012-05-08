@@ -22,6 +22,15 @@ public class GetGeometryCommand extends GeometryCommand<GetGeometryOptions>{
     }
 
     /**
+     * Get the description of what the Command does
+     * @return The description of what the Command does
+     */
+    @Override
+    public String getDescription() {
+        return "Get a sub geometry from a geometry collection by index.";
+    }
+
+    /**
      * Get a new GetGeometryOptions
      * @return A new GetGeometryOptions
      */
@@ -52,7 +61,7 @@ public class GetGeometryCommand extends GeometryCommand<GetGeometryOptions>{
         /**
          * The index number of the Geometry
          */
-        @Option(name="-n", usage="The index number of the Geometry", required=true)
+        @Option(name="-n", aliases = "--index", usage="The index number of the Geometry", required=true)
         private int index;
         
         /**

@@ -24,6 +24,15 @@ public class SierpinskiCarpetCommand extends GeometryCommand<SierpinskiCarpetOpt
     }
 
     /**
+     * Get the description of what the Command does
+     * @return The description of what the Command does
+     */
+    @Override
+    public String getDescription() {
+        return "Create a sierpinski carpet.";
+    }
+
+    /**
      * Get the new SierpinskiCarpetOptions
      * @return The new SierpinskiCarpetOptions
      */
@@ -57,7 +66,7 @@ public class SierpinskiCarpetCommand extends GeometryCommand<SierpinskiCarpetOpt
         /**
          * The number of points.
          */
-        @Option(name = "-n", usage = "The number of points.", required = true)
+        @Option(name = "-n", aliases = "--number", usage = "The number of points.", required = true)
         private int numberOfPoints;
 
         /**

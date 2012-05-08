@@ -20,6 +20,15 @@ public class ConvexHullCommand extends GeometryCommand<GeometryOptions> {
     }
 
     /**
+     * Get the description of what the Command does
+     * @return The description of what the Command does
+     */
+    @Override
+    public String getDescription() {
+        return "Calculate the convex hull of a Geometry.";
+    }
+
+    /**
      * Get the new OtherGeometryOptions
      * @return A new OtherGeometryOptions
      */

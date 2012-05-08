@@ -23,6 +23,16 @@ public class RelateCommand extends OtherGeometryCommand<RelateOptions> {
     }
 
     /**
+     * Get the description of what the Command does
+     * @return The description of what the Command does
+     */
+    @Override
+    public String getDescription() {
+        return "Determine if the input Geometry and the other Geometry are related according to the DE-9IM intersection matrix or calculate the DE-9IM.";
+    }
+
+
+    /**
      * Get the new OtherGeometryOptions
      * @return A new OtherGeometryOptions
      */
@@ -61,7 +71,7 @@ public class RelateCommand extends OtherGeometryCommand<RelateOptions> {
         /**
          * The DE-9IM intersection matrix
          */
-        @Option(name = "-matrix", usage = "The DE-9IM intersection matrix", required = false)
+        @Option(name = "-m", aliases = "--matrix", usage = "The DE-9IM intersection matrix", required = false)
         private String intersectionMatrix;
 
         /**

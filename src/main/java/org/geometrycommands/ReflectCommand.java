@@ -23,6 +23,15 @@ public class ReflectCommand extends GeometryCommand<ReflectOptions> {
     }
 
     /**
+     * Get the description of what the Command does
+     * @return The description of what the Command does
+     */
+    @Override
+    public String getDescription() {
+        return "Create a new geometry by applying the reflect affine transformation on the input geometry.";
+    }
+
+    /**
      * Get a new ReflectOptions
      * @return The new ReflectOptions
      */
@@ -59,25 +68,25 @@ public class ReflectCommand extends GeometryCommand<ReflectOptions> {
         /**
          * The x-ordinate of a point on the reflection line
          */
-        @Option(name = "-x0", usage = "The x-ordinate of a point on the reflection line", required = true)
+        @Option(name="-0", aliases = "--x0", usage = "The x-ordinate of a point on the reflection line", required = true)
         private double x0;
 
         /**
          * The y-ordinate of a point on the reflection line
          */
-        @Option(name = "-y0", usage = "The y-ordinate of a point on the reflection line", required = true)
+        @Option(name="-1", aliases = "--y0", usage = "The y-ordinate of a point on the reflection line", required = true)
         private double y0;
 
         /**
          * The x-ordinate of a another point on the reflection line
          */
-        @Option(name = "-x1", usage = "The x-ordinate of a another point on the reflection line", required = false)
+        @Option(name="-2", aliases = "--x1", usage = "The x-ordinate of a another point on the reflection line", required = false)
         private double x1 = Double.NaN;
 
         /**
          * The y-ordinate of a another point on the reflection line
          */
-        @Option(name = "-y1", usage = "The y-ordinate of a another point on the reflection line", required = false)
+        @Option(name="-3", aliases = "--y1", usage = "The y-ordinate of a another point on the reflection line", required = false)
         private double y1 = Double.NaN;
 
         /**

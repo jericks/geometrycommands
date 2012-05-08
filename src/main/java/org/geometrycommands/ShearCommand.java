@@ -23,6 +23,15 @@ public class ShearCommand extends GeometryCommand<ShearOptions> {
     }
 
     /**
+     * Get the description of what the Command does
+     * @return The description of what the Command does
+     */
+    @Override
+    public String getDescription() {
+        return "Create a new geometry by apply a shear affine transformation to the input geometry";
+    }
+
+    /**
      * Get a new ShearOptions
      * @return The new ShearOptions
      */
@@ -53,13 +62,13 @@ public class ShearCommand extends GeometryCommand<ShearOptions> {
         /**
          * The value to shear by in the x direction
          */
-        @Option(name = "-x", usage = "The value to translate by in the x direction", required = true)
+        @Option(name = "-x", aliases = "--xDistance", usage = "The value to translate by in the x direction", required = true)
         private double x;
 
         /**
          * The value to shear by in the y direction
          */
-        @Option(name = "-y", usage = "The value to translate by in the y direction", required = true)
+        @Option(name = "-y", aliases = "-yDistance", usage = "The value to translate by in the y direction", required = true)
         private double y;
 
         /**

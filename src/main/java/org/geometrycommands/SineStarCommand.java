@@ -24,6 +24,15 @@ public class SineStarCommand extends ShapeFactoryCommand<SineStarOptions> {
     }
 
     /**
+     * Get the description of what the Command does
+     * @return The description of what the Command does
+     */
+    @Override
+    public String getDescription() {
+        return "Create a sine star.";
+    }
+
+    /**
      * Get a new SineStarOptions
      * @return A new SineStarOptions
      */
@@ -68,13 +77,13 @@ public class SineStarCommand extends ShapeFactoryCommand<SineStarOptions> {
         /**
          * The number of arms
          */
-        @Option(name = "-numArms", usage = "The number of arms", required = true)
+        @Option(name = "-n", aliases = "--numberOfArms", usage = "The number of arms", required = true)
         private int numberOfArms;
 
         /**
          * The arm length ratio
          */
-        @Option(name = "-armLengthRatio", usage = "The arm length ratio", required = true)
+        @Option(name = "-l", aliases = "--armLengthRatio", usage = "The arm length ratio", required = true)
         private double armLengthRatio;
 
         /**

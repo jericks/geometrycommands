@@ -23,6 +23,16 @@ public class ArcPolygonCommand extends ShapeFactoryCommand<ArcPolygonOptions> {
     }
 
     /**
+     * Get the description of what the Command does
+     * @return The description of what the Command does
+     */
+    @Override
+    public String getDescription() {
+        return "Creates an arc polygon from a start angle and an angle extent.";
+    }
+
+
+    /**
      * Get the ArcPolygonOptions
      * @return The ArcPolygonOptions
      */
@@ -60,19 +70,19 @@ public class ArcPolygonCommand extends ShapeFactoryCommand<ArcPolygonOptions> {
         /**
          * The start angle (in radians)
          */
-        @Option(name = "-a", usage = "The start angle (in radians)", required = true)
+        @Option(name = "-a", aliases = "--startAngle", usage = "The start angle (in radians)", required = true)
         private double startAngle;
 
         /**
          * The size of angle (in radians)
          */
-        @Option(name = "-e", usage = "The size of angle (in radians)", required = true)
+        @Option(name = "-e", aliases= "--angleExtent", usage = "The size of angle (in radians)", required = true)
         private double angleExtent;
 
         /**
          * The flag for whether given angle measures are in degrees (true) or radians (false)
          */
-        @Option(name = "-degrees", usage = "The flag for whether given angle measures are in degrees (true) or radians (false)", required = false)
+        @Option(name = "-d", aliases = "--degrees", usage = "The flag for whether given angle measures are in degrees (true) or radians (false)", required = false)
         private boolean degrees;
 
         /**

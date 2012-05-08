@@ -24,6 +24,15 @@ public class SubLineCommand extends GeometryCommand<SubLineOptions> {
     }
 
     /**
+     * Get the description of what the Command does
+     * @return The description of what the Command does
+     */
+    @Override
+    public String getDescription() {
+        return "Extract a sub line from a linear geometry.";
+    }
+
+    /**
      * Get a new SubLineOptions
      * @return A new SubLineOptions
      */
@@ -62,13 +71,13 @@ public class SubLineCommand extends GeometryCommand<SubLineOptions> {
         /**
          * The start position between 0 and 1
          */
-        @Option(name = "-s", usage = "The start position between 0 and 1", required = true)
+        @Option(name = "-s", aliases = "startPosition", usage = "The start position between 0 and 1", required = true)
         private double startPosition;
 
         /**
          * The end position between 0 and 1
          */
-        @Option(name = "-e", usage = "The end position between 0 and 1", required = true)
+        @Option(name = "-e", aliases = "endPosition", usage = "The end position between 0 and 1", required = true)
         private double endPosition;
 
         /**

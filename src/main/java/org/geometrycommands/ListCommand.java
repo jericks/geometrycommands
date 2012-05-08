@@ -21,6 +21,15 @@ public class ListCommand implements Command<Options> {
     }
 
     /**
+     * Get the description of what the Command does
+     * @return The description of what the Command does
+     */
+    @Override
+    public String getDescription() {
+        return "List all of the geometry commands.";
+    }
+
+    /**
      * Get a new Options
      * @return A new Options
      */

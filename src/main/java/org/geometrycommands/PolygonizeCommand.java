@@ -24,6 +24,15 @@ public class PolygonizeCommand extends GeometryCommand<GeometryOptions> {
     }
 
     /**
+     * Get the description of what the Command does
+     * @return The description of what the Command does
+     */
+    @Override
+    public String getDescription() {
+        return "Creates polygons from lines.";
+    }
+
+    /**
      * Get a new GeometryOptions
      * @return A new GeometryOptions
      */

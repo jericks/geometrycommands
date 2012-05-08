@@ -21,6 +21,15 @@ public class CoordinatesCommand extends GeometryCommand<GeometryOptions> {
     }
 
     /**
+     * Get the description of what the Command does
+     * @return The description of what the Command does
+     */
+    @Override
+    public String getDescription() {
+        return "Get the coordinates of the geometry.";
+    }
+
+    /**
      * Get a new GeometryOptions
      * @return A new GeometryOptions
      */

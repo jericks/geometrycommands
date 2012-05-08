@@ -25,6 +25,15 @@ public class DistanceLineStringCommand extends OtherGeometryCommand<OtherGeometr
     }
 
     /**
+     * Get the description of what the Command does
+     * @return The description of what the Command does
+     */
+    @Override
+    public String getDescription() {
+        return "Generate a LineString representing the shortest distance between two geometries.";
+    }
+
+    /**
      * Get a new OtherGeometryOptions
      * @return A new OtherGeometryOptions
      */

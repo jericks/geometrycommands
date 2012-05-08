@@ -20,6 +20,15 @@ public class DistanceCommand extends OtherGeometryCommand<OtherGeometryOptions> 
     }
 
     /**
+     * Get the description of what the Command does
+     * @return The description of what the Command does
+     */
+    @Override
+    public String getDescription() {
+        return "Calculate the distance between the two input geometries.";
+    }
+
+    /**
      * Get a new OtherGeometryOptions
      * @return A new OtherGeometryOptions
      */

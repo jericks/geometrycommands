@@ -23,6 +23,15 @@ public class LocatePointCommand extends OtherGeometryCommand<OtherGeometryOption
     }
 
     /**
+     * Get the description of what the Command does
+     * @return The description of what the Command does
+     */
+    @Override
+    public String getDescription() {
+        return "Locate the position of a point on the linear geometry as a percentage of the distance.";
+    }
+
+    /**
      * Get a new OtherGeometryOptions
      * @return A new OtherGeometryOptions
      */

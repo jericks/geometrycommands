@@ -21,6 +21,15 @@ public class MinimumBoundingCircleCommand extends GeometryCommand<GeometryOption
     }
 
     /**
+     * Get the description of what the Command does
+     * @return The description of what the Command does
+     */
+    @Override
+    public String getDescription() {
+        return "Calculate the minimum bounding circle of the input geometry.";
+    }
+
+    /**
      * Get a new GeometryOptions
      * @return A new GeometryOptions
      */

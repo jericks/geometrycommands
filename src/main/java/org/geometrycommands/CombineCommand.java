@@ -31,6 +31,15 @@ public class CombineCommand implements Command<Options> {
     }
 
     /**
+     * Get the description of what the Command does
+     * @return The description of what the Command does
+     */
+    @Override
+    public String getDescription() {
+        return "Combine geometries on separate lines to create a GeometryCollection.";
+    }
+
+    /**
      * Get the Options
      * @return The Options
      */

@@ -27,6 +27,15 @@ public class NodeCommand extends GeometryCommand<NodeOptions> {
     }
 
     /**
+     * Get the description of what the Command does
+     * @return The description of what the Command does
+     */
+    @Override
+    public String getDescription() {
+        return "Node the linestrings from the input geometry.";
+    }
+
+    /**
      * Get a new NodeOptions
      * @return A new NodeOptions
      */
@@ -64,7 +73,7 @@ public class NodeCommand extends GeometryCommand<NodeOptions> {
         /**
          * The number of decimal places
          */
-        @Option(name = "-n", usage = "The number of decimal places", required = true)
+        @Option(name = "-n", aliases = "--number", usage = "The number of decimal places", required = true)
         private int numberOfDecimalPlaces;
 
         /**

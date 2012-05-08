@@ -20,6 +20,15 @@ public class CountGeometriesCommand extends GeometryCommand<GeometryOptions> {
     }
 
     /**
+     * Get the description of what the Command does
+     * @return The description of what the Command does
+     */
+    @Override
+    public String getDescription() {
+        return "Count the number of geometries in the input geometry.";
+    }
+
+    /**
      * Get a new GeometryOptions
      * @return A new GeometryOptions
      */

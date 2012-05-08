@@ -22,6 +22,15 @@ public class IsWithinDistanceCommand extends OtherGeometryCommand<IsWithinDistan
     }
 
     /**
+     * Get the description of what the Command does
+     * @return The description of what the Command does
+     */
+    @Override
+    public String getDescription() {
+        return "Determine if the input geometry is within the given distance of the other geometry.";
+    }
+
+    /**
      * Get a new IsWithinDistanceOptions
      * @return A new IsWithinDistanceOptions
      */
@@ -53,7 +62,7 @@ public class IsWithinDistanceCommand extends OtherGeometryCommand<IsWithinDistan
         /**
          * The distance
          */
-        @Option(name = "-d", usage = "The distance", required = true)
+        @Option(name = "-d", aliases = "--distance", usage = "The distance", required = true)
         private double distance;
 
         /**

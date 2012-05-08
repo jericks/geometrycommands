@@ -27,6 +27,15 @@ public class RandomWalkCommand extends GeometryCommand<RandomWalkOptions> {
     }
 
     /**
+     * Get the description of what the Command does
+     * @return The description of what the Command does
+     */
+    @Override
+    public String getDescription() {
+        return "Generate a random walk as a linestring.";
+    }
+
+    /**
      * Get the RandomWalkOptions
      * @return The RandomWalkOptions
      */
@@ -111,25 +120,25 @@ public class RandomWalkCommand extends GeometryCommand<RandomWalkOptions> {
         /**
          * The number of walks
          */
-        @Option(name = "-n", usage = "The number of walks", required = true)
+        @Option(name = "-n", aliases = "--number", usage = "The number of walks", required = true)
         private int numberOfWalks;
 
         /**
          * The distance between Coordinates
          */
-        @Option(name = "-d", usage = "The distance between Coordinates", required = true)
+        @Option(name = "-d", aliases = "--distance", usage = "The distance between Coordinates", required = true)
         private double distance;
 
         /**
          * The probability of changing direction
          */
-        @Option(name = "-p", usage = "The probability of changing direction", required = false)
+        @Option(name = "-p", aliases = "--probability", usage = "The probability of changing direction", required = false)
         private double probability = 0.75;
 
         /**
          * The angle increment (in degrees) when changing direction.
          */
-        @Option(name = "-a", usage = "The angle increment (in degrees) when changing direction", required = false)
+        @Option(name = "-a", aliases = "--angle", usage = "The angle increment (in degrees) when changing direction", required = false)
         private int angleIncrement = 90;
 
         /**

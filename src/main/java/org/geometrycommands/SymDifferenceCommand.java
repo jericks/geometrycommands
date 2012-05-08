@@ -20,6 +20,15 @@ public class SymDifferenceCommand extends OtherGeometryCommand<OtherGeometryOpti
     }
 
     /**
+     * Get the description of what the Command does
+     * @return The description of what the Command does
+     */
+    @Override
+    public String getDescription() {
+        return "Calculate the symetric difference between two geometries";
+    }
+
+    /**
      * Get the new OtherGeometryOptions
      * @return A new OtherGeometryOptions
      */

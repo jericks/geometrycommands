@@ -21,6 +21,15 @@ public class RectangleCommand extends ShapeFactoryCommand<ShapeFactoryOptions> {
     }
 
     /**
+     * Get the description of what the Command does
+     * @return The description of what the Command does
+     */
+    @Override
+    public String getDescription() {
+        return "Create a rectangle from the input geometry.";
+    }
+
+    /**
      * Get the ShapeFactoryOptions
      * @return The ShapeFactoryOptions
      */

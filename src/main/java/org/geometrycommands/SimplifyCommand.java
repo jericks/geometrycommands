@@ -24,6 +24,15 @@ public class SimplifyCommand extends GeometryCommand<SimplifyOptions> {
     }
 
     /**
+     * Get the description of what the Command does
+     * @return The description of what the Command does
+     */
+    @Override
+    public String getDescription() {
+        return "Simplify the input geometry.";
+    }
+
+    /**
      * Get a new SimplifyOptions
      * @return A new SimplifyOptions
      */
@@ -63,13 +72,13 @@ public class SimplifyCommand extends GeometryCommand<SimplifyOptions> {
         /**
          * The algorithm (douglaspeucker/dp or topologypreserving/tp)
          */
-        @Option(name = "-algorithm", usage = "The distance tolerance (douglaspeucker/dp or topologypreserving/tp)", required = true)
+        @Option(name = "-a", aliases = "--algorithm",  usage = "The distance tolerance (douglaspeucker/dp or topologypreserving/tp)", required = true)
         private String algorithm;
 
         /**
          * The distance tolerance
          */
-        @Option(name = "-d", usage = "The distance tolerance", required = true)
+        @Option(name = "-d", aliases = "--distance", usage = "The distance tolerance", required = true)
         private double distanceTolerance;
 
         /**

@@ -23,6 +23,15 @@ public class DensifyCommand extends GeometryCommand<DensifyOptions> {
     }
 
     /**
+     * Get the description of what the Command does
+     * @return The description of what the Command does
+     */
+    @Override
+    public String getDescription() {
+        return "Densify the coordinates of the input geometry.";
+    }
+
+    /**
      * Get a new DensifyOptions
      * @return A new DensifyOptions
      */
@@ -53,7 +62,7 @@ public class DensifyCommand extends GeometryCommand<DensifyOptions> {
         /**
          * The distance tolerance
          */
-        @Option(name="-d", usage="The distance tolerance", required=true)
+        @Option(name="-d", aliases = "--distance", usage="The distance tolerance", required=true)
         private double distanceTolerance;
 
         /**

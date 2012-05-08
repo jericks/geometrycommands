@@ -23,6 +23,15 @@ public class RotateCommand extends GeometryCommand<RotateOptions> {
     }
 
     /**
+     * Get the description of what the Command does
+     * @return The description of what the Command does
+     */
+    @Override
+    public String getDescription() {
+        return "Create a new geometry by rotating the input geometry";
+    }
+
+    /**
      * Get a new RotateOptions
      * @return The new RotateOptions
      */
@@ -69,31 +78,31 @@ public class RotateCommand extends GeometryCommand<RotateOptions> {
         /**
          * The rotation angle, in radians
          */
-        @Option(name = "-theta", usage = "The rotation angle, in radians", required = false)
+        @Option(name = "-t", aliases = "--theta", usage = "The rotation angle, in radians", required = false)
         private double theta = Double.NaN;
 
         /**
          * The x-ordinate of the rotation point
          */
-        @Option(name = "-x", usage = "The x-ordinate of the rotation point", required = false)
+        @Option(name = "-x", aliases = "--xCoordinate", usage = "The x-ordinate of the rotation point", required = false)
         private double x = Double.NaN;
 
         /**
          * The y-ordinate of the rotation point
          */
-        @Option(name = "-y", usage = "The y-ordinate of the rotation point", required = false)
+        @Option(name = "-y", aliases = "--yCoordinate", usage = "The y-ordinate of the rotation point", required = false)
         private double y = Double.NaN;
 
         /**
          * The sine of the rotation angle
          */
-        @Option(name = "-sin", usage = "The sine of the rotation angle", required = false)
+        @Option(name = "-s", aliases = "--sine", usage = "The sine of the rotation angle", required = false)
         private double sinTheta = Double.NaN;
 
         /**
          * The cosine of the rotation angle
          */
-        @Option(name = "-cos", usage = "The cosine of the rotation angle", required = false)
+        @Option(name = "-c", aliases = "--cosine", usage = "The cosine of the rotation angle", required = false)
         private double cosTheta = Double.NaN;
 
         /**

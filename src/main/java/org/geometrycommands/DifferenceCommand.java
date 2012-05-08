@@ -20,6 +20,15 @@ public class DifferenceCommand extends OtherGeometryCommand<OtherGeometryOptions
     }
 
     /**
+     * Get the description of what the Command does
+     * @return The description of what the Command does
+     */
+    @Override
+    public String getDescription() {
+        return "Calculate the difference between the input geometries.";
+    }
+
+    /**
      * Get the new OtherGeometryOptions
      * @return A new OtherGeometryOptions
      */

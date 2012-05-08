@@ -24,6 +24,15 @@ public class GetStartPointCommand extends GeometryCommand<GeometryOptions> {
     }
 
     /**
+     * Get the description of what the Command does
+     * @return The description of what the Command does
+     */
+    @Override
+    public String getDescription() {
+        return "Get the start point of a LineString or MultiLineString.";
+    }
+
+    /**
      * Get the GeometryOptions
      * @return The GeometryOptions
      */

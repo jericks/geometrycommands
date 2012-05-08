@@ -24,6 +24,15 @@ public class SnapCommand extends OtherGeometryCommand<SnapOptions> {
     }
 
     /**
+     * Get the description of what the Command does
+     * @return The description of what the Command does
+     */
+    @Override
+    public String getDescription() {
+        return "Snap the input geometry to the other geometry.";
+    }
+
+    /**
      * Get the SnapOptions
      * @return The SnapOptions
      */
@@ -56,7 +65,7 @@ public class SnapCommand extends OtherGeometryCommand<SnapOptions> {
         /**
          * The distance/tolerance
          */
-        @Option(name = "-d", usage = "The distance/tolerance", required = true)
+        @Option(name = "-d", aliases = "--distance", usage = "The distance/tolerance", required = true)
         private double distance;
 
         /**

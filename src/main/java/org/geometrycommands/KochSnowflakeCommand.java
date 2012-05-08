@@ -24,6 +24,15 @@ public class KochSnowflakeCommand extends GeometryCommand<KochSnowflakeOptions> 
     }
 
     /**
+     * Get the description of what the Command does
+     * @return The description of what the Command does
+     */
+    @Override
+    public String getDescription() {
+        return "Generate a koch snow flake.";
+    }
+
+    /**
      * Get the new KochSnowflakeOptions
      * @return The new KochSnowflakeOptions
      */
@@ -57,7 +66,7 @@ public class KochSnowflakeCommand extends GeometryCommand<KochSnowflakeOptions> 
         /**
          * The number of points.
          */
-        @Option(name = "-n", usage = "The number of points.", required = true)
+        @Option(name = "-n", aliases = "--number", usage = "The number of points.", required = true)
         private int numberOfPoints;
 
         /**

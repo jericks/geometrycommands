@@ -24,6 +24,15 @@ public class GridCommand extends GeometryCommand<GridOptions> {
     }
 
     /**
+     * Get the description of what the Command does
+     * @return The description of what the Command does
+     */
+    @Override
+    public String getDescription() {
+        return "Calculate a grid around the input geometry.";
+    }
+
+    /**
      * Get the GridOptions
      * @return The GridOptions
      */
@@ -91,13 +100,13 @@ public class GridCommand extends GeometryCommand<GridOptions> {
         /**
          * The number of columns
          */
-        @Option(name = "-c", usage = "The number of columns", required = true)
+        @Option(name = "-c", aliases = "--columns", usage = "The number of columns", required = true)
         private int numberOfColumns;
 
         /**
          * The number of rows
          */
-        @Option(name = "-r", usage = "The number of rows", required = true)
+        @Option(name = "-r", aliases = "--rows", usage = "The number of rows", required = true)
         private int numberOfRows;
 
         /**

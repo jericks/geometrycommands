@@ -14,6 +14,12 @@ public interface Command<T extends Options> {
     public String getName();
 
     /**
+     * Get the description of what the Command does
+     * @return The description of what the Command does
+     */
+    public String getDescription();
+
+    /**
      * Get a new Options
      * @return A new Options
      */

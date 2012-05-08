@@ -20,6 +20,15 @@ public class TouchesCommand extends OtherGeometryCommand<OtherGeometryOptions> {
     }
 
     /**
+     * Get the description of what the Command does
+     * @return The description of what the Command does
+     */
+    @Override
+    public String getDescription() {
+        return "Determine if the input geometry touches another geometry.";
+    }
+
+    /**
      * Get a new OtherGeometryOptions
      * @return A new OtherGeometryOptions
      */

@@ -59,6 +59,7 @@ public class App {
             cmdLineParser.parseArgument(args);
             // Print help for the command
             if (options.isHelp()) {
+                System.out.println("geom " + command.getName() + ": " + command.getDescription());
                 cmdLineParser.printUsage(System.out);
             } else {
                 // If there are no errors, execute the command
@@ -74,6 +75,7 @@ public class App {
         } catch (Exception e) {
             // Print help for the command (if required options are not present)
             if (options.isHelp()) {
+                System.out.println("geom " + command.getName() + ": " + command.getDescription());
                 cmdLineParser.printUsage(System.out);
             } else {
                 // Oops, display the error messages to the user

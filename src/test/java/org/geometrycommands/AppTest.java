@@ -57,7 +57,7 @@ public class AppTest {
         } catch (OverrideExitException ex) {
         }
         Map<String, String> values = capture.stop();
-        assertEquals("--help    : Print help message" + NEW_LINE + " -geom VAL : The input geometry", values.get("out"));
+        assertEquals("geom centroid: Calculate the centroid of a Geometry." + NEW_LINE + " --help              : Print help message" + NEW_LINE + " -g (--geometry) VAL : The input geometry", values.get("out"));
     }
 
     @Test
@@ -72,8 +72,8 @@ public class AppTest {
         Map<String, String> values = capture.stop();
         assertEquals("\"--asdf\" is not a valid option" + NEW_LINE
                 + "Usage: geom <command> <args>" + NEW_LINE
-                + " --help    : Print help message" + NEW_LINE
-                + " -geom VAL : The input geometry", values.get("err"));
+                + " --help              : Print help message" + NEW_LINE
+                + " -g (--geometry) VAL : The input geometry", values.get("err"));
     }
 
     @Test
@@ -81,7 +81,7 @@ public class AppTest {
         CaptureOutput capture = CaptureOutput.createAndStart();
         try {
             App.main(new String[]{
-                        "centroid", "-geom", "POLYGON ((0 0, 0 10, 10 10, 10 0, 0 0))"
+                        "centroid", "--geometry", "POLYGON ((0 0, 0 10, 10 10, 10 0, 0 0))"
                     });
         } catch (OverrideExitException ex) {
         }
@@ -94,7 +94,7 @@ public class AppTest {
         CaptureOutput capture = CaptureOutput.createAndStart();
         try {
             App.main(new String[]{
-                        "envelope", "-geom", "POINT (5 5)", "-expandBy", "5"
+                        "envelope", "-g", "POINT (5 5)", "-e", "5"
                     });
         } catch (OverrideExitException ex) {
         }

@@ -25,6 +25,15 @@ public class RandomCommand extends GeometryCommand<RandomOptions> {
     }
 
     /**
+     * Get the description of what the Command does
+     * @return The description of what the Command does
+     */
+    @Override
+    public String getDescription() {
+        return "Generate random points inside the input geometry.";
+    }
+
+    /**
      * Get a new RandomOptions
      * @return The new RandomOptions
      */
@@ -77,25 +86,25 @@ public class RandomCommand extends GeometryCommand<RandomOptions> {
         /**
          * The number of points
          */
-        @Option(name = "-n", usage = "The number of points", required = true)
+        @Option(name = "-n", aliases = "--number", usage = "The number of points", required = true)
         private int number;
 
         /**
          * The flag for whether the random points should be gridded.
          */
-        @Option(name = "-gridded", usage = "The flag for whether the random points should be gridded.", required = false)
+        @Option(name = "-r", aliases = "--gridded", usage = "The flag for whether the random points should be gridded.", required = false)
         private boolean gridded;
 
         /**
          * The flag for whether the random points should be constrained to a circle when gridded.
          */
-        @Option(name = "-constrainedToCircle", usage = "The flag for whether the random points should be constrained to a circle when gridded.", required = false)
+        @Option(name = "-c", aliases = "--constrained", usage = "The flag for whether the random points should be constrained to a circle when gridded.", required = false)
         private boolean constrainedToCircle;
 
         /**
          * The gutter distance or padding for random points when gridded.
          */
-        @Option(name = "-gutterFraction", usage = "The gutter distance or padding for random points when gridded.", required = false)
+        @Option(name = "-f", aliases = "--gutterFraction", usage = "The gutter distance or padding for random points when gridded.", required = false)
         private double gutterFraction = Double.NaN;
 
         /**

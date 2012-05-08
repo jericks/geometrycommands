@@ -11,7 +11,7 @@ public class GeometryOptions extends Options {
     /**
      * The input geometry
      */
-    @Option(name = "-geom", usage = "The input geometry", required = false)
+    @Option(name = "-g", aliases = "--geometry", usage = "The input geometry", required = false)
     private String geometry;
 
     /**

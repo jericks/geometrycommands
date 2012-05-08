@@ -11,31 +11,31 @@ public class ShapeFactoryOptions extends GeometryOptions {
     /**
      * The width
      */
-    @Option(name = "-w", usage = "The width", required = false)
+    @Option(name = "-w", aliases = "--width", usage = "The width", required = false)
     private int width;
 
     /**
      * The height
      */
-    @Option(name = "-h", usage = "The height", required = false)
+    @Option(name = "-h", aliases = "--height", usage = "The height", required = false)
     private int height;
 
     /**
      * The number of points
      */
-    @Option(name = "-numPts", usage = "The number of points", required = false)
+    @Option(name = "-p", aliases = "--numberOfPoints", usage = "The number of points", required = false)
     private int numberOfPoints = 100;
 
     /**
      * The rotation
      */
-    @Option(name = "-rotation", usage = "The rotation", required = false)
+    @Option(name = "-r", aliases = "--rotation", usage = "The rotation", required = false)
     private double rotation = 0.0;
 
     /**
      * The flag to use center (true) or the base (false).
      */
-    @Option(name = "-center", usage = "The flag to use center (true) or the base (false)", required = false)
+    @Option(name = "-c", aliases = "--center", usage = "The flag to use center (true) or the base (false)", required = false)
     private boolean center;
 
     /**

@@ -20,6 +20,15 @@ public class IntersectsCommand extends OtherGeometryCommand<OtherGeometryOptions
     }
 
     /**
+     * Get the description of what the Command does
+     * @return The description of what the Command does
+     */
+    @Override
+    public String getDescription() {
+        return "Determine if the first geometry intersects the second geometry.";
+    }
+
+    /**
      * Get a new OtherGeometryOptions
      * @return A new OtherGeometryOptions
      */

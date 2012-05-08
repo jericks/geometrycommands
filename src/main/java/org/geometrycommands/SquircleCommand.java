@@ -23,6 +23,15 @@ public class SquircleCommand extends ShapeFactoryCommand<ShapeFactoryOptions> {
     }
 
     /**
+     * Get the description of what the Command does
+     * @return The description of what the Command does
+     */
+    @Override
+    public String getDescription() {
+        return "Create a squircle.";
+    }
+
+    /**
      * Get the ShapeFactoryOptions
      * @return The ShapeFactoryOptions
      */

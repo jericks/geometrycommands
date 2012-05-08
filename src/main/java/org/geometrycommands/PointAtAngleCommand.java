@@ -25,6 +25,15 @@ public class PointAtAngleCommand extends GeometryCommand<PointAtAngleOptions> {
     }
 
     /**
+     * Get the description of what the Command does
+     * @return The description of what the Command does
+     */
+    @Override
+    public String getDescription() {
+        return "Calculate a point at a given angle distance from the input point.";
+    }
+
+    /**
      * Get the PointAtAngleOptions
      * @return The PointAtAngleOptions
      */
@@ -60,13 +69,13 @@ public class PointAtAngleCommand extends GeometryCommand<PointAtAngleOptions> {
         /**
          * The distance
          */
-        @Option(name = "-d", usage = "The distance", required = true)
+        @Option(name = "-d", aliases = "--distance", usage = "The distance", required = true)
         private double distance;
 
         /**
          * The angle (in degrees).
          */
-        @Option(name = "-a", usage = "The angle (in degrees)", required = true)
+        @Option(name = "-a", aliases = "--angle", usage = "The angle (in degrees)", required = true)
         private int angle;
 
         /**

@@ -20,6 +20,15 @@ public class OverlapsCommand extends OtherGeometryCommand<OtherGeometryOptions> 
     }
 
     /**
+     * Get the description of what the Command does
+     * @return The description of what the Command does
+     */
+    @Override
+    public String getDescription() {
+        return "Determine whether the first geometry overlaps with the other geometry.";
+    }
+
+    /**
      * Get the new OtherGeometryOptions
      * @return A new OtherGeometryOptions
      */

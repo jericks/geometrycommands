@@ -21,6 +21,15 @@ public class DumpCommand extends GeometryCommand<GeometryOptions> {
     }
 
     /**
+     * Get the description of what the Command does
+     * @return The description of what the Command does
+     */
+    @Override
+    public String getDescription() {
+        return "Put each geometry from a GeometryCollection on it's own line.";
+    }
+
+    /**
      * Get the GeometryOptions
      * @return The GeometryOptions
      */

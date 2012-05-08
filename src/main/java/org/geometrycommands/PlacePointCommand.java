@@ -25,6 +25,15 @@ public class PlacePointCommand extends OtherGeometryCommand<OtherGeometryOptions
     }
 
     /**
+     * Get the description of what the Command does
+     * @return The description of what the Command does
+     */
+    @Override
+    public String getDescription() {
+        return "Place a point on the input linear geometry.";
+    }
+
+    /**
      * Get a new OtherGeometryOptions
      * @return A new OtherGeometryOptions
      */

@@ -25,6 +25,15 @@ public class SimilarityCommand extends OtherGeometryCommand<SimilarityOptions> {
     }
 
     /**
+     * Get the description of what the Command does
+     * @return The description of what the Command does
+     */
+    @Override
+    public String getDescription() {
+        return "Calculate the degree of similarity between two geometries.";
+    }
+
+    /**
      * Get a new SimilarityOptions
      * @return A new SimilarityOptions
      */
@@ -64,7 +73,7 @@ public class SimilarityCommand extends OtherGeometryCommand<SimilarityOptions> {
         /**
          * The algorithm (area/a or hausdorff/h)
          */
-        @Option(name = "-a", usage = "The algorithm (area/a or hausdorff/h)", required = true)
+        @Option(name = "-a", aliases = "--algorithm", usage = "The algorithm (area/a or hausdorff/h)", required = true)
         private String algorithm;
 
         /**

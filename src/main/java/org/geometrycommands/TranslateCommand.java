@@ -23,6 +23,15 @@ public class TranslateCommand extends GeometryCommand<TranslateOptions> {
     }
 
     /**
+     * Get the description of what the Command does
+     * @return The description of what the Command does
+     */
+    @Override
+    public String getDescription() {
+        return "Create a new geometry by applying the translate affine transformation on the input geometry.";
+    }
+
+    /**
      * Get a new TranslateOptions
      * @return The new TranslateOptions
      */
@@ -53,13 +62,13 @@ public class TranslateCommand extends GeometryCommand<TranslateOptions> {
         /**
          * The value to translate by in the x direction
          */
-        @Option(name = "-x", usage = "The value to translate by in the x direction", required = true)
+        @Option(name = "-x", aliases = "--xDistance", usage = "The value to translate by in the x direction", required = true)
         private double x;
 
         /**
          * The value to translate by in the y direction
          */
-        @Option(name = "-y", usage = "The value to translate by in the y direction", required = true)
+        @Option(name = "-y", aliases = "--yDistance", usage = "The value to translate by in the y direction", required = true)
         private double y;
 
         /**

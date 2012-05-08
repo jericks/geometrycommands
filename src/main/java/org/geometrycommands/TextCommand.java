@@ -24,6 +24,15 @@ public class TextCommand implements Command<TextOptions> {
     }
 
     /**
+     * Get the description of what the Command does
+     * @return The description of what the Command does
+     */
+    @Override
+    public String getDescription() {
+        return "Create a geometry from a string.";
+    }
+
+    /**
      * Get a new TextOptions
      * @return The new TextOptions
      */
@@ -54,19 +63,19 @@ public class TextCommand implements Command<TextOptions> {
         /**
          * The text
          */
-        @Option(name = "-t", usage = "The text", required = true)
+        @Option(name = "-t", aliases = "--text", usage = "The text", required = true)
         private String text;
 
         /**
          * The font name
          */
-        @Option(name = "-f", usage = "The font name", required = false)
+        @Option(name = "-f", aliases = "--fontName", usage = "The font name", required = false)
         private String fontName = FontGlyphReader.FONT_SANSERIF;
 
         /**
          * The font size
          */
-        @Option(name = "-s", usage = "The font size", required = false)
+        @Option(name = "-s", aliases = "--pointSize", usage = "The font size", required = false)
         private int pointSize = 24;
 
         /**

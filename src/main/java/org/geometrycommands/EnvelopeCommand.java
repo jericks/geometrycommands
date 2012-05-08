@@ -23,6 +23,15 @@ public class EnvelopeCommand extends GeometryCommand<EnvelopeOptions> {
     }
 
     /**
+     * Get the description of what the Command does
+     * @return The description of what the Command does
+     */
+    @Override
+    public String getDescription() {
+        return "Calculate the envelope of a Geometry.";
+    }
+
+    /**
      * Get a new EnvelopeOptions
      * @return A new EnvelopeOptions
      */
@@ -57,7 +66,7 @@ public class EnvelopeCommand extends GeometryCommand<EnvelopeOptions> {
         /**
          * The distance to expand the Envelope
          */
-        @Option(name = "-expandBy", usage = "The distance to expand the Envelope", required = false)
+        @Option(name = "-e", aliases = "--expandBy", usage = "The distance to expand the Envelope", required = false)
         private double expandBy;
 
         /**

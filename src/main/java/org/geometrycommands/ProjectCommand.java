@@ -40,6 +40,15 @@ public class ProjectCommand extends GeometryCommand<ProjectOptions> {
     }
 
     /**
+     * Get the description of what the Command does
+     * @return The description of what the Command does
+     */
+    @Override
+    public String getDescription() {
+        return "Project the input geometry from one coordinate system to another.";
+    }
+
+    /**
      * Get a new ProjectOptions
      * @return The new ProjectOptions
      */
@@ -210,13 +219,13 @@ public class ProjectCommand extends GeometryCommand<ProjectOptions> {
         /**
          * The source projection
          */
-        @Option(name = "-s", usage = "The source projection", required = true)
+        @Option(name = "-s", aliases = "--source", usage = "The source projection", required = true)
         private String source;
 
         /**
          * The target projection
          */
-        @Option(name = "-t", usage = "The target projection", required = true)
+        @Option(name = "-t", aliases = "--target", usage = "The target projection", required = true)
         private String target;
 
         /**

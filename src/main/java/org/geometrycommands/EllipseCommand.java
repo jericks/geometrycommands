@@ -21,6 +21,15 @@ public class EllipseCommand extends ShapeFactoryCommand<ShapeFactoryOptions> {
     }
 
     /**
+     * Get the description of what the Command does
+     * @return The description of what the Command does
+     */
+    @Override
+    public String getDescription() {
+        return "Create an ellipse of circle around the input geometry.";
+    }
+
+    /**
      * Get the ShapeFactoryOptions
      * @return The ShapeFactoryOptions
      */

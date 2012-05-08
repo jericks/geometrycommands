@@ -24,6 +24,15 @@ public class GetEndPointCommand extends GeometryCommand<GeometryOptions> {
     }
 
     /**
+     * Get the description of what the Command does
+     * @return The description of what the Command does
+     */
+    @Override
+    public String getDescription() {
+        return "Get the end point of a LineString or a MultiLineString.";
+    }
+
+    /**
      * Get the GeometryOptions
      * @return The GeometryOptions
      */

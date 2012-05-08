@@ -24,6 +24,15 @@ public class BufferCommand extends GeometryCommand<BufferOptions> {
     }
 
     /**
+     * Get the description of what the Command does
+     * @return The description of what the Command does
+     */
+    @Override
+    public String getDescription() {
+        return "Buffer a geometry by a distance.";
+    }
+
+    /**
      * Get a new BufferOptions
      * @return The new BufferOptions
      */
@@ -71,25 +80,25 @@ public class BufferCommand extends GeometryCommand<BufferOptions> {
         /**
          * The buffer distance
          */
-        @Option(name = "-d", usage = "The buffer distance", required = true)
+        @Option(name = "-d", aliases = "--distance", usage = "The buffer distance", required = true)
         private double distance;
 
         /**
          * The number of quadrant segments
          */
-        @Option(name = "-quadrantSegments", usage = "The number of quadrant segments", required = false)
+        @Option(name = "-q", aliases = "--quadrantSegments", usage = "The number of quadrant segments", required = false)
         private int quadrantSegements = 8;
 
         /**
          * The end cap style (round, flat/butt, square)
          */
-        @Option(name = "-endCapStyle", usage = "The end cap style (round, flat/butt, square)", required = false)
+        @Option(name = "-c", aliases = "--endCapStyle", usage = "The end cap style (round, flat/butt, square)", required = false)
         private String endCapStyle = "round";
 
         /**
          * The flag for whether the buffer should be single sided
          */
-        @Option(name = "-singleSided", usage = "The flag for whether the buffer should be single sided", required = false)
+        @Option(name = "-s", aliases = "--singleSided", usage = "The flag for whether the buffer should be single sided", required = false)
         private boolean singleSided;
 
         /**

@@ -22,6 +22,15 @@ public class EqualsCommand extends OtherGeometryCommand<EqualsOptions> {
     }
 
     /**
+     * Get the description of what the Command does
+     * @return The description of what the Command does
+     */
+    @Override
+    public String getDescription() {
+        return "Determine whether the first geometry equals the second geometry.";
+    }
+
+    /**
      * Get a new OtherGeometryOptions
      * @return A new OtherGeometryOptions
      */
@@ -66,13 +75,13 @@ public class EqualsCommand extends OtherGeometryCommand<EqualsOptions> {
         /**
          * The type of equals (exact, norm, topo)
          */
-        @Option(name = "-t", usage = "The type of equals (exact, norm, topo)", required = false)
+        @Option(name = "-t", aliases = "--type", usage = "The type of equals (exact, norm, topo)", required = false)
         private String type;
 
         /**
          * The tolerance when type is exact
          */
-        @Option(name = "-tolerance", usage = "The tolerance when type is exact", required = false)
+        @Option(name = "-l", aliases = "--tolerance", usage = "The tolerance when type is exact", required = false)
         private double tolerance;
 
         /**

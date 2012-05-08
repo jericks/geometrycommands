@@ -26,6 +26,15 @@ public class IsValidCommand extends GeometryCommand<IsValidOptions> {
     }
 
     /**
+     * Get the description of what the Command does
+     * @return The description of what the Command does
+     */
+    @Override
+    public String getDescription() {
+        return "Determine if the input geometry is valid or not.";
+    }
+
+    /**
      * Get a new IsValidOptions
      * @return A new IsValidOptions
      */
@@ -68,7 +77,7 @@ public class IsValidCommand extends GeometryCommand<IsValidOptions> {
         /**
          * The flag to show the validation error message, the error location, or validity (msg, loc, or val).
          */
-        @Option(name = "-t", usage = "The flag to show the validation error message, the error location, or validity (msg, loc, or val)", required = false)
+        @Option(name = "-t", aliases = "--type", usage = "The flag to show the validation error message, the error location, or validity (msg, loc, or val)", required = false)
         private String type = "val";
 
         /**

@@ -21,6 +21,15 @@ public class DiscreteHausdorffDistanceCommand extends OtherGeometryCommand<Other
     }
 
     /**
+     * Get the description of what the Command does
+     * @return The description of what the Command does
+     */
+    @Override
+    public String getDescription() {
+        return "Calculate the discrete hausdorff distance between the two input geometries.";
+    }
+
+    /**
      * Get a new OtherGeometryOptions
      * @return A new OtherGeometryOptions
      */

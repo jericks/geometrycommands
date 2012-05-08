@@ -23,6 +23,15 @@ public class ScaleCommand extends GeometryCommand<ScaleOptions> {
     }
 
     /**
+     * Get the description of what the Command does
+     * @return The description of what the Command does
+     */
+    @Override
+    public String getDescription() {
+        return "Create a new geometry by scaling the input geometry";
+    }
+
+    /**
      * Get a new ScaleOptions
      * @return The new ScaleOptions
      */
@@ -59,25 +68,25 @@ public class ScaleCommand extends GeometryCommand<ScaleOptions> {
         /**
          * The value to scale by in the x direction
          */
-        @Option(name = "-xScale", usage = "The value to scale by in the x direction", required = true)
+        @Option(name = "-s", aliases = "--xscale", usage = "The value to scale by in the x direction", required = true)
         private double xScale;
 
         /**
          * The value to scale by in the y direction
          */
-        @Option(name = "-yScale", usage = "The value to scale by in the y direction", required = true)
+        @Option(name = "-t", aliases = "--yscale", usage = "The value to scale by in the y direction", required = true)
         private double yScale;
 
         /**
          * The x-ordinate of the point to scale around
          */
-        @Option(name = "-x", usage = "The x-ordinate of the point to scale around", required = false)
+        @Option(name = "-x", aliases = "--xcoordinate", usage = "The x-ordinate of the point to scale around", required = false)
         private double x = Double.NaN;
 
         /**
          * The y-ordinate of the point to scale around
          */
-        @Option(name = "-y", usage = "The y-ordinate of the point to scale around", required = false)
+        @Option(name = "-y", aliases = "--ycoordinate", usage = "The y-ordinate of the point to scale around", required = false)
         private double y = Double.NaN;
 
         /**

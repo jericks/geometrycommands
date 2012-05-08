@@ -28,6 +28,15 @@ public class InterpolatePointCommand extends GeometryCommand<InterpolatePointOpt
     }
 
     /**
+     * Get the description of what the Command does
+     * @return The description of what the Command does
+     */
+    @Override
+    public String getDescription() {
+        return "Interpolate the location of a point on the input linear geometry given a percentage position.";
+    }
+
+    /**
      * Get a new InterpolatePointOptions
      * @return A new InterpolatePointOptions
      */
@@ -66,7 +75,7 @@ public class InterpolatePointCommand extends GeometryCommand<InterpolatePointOpt
         /**
          * The position between 0 and 1
          */
-        @Option(name = "-p", usage = "The position between 0 and 1", required = true)
+        @Option(name = "-p", aliases = "--position", usage = "The position between 0 and 1", required = true)
         private double position;
 
         /**

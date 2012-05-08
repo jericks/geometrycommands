@@ -25,6 +25,15 @@ public class SuperCircleCommand extends ShapeFactoryCommand<SuperCircleOptions> 
     }
 
     /**
+     * Get the description of what the Command does
+     * @return The description of what the Command does
+     */
+    @Override
+    public String getDescription() {
+        return "Create a super circle.";
+    }
+
+    /**
      * Get the SuperCircleOptions
      * @return The SuperCircleOptions
      */
@@ -62,7 +71,7 @@ public class SuperCircleCommand extends ShapeFactoryCommand<SuperCircleOptions> 
         /**
          * The positive power
          */
-        @Option(name = "-p", usage = "The positive power", required = false)
+        @Option(name = "-p", aliases = "--power", usage = "The positive power", required = false)
         private double power = 4.0;
 
         /**
