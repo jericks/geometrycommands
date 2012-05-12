@@ -71,7 +71,7 @@ public class SuperCircleCommand extends ShapeFactoryCommand<SuperCircleOptions> 
         /**
          * The positive power
          */
-        @Option(name = "-p", aliases = "--power", usage = "The positive power", required = false)
+        @Option(name = "-o", aliases = "--power", usage = "The positive power", required = false)
         private double power = 4.0;
 
         /**
