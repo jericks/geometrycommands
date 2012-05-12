@@ -1,0 +1,20 @@
+.TH "geom-reduceprecision" "1" "4 May 2012" "version 0.1"
+.SH NAME
+geom reduceprecision
+.SH DESCRIPTION
+Reduce the precision of the input geometry.
+.SH USAGE
+geom reduceprecision -g "POINT (-5.70068359375 45.1416015625)" -s 2 -t fixed 
+.SH OPTIONS
+-t --type: The precision model type (FIXED, FLOATING, FLOATING_SINGLE)
+.PP
+-s --scale: The precision model scale when type is FLOATING
+.PP
+-p --pointWise: Whether the precision reducer operates pointwise
+.PP
+-r --removeCollapsed: Whether the precision reducer should remove collapsed geometry
+.PP
+-g --geometry: The input geometry
+.PP
+--help : Print help message
+.PP

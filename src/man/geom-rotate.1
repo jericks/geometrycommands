@@ -1,0 +1,22 @@
+.TH "geom-rotate" "1" "4 May 2012" "version 0.1"
+.SH NAME
+geom rotate
+.SH DESCRIPTION
+Create a new geometry by rotating the input geometry
+.SH USAGE
+geom rotate -g "POLYGON ((0 0, 0 10, 10 10, 10 0, 0 0))" -t 0.785398163
+.SH OPTIONS
+-t --theta: The rotation angle, in radians
+.PP
+-x --xCoordinate: The x-ordinate of the rotation point
+.PP
+-y --yCoordinate: The y-ordinate of the rotation point
+.PP
+-s --sine: The sine of the rotation angle
+.PP
+-c --cosine: The cosine of the rotation angle
+.PP
+-g --geometry: The input geometry
+.PP
+--help : Print help message
+.PP

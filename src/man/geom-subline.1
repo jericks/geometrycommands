@@ -1,0 +1,16 @@
+.TH "geom-subline" "1" "4 May 2012" "version 0.1"
+.SH NAME
+geom subline
+.SH DESCRIPTION
+Extract a sub line from a linear geometry.
+.SH USAGE
+geom subline -g "LINESTRING (0 0, 10 10, 20 20)" -s 0.25 -e 0.75
+.SH OPTIONS
+-s startPosition: The start position between 0 and 1
+.PP
+-e endPosition: The end position between 0 and 1
+.PP
+-g --geometry: The input geometry
+.PP
+--help : Print help message
+.PP

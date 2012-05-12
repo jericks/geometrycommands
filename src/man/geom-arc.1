@@ -1,0 +1,28 @@
+.TH "geom-arc" "1" "4 May 2012" "version 0.1"
+.SH NAME
+geom arc
+.SH DESCRIPTION
+Creates an arc linestring from a start angle and an angle extent.
+.SH USAGE
+geom arc -g "POINT (100 100)" -d -a 45 -e 90 -w 50 -h 50 -p 10
+.SH OPTIONS
+-a --startAngle: The start angle (in radians)
+.PP
+-e --angleExtent: The size of angle (in radians)
+.PP
+-d -degrees: The flag for whether given angle measures are in degrees (true) or radians (false)
+.PP
+-w --width: The width
+.PP
+-h --height: The height
+.PP
+-p --numberOfPoints: The number of points
+.PP
+-r --rotation: The rotation
+.PP
+-c --center: The flag to use center (true) or the base (false)
+.PP
+-g --geometry: The input geometry
+.PP
+--help : Print help message
+.PP

@@ -1,0 +1,14 @@
+.TH "geom-delaunay" "1" "4 May 2012" "version 0.1"
+.SH NAME
+geom delaunay
+.SH DESCRIPTION
+Generate a delaunay triangulation of the input geometry.
+.SH USAGE
+geom buffer -g "POINT (1 1)" -d 100 | geom random -n 100 | geom delaunay
+.SH OPTIONS
+-c --conforming: The flag for whether to use conforming algorithm
+.PP
+-g --geometry: The input geometry
+.PP
+--help : Print help message
+.PP

@@ -1,0 +1,16 @@
+.TH "geom-similarity" "1" "4 May 2012" "version 0.1"
+.SH NAME
+geom similarity
+.SH DESCRIPTION
+Calculate the degree of similarity between two geometries.
+.SH USAGE
+geom similarity -g "POLYGON ((0 0, 0 10, 10 10, 10 0, 0 0))" -o "POLYGON ((2 2, 2 14, 14 14, 14 2, 2 2))" -a "area" 
+.SH OPTIONS
+-a --algorithm: The algorithm (area/a or hausdorff/h)
+.PP
+-o --otherGeometry: The other geometry
+.PP
+-g --geometry: The input geometry
+.PP
+--help : Print help message
+.PP
