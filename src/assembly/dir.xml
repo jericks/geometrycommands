@@ -23,6 +23,13 @@
                 <include>bin/geom*</include>
             </includes>
         </fileSet>
+		<fileSet>
+			<directory>${project.basedir}/src/man</directory>
+			<outputDirectory>/man</outputDirectory>
+			<includes>
+				<include>*</include>
+			</includes>
+		</fileSet>
         <fileSet>
             <outputDirectory>/</outputDirectory>
             <includes>
