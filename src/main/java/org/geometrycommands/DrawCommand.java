@@ -204,6 +204,20 @@ public class DrawCommand extends GeometryCommand<DrawOptions> {
             env = geometry.getEnvelopeInternal();
             env.expandBy(env.getWidth() * 0.1);
         }
+        if (env.getWidth() == 0 || env.getHeight() == 0) {
+            if (env.getHeight() > 0) {
+                double h = env.getHeight() / 2.0;
+                env = new Envelope(env.getMinX() - h, env.getMaxX() + h, env.getMinY(), env.getMaxY());
+            }
+            else if (env.getWidth() > 0) {
+                double w = env.getWidth() / 2.0;
+                env = new Envelope(env.getMinX(), env.getMaxX(), env.getMinY() - w, env.getMaxY() + w);
+            }
+            else {
+                env = geometry.getFactory().createPoint(new Coordinate(env.getMinX(), env.getMinY())).buffer(0.1).getEnvelopeInternal();
+            }
+            env.expandBy(env.getWidth() * 0.1);
+        }
         return env;
     }
 
@@ -263,7 +277,7 @@ public class DrawCommand extends GeometryCommand<DrawOptions> {
         /**
          * The marker size
          */
-        @Option(name = "-s", aliases = "--size", usage = "The marker size", required = false)
+        @Option(name = "-z", aliases = "--size", usage = "The marker size", required = false)
         private double markerSize = 8;
 
         /**
@@ -294,15 +308,22 @@ public class DrawCommand extends GeometryCommand<DrawOptions> {
             this.bounds = bounds;
         }
 
+        /**
+         * Get the background image
+         * @return The background image
+         */
         public String getBackgroundImage() {
             return backgroundImage;
         }
 
+        /**
+         * Set the background image
+         * @param backgroundImage The background image
+         */
         public void setBackgroundImage(String backgroundImage) {
             this.backgroundImage = backgroundImage;
         }
 
-        
         /**
          * Get the flag for drawing coordinates or not
          * @return The flag for drawing coordinates or not
