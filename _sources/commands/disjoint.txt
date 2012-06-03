@@ -1,0 +1,26 @@
+disjoint
+========
+
+**Name**:
+
+geom disjoint
+
+**Description**:
+
+Determine whether the first geometry is disjoint from the other geometry.
+
+**Arguments**:
+
+   * -o --otherGeometry: The other geometry
+
+   * -g --geometry: The input geometry
+
+   * --help : Print help message
+
+
+
+**Example**:::
+
+    >>>geom disjoint -g "POLYGON ((0 0, 0 10, 10 10, 10 0, 0 0))" -o "LINESTRING (15 15, 20 20)"
+
+    true

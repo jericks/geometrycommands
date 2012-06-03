@@ -1,0 +1,136 @@
+
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>randomwalk &mdash; Geometry Commands 0.1 documentation</title>
+    
+    <link rel="stylesheet" href="../_static/default.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../',
+        VERSION:     '0.1',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="../_static/jquery.js"></script>
+    <script type="text/javascript" src="../_static/underscore.js"></script>
+    <script type="text/javascript" src="../_static/doctools.js"></script>
+    <link rel="top" title="Geometry Commands 0.1 documentation" href="../index.html" />
+    <link rel="up" title="Geometry Commands" href="../commands.html" />
+    <link rel="next" title="rectangle" href="rectangle.html" />
+    <link rel="prev" title="random" href="random.html" /> 
+  </head>
+  <body>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="rectangle.html" title="rectangle"
+             accesskey="N">next</a> |</li>
+        <li class="right" >
+          <a href="random.html" title="random"
+             accesskey="P">previous</a> |</li>
+        <li><a href="../index.html">Geometry Commands 0.1 documentation</a> &raquo;</li>
+          <li><a href="../commands.html" accesskey="U">Geometry Commands</a> &raquo;</li> 
+      </ul>
+    </div>  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body">
+            
+  <div class="section" id="randomwalk">
+<h1>randomwalk<a class="headerlink" href="#randomwalk" title="Permalink to this headline">¶</a></h1>
+<p><strong>Name</strong>:</p>
+<p>geom randomwalk</p>
+<p><strong>Description</strong>:</p>
+<p>Generate a random walk as a linestring.</p>
+<p><strong>Arguments</strong>:</p>
+<blockquote>
+<div><ul class="simple">
+<li>-n &#8211;number: The number of walks</li>
+<li>-d &#8211;distance: The distance between Coordinates</li>
+<li>-p &#8211;probability: The probability of changing direction</li>
+<li>-a &#8211;angle: The angle increment (in degrees) when changing direction</li>
+<li>-g &#8211;geometry: The input geometry</li>
+<li>&#8211;help : Print help message</li>
+</ul>
+</div></blockquote>
+<p><strong>Example</strong>::</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="go">&gt;&gt;&gt;geom randomwalk -n 100 -a 45 -d 10 -g &quot;POINT (1 1)&quot;</span>
+
+<span class="go">LINESTRING (1 1, -6.071067811865475 8.071067811865476, -16.071067811865476 8.071067811865477, -16.07106781186548 -1.9289321881345227, -9.000000000000004 5.142135623730952, -9.000000000000004 15.142135623730951, -16.07106781186548 22.213203435596427, -26.07106781186548 22.213203435596427, -36.071067811865476 22.213203435596427, -43.14213562373095 29.284271247461902, -33.14213562373095 29.284271247461902, -33.14213562373095 39.2842712474619, -26.071067811865476 32.21320343559643, -19 25.14213562373095, -11.928932188134524 32.21320343559643, -4.857864376269051 25.14213562373095, -4.8578643762690525 15.142135623730951, 2.213203435596421 8.071067811865474, 9.284271247461897 15.142135623730947, -0.7157287525381033 15.14213562373095, -0.7157287525381026 25.14213562373095, -10.715728752538103 25.14213562373095, -10.715728752538105 15.142135623730951, -10.715728752538107 5.142135623730951, -10.715728752538109 -4.857864376269049, -20.71572875253811 -4.857864376269048, -13.644660940672633 2.2132034355964265, -13.644660940672633 12.213203435596427, -6.573593128807158 19.284271247461902, -16.573593128807158 19.284271247461902, -23.644660940672633 26.355339059327378, -23.644660940672637 16.355339059327378, -16.57359312880716 23.426406871192853, -26.57359312880716 23.426406871192853, -33.64466094067264 30.49747468305833, -43.64466094067264 30.49747468305833, -43.64466094067264 20.49747468305833, -43.64466094067264 10.497474683058329, -50.71572875253811 17.568542494923804, -50.71572875253811 27.568542494923804, -40.71572875253811 27.568542494923804, -40.71572875253811 17.568542494923804, -47.78679656440359 24.63961030678928, -40.71572875253811 31.710678118654755, -50.71572875253811 31.710678118654755, -50.71572875253811 21.710678118654755, -40.71572875253811 21.710678118654755, -40.71572875253811 31.710678118654755, -50.71572875253811 31.710678118654755, -43.64466094067264 24.63961030678928, -36.57359312880716 17.568542494923804, -29.502525316941686 24.63961030678928, -22.43145750507621 31.710678118654755, -22.431457505076214 21.710678118654755, -15.36038969321074 14.639610306789278, -5.36038969321074 14.639610306789278, 4.63961030678926 14.639610306789278, 11.710678118654734 7.5685424949238005, 1.7106781186547337 7.568542494923801, -8.289321881345266 7.568542494923802, -15.360389693210742 14.639610306789278, -15.360389693210744 4.639610306789278, -8.28932188134527 -2.4314575050761995, 1.7106781186547302 -2.4314575050761995, -5.360389693210744 4.639610306789276, 4.639610306789256 4.639610306789276, -2.4314575050762217 -2.4314575050761986, 7.568542494923778 -2.4314575050761986, 7.5685424949237765 -12.4314575050762, 14.639610306789251 -5.360389693210725, 21.710678118654727 1.7106781186547497, 21.710678118654727 11.71067811865475, 28.781745930520202 18.781745930520223, 35.85281374238568 11.710678118654746, 42.92388155425115 18.78174593052022, 35.85281374238568 25.852813742385695, 35.85281374238568 35.85281374238569, 25.852813742385678 35.85281374238569, 25.852813742385674 25.852813742385692, 32.92388155425115 32.92388155425117, 32.92388155425115 22.923881554251167, 39.99494936611663 15.85281374238569, 47.066017177982104 8.781745930520213, 47.066017177982104 18.781745930520213, 54.13708498984758 25.85281374238569, 44.13708498984758 25.85281374238569, 37.066017177982104 18.781745930520213, 37.066017177982104 8.781745930520213, 44.13708498984758 15.852813742385688, 44.13708498984758 25.85281374238569, 54.13708498984758 25.85281374238569, 54.13708498984758 35.85281374238569, 61.208152801713055 42.92388155425117, 54.13708498984758 49.99494936611664, 61.208152801713055 57.06601717798212, 71.20815280171306 57.06601717798212, 81.20815280171306 57.06601717798212, 74.13708498984758 64.1370849898476, 67.0660171779821 57.06601717798212, 59.99494936611663 49.99494936611664, 49.99494936611663 49.99494936611664)</span>
+</pre></div>
+</div>
+</div>
+
+
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar">
+        <div class="sphinxsidebarwrapper">
+  <h4>Previous topic</h4>
+  <p class="topless"><a href="random.html"
+                        title="previous chapter">random</a></p>
+  <h4>Next topic</h4>
+  <p class="topless"><a href="rectangle.html"
+                        title="next chapter">rectangle</a></p>
+  <h3>This Page</h3>
+  <ul class="this-page-menu">
+    <li><a href="../_sources/commands/randomwalk.txt"
+           rel="nofollow">Show Source</a></li>
+  </ul>
+<div id="searchbox" style="display: none">
+  <h3>Quick search</h3>
+    <form class="search" action="../search.html" method="get">
+      <input type="text" name="q" />
+      <input type="submit" value="Go" />
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+    <p class="searchtip" style="font-size: 90%">
+    Enter search terms or a module, class or function name.
+    </p>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../genindex.html" title="General Index"
+             >index</a></li>
+        <li class="right" >
+          <a href="rectangle.html" title="rectangle"
+             >next</a> |</li>
+        <li class="right" >
+          <a href="random.html" title="random"
+             >previous</a> |</li>
+        <li><a href="../index.html">Geometry Commands 0.1 documentation</a> &raquo;</li>
+          <li><a href="../commands.html" >Geometry Commands</a> &raquo;</li> 
+      </ul>
+    </div>
+    <div class="footer">
+        &copy; Copyright 2012, Jared Erickson.
+      Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 1.1.3.
+    </div>
+  </body>
+</html>

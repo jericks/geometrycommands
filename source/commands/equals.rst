@@ -1,0 +1,28 @@
+equals
+======
+
+**Name**:
+
+geom equals
+
+**Description**:
+
+Determine whether the first geometry equals the second geometry.
+
+**Arguments**:
+
+   * -t --type: The type of equals (exact, norm, topo)
+
+   * -l --tolerance: The tolerance when type is exact
+
+   * -o --otherGeometry: The other geometry
+
+   * -g --geometry: The input geometry
+
+   * --help : Print help message
+
+
+
+**Example**:::
+
+    geom equals -g "POLYGON ((0 0, 0 10, 10 10, 10 0, 0 0))" -o "POLYGON ((0 0, 0 10, 10 10, 10 0, 0 0))"

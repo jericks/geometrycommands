@@ -1,0 +1,133 @@
+
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>kochsnowflake &mdash; Geometry Commands 0.1 documentation</title>
+    
+    <link rel="stylesheet" href="../_static/default.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../',
+        VERSION:     '0.1',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="../_static/jquery.js"></script>
+    <script type="text/javascript" src="../_static/underscore.js"></script>
+    <script type="text/javascript" src="../_static/doctools.js"></script>
+    <link rel="top" title="Geometry Commands 0.1 documentation" href="../index.html" />
+    <link rel="up" title="Geometry Commands" href="../commands.html" />
+    <link rel="next" title="linemerge" href="linemerge.html" />
+    <link rel="prev" title="iswithindistance" href="iswithindistance.html" /> 
+  </head>
+  <body>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="linemerge.html" title="linemerge"
+             accesskey="N">next</a> |</li>
+        <li class="right" >
+          <a href="iswithindistance.html" title="iswithindistance"
+             accesskey="P">previous</a> |</li>
+        <li><a href="../index.html">Geometry Commands 0.1 documentation</a> &raquo;</li>
+          <li><a href="../commands.html" accesskey="U">Geometry Commands</a> &raquo;</li> 
+      </ul>
+    </div>  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body">
+            
+  <div class="section" id="kochsnowflake">
+<h1>kochsnowflake<a class="headerlink" href="#kochsnowflake" title="Permalink to this headline">¶</a></h1>
+<p><strong>Name</strong>:</p>
+<p>geom kochsnowflake</p>
+<p><strong>Description</strong>:</p>
+<p>Generate a koch snow flake.</p>
+<p><strong>Arguments</strong>:</p>
+<blockquote>
+<div><ul class="simple">
+<li>-n &#8211;number: The number of points.</li>
+<li>-g &#8211;geometry: The input geometry</li>
+<li>&#8211;help : Print help message</li>
+</ul>
+</div></blockquote>
+<p><strong>Example</strong>::</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="go">&gt;&gt;&gt;geom kochsnowflake -g &quot;POLYGON ((0 0, 0 10, 10 10, 10 0, 0 0))&quot; -n 100</span>
+
+<span class="go">POLYGON ((0.5555555555555555 3.8490017945975046, 0.0000000000000003 4.811252243246881, 1.111111111111111 4.81125224324688, 1.6666666666666665 5.773502691896256, 1.1111111111111112 6.735753140545633, 0.0000000000000001 6.735753140545633, 0.5555555555555558 7.698003589195009, 0.0000000000000004 8.660254037844386, 1.1111111111111112 8.660254037844386, 1.6666666666666667 9.622504486493762, 2.222222222222222 8.660254037844386, 3.333333333333333 8.660254037844386, 3.8888888888888884 9.622504486493762, 3.3333333333333326 10.584754935143138, 4.444444444444445 10.584754935143138, 5 11.547005383792515, 5.555555555555555 10.584754935143138, 6.666666666666666 10.584754935143136, 6.111111111111111 9.622504486493762, 6.666666666666666 8.660254037844386, 7.777777777777777 8.660254037844386, 8.333333333333332 9.622504486493762, 8.88888888888889 8.660254037844386, 10 8.660254037844386, 9.444444444444445 7.69800358919501, 9.999999999999998 6.735753140545634, 8.888888888888888 6.735753140545635, 8.333333333333332 5.773502691896258, 8.888888888888888 4.811252243246882, 10 4.811252243246882, 9.444444444444445 3.8490017945975055, 10 2.8867513459481287, 8.88888888888889 2.8867513459481287, 8.333333333333334 1.9245008972987525, 7.777777777777779 2.8867513459481287, 6.666666666666667 2.8867513459481287, 6.111111111111112 1.9245008972987525, 6.666666666666667 0.9622504486493761, 5.555555555555555 0.9622504486493764, 5 0, 4.444444444444445 0.9622504486493761, 3.333333333333334 0.9622504486493764, 3.8888888888888893 1.9245008972987523, 3.333333333333334 2.8867513459481287, 2.2222222222222228 2.8867513459481287, 1.666666666666667 1.9245008972987523, 1.1111111111111116 2.8867513459481287, 0 2.8867513459481287, 0.5555555555555555 3.8490017945975046))</span>
+</pre></div>
+</div>
+</div>
+
+
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar">
+        <div class="sphinxsidebarwrapper">
+  <h4>Previous topic</h4>
+  <p class="topless"><a href="iswithindistance.html"
+                        title="previous chapter">iswithindistance</a></p>
+  <h4>Next topic</h4>
+  <p class="topless"><a href="linemerge.html"
+                        title="next chapter">linemerge</a></p>
+  <h3>This Page</h3>
+  <ul class="this-page-menu">
+    <li><a href="../_sources/commands/kochsnowflake.txt"
+           rel="nofollow">Show Source</a></li>
+  </ul>
+<div id="searchbox" style="display: none">
+  <h3>Quick search</h3>
+    <form class="search" action="../search.html" method="get">
+      <input type="text" name="q" />
+      <input type="submit" value="Go" />
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+    <p class="searchtip" style="font-size: 90%">
+    Enter search terms or a module, class or function name.
+    </p>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../genindex.html" title="General Index"
+             >index</a></li>
+        <li class="right" >
+          <a href="linemerge.html" title="linemerge"
+             >next</a> |</li>
+        <li class="right" >
+          <a href="iswithindistance.html" title="iswithindistance"
+             >previous</a> |</li>
+        <li><a href="../index.html">Geometry Commands 0.1 documentation</a> &raquo;</li>
+          <li><a href="../commands.html" >Geometry Commands</a> &raquo;</li> 
+      </ul>
+    </div>
+    <div class="footer">
+        &copy; Copyright 2012, Jared Erickson.
+      Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 1.1.3.
+    </div>
+  </body>
+</html>

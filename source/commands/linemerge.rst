@@ -1,0 +1,22 @@
+linemerge
+=========
+
+**Name**:
+
+geom linemerge
+
+**Description**:
+
+Merge lines of the input geoemtry together.
+
+**Arguments**:
+
+   * -g --geometry: The input geometry
+
+   * --help : Print help message
+
+
+
+**Example**:::
+
+    geom linemerge -g "MULTILINESTRING((-29 -27,-30 -29.7,-36 -31,-45 -33),(-45 -33,-46 -32))"

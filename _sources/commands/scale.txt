@@ -1,0 +1,32 @@
+scale
+=====
+
+**Name**:
+
+geom scale
+
+**Description**:
+
+Create a new geometry by scaling the input geometry
+
+**Arguments**:
+
+   * -s --xscale: The value to scale by in the x direction
+
+   * -t --yscale: The value to scale by in the y direction
+
+   * -x --xcoordinate: The x-ordinate of the point to scale around
+
+   * -y --ycoordinate: The y-ordinate of the point to scale around
+
+   * -g --geometry: The input geometry
+
+   * --help : Print help message
+
+
+
+**Example**:::
+
+    >>>geom scale -g "POLYGON ((0 0, 0 10, 10 10, 10 0, 0 0))" -s 2 -t 5
+
+    POLYGON ((0 0, 0 50, 20 50, 20 0, 0 0))

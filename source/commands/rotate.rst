@@ -1,0 +1,32 @@
+rotate
+======
+
+**Name**:
+
+geom rotate
+
+**Description**:
+
+Create a new geometry by rotating the input geometry
+
+**Arguments**:
+
+   * -t --theta: The rotation angle, in radians
+
+   * -x --xCoordinate: The x-ordinate of the rotation point
+
+   * -y --yCoordinate: The y-ordinate of the rotation point
+
+   * -s --sine: The sine of the rotation angle
+
+   * -c --cosine: The cosine of the rotation angle
+
+   * -g --geometry: The input geometry
+
+   * --help : Print help message
+
+
+
+**Example**:::
+
+    geom rotate -g "POLYGON ((0 0, 0 10, 10 10, 10 0, 0 0))" -t 0.785398163

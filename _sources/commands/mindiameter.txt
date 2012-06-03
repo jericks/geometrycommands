@@ -1,0 +1,24 @@
+mindiameter
+===========
+
+**Name**:
+
+geom mindiameter
+
+**Description**:
+
+Calculate the minimum diameter of the input geometry.
+
+**Arguments**:
+
+   * -g --geometry: The input geometry
+
+   * --help : Print help message
+
+
+
+**Example**:::
+
+    >>>geom mindiameter -g "POLYGON ((16 51, 7 53, 12 46, 5 41, 12 41, 16 51))"
+
+    LINESTRING (15.448275862068966 49.62068965517241, 7 53)

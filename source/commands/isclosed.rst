@@ -1,0 +1,22 @@
+isclosed
+========
+
+**Name**:
+
+geom isclosed
+
+**Description**:
+
+Determine if the input geometry is closed or not.
+
+**Arguments**:
+
+   * -g --geometry: The input geometry
+
+   * --help : Print help message
+
+
+
+**Example**:::
+
+    geom isclosed -g "LINESTRING (1 1, 1 5, 5 5, 5 1, 1 1)"

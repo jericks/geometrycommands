@@ -1,0 +1,140 @@
+
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>arc &mdash; Geometry Commands 0.1 documentation</title>
+    
+    <link rel="stylesheet" href="../_static/default.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../',
+        VERSION:     '0.1',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="../_static/jquery.js"></script>
+    <script type="text/javascript" src="../_static/underscore.js"></script>
+    <script type="text/javascript" src="../_static/doctools.js"></script>
+    <link rel="top" title="Geometry Commands 0.1 documentation" href="../index.html" />
+    <link rel="up" title="Geometry Commands" href="../commands.html" />
+    <link rel="next" title="arcpoly" href="arcpoly.html" />
+    <link rel="prev" title="list" href="list.html" /> 
+  </head>
+  <body>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="arcpoly.html" title="arcpoly"
+             accesskey="N">next</a> |</li>
+        <li class="right" >
+          <a href="list.html" title="list"
+             accesskey="P">previous</a> |</li>
+        <li><a href="../index.html">Geometry Commands 0.1 documentation</a> &raquo;</li>
+          <li><a href="../commands.html" accesskey="U">Geometry Commands</a> &raquo;</li> 
+      </ul>
+    </div>  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body">
+            
+  <div class="section" id="arc">
+<h1>arc<a class="headerlink" href="#arc" title="Permalink to this headline">¶</a></h1>
+<p><strong>Name</strong>:</p>
+<p>geom arc</p>
+<p><strong>Description</strong>:</p>
+<p>Creates an arc linestring from a start angle and an angle extent.</p>
+<p><strong>Arguments</strong>:</p>
+<blockquote>
+<div><ul class="simple">
+<li>-a &#8211;startAngle: The start angle (in radians)</li>
+<li>-e &#8211;angleExtent: The size of angle (in radians)</li>
+<li>-d -degrees: The flag for whether given angle measures are in degrees (true) or radians (false)</li>
+<li>-w &#8211;width: The width</li>
+<li>-h &#8211;height: The height</li>
+<li>-p &#8211;numberOfPoints: The number of points</li>
+<li>-r &#8211;rotation: The rotation</li>
+<li>-c &#8211;center: The flag to use center (true) or the base (false)</li>
+<li>-g &#8211;geometry: The input geometry</li>
+<li>&#8211;help : Print help message</li>
+</ul>
+</div></blockquote>
+<p><strong>Example</strong>::</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="go">&gt;&gt;&gt;geom arc -g &quot;POINT (100 100)&quot; -d -a 45 -e 90 -w 50 -h 50 -p 10</span>
+
+<span class="go">LINESTRING (142.6776695296637 142.6776695296637, 139.33941090877616 145.4788011072248, 135.56545654351748 147.65769467591625, 131.47047612756302 149.1481456572267, 127.17889356869145 149.90486745229364, 122.82110643130855 149.90486745229364, 118.52952387243698 149.1481456572267, 114.43454345648252 147.65769467591625, 110.66058909122384 145.4788011072248, 107.32233047033631 142.6776695296637)</span>
+</pre></div>
+</div>
+</div>
+
+
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar">
+        <div class="sphinxsidebarwrapper">
+  <h4>Previous topic</h4>
+  <p class="topless"><a href="list.html"
+                        title="previous chapter">list</a></p>
+  <h4>Next topic</h4>
+  <p class="topless"><a href="arcpoly.html"
+                        title="next chapter">arcpoly</a></p>
+  <h3>This Page</h3>
+  <ul class="this-page-menu">
+    <li><a href="../_sources/commands/arc.txt"
+           rel="nofollow">Show Source</a></li>
+  </ul>
+<div id="searchbox" style="display: none">
+  <h3>Quick search</h3>
+    <form class="search" action="../search.html" method="get">
+      <input type="text" name="q" />
+      <input type="submit" value="Go" />
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+    <p class="searchtip" style="font-size: 90%">
+    Enter search terms or a module, class or function name.
+    </p>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../genindex.html" title="General Index"
+             >index</a></li>
+        <li class="right" >
+          <a href="arcpoly.html" title="arcpoly"
+             >next</a> |</li>
+        <li class="right" >
+          <a href="list.html" title="list"
+             >previous</a> |</li>
+        <li><a href="../index.html">Geometry Commands 0.1 documentation</a> &raquo;</li>
+          <li><a href="../commands.html" >Geometry Commands</a> &raquo;</li> 
+      </ul>
+    </div>
+    <div class="footer">
+        &copy; Copyright 2012, Jared Erickson.
+      Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 1.1.3.
+    </div>
+  </body>
+</html>

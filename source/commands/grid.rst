@@ -1,0 +1,26 @@
+grid
+====
+
+**Name**:
+
+geom grid
+
+**Description**:
+
+Calculate a grid around the input geometry.
+
+**Arguments**:
+
+   * -c --columns: The number of columns
+
+   * -r --rows: The number of rows
+
+   * -g --geometry: The input geometry
+
+   * --help : Print help message
+
+
+
+**Example**:::
+
+    geom grid -g "POLYGON ((0 0, 0 10, 10 10, 10 0, 0 0))" -c 10 -r 10

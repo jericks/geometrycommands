@@ -1,0 +1,136 @@
+
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>scale &mdash; Geometry Commands 0.1 documentation</title>
+    
+    <link rel="stylesheet" href="../_static/default.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../',
+        VERSION:     '0.1',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="../_static/jquery.js"></script>
+    <script type="text/javascript" src="../_static/underscore.js"></script>
+    <script type="text/javascript" src="../_static/doctools.js"></script>
+    <link rel="top" title="Geometry Commands 0.1 documentation" href="../index.html" />
+    <link rel="up" title="Geometry Commands" href="../commands.html" />
+    <link rel="next" title="shear" href="shear.html" />
+    <link rel="prev" title="rotate" href="rotate.html" /> 
+  </head>
+  <body>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="shear.html" title="shear"
+             accesskey="N">next</a> |</li>
+        <li class="right" >
+          <a href="rotate.html" title="rotate"
+             accesskey="P">previous</a> |</li>
+        <li><a href="../index.html">Geometry Commands 0.1 documentation</a> &raquo;</li>
+          <li><a href="../commands.html" accesskey="U">Geometry Commands</a> &raquo;</li> 
+      </ul>
+    </div>  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body">
+            
+  <div class="section" id="scale">
+<h1>scale<a class="headerlink" href="#scale" title="Permalink to this headline">¶</a></h1>
+<p><strong>Name</strong>:</p>
+<p>geom scale</p>
+<p><strong>Description</strong>:</p>
+<p>Create a new geometry by scaling the input geometry</p>
+<p><strong>Arguments</strong>:</p>
+<blockquote>
+<div><ul class="simple">
+<li>-s &#8211;xscale: The value to scale by in the x direction</li>
+<li>-t &#8211;yscale: The value to scale by in the y direction</li>
+<li>-x &#8211;xcoordinate: The x-ordinate of the point to scale around</li>
+<li>-y &#8211;ycoordinate: The y-ordinate of the point to scale around</li>
+<li>-g &#8211;geometry: The input geometry</li>
+<li>&#8211;help : Print help message</li>
+</ul>
+</div></blockquote>
+<p><strong>Example</strong>::</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="go">&gt;&gt;&gt;geom scale -g &quot;POLYGON ((0 0, 0 10, 10 10, 10 0, 0 0))&quot; -s 2 -t 5</span>
+
+<span class="go">POLYGON ((0 0, 0 50, 20 50, 20 0, 0 0))</span>
+</pre></div>
+</div>
+</div>
+
+
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar">
+        <div class="sphinxsidebarwrapper">
+  <h4>Previous topic</h4>
+  <p class="topless"><a href="rotate.html"
+                        title="previous chapter">rotate</a></p>
+  <h4>Next topic</h4>
+  <p class="topless"><a href="shear.html"
+                        title="next chapter">shear</a></p>
+  <h3>This Page</h3>
+  <ul class="this-page-menu">
+    <li><a href="../_sources/commands/scale.txt"
+           rel="nofollow">Show Source</a></li>
+  </ul>
+<div id="searchbox" style="display: none">
+  <h3>Quick search</h3>
+    <form class="search" action="../search.html" method="get">
+      <input type="text" name="q" />
+      <input type="submit" value="Go" />
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+    <p class="searchtip" style="font-size: 90%">
+    Enter search terms or a module, class or function name.
+    </p>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../genindex.html" title="General Index"
+             >index</a></li>
+        <li class="right" >
+          <a href="shear.html" title="shear"
+             >next</a> |</li>
+        <li class="right" >
+          <a href="rotate.html" title="rotate"
+             >previous</a> |</li>
+        <li><a href="../index.html">Geometry Commands 0.1 documentation</a> &raquo;</li>
+          <li><a href="../commands.html" >Geometry Commands</a> &raquo;</li> 
+      </ul>
+    </div>
+    <div class="footer">
+        &copy; Copyright 2012, Jared Erickson.
+      Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 1.1.3.
+    </div>
+  </body>
+</html>

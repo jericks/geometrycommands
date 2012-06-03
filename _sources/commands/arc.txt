@@ -1,0 +1,40 @@
+arc
+===
+
+**Name**:
+
+geom arc
+
+**Description**:
+
+Creates an arc linestring from a start angle and an angle extent.
+
+**Arguments**:
+
+   * -a --startAngle: The start angle (in radians)
+
+   * -e --angleExtent: The size of angle (in radians)
+
+   * -d -degrees: The flag for whether given angle measures are in degrees (true) or radians (false)
+
+   * -w --width: The width
+
+   * -h --height: The height
+
+   * -p --numberOfPoints: The number of points
+
+   * -r --rotation: The rotation
+
+   * -c --center: The flag to use center (true) or the base (false)
+
+   * -g --geometry: The input geometry
+
+   * --help : Print help message
+
+
+
+**Example**:::
+
+    >>>geom arc -g "POINT (100 100)" -d -a 45 -e 90 -w 50 -h 50 -p 10
+
+    LINESTRING (142.6776695296637 142.6776695296637, 139.33941090877616 145.4788011072248, 135.56545654351748 147.65769467591625, 131.47047612756302 149.1481456572267, 127.17889356869145 149.90486745229364, 122.82110643130855 149.90486745229364, 118.52952387243698 149.1481456572267, 114.43454345648252 147.65769467591625, 110.66058909122384 145.4788011072248, 107.32233047033631 142.6776695296637)

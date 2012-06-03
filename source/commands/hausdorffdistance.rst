@@ -1,0 +1,24 @@
+hausdorffdistance
+=================
+
+**Name**:
+
+geom hausdorffdistance
+
+**Description**:
+
+Calculate the discrete hausdorff distance between the two input geometries.
+
+**Arguments**:
+
+   * -o --otherGeometry: The other geometry
+
+   * -g --geometry: The input geometry
+
+   * --help : Print help message
+
+
+
+**Example**:::
+
+    geom hausdorffdistance -g "POLYGON ((0 0, 0 10, 10 10, 10 0, 0 0))" -o "POLYGON ((5 5, 5 15, 15 15, 15 5, 5 5))"

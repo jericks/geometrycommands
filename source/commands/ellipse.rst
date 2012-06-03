@@ -1,0 +1,32 @@
+ellipse
+=======
+
+**Name**:
+
+geom ellipse
+
+**Description**:
+
+Create an ellipse of circle around the input geometry.
+
+**Arguments**:
+
+   * -w --width: The width
+
+   * -h --height: The height
+
+   * -p --numberOfPoints: The number of points
+
+   * -r --rotation: The rotation
+
+   * -c --center: The flag to use center (true) or the base (false)
+
+   * -g --geometry: The input geometry
+
+   * --help : Print help message
+
+
+
+**Example**:::
+
+    geom ellipse -g "POINT (100 100)" -p 30 -w 500 -h 500

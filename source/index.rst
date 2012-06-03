@@ -6,11 +6,14 @@
 Welcome to Geometry Commands's documentation!
 =============================================
 
+Geometry Commands is a command line application for processing geometry.
+
 Contents:
 
 .. toctree::
    :maxdepth: 2
 
+   commands.rst
 
 
 Indices and tables

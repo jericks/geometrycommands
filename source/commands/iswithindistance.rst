@@ -1,0 +1,26 @@
+iswithindistance
+================
+
+**Name**:
+
+geom iswithindistance
+
+**Description**:
+
+Determine if the input geometry is within the given distance of the other geometry.
+
+**Arguments**:
+
+   * -d --distance: The distance
+
+   * -o --otherGeometry: The other geometry
+
+   * -g --geometry: The input geometry
+
+   * --help : Print help message
+
+
+
+**Example**:::
+
+    geom iswithindistance -g "POINT (1 1)" -o "POINT (20 23)" -d 30
