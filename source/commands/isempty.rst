@@ -17,6 +17,6 @@ Determine if the input geometry is empty or not.
 
 
 
-**Example**:::
+**Example**::
 
     geom isempty -g "POINT EMPTY"

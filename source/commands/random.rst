@@ -25,6 +25,6 @@ Generate random points inside the input geometry.
 
 
 
-**Example**:::
+**Example**::
 
     geom random -g "POLYGON ((0 0, 0 10, 10 10, 10 0, 0 0))" -n 100

@@ -19,6 +19,6 @@ Calculate the symetric difference between two geometries
 
 
 
-**Example**:::
+**Example**::
 
     geom symdifference -g "POLYGON ((0 0, 0 10, 10 10, 10 0, 0 0))" -o "POLYGON ((5 5, 5 20, 20 20, 20 5, 5 5))"

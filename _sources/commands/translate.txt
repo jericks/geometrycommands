@@ -21,6 +21,6 @@ Create a new geometry by applying the translate affine transformation on the inp
 
 
 
-**Example**:::
+**Example**::
 
     geom translate -g "POLYGON ((0 0, 0 10, 10 10, 10 0, 0 0))" -x 4 -y 2

@@ -17,6 +17,6 @@ Determine if the input geometry is rectangular or not.
 
 
 
-**Example**:::
+**Example**::
 
     geom isrectangle -g "POLYGON ((0 0, 0 10, 10 10, 10 0, 0 0))"

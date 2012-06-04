@@ -21,6 +21,6 @@ Project the input geometry from one coordinate system to another.
 
 
 
-**Example**:::
+**Example**::
 
     geom project -g "POINT (1179931.55 645310.31)" -s EPSG:2927 -t EPSG:4326

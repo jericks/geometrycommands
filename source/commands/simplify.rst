@@ -21,6 +21,6 @@ Simplify the input geometry.
 
 
 
-**Example**:::
+**Example**::
 
     geom simplify -g "LINESTRING (1 1, 2.5 2.5, 3.5 3.5, 5 5, 6.5 6.5, 8 8, 9 9, 10.5 10.5, 12 12)" -a dp -d 2

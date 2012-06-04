@@ -25,8 +25,6 @@ Create a new geometry by applying the reflect affine transformation on the input
 
 
 
-**Example**:::
+**Example**::
 
-    >>>geom reflect -g "POLYGON ((0 0, 0 10, 10 10, 10 0, 0 0))" -0 5 -1 2 
-
-    POLYGON ((0 0, 6.8965517241379315 -7.241379310344829, 14.137931034482762 -0.3448275862068977, 7.241379310344829 6.8965517241379315, 0 0))
+    geom reflect -g "POLYGON ((0 0, 0 10, 10 10, 10 0, 0 0))" -0 5 -1 2

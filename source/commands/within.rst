@@ -19,6 +19,6 @@ Determine if the input geometry is within the other geometry.
 
 
 
-**Example**:::
+**Example**::
 
     geom within -g "POINT (2 2)" -o "POLYGON ((1 1, 1 10, 10 10, 10 1, 1 1))"

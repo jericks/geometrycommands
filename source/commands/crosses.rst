@@ -19,6 +19,6 @@ Determine whether the first geometry crosses the other geometry.
 
 
 
-**Example**:::
+**Example**::
 
     geom crosses -g "LINESTRING (1 1, 10 10)" -o "LINESTRING (1 10, 10 1)"

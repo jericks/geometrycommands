@@ -19,6 +19,6 @@ Determine whether the first geometry overlaps with the other geometry.
 
 
 
-**Example**:::
+**Example**::
 
     geom overlaps -g "POLYGON ((0 0, 0 10, 10 10, 10 0, 0 0))" -o "POLYGON ((2 2, 2 14, 14 14, 14 2, 2 2))"

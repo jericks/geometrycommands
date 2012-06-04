@@ -25,6 +25,6 @@ Generate a random walk as a linestring.
 
 
 
-**Example**:::
+**Example**::
 
     geom randomwalk -n 100 -a 45 -d 10 -g "POINT (1 1)"

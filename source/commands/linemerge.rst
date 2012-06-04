@@ -17,6 +17,6 @@ Merge lines of the input geoemtry together.
 
 
 
-**Example**:::
+**Example**::
 
     geom linemerge -g "MULTILINESTRING((-29 -27,-30 -29.7,-36 -31,-45 -33),(-45 -33,-46 -32))"

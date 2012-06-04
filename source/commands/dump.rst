@@ -17,6 +17,6 @@ Put each geometry from a GeometryCollection on it's own line.
 
 
 
-**Example**:::
+**Example**::
 
     geom dump -g "MULTIPOINT (1 1, 2 2)"

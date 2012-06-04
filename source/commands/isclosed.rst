@@ -17,6 +17,6 @@ Determine if the input geometry is closed or not.
 
 
 
-**Example**:::
+**Example**::
 
     geom isclosed -g "LINESTRING (1 1, 1 5, 5 5, 5 1, 1 1)"

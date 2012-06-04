@@ -19,6 +19,6 @@ Calculate the intersection between two geometries.
 
 
 
-**Example**:::
+**Example**::
 
     geom intersection -g "POLYGON ((0 0, 0 10, 10 10, 10 0, 0 0))" -o "POLYGON ((5 5, 5 15, 15 15, 15 5, 5 5))"

@@ -25,6 +25,6 @@ Create a new geometry by scaling the input geometry
 
 
 
-**Example**:::
+**Example**::
 
     geom scale -g "POLYGON ((0 0, 0 10, 10 10, 10 0, 0 0))" -s 2 -t 5

@@ -17,6 +17,6 @@ Get the type of the geometry.
 
 
 
-**Example**:::
+**Example**::
 
     geom type -g "POINT (1 1)"

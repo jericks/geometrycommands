@@ -17,6 +17,6 @@ Calculate the normalized version of the input geometry.
 
 
 
-**Example**:::
+**Example**::
 
     geom normalize -g "MULTIPOINT ((12.5 12.5), (13.5 7.5), (7 9), (9.5 13), (8 7.5))"

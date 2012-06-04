@@ -21,6 +21,6 @@ Calculate the degree of similarity between two geometries.
 
 
 
-**Example**:::
+**Example**::
 
-    >>>geom similarity -g "POLYGON ((0 0, 0 10, 10 10, 10 0, 0 0))" -o "POLYGON ((2 2, 2 14, 14 14, 14 2, 2 2))" -a "area"
+    geom similarity -g "POLYGON ((0 0, 0 10, 10 10, 10 0, 0 0))" -o "POLYGON ((2 2, 2 14, 14 14, 14 2, 2 2))" -a "area"

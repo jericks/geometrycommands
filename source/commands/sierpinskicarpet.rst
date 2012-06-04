@@ -19,6 +19,6 @@ Create a sierpinski carpet.
 
 
 
-**Example**:::
+**Example**::
 
     geom sierpinskicarpet -g "POLYGON ((0 0, 0 10, 10 10, 10 0, 0 0))" -n 100

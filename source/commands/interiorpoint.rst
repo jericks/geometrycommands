@@ -17,6 +17,6 @@ Calculate the interior point of the input geometry.
 
 
 
-**Example**:::
+**Example**::
 
     geom interiorpoint -g "POLYGON ((8 54, 8 51, 14 51, 14 47, 7 47, 7 42, 17 45, 16 53, 13 53, 8 54))"

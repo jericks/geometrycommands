@@ -19,6 +19,6 @@ Generate a LineString representing the shortest distance between two geometries.
 
 
 
-**Example**:::
+**Example**::
 
     geom distanceline -g "POINT (5 5)" -o "POINT (20 21)"

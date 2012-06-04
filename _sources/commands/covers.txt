@@ -19,8 +19,6 @@ Determine whether the first geometry covers the other geometry.
 
 
 
-**Example**:::
+**Example**::
 
-    >>>geom covers -g "POLYGON ((1 1, 1 10, 10 10, 10 1, 1 1))" -o "POINT (2 2)" 
-
-    true
+    geom covers -g "POLYGON ((1 1, 1 10, 10 10, 10 1, 1 1))" -o "POINT (2 2)"

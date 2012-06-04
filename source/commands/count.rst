@@ -17,6 +17,6 @@ Count the number of geometries in the input geometry.
 
 
 
-**Example**:::
+**Example**::
 
     geom count -g "MULTIPOINT (1 1, 2 2, 3 3)"

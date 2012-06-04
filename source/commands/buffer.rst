@@ -25,6 +25,6 @@ Buffer a geometry by a distance.
 
 
 
-**Example**:::
+**Example**::
 
     geom buffer -g "POINT (1 1)" -d 10

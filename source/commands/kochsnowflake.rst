@@ -19,6 +19,6 @@ Generate a koch snow flake.
 
 
 
-**Example**:::
+**Example**::
 
     geom kochsnowflake -g "POLYGON ((0 0, 0 10, 10 10, 10 0, 0 0))" -n 100

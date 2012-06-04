@@ -21,6 +21,6 @@ Calculate a point at a given angle distance from the input point.
 
 
 
-**Example**:::
+**Example**::
 
     geom pointatangle -g "POINT (10 10)" -a 90 -d 10

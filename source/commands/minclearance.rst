@@ -17,6 +17,6 @@ Calculate the minimum clearance of the input geometry.
 
 
 
-**Example**:::
+**Example**::
 
     geom minclearance -g "POLYGON ((16 51, 7 53, 12 46, 5 41, 12 41, 16 51))"

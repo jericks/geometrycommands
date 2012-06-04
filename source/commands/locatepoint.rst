@@ -19,6 +19,6 @@ Locate the position of a point on the linear geometry as a percentage of the dis
 
 
 
-**Example**:::
+**Example**::
 
     geom locatepoint -g "LINESTRING (0 0, 5 5, 10 10)" -o "POINT (2.5 2.5)"

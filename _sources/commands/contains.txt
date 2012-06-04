@@ -19,8 +19,6 @@ Calculate whether the first geometry contains the other geometry.
 
 
 
-**Example**:::
+**Example**::
 
-    >>>geom contains -g "POLYGON ((1 1, 1 10, 10 10, 10 1, 1 1))" -o "POINT (2 2)"
-
-    true
+    geom contains -g "POLYGON ((1 1, 1 10, 10 10, 10 1, 1 1))" -o "POINT (2 2)"

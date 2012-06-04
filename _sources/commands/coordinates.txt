@@ -17,8 +17,6 @@ Get the coordinates of the geometry.
 
 
 
-**Example**:::
+**Example**::
 
-    >>>geom coordinates -g "POLYGON ((1 1, 1 10, 10 10, 10 1, 1 1))"
-
-    MULTIPOINT ((1 1), (1 10), (10 10), (10 1), (1 1))
+    geom coordinates -g "POLYGON ((1 1, 1 10, 10 10, 10 1, 1 1))"

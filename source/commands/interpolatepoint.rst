@@ -19,6 +19,6 @@ Interpolate the location of a point on the input linear geometry given a percent
 
 
 
-**Example**:::
+**Example**::
 
     geom interpolatepoint -g "LINESTRING (0 0, 5 5, 10 10)" -p 0.25

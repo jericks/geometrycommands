@@ -15,6 +15,6 @@ List all of the geometry commands.
 
 
 
-**Example**:::
+**Example**::
 
     geom list

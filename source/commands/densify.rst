@@ -19,6 +19,6 @@ Densify the coordinates of the input geometry.
 
 
 
-**Example**:::
+**Example**::
 
     geom densify -g "LINESTRING (1 1, 100 100)" -d 20

@@ -19,6 +19,6 @@ Determine if the input geometry is valid or not.
 
 
 
-**Example**:::
+**Example**::
 
     geom isvalid -g "POLYGON ((0 0, 0 10, 10 10, 10 0, 0 0))"

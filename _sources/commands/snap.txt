@@ -21,6 +21,6 @@ Snap the input geometry to the other geometry.
 
 
 
-**Example**:::
+**Example**::
 
     geom snap -g "POLYGON ((0 0, 0 10, 10 10, 10 0, 0 0))" -o "POLYGON ((11 11, 11 20, 20 20, 20 11, 11 11))" -d 1.5

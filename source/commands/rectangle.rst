@@ -27,6 +27,6 @@ Create a rectangle from the input geometry.
 
 
 
-**Example**:::
+**Example**::
 
     geom rectangle -g "POINT (100 100)" -p 30 -w 500 -h 500

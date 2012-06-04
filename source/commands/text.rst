@@ -21,6 +21,6 @@ Create a geometry from a string.
 
 
 
-**Example**:::
+**Example**::
 
     geom text -t "JTS"

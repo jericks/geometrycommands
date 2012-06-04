@@ -21,6 +21,6 @@ Extract a sub line from a linear geometry.
 
 
 
-**Example**:::
+**Example**::
 
     geom subline -g "LINESTRING (0 0, 10 10, 20 20)" -s 0.25 -e 0.75

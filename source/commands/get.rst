@@ -19,6 +19,6 @@ Get a sub geometry from a geometry collection by index.
 
 
 
-**Example**:::
+**Example**::
 
     geom get -g "MULTIPOINT (1 1, 5 5, 10 10)" -n 1

@@ -25,6 +25,6 @@ Reduce the precision of the input geometry.
 
 
 
-**Example**:::
+**Example**::
 
     geom reduceprecision -g "POINT (-5.70068359375 45.1416015625)" -s 2 -t fixed

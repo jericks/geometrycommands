@@ -17,6 +17,6 @@ Get the start point of a LineString or MultiLineString.
 
 
 
-**Example**:::
+**Example**::
 
     geom startpoint -g "LINESTRING (1 1, 5 5, 10 10)"

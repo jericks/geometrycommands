@@ -17,6 +17,6 @@ Calculate the centroid of a Geometry.
 
 
 
-**Example**:::
+**Example**::
 
     geom centroid -g "POLYGON ((1 1, 1 10, 10 10, 10 1, 1 1))"

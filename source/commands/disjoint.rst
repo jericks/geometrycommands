@@ -19,6 +19,6 @@ Determine whether the first geometry is disjoint from the other geometry.
 
 
 
-**Example**:::
+**Example**::
 
     geom disjoint -g "POLYGON ((0 0, 0 10, 10 10, 10 0, 0 0))" -o "LINESTRING (15 15, 20 20)"

@@ -21,8 +21,6 @@ Determine if the input geometry is within the given distance of the other geomet
 
 
 
-**Example**:::
+**Example**::
 
-    >>>geom iswithindistance -g "POINT (1 1)" -o "POINT (20 23)" -d 30
-
-    true
+    geom iswithindistance -g "POINT (1 1)" -o "POINT (20 23)" -d 30

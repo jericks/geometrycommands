@@ -21,6 +21,6 @@ Create a new geometry by apply a shear affine transformation to the input geomet
 
 
 
-**Example**:::
+**Example**::
 
     geom shear -g "POLYGON ((0 0, 0 10, 10 10, 10 0, 0 0))" -x 4 -y 2

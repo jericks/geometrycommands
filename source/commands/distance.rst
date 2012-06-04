@@ -19,6 +19,6 @@ Calculate the distance between the two input geometries.
 
 
 
-**Example**:::
+**Example**::
 
     geom distance -g "POINT (5 5)" -o "POINT (20 21)"

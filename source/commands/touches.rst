@@ -19,6 +19,6 @@ Determine if the input geometry touches another geometry.
 
 
 
-**Example**:::
+**Example**::
 
     geom touches -g "POLYGON ((0 0, 0 10, 10 10, 10 0, 0 0))" -o "POLYGON ((10 10, 10 14, 14 14, 14 10, 10 10))"

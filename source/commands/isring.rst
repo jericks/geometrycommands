@@ -17,6 +17,6 @@ Determine if the input geometry is a ring or not.
 
 
 
-**Example**:::
+**Example**::
 
     geom isring -g "LINESTRING (1 1, 1 5, 5 5, 5 1, 1 1)"

@@ -17,6 +17,6 @@ Reverse the coordinates of the input geometry
 
 
 
-**Example**:::
+**Example**::
 
     geom reverse -g "LINESTRING (0 0, 5 5, 10 10)"

@@ -27,6 +27,6 @@ Create a new geometry by rotating the input geometry
 
 
 
-**Example**:::
+**Example**::
 
     geom rotate -g "POLYGON ((0 0, 0 10, 10 10, 10 0, 0 0))" -t 0.785398163
