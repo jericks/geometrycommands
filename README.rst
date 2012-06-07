@@ -13,35 +13,41 @@ Args4J:
 
 Examples:
 ---------
-Geometry input with -geom argument
->>> geom buffer -g "POINT (10 10)" -d 2
+Geometry input with -geom argument::
 
-Geometry input using Standard input stream
->>> echo "POINT (10 10)" | geom buffer -d 20
+    >>> geom buffer -g "POINT (10 10)" -d 2
 
-Piping results of one geometry command to another
->>> geom buffer -g "POINT (10 10)" -d 2 | geom envelope
+Geometry input using Standard input stream::
 
-Contains
->>> echo "POINT (0 0)" | geom buffer -d 10 | geom contains -o "POINT (5 5)"
-true
->>> echo "POINT (0 0)" | geom buffer -d 10 | geom contains -o "POINT (25 25)"
-false
+    >>> echo "POINT (10 10)" | geom buffer -d 20
 
-Buffer a point, get coordinates, draw coordinates to image, and open the image 
->>> echo "POINT (10 10)" | geom buffer -d 5 | geom coordinates | geom draw && open image.png
+Piping results of one geometry command to another::
 
-List available geometry commands:
->>> geom list
-list
-buffer
-centroid
-contains
-convexHull
-draw
-difference
-envelope
-intersection
+    >>> geom buffer -g "POINT (10 10)" -d 2 | geom envelope
+
+Contains::
+
+    >>> echo "POINT (0 0)" | geom buffer -d 10 | geom contains -o "POINT (5 5)"
+    true
+    >>> echo "POINT (0 0)" | geom buffer -d 10 | geom contains -o "POINT (25 25)"
+    false
+
+Buffer a point, get coordinates, draw coordinates to image, and open the image::
+
+    >>> echo "POINT (10 10)" | geom buffer -d 5 | geom coordinates | geom draw && open image.png
+
+List available geometry commands::
+
+    >>> geom list
+    list
+    buffer
+    centroid
+    contains
+    convexHull
+    draw
+    difference
+    envelope
+    intersection
 
 Build
 -----
