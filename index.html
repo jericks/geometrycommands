@@ -8,7 +8,7 @@
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     
-    <title>Welcome to Geometry Commands’s documentation! &mdash; Geometry Commands 0.1 documentation</title>
+    <title>Geometry Commands &mdash; Geometry Commands 0.1 documentation</title>
     
     <link rel="stylesheet" href="_static/default.css" type="text/css" />
     <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
@@ -47,10 +47,34 @@
         <div class="bodywrapper">
           <div class="body">
             
-  <div class="section" id="welcome-to-geometry-commands-s-documentation">
-<h1>Welcome to Geometry Commands&#8217;s documentation!<a class="headerlink" href="#welcome-to-geometry-commands-s-documentation" title="Permalink to this headline">¶</a></h1>
-<p>Geometry Commands is a command line application for processing geometry.</p>
-<p>Contents:</p>
+  <div class="section" id="geometry-commands">
+<h1>Geometry Commands<a class="headerlink" href="#geometry-commands" title="Permalink to this headline">¶</a></h1>
+<p>Geometry Commands is a command line application for processing geometry. It is inspired by the wonderful Java Topology Suite (JTS) library and the Unix Philosophy.</p>
+<p>It contains one command line application (geom) with numerous subcommands (buffer, centroid, envelope) that generally read WKT geometry from standard input and then write WKT geometry to standard output.  This enables several geometry commands to be chained otogether using pipes.:</p>
+<div class="highlight-python"><pre>echo "POINT (1 1)" | geom buffer -d 10 | geom envelope</pre>
+</div>
+<p>Geometry Commands is open source under the MIT license.  I hope you find it useful.  The code is available at <a class="reference external" href="https://github.com/jericks/geometrycommands">github</a>. If you find any bugs or would like any enhancements please use the GitHub <a class="reference external" href="https://github.com/jericks/geometrycommands/issues">issue tracker</a>.</p>
+<p>To install, simple download the latest <a class="reference external" href="https://github.com/jericks/geometrycommands/downloads">zip file</a> and place the <strong>bin</strong> directory in your path. You should then be able to run the <strong>geom</strong> command.</p>
+<div class="section" id="usage">
+<h2>Usage<a class="headerlink" href="#usage" title="Permalink to this headline">¶</a></h2>
+<p>View a list of all geom commands:</p>
+<div class="highlight-python"><pre>geom list</pre>
+</div>
+<p>Buffer a geometry:</p>
+<div class="highlight-python"><pre>echo "POINT (1 1)" | geom buffer -d 10</pre>
+</div>
+<p>Reproject a geometry:</p>
+<div class="highlight-python"><pre>echo "POINT (1 1)" | geom project -s "EPSG:4326" -t "EPSG:2927"</pre>
+</div>
+<p>Generate random points:</p>
+<div class="highlight-python"><pre>echo "POINT (1 1)" | geom buffer -d 100 | geom random -n 200</pre>
+</div>
+<p>Draw a geometry to an image:</p>
+<div class="highlight-python"><pre>echo "POINT (1 1)" | geom buffer -d 100 | geom draw &amp;&amp; open image.png</pre>
+</div>
+</div>
+<div class="section" id="documentation">
+<h2>Documentation<a class="headerlink" href="#documentation" title="Permalink to this headline">¶</a></h2>
 <div class="toctree-wrapper compound">
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="commands.html">Geometry Commands</a><ul>
@@ -143,6 +167,7 @@
 </ul>
 </div>
 </div>
+</div>
 <div class="section" id="indices-and-tables">
 <h1>Indices and tables<a class="headerlink" href="#indices-and-tables" title="Permalink to this headline">¶</a></h1>
 <ul class="simple">
@@ -160,7 +185,11 @@
         <div class="sphinxsidebarwrapper">
   <h3><a href="#">Table Of Contents</a></h3>
   <ul>
-<li><a class="reference internal" href="#">Welcome to Geometry Commands&#8217;s documentation!</a><ul>
+<li><a class="reference internal" href="#">Geometry Commands</a><ul>
+<li><a class="reference internal" href="#usage">Usage</a></li>
+<li><a class="reference internal" href="#documentation">Documentation</a><ul>
+</ul>
+</li>
 </ul>
 </li>
 <li><a class="reference internal" href="#indices-and-tables">Indices and tables</a></li>
