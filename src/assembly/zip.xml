@@ -16,7 +16,7 @@
               <include>LICENSE</include>
               <include>bin/*</include>
               <include>lib/*</include>
-			  <include>man/*</include>
+              <include>man/man1/*</include>
           </includes>
       </fileSet>
   </fileSets>
