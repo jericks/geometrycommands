@@ -13,11 +13,11 @@ Args4J:
 
 Examples:
 ---------
-Geometry input with -geom argument::
+Geometry input with -g argument::
 
     >>> geom buffer -g "POINT (10 10)" -d 2
 
-Geometry input using Standard input stream::
+Geometry input using standard input stream::
 
     >>> echo "POINT (10 10)" | geom buffer -d 20
 
@@ -25,7 +25,7 @@ Piping results of one geometry command to another::
 
     >>> geom buffer -g "POINT (10 10)" -d 2 | geom envelope
 
-Contains::
+Determine if one geometry contains another::
 
     >>> echo "POINT (0 0)" | geom buffer -d 10 | geom contains -o "POINT (5 5)"
     true
