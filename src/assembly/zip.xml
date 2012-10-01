@@ -12,7 +12,7 @@
           <outputDirectory>/</outputDirectory>
           <directory>${basedir}/target/geometrycommands-${project.version}-app/geom-${project.version}</directory>
           <includes>
-              <include>README</include>
+              <include>README.rst</include>
               <include>LICENSE</include>
               <include>bin/*</include>
               <include>lib/*</include>
