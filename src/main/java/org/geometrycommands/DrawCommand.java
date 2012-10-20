@@ -129,9 +129,6 @@ public class DrawCommand extends GeometryCommand<DrawOptions> {
             pointShapeFactory = new PointShapeFactory.Square(markerSize);
         }
 
-        float opacity = 0.75f;
-        float strokeWidth = 1.0f;
-
         ShapeWriter shapeWriter = new ShapeWriter(new PointTransformation() {
 
             @Override
@@ -142,8 +139,8 @@ public class DrawCommand extends GeometryCommand<DrawOptions> {
             }
         }, pointShapeFactory);
 
-        Composite strokeComposite = g2d.getComposite();
-        Composite fillComposite = AlphaComposite.getInstance(AlphaComposite.SRC_OVER, opacity);
+        Composite strokeComposite = AlphaComposite.getInstance(AlphaComposite.SRC_OVER, options.getStrokeOpacity());
+        Composite fillComposite = AlphaComposite.getInstance(AlphaComposite.SRC_OVER, options.getFillOpacity());
 
         Shape shp = shapeWriter.toShape(geometry);
         g2d.setComposite(fillComposite);
@@ -155,12 +152,12 @@ public class DrawCommand extends GeometryCommand<DrawOptions> {
         }
         // Stroke
         g2d.setComposite(strokeComposite);
-        g2d.setStroke(new BasicStroke(strokeWidth));
+        g2d.setStroke(new BasicStroke(options.getStrokeWidth()));
         g2d.setColor(strokeColor);
         g2d.draw(shp);
 
         if (options.isDrawingCoordinates()) {
-            g2d.setStroke(new BasicStroke(strokeWidth));
+            g2d.setStroke(new BasicStroke(options.getStrokeWidth()));
             Coordinate[] coords = geometry.getCoordinates();
             for (Coordinate c : coords) {
                 Shape coordinateShp = shapeWriter.toShape(geometry.getFactory().createPoint(c));
@@ -263,10 +260,28 @@ public class DrawCommand extends GeometryCommand<DrawOptions> {
         private String strokeColor = "99,99,99";
 
         /**
+         * The stroke opacity
+         */
+        @Option(name = "-t", aliases = "--strokeOpacity", usage = "The stroke opacity", required = false)
+        private float strokeOpacity = 1.0f;
+
+        /**
+         * The stroke width
+         */
+        @Option(name = "-r", aliases = "--strokeWidth", usage = "The stroke width", required = false)
+        private float strokeWidth = 1.0f;
+
+        /**
          * The fill Color
          */
         @Option(name = "-l", aliases = "--fill", usage = "The fill Color", required = false)
         private String fillColor = "206,206,206,100";
+
+        /**
+         * The fill opacity
+         */
+        @Option(name = "-o", aliases = "--fillOpacity", usage = "The fill opacity", required = false)
+        private float fillOpacity = 0.75f;
 
         /**
          * The marker shape
@@ -437,6 +452,22 @@ public class DrawCommand extends GeometryCommand<DrawOptions> {
         }
 
         /**
+         * Get the fill opacity
+         * @return The fill opacity
+         */
+        public float getFillOpacity() {
+            return fillOpacity;
+        }
+
+        /**
+         * Set the fill opacity
+         * @param opacity The fill opacity
+         */
+        public void setFillOpacity(float opacity) {
+            this.fillOpacity = opacity;
+        }
+
+        /**
          * Get the stroke Color
          * @return The stroke Color
          */
@@ -450,6 +481,38 @@ public class DrawCommand extends GeometryCommand<DrawOptions> {
          */
         public void setStrokeColor(String strokeColor) {
             this.strokeColor = strokeColor;
+        }
+
+        /**
+         * Get the stroke opacity
+         * @return The stroke opacity
+         */
+        public float getStrokeOpacity() {
+            return strokeOpacity;
+        }
+
+        /**
+         * Set the stroke opacity
+         * @param opacity The stroke opacity
+         */
+        public void setStrokeOpacity(float opacity) {
+            this.strokeOpacity = opacity;
+        }
+
+        /**
+         * Get the stroke width
+         * @return The stroke width
+         */
+        public float getStrokeWidth() {
+            return strokeWidth;
+        }
+
+        /**
+         * Set the stroke width
+         * @param width The stroke width
+         */
+        public void setStrokeWidth(float width) {
+            this.strokeWidth = width;
         }
 
         /**
