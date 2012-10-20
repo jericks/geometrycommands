@@ -39,8 +39,8 @@ Draw a geometry to an image::
 
     echo "POINT (1 1)" | geom buffer -d 100 | geom draw && open image.png
 
-Documentation
--------------
+Command Documentation
+---------------------
 
 .. toctree::
    :maxdepth: 2
