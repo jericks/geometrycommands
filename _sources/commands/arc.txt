@@ -36,3 +36,6 @@ Creates an arc linestring from a start angle and an angle extent.
 **Example**::
 
     geom arc -g "POINT (100 100)" -d -a 45 -e 90 -w 50 -h 50 -p 10
+
+.. image:: images/arc.png
+    :alt: geom arc example
