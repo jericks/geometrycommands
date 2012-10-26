@@ -18,4 +18,4 @@ Combine geometries on separate lines to create a GeometryCollection.
 **Example**::
 
     echo -e "POINT(1 1)
-POINT(2 2)" | geom combine
+    POINT(2 2)" | geom combine
