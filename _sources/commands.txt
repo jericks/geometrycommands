@@ -54,6 +54,7 @@ Geometry Commands
     commands/minclearance.rst
     commands/mindiameter.rst
     commands/minrect.rst
+    commands/nearestpoints.rst
     commands/node.rst
     commands/normalize.rst
     commands/octagonalenvelope.rst
