@@ -39,8 +39,8 @@ public abstract class GeometryCommand<T extends GeometryOptions> implements Comm
         if (options.getGeometry() != null && options.getGeometry().trim().length() > 0) {
             geometry = readGeometry(options.getGeometry(), options);
         } else {
-            // Or Read it from the Standard Inputstream
-            BufferedReader inputStreamReader = new BufferedReader(new InputStreamReader(System.in));
+            // Or Read it from the Reader
+            BufferedReader inputStreamReader = new BufferedReader(reader);
             String str;
             StringBuilder builder = new StringBuilder();
             while ((str = inputStreamReader.readLine()) != null) {
