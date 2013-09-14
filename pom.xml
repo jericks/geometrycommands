@@ -5,7 +5,7 @@
     <modelVersion>4.0.0</modelVersion>
     <groupId>org.geometrycommands</groupId>
     <artifactId>geometrycommands</artifactId>
-    <version>0.2</version>
+    <version>0.3-SNAPSHOT</version>
     <repositories>
         <repository>
             <id>opengeo</id>
