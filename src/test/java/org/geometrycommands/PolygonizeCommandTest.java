@@ -1,13 +1,19 @@
 package org.geometrycommands;
 
 import com.vividsolutions.jts.geom.Geometry;
+import com.vividsolutions.jts.geom.GeometryCollection;
 import com.vividsolutions.jts.geom.MultiPolygon;
 import com.vividsolutions.jts.io.WKTReader;
+import org.geometrycommands.PolygonizeCommand.PolygonizeOptions;
+import org.junit.Test;
+
 import java.io.Reader;
 import java.io.StringReader;
 import java.io.StringWriter;
-import org.junit.Test;
-import static org.junit.Assert.*;
+
+import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.assertFalse;
+import static org.junit.Assert.assertTrue;
 
 /**
  * The PolygonizeCommand UnitTest
@@ -26,7 +32,7 @@ public class PolygonizeCommandTest {
                 + "(5.6 48.6, 7.13134765625 50.37109375), (-5.83251953125 "
                 + "46.943359375, -4.6 46.4), (-4.6 46.4, 1.8 44), (1.8 44, "
                 + "4.45068359375 42.98828125))";
-        GeometryOptions options = new GeometryOptions();
+        PolygonizeOptions options = new PolygonizeOptions();
         options.setGeometry(inputGeometry);
 
         Reader reader = new StringReader(inputGeometry);
@@ -37,5 +43,23 @@ public class PolygonizeCommandTest {
         Geometry outputGeometry = new WKTReader().read(writer.getBuffer().toString());
         assertTrue(outputGeometry instanceof MultiPolygon);
         assertEquals(1, outputGeometry.getNumGeometries());
+
+        // Get full report
+        options = new PolygonizeOptions();
+        options.setGeometry(inputGeometry);
+        options.setFull(true);
+
+        reader = new StringReader(inputGeometry);
+        writer = new StringWriter();
+
+        command = new PolygonizeCommand();
+        command.execute(options, reader, writer);
+        outputGeometry = new WKTReader().read(writer.getBuffer().toString());
+        assertTrue(outputGeometry instanceof GeometryCollection);
+        assertEquals(4, outputGeometry.getNumGeometries());
+        assertFalse(outputGeometry.getGeometryN(0).isEmpty());
+        assertTrue(outputGeometry.getGeometryN(1).isEmpty());
+        assertFalse(outputGeometry.getGeometryN(2).isEmpty());
+        assertTrue(outputGeometry.getGeometryN(3).isEmpty());
     }
 }
