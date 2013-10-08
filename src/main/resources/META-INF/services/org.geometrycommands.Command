@@ -1,4 +1,5 @@
 org.geometrycommands.ListCommand
+org.geometrycommands.AngleCommand
 org.geometrycommands.ArcCommand
 org.geometrycommands.ArcPolygonCommand
 org.geometrycommands.AreaCommand
