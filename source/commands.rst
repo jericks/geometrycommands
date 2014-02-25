@@ -77,6 +77,7 @@ Geometry Commands
     commands/similarity.rst
     commands/simplify.rst
     commands/sinestar.rst
+    commands/slice.rst
     commands/snap.rst
     commands/squircle.rst
     commands/subline.rst

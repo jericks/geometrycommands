@@ -6,7 +6,7 @@
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     
-    <title>mindiameter &mdash; Geometry Commands 0.1 documentation</title>
+    <title>slice &mdash; Geometry Commands 0.1 documentation</title>
     
     <link rel="stylesheet" href="../_static/default.css" type="text/css" />
     <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
@@ -25,8 +25,8 @@
     <script type="text/javascript" src="../_static/doctools.js"></script>
     <link rel="top" title="Geometry Commands 0.1 documentation" href="../index.html" />
     <link rel="up" title="Geometry Commands" href="../commands.html" />
-    <link rel="next" title="minrect" href="minrect.html" />
-    <link rel="prev" title="minclearance" href="minclearance.html" /> 
+    <link rel="next" title="snap" href="snap.html" />
+    <link rel="prev" title="sinestar" href="sinestar.html" /> 
   </head>
   <body>
     <div class="related">
@@ -36,10 +36,10 @@
           <a href="../genindex.html" title="General Index"
              accesskey="I">index</a></li>
         <li class="right" >
-          <a href="minrect.html" title="minrect"
+          <a href="snap.html" title="snap"
              accesskey="N">next</a> |</li>
         <li class="right" >
-          <a href="minclearance.html" title="minclearance"
+          <a href="sinestar.html" title="sinestar"
              accesskey="P">previous</a> |</li>
         <li><a href="../index.html">Geometry Commands 0.1 documentation</a> &raquo;</li>
           <li><a href="../commands.html" accesskey="U">Geometry Commands</a> &raquo;</li> 
@@ -51,21 +51,23 @@
         <div class="bodywrapper">
           <div class="body">
             
-  <div class="section" id="mindiameter">
-<h1>mindiameter<a class="headerlink" href="#mindiameter" title="Permalink to this headline">¶</a></h1>
+  <div class="section" id="slice">
+<h1>slice<a class="headerlink" href="#slice" title="Permalink to this headline">¶</a></h1>
 <p><strong>Name</strong>:</p>
-<p>geom mindiameter</p>
+<p>geom slice</p>
 <p><strong>Description</strong>:</p>
-<p>Calculate the minimum diameter of the input geometry.</p>
+<p>Get a subset of geometries from a geometrycollection.</p>
 <p><strong>Arguments</strong>:</p>
 <blockquote>
 <div><ul class="simple">
+<li>-s &#8211;start The start index</li>
+<li>-e &#8211;end The end index</li>
 <li>-g &#8211;geometry: The input geometry</li>
 <li>&#8211;help : Print help message</li>
 </ul>
 </div></blockquote>
 <p><strong>Example</strong>:</p>
-<div class="highlight-python"><div class="highlight"><pre>geom mindiameter -g &quot;POLYGON ((16 51, 7 53, 12 46, 5 41, 12 41, 16 51))&quot;
+<div class="highlight-python"><div class="highlight"><pre>geom slice -g &quot;MULTIPOINT ((1 1), (2 2), (3 3), (4 4), (5 5))&quot; -s 1 -e 3
 </pre></div>
 </div>
 </div>
@@ -77,14 +79,14 @@
       <div class="sphinxsidebar">
         <div class="sphinxsidebarwrapper">
   <h4>Previous topic</h4>
-  <p class="topless"><a href="minclearance.html"
-                        title="previous chapter">minclearance</a></p>
+  <p class="topless"><a href="sinestar.html"
+                        title="previous chapter">sinestar</a></p>
   <h4>Next topic</h4>
-  <p class="topless"><a href="minrect.html"
-                        title="next chapter">minrect</a></p>
+  <p class="topless"><a href="snap.html"
+                        title="next chapter">snap</a></p>
   <h3>This Page</h3>
   <ul class="this-page-menu">
-    <li><a href="../_sources/commands/mindiameter.txt"
+    <li><a href="../_sources/commands/slice.txt"
            rel="nofollow">Show Source</a></li>
   </ul>
 <div id="searchbox" style="display: none">
@@ -111,10 +113,10 @@
           <a href="../genindex.html" title="General Index"
              >index</a></li>
         <li class="right" >
-          <a href="minrect.html" title="minrect"
+          <a href="snap.html" title="snap"
              >next</a> |</li>
         <li class="right" >
-          <a href="minclearance.html" title="minclearance"
+          <a href="sinestar.html" title="sinestar"
              >previous</a> |</li>
         <li><a href="../index.html">Geometry Commands 0.1 documentation</a> &raquo;</li>
           <li><a href="../commands.html" >Geometry Commands</a> &raquo;</li> 
