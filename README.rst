@@ -74,6 +74,11 @@ Now you can build Geometry Commands using Maven::
     cd /geometrycommands
     mvn clean install
 
+Presentations
+-------------
+
+`geometry commands <http://www.slideshare.net/JaredErickson/geometry-commands>`_
+
 License
 -------
 Geometry Commands is open source and licensed under the MIT License.
