@@ -1,0 +1,14 @@
+_geom()
+{
+    local cur=${COMP_WORDS[COMP_CWORD]}
+    local prev=${COMP_WORDS[COMP_CWORD-1]}
+    local line=${COMP_LINE}
+    COMPREPLY=()
+    if [ "$prev" == "geom" ]; then
+        COMPREPLY=($(compgen -W '`geom list`' -- $cur))
+    else
+        local cmd="${COMP_WORDS[0]} ${COMP_WORDS[1]}"
+        COMPREPLY=($(compgen -W "`$cmd --args`" -- $cur))
+    fi
+    return 0
+} && complete -F _geom geom

@@ -1,27 +1,31 @@
 package org.geometrycommands;
 
+import org.kohsuke.args4j.CmdLineParser;
+import org.kohsuke.args4j.ExampleMode;
+
 import java.io.InputStreamReader;
 import java.io.Reader;
 import java.io.StringWriter;
 import java.io.Writer;
 import java.util.ServiceLoader;
-import org.kohsuke.args4j.CmdLineParser;
 
 /**
  * The command line application
+ *
  * @author Jared Erickson
  */
 public class App {
 
     /**
      * Run the command line application
+     *
      * @param args The arguments from the command line
      */
     public static void main(String[] args) {
 
         // The usage 
         final String usage = "Usage: geom <command> <args>";
-        
+
         // Check for an argument (the command name is required)
         if (args.length == 0) {
             System.err.println("Please enter a geometry command!");
@@ -61,13 +65,18 @@ public class App {
             if (options.isHelp()) {
                 System.out.println("geom " + command.getName() + ": " + command.getDescription());
                 cmdLineParser.printUsage(System.out);
-            } else {
+            }
+            // Print the arguments on one line (for bash completion)
+            else if (options.isArgs()) {
+                System.out.println(getArgStringLine(cmdLineParser.printExample(ExampleMode.ALL)));
+            }
+            else {
                 // If there are no errors, execute the command
                 Reader reader = new InputStreamReader(System.in);
                 Writer writer = new StringWriter();
                 command.execute(options, reader, writer);
                 writer.flush();
-                String output = ((StringWriter)writer).getBuffer().toString();
+                String output = ((StringWriter) writer).getBuffer().toString();
                 if (!output.isEmpty()) {
                     System.out.println(output);
                 }
@@ -77,7 +86,12 @@ public class App {
             if (options.isHelp()) {
                 System.out.println("geom " + command.getName() + ": " + command.getDescription());
                 cmdLineParser.printUsage(System.out);
-            } else {
+            }
+            // Print the arguments on one line (for bash completion)
+            else if (options.isArgs()) {
+                System.out.println(getArgStringLine(cmdLineParser.printExample(ExampleMode.ALL)));
+            }
+            else {
                 // Oops, display the error messages to the user
                 System.err.println(e.getMessage());
                 System.err.println("Usage: geom <command> <args>");
@@ -85,5 +99,16 @@ public class App {
             }
 
         }
+    }
+
+    private static String getArgStringLine(String argStr) {
+        argStr = argStr.replaceAll("\\(","").replaceAll("\\)","");
+        StringBuilder b = new StringBuilder();
+        for(String str : argStr.split(" ")) {
+            if (str.startsWith("-")) {
+                b.append(str).append(" ");
+            }
+        }
+        return b.toString().trim();
     }
 }

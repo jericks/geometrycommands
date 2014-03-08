@@ -20,7 +20,13 @@ public class Options {
      */
     @Option(name = "--help", usage = "Print help message", required = false)
     private boolean help;
-    
+
+    /**
+     * The flag to print the argument list
+     */
+    @Option(name = "--args", usage = "Print argument list", required = false)
+    private boolean args;
+
     /**
      * Get the Command name
      * @return The Command name
@@ -51,5 +57,13 @@ public class Options {
      */
     public void setHelp(boolean help) {
         this.help = help;
+    }
+
+    public boolean isArgs() {
+        return args;
+    }
+
+    public void setArgs(boolean args) {
+        this.args = args;
     }
 }
