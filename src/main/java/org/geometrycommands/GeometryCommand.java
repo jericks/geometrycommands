@@ -47,7 +47,7 @@ public abstract class GeometryCommand<T extends GeometryOptions> implements Comm
                 builder.append(str);
             }
             String text = builder.toString();
-            geometry = wktReader.read(text);
+            geometry = readGeometry(text, options);
         }
         // Process the Geometry
         processGeometry(geometry, options, reader, writer);
