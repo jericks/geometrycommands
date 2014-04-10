@@ -1,26 +1,29 @@
 package org.geometrycommands;
 
+import org.junit.Test;
+
 import java.io.Reader;
 import java.io.StringReader;
 import java.io.StringWriter;
-import org.junit.Test;
+
 import static org.junit.Assert.assertEquals;
 
 /**
  * The CentroidCommand UnitTest
+ *
  * @author Jared Erickson
  */
-public class CentroidCommandTest {
+public class CentroidCommandTest extends BaseTest {
 
-    @Test 
+    @Test
     public void executeWithOption() throws Exception {
         String inputGeometry = "POLYGON ((0 0, 0 10, 10 10, 10 0, 0 0))";
         GeometryOptions options = new GeometryOptions();
         options.setGeometry(inputGeometry);
-        
+
         Reader reader = new StringReader("");
         StringWriter writer = new StringWriter();
-        
+
         CentroidCommand command = new CentroidCommand();
         command.execute(options, reader, writer);
         assertEquals("POINT (5 5)", writer.getBuffer().toString());
@@ -37,5 +40,21 @@ public class CentroidCommandTest {
         CentroidCommand command = new CentroidCommand();
         command.execute(options, reader, writer);
         assertEquals("POINT (5 5)", writer.getBuffer().toString());
+    }
+
+    @Test
+    public void run() throws Exception {
+        // Geometry from options
+        String result = runApp(new String[]{
+                "centroid",
+                "-g", "POLYGON ((0 0, 0 10, 10 10, 10 0, 0 0))"
+        }, null);
+        assertEquals("POINT (5 5)", result);
+
+        // Geometry from input stream
+        result = runApp(new String[]{
+                "centroid"
+        }, "POLYGON ((0 0, 0 10, 10 10, 10 0, 0 0))");
+        assertEquals("POINT (5 5)", result);
     }
 }
