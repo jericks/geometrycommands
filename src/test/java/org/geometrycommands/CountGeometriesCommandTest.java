@@ -10,7 +10,7 @@ import static org.junit.Assert.assertEquals;
  * The CountGeometriesCommand UnitTest
  * @author Jared Erickson
  */
-public class CountGeometriesCommandTest {
+public class CountGeometriesCommandTest extends BaseTest {
 
     @Test 
     public void execute() throws Exception {
@@ -25,5 +25,21 @@ public class CountGeometriesCommandTest {
         CountGeometriesCommand command = new CountGeometriesCommand();
         command.execute(options, reader, writer);
         assertEquals("5", writer.getBuffer().toString());
+    }
+
+    @Test
+    public void run() throws Exception {
+        // Geometry from options
+        String result = runApp(new String[]{
+                "count",
+                "-g", "MULTIPOINT ((0 0), (0 10), (10 10), (10 0), (0 0))"
+        }, null);
+        assertEquals(5, Integer.parseInt(result));
+
+        // Geometry from input stream
+        result = runApp(new String[]{
+                "count"
+        }, "MULTIPOINT ((0 0), (0 10), (10 10), (10 0), (0 0))");
+        assertEquals(5, Integer.parseInt(result));
     }
 }

@@ -10,7 +10,7 @@ import static org.junit.Assert.*;
  * The AreaCommand UnitTest
  * @author Jared Erickson
  */
-public class AreaCommandTest {
+public class AreaCommandTest extends BaseTest {
     
     @Test 
     public void executeWithOption() throws Exception {
@@ -37,5 +37,21 @@ public class AreaCommandTest {
         AreaCommand command = new AreaCommand();
         command.execute(options, reader, writer);
         assertEquals("100.0", writer.getBuffer().toString());
+    }
+
+    @Test
+    public void run() throws Exception {
+        // Geometry from options
+        String result = runApp(new String[]{
+                "area",
+                "-g", "POLYGON ((0 0, 0 10, 10 10, 10 0, 0 0))"
+        }, null);
+        assertEquals(100.0, Double.parseDouble(result), 0.001);
+
+        // Geometry from input stream
+        result = runApp(new String[]{
+                "area",
+        }, "POLYGON ((0 0, 0 10, 10 10, 10 0, 0 0))");
+        assertEquals(100.0, Double.parseDouble(result), 0.001);
     }
 }

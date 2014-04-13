@@ -5,12 +5,14 @@ import java.io.StringReader;
 import java.io.StringWriter;
 import org.junit.Test;
 import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.assertFalse;
+import static org.junit.Assert.assertTrue;
 
 /**
  * The ContainsCommand UnitTest
  * @author Jared Erickson
  */
-public class ContainsCommandTest {
+public class ContainsCommandTest extends BaseTest {
 
     @Test 
     public void execute() throws Exception {
@@ -42,5 +44,23 @@ public class ContainsCommandTest {
         command = new ContainsCommand();
         command.execute(options, reader, writer);
         assertEquals("false", writer.getBuffer().toString());
+    }
+
+    @Test
+    public void run() throws Exception {
+        // Geometry from options
+        String result = runApp(new String[]{
+                "contains",
+                "-g", "POLYGON ((0 0, 0 10, 10 10, 10 0, 0 0))",
+                "-o", "POINT (5 5)"
+        }, null);
+        assertTrue(Boolean.parseBoolean(result));
+
+        // Geometry from input stream
+        result = runApp(new String[]{
+                "contains",
+                "-o", "POINT (15 15)"
+        }, "POLYGON ((0 0, 0 10, 10 10, 10 0, 0 0))");
+        assertFalse(Boolean.parseBoolean(result));
     }
 }

@@ -11,7 +11,7 @@ import static org.junit.Assert.assertEquals;
  * The CoordinatesCommand UnitTest
  * @author Jared Erickson
  */
-public class CoordinatesCommandTest {
+public class CoordinatesCommandTest extends BaseTest {
 
     @Test 
     public void execute() throws Exception {
@@ -40,5 +40,22 @@ public class CoordinatesCommandTest {
         command = new CoordinatesCommand();
         command.execute(options, reader, writer);
         assertEquals("MULTIPOINT ((0 0), (0 10), (10 10), (10 0))", writer.getBuffer().toString());
+    }
+
+    @Test
+    public void run() throws Exception {
+        // Geometry from options
+        String result = runApp(new String[]{
+                "coordinates",
+                "-g", "POLYGON ((0 0, 0 10, 10 10, 10 0, 0 0))"
+        }, null);
+        assertEquals("MULTIPOINT ((0 0), (0 10), (10 10), (10 0), (0 0))", result);
+
+        // Geometry from input stream
+        result = runApp(new String[]{
+                "coordinates",
+                "-u"
+        }, "POLYGON ((0 0, 0 10, 10 10, 10 0, 0 0))");
+        assertEquals("MULTIPOINT ((0 0), (0 10), (10 10), (10 0))", result);
     }
 }

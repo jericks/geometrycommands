@@ -5,12 +5,14 @@ import java.io.StringReader;
 import java.io.StringWriter;
 import org.junit.Test;
 import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.assertFalse;
+import static org.junit.Assert.assertTrue;
 
 /**
  * The CoversCommand UnitTest
  * @author Jared Erickson
  */
-public class CoversCommandTest {
+public class CoversCommandTest extends BaseTest {
 
     @Test 
     public void execute() throws Exception {
@@ -42,5 +44,23 @@ public class CoversCommandTest {
         command = new CoversCommand();
         command.execute(options, reader, writer);
         assertEquals("false", writer.getBuffer().toString());
+    }
+
+    @Test
+    public void run() throws Exception {
+        // Geometry from options
+        String result = runApp(new String[]{
+                "covers",
+                "-g", "POLYGON ((0 0, 0 10, 10 10, 10 0, 0 0))",
+                "-o", "POINT (5 5)"
+        }, null);
+        assertTrue(Boolean.parseBoolean(result));
+
+        // Geometry from input stream
+        result = runApp(new String[]{
+                "covers",
+                "-o", "POINT (15 15)"
+        }, "POLYGON ((0 0, 0 10, 10 10, 10 0, 0 0))");
+        assertFalse(Boolean.parseBoolean(result));
     }
 }

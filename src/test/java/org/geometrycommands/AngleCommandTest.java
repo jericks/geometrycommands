@@ -15,7 +15,7 @@ import static org.junit.Assert.assertEquals;
  * The AngleCommand Unit Test
  * @author Jared Erickson
  */
-public class AngleCommandTest {
+public class AngleCommandTest extends BaseTest {
 
     @Test
     public void executeDegrees() throws Exception {
@@ -47,4 +47,24 @@ public class AngleCommandTest {
         String result = writer.toString();
         assertEquals(0.7853981633974483, Double.parseDouble(result), 0.001);
     }
+
+    @Test
+    public void run() throws Exception {
+        // Geometry from options
+        String result = runApp(new String[]{
+                "angle",
+                "-g", "POINT (1 1)",
+                "-o", "POINT (10 10)"
+        }, null);
+        assertEquals(45.0, Double.parseDouble(result), 0.001);
+
+        // Geometry from input stream
+        result = runApp(new String[]{
+                "angle",
+                "-o", "POINT (10 10)",
+                "-t", "radians"
+        }, "POINT (1 1)");
+        assertEquals(0.7853981633974483, Double.parseDouble(result), 0.001);
+    }
+
 }

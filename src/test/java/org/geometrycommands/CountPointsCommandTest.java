@@ -10,7 +10,7 @@ import static org.junit.Assert.assertEquals;
  * The CountPointsCommand UnitTest
  * @author Jared Erickson
  */
-public class CountPointsCommandTest {
+public class CountPointsCommandTest extends BaseTest {
 
     @Test 
     public void execute() throws Exception {
@@ -25,5 +25,21 @@ public class CountPointsCommandTest {
         CountPointsCommand command = new CountPointsCommand();
         command.execute(options, reader, writer);
         assertEquals("5", writer.getBuffer().toString());
+    }
+
+    @Test
+    public void run() throws Exception {
+        // Geometry from options
+        String result = runApp(new String[]{
+                "countpoints",
+                "-g", "MULTIPOINT ((0 0), (0 10), (10 10), (10 0), (0 0))"
+        }, null);
+        assertEquals(5, Integer.parseInt(result));
+
+        // Geometry from input stream
+        result = runApp(new String[]{
+                "countpoints"
+        }, "MULTIPOINT ((0 0), (0 10), (10 10), (10 0), (0 0))");
+        assertEquals(5, Integer.parseInt(result));
     }
 }

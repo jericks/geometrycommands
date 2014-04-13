@@ -10,7 +10,7 @@ import static org.junit.Assert.assertEquals;
  * The CombineCommand UnitTest
  * @author Jared Erickson
  */
-public class CombineCommandTest {
+public class CombineCommandTest extends BaseTest {
 
     private final static String NEW_LINE = System.getProperty("line.separator");
     
@@ -33,5 +33,13 @@ public class CombineCommandTest {
         writer = new StringWriter();
         command.execute(options, reader, writer);
         assertEquals("MULTIPOINT ((5 5), (1 1), (2 2))", writer.getBuffer().toString());
+    }
+
+    @Test
+    public void run() throws Exception {
+        String result = runApp(new String[]{
+                "combine",
+        }, "POINT (1 1)" + NEW_LINE + "POINT (2 2)" + NEW_LINE);
+        assertEquals("MULTIPOINT ((1 1), (2 2))", result);
     }
 }
