@@ -10,7 +10,7 @@ import static org.junit.Assert.assertEquals;
  * The DumpCommand UnitTest
  * @author Jared Erickson
  */
-public class DumpCommandTest {
+public class DumpCommandTest extends BaseTest {
 
     private final static String NEW_LINE = System.getProperty("line.separator");
     
@@ -38,5 +38,21 @@ public class DumpCommandTest {
         
         command.execute(options, reader, writer);
         assertEquals("POINT (5 5)" + NEW_LINE + "POINT (1 1)" + NEW_LINE + "POINT (2 2)" + NEW_LINE, writer.getBuffer().toString());
+    }
+
+    @Test
+    public void run() throws Exception {
+        // Geometry from options
+        String result = runApp(new String[]{
+                "dump",
+                "-g", "MULTIPOINT ((1 1), (2 2))"
+        }, null);
+        assertEquals("POINT (1 1)" + NEW_LINE + "POINT (2 2)", result);
+
+        // Geometry from input stream
+        result = runApp(new String[]{
+                "dump"
+        }, "MULTIPOINT ((1 1), (2 2))");
+        assertEquals("POINT (1 1)" + NEW_LINE + "POINT (2 2)", result);
     }
 }

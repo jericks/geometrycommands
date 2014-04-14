@@ -1,16 +1,19 @@
 package org.geometrycommands;
 
+import org.junit.Test;
+
 import java.io.Reader;
 import java.io.StringReader;
 import java.io.StringWriter;
-import org.junit.Test;
-import static org.junit.Assert.assertEquals;
+
+import static org.junit.Assert.*;
 
 /**
  * The DisjointCommand UnitTest
+ *
  * @author Jared Erickson
  */
-public class DisjointCommandTest {
+public class DisjointCommandTest extends BaseTest {
 
     @Test
     public void execute() throws Exception {
@@ -42,5 +45,23 @@ public class DisjointCommandTest {
         command = new DisjointCommand();
         command.execute(options, reader, writer);
         assertEquals("true", writer.getBuffer().toString());
+    }
+
+    @Test
+    public void run() throws Exception {
+        // Geometry from options
+        String result = runApp(new String[]{
+                "disjoint",
+                "-g", "POLYGON ((0 0, 0 10, 10 10, 10 0, 0 0))",
+                "-o", "LINESTRING (5 5, 5 15)"
+        }, null);
+        assertFalse(Boolean.parseBoolean(result));
+
+        // Geometry from input stream
+        result = runApp(new String[]{
+                "disjoint",
+                "-o", "LINESTRING (15 15, 20 20)"
+        }, "POLYGON ((0 0, 0 10, 10 10, 10 0, 0 0))");
+        assertTrue(Boolean.parseBoolean(result));
     }
 }

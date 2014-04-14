@@ -10,7 +10,7 @@ import static org.junit.Assert.assertEquals;
  * The DiscreteHausdorffDistanceCommand UnitTest
  * @author Jared Erickson
  */
-public class DiscreteHausdorffDistanceCommandTest {
+public class DiscreteHausdorffDistanceCommandTest extends BaseTest {
 
     @Test
     public void execute() throws Exception {
@@ -27,5 +27,23 @@ public class DiscreteHausdorffDistanceCommandTest {
         DiscreteHausdorffDistanceCommand command = new DiscreteHausdorffDistanceCommand();
         command.execute(options, reader, writer);
         assertEquals("29.068883707497267", writer.getBuffer().toString());
+    }
+
+    @Test
+    public void run() throws Exception {
+        // Geometry from options
+        String result = runApp(new String[]{
+                "hausdorffdistance",
+                "-g", "POINT (1 1)",
+                "-o", "POINT (20 23)"
+        }, null);
+        assertEquals(29.068883707497267, Double.parseDouble(result), 0.00001);
+
+        // Geometry from input stream
+        result = runApp(new String[]{
+                "hausdorffdistance",
+                "-o", "POINT (20 23)"
+        }, "POINT (1 1)");
+        assertEquals(29.068883707497267, Double.parseDouble(result), 0.00001);
     }
 }

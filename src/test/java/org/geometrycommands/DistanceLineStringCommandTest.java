@@ -1,16 +1,19 @@
 package org.geometrycommands;
 
+import org.junit.Test;
+
 import java.io.Reader;
 import java.io.StringReader;
 import java.io.StringWriter;
-import org.junit.Test;
+
 import static org.junit.Assert.assertEquals;
 
 /**
  * The DistanceLineStringCommand UnitTest
+ *
  * @author Jared Erickson
  */
-public class DistanceLineStringCommandTest {
+public class DistanceLineStringCommandTest extends BaseTest {
 
     @Test
     public void execute() throws Exception {
@@ -27,5 +30,23 @@ public class DistanceLineStringCommandTest {
         DistanceLineStringCommand command = new DistanceLineStringCommand();
         command.execute(options, reader, writer);
         assertEquals("LINESTRING (1 1, 20 23)", writer.getBuffer().toString());
+    }
+
+    @Test
+    public void run() throws Exception {
+        // Geometry from options
+        String result = runApp(new String[]{
+                "distanceline",
+                "-g", "POINT (1 1)",
+                "-o", "POINT (20 23)"
+        }, null);
+        assertEquals("LINESTRING (1 1, 20 23)", result);
+
+        // Geometry from input stream
+        result = runApp(new String[]{
+                "distanceline",
+                "-o", "POINT (20 23)"
+        }, "POINT (1 1)");
+        assertEquals("LINESTRING (1 1, 20 23)", result);
     }
 }
