@@ -10,7 +10,7 @@ import static org.junit.Assert.assertEquals;
  * The GeometryTypeCommand UnitTest
  * @author Jared Erickson
  */
-public class GeometryTypeCommandTest {
+public class GeometryTypeCommandTest extends BaseTest {
 
     @Test 
     public void execute() throws Exception {
@@ -38,5 +38,21 @@ public class GeometryTypeCommandTest {
         command = new GeometryTypeCommand();
         command.execute(options, reader, writer);
         assertEquals("Point", writer.getBuffer().toString());
+    }
+
+    @Test
+    public void run() throws Exception {
+        // Geometry from options
+        String result = runApp(new String[]{
+                "type",
+                "-g", "POLYGON ((0 0, 0 10, 10 10, 10 0, 0 0))"
+        }, null);
+        assertEquals("Polygon", result);
+
+        // Geometry from input stream
+        result = runApp(new String[]{
+                "type"
+        }, "POINT (5 5)");
+        assertEquals("Point", result);
     }
 }

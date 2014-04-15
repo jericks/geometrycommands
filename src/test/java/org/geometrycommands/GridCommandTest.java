@@ -11,7 +11,7 @@ import static org.junit.Assert.assertEquals;
  * The GridCommand UnitTest
  * @author Jared Erickson
  */
-public class GridCommandTest {
+public class GridCommandTest extends BaseTest {
 
     @Test
     public void execute() throws Exception {
@@ -32,5 +32,33 @@ public class GridCommandTest {
                 + "POLYGON ((0 5, 0 10, 5 10, 5 5, 0 5)), "
                 + "POLYGON ((5 5, 5 10, 10 10, 10 5, 5 5)))",
                 writer.getBuffer().toString());
+    }
+
+    @Test
+    public void run() throws Exception {
+        // Geometry from options
+        String result = runApp(new String[]{
+                "grid",
+                "-g", "POLYGON ((0 0, 0 10, 10 10, 10 0, 0 0))",
+                "-c", "2",
+                "-r", "2"
+        }, null);
+        assertEquals("GEOMETRYCOLLECTION ("
+                + "POLYGON ((0 0, 0 5, 5 5, 5 0, 0 0)), "
+                + "POLYGON ((5 0, 5 5, 10 5, 10 0, 5 0)), "
+                + "POLYGON ((0 5, 0 10, 5 10, 5 5, 0 5)), "
+                + "POLYGON ((5 5, 5 10, 10 10, 10 5, 5 5)))", result);
+
+        // Geometry from input stream
+        result = runApp(new String[]{
+                "grid",
+                "-c", "2",
+                "-r", "2"
+        }, "POLYGON ((0 0, 0 10, 10 10, 10 0, 0 0))");
+        assertEquals("GEOMETRYCOLLECTION ("
+                + "POLYGON ((0 0, 0 5, 5 5, 5 0, 0 0)), "
+                + "POLYGON ((5 0, 5 5, 10 5, 10 0, 5 0)), "
+                + "POLYGON ((0 5, 0 10, 5 10, 5 5, 0 5)), "
+                + "POLYGON ((5 5, 5 10, 10 10, 10 5, 5 5)))", result);
     }
 }

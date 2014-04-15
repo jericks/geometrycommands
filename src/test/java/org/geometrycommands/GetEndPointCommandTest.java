@@ -10,7 +10,7 @@ import static org.junit.Assert.assertEquals;
  * The GetEndPointCommand UnitTest
  * @author Jared Erickson
  */
-public class GetEndPointCommandTest {
+public class GetEndPointCommandTest extends BaseTest {
 
     @Test 
     public void execute() throws Exception {
@@ -35,5 +35,21 @@ public class GetEndPointCommandTest {
         
         command.execute(options, reader, writer);
         assertEquals("POINT (40 40)", writer.getBuffer().toString());
+    }
+
+    @Test
+    public void run() throws Exception {
+        // Geometry from options
+        String result = runApp(new String[]{
+                "endpoint",
+                "-g", "LINESTRING (1 1, 5 5, 10 10)"
+        }, null);
+        assertEquals("POINT (10 10)", result);
+
+        // Geometry from input stream
+        result = runApp(new String[]{
+                "endpoint"
+        }, "MULTILINESTRING ((1 1, 5 5, 10 10), (20 20, 30 30, 40 40))");
+        assertEquals("POINT (40 40)", result);
     }
 }

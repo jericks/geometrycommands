@@ -11,7 +11,7 @@ import static org.junit.Assert.assertEquals;
  * The GetGeometryCommand UnitTest
  * @author Jared Erickson
  */
-public class GetGeometryCommandTest {
+public class GetGeometryCommandTest extends BaseTest {
 
     @Test
     public void execute() throws Exception {
@@ -39,5 +39,23 @@ public class GetGeometryCommandTest {
 
         command.execute(options, reader, writer);
         assertEquals("POINT (10 10)", writer.getBuffer().toString());
+    }
+
+    @Test
+    public void run() throws Exception {
+        // Geometry from options
+        String result = runApp(new String[]{
+                "get",
+                "-g", "MULTIPOINT ((0 0), (0 10), (10 10), (10 0))",
+                "-n", "0"
+        }, null);
+        assertEquals("POINT (0 0)", result);
+
+        // Geometry from input stream
+        result = runApp(new String[]{
+                "get",
+                "-n", "2"
+        }, "MULTIPOINT ((0 0), (0 10), (10 10), (10 0))");
+        assertEquals("POINT (10 10)", result);
     }
 }

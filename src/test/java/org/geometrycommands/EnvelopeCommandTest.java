@@ -11,7 +11,7 @@ import static org.junit.Assert.assertEquals;
  * The EnvelopeCommand UnitTest
  * @author Jared Erickson
  */
-public class EnvelopeCommandTest {
+public class EnvelopeCommandTest extends BaseTest {
 
     @Test 
     public void execute() throws Exception {
@@ -43,5 +43,22 @@ public class EnvelopeCommandTest {
         command.execute(options, reader, writer);
         assertEquals("POLYGON ((0 0, 0 10, 10 10, 10 0, 0 0))", writer.getBuffer().toString());
     }
-    
+
+    @Test
+    public void run() throws Exception {
+        // Geometry from options
+        String result = runApp(new String[]{
+                "envelope",
+                "-g", "POLYGON ((0 0, 0 10, 10 10, 10 0, 0 0))"
+        }, null);
+        assertEquals("POLYGON ((0 0, 0 10, 10 10, 10 0, 0 0))", result);
+
+        // Geometry from input stream
+        result = runApp(new String[]{
+                "envelope",
+                "-e", "5"
+        }, "POINT (5 5)");
+        assertEquals("POLYGON ((0 0, 0 10, 10 10, 10 0, 0 0))", result);
+    }
+
 }
