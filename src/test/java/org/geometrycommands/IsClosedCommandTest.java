@@ -5,12 +5,14 @@ import java.io.StringReader;
 import java.io.StringWriter;
 import org.junit.Test;
 import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.assertFalse;
+import static org.junit.Assert.assertTrue;
 
 /**
  * The IsClosedCommand UnitTest
  * @author Jared Erickson
  */
-public class IsClosedCommandTest {
+public class IsClosedCommandTest extends BaseTest {
 
     @Test
     public void execute() throws Exception {
@@ -37,5 +39,21 @@ public class IsClosedCommandTest {
 
         command.execute(options, reader, writer);
         assertEquals("false", writer.getBuffer().toString());
+    }
+
+    @Test
+    public void run() throws Exception {
+        // Geometry from options
+        String result = runApp(new String[]{
+                "isclosed",
+                "-g", "LINESTRING (1 1, 1 5, 5 5, 5 1, 1 1)"
+        }, null);
+        assertTrue(Boolean.parseBoolean(result));
+
+        // Geometry from input stream
+        result = runApp(new String[]{
+                "isclosed"
+        }, "LINESTRING (1 1, 5 5, 10 10)");
+        assertFalse(Boolean.parseBoolean(result));
     }
 }

@@ -5,12 +5,14 @@ import java.io.StringReader;
 import java.io.StringWriter;
 import org.junit.Test;
 import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.assertFalse;
+import static org.junit.Assert.assertTrue;
 
 /**
  * The IsEmptyCommand UnitTest
  * @author Jared Erickson
  */
-public class IsEmptyCommandTest {
+public class IsEmptyCommandTest extends BaseTest {
 
     @Test
     public void execute() throws Exception {
@@ -38,5 +40,21 @@ public class IsEmptyCommandTest {
         command = new IsEmptyCommand();
         command.execute(options, reader, writer);
         assertEquals("false", writer.getBuffer().toString());
+    }
+
+    @Test
+    public void run() throws Exception {
+        // Geometry from options
+        String result = runApp(new String[]{
+                "isempty",
+                "-g", "POINT EMPTY"
+        }, null);
+        assertTrue(Boolean.parseBoolean(result));
+
+        // Geometry from input stream
+        result = runApp(new String[]{
+                "isempty"
+        }, "LINESTRING (1 1, 5 5, 10 10)");
+        assertFalse(Boolean.parseBoolean(result));
     }
 }

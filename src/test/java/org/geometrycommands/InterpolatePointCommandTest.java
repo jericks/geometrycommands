@@ -11,7 +11,7 @@ import static org.junit.Assert.assertEquals;
  * The InterpolatePointCommand UnitTest
  * @author Jared Erickson
  */
-public class InterpolatePointCommandTest {
+public class InterpolatePointCommandTest extends BaseTest {
 
     @Test 
     public void execute() throws Exception {
@@ -27,5 +27,23 @@ public class InterpolatePointCommandTest {
         InterpolatePointCommand command = new InterpolatePointCommand();
         command.execute(options, reader, writer);
         assertEquals("POINT (2.5 2.5)", writer.getBuffer().toString());
+    }
+
+    @Test
+    public void run() throws Exception {
+        // Geometry from options
+        String result = runApp(new String[]{
+                "interpolatepoint",
+                "-g", "LINESTRING (0 0, 5 5, 10 10)",
+                "-p", "0.25"
+        }, null);
+        assertEquals("POINT (2.5 2.5)", result);
+
+        // Geometry from input stream
+        result = runApp(new String[]{
+                "interpolatepoint",
+                "-p", "0.25"
+        }, "LINESTRING (0 0, 5 5, 10 10)");
+        assertEquals("POINT (2.5 2.5)", result);
     }
 }

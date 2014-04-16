@@ -6,12 +6,14 @@ import java.io.StringReader;
 import java.io.StringWriter;
 import org.junit.Test;
 import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.assertFalse;
+import static org.junit.Assert.assertTrue;
 
 /**
  * The IsWithinDistanceCommand UnitTest
  * @author Jared Erickson
  */
-public class IsWithinDistanceCommandTest {
+public class IsWithinDistanceCommandTest extends BaseTest {
 
     @Test
     public void execute() throws Exception {
@@ -40,5 +42,25 @@ public class IsWithinDistanceCommandTest {
         command = new IsWithinDistanceCommand();
         command.execute(options, reader, writer);
         assertEquals("false", writer.getBuffer().toString());
+    }
+
+    @Test
+    public void run() throws Exception {
+        // Geometry from options
+        String result = runApp(new String[]{
+                "iswithindistance",
+                "-g", "POINT (1 1)",
+                "-o", "POINT (20 23)",
+                "-d", "30"
+        }, null);
+        assertTrue(Boolean.parseBoolean(result));
+
+        // Geometry from input stream
+        result = runApp(new String[]{
+                "iswithindistance",
+                "-o", "POINT (20 23)",
+                "-d", "10"
+        }, "POINT (1 1)");
+        assertFalse(Boolean.parseBoolean(result));
     }
 }

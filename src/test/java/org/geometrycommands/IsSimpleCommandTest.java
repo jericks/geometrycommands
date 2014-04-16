@@ -5,12 +5,14 @@ import java.io.StringReader;
 import java.io.StringWriter;
 import org.junit.Test;
 import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.assertFalse;
+import static org.junit.Assert.assertTrue;
 
 /**
  * The IsSimpleCommand UnitTest
  * @author Jared Erickson
  */
-public class IsSimpleCommandTest {
+public class IsSimpleCommandTest extends BaseTest {
 
     @Test
     public void execute() throws Exception {
@@ -39,5 +41,23 @@ public class IsSimpleCommandTest {
 
         command.execute(options, reader, writer);
         assertEquals("false", writer.getBuffer().toString());
+    }
+
+    @Test
+    public void run() throws Exception {
+        // Geometry from options
+        String result = runApp(new String[]{
+                "issimple",
+                "-g", "POLYGON ((0 0, 0 10, 10 10, 10 0, 0 0))"
+        }, null);
+        assertTrue(Boolean.parseBoolean(result));
+
+        // Geometry from input stream
+        result = runApp(new String[]{
+                "issimple"
+        }, "LINESTRING (8.14208984375 48.0419921875, "
+                + "10.60302734375 51.6015625, 11.56982421875 47.91015625, "
+                + "8.36181640625 50.72265625)");
+        assertFalse(Boolean.parseBoolean(result));
     }
 }

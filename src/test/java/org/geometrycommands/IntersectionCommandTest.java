@@ -10,7 +10,7 @@ import static org.junit.Assert.assertEquals;
  * The IntersectionCommand UnitTest
  * @author Jared Erickson
  */
-public class IntersectionCommandTest {
+public class IntersectionCommandTest extends BaseTest {
 
     @Test
     public void execute() throws Exception {
@@ -28,5 +28,23 @@ public class IntersectionCommandTest {
         command.execute(options, reader, writer);
         assertEquals("POLYGON ((5 10, 10 10, 10 5, 5 5, 5 10))",
                 writer.getBuffer().toString());
+    }
+
+    @Test
+    public void run() throws Exception {
+        // Geometry from options
+        String result = runApp(new String[]{
+                "intersection",
+                "-g", "POLYGON ((0 0, 0 10, 10 10, 10 0, 0 0))",
+                "-o", "POLYGON ((5 5, 5 20, 20 20, 20 5, 5 5))"
+        }, null);
+        assertEquals("POLYGON ((5 10, 10 10, 10 5, 5 5, 5 10))", result);
+
+        // Geometry from input stream
+        result = runApp(new String[]{
+                "intersection",
+                "-o", "POLYGON ((5 5, 5 20, 20 20, 20 5, 5 5))"
+        }, "POLYGON ((0 0, 0 10, 10 10, 10 0, 0 0))");
+        assertEquals("POLYGON ((5 10, 10 10, 10 5, 5 5, 5 10))", result);
     }
 }
