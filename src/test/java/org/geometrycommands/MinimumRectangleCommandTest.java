@@ -10,7 +10,7 @@ import static org.junit.Assert.assertEquals;
  * The MinimumRectangleCommand UnitTest
  * @author Jared Erickson
  */
-public class MinimumRectangleCommandTest {
+public class MinimumRectangleCommandTest extends BaseTest {
 
     @Test
     public void execute() throws Exception {
@@ -33,5 +33,35 @@ public class MinimumRectangleCommandTest {
                 + "13.014032922722615, 6.896623691680514 7.460269758113947, "
                 + "13.737894633461437 7.658802439672627))", 
                 writer.getBuffer().toString());
+    }
+
+    @Test
+    public void run() throws Exception {
+        // Geometry from options
+        String result = runApp(new String[]{
+                "minrect",
+                "-g", "MULTIPOINT ((12.27256417862947 12.73833434783841), "
+                + "(13.737894633461437 7.658802439672621), "
+                + "(6.857126638942733 8.821305316892328), "
+                + "(9.260874914207697 13.087320259444919), "
+                + "(8.017822881853032 7.492806794533148))",
+        }, null);
+        assertEquals("POLYGON ((13.737894633461437 7.658802439672627, "
+                + "13.576725239178604 13.212565604281293, 6.7354542973976805 "
+                + "13.014032922722615, 6.896623691680514 7.460269758113947, "
+                + "13.737894633461437 7.658802439672627))", result);
+
+        // Geometry from input stream
+        result = runApp(new String[]{
+                "minrect"
+        }, "MULTIPOINT ((12.27256417862947 12.73833434783841), "
+                + "(13.737894633461437 7.658802439672621), "
+                + "(6.857126638942733 8.821305316892328), "
+                + "(9.260874914207697 13.087320259444919), "
+                + "(8.017822881853032 7.492806794533148))");
+        assertEquals("POLYGON ((13.737894633461437 7.658802439672627, "
+                + "13.576725239178604 13.212565604281293, 6.7354542973976805 "
+                + "13.014032922722615, 6.896623691680514 7.460269758113947, "
+                + "13.737894633461437 7.658802439672627))", result);
     }
 }

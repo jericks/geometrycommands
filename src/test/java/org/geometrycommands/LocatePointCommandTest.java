@@ -10,7 +10,7 @@ import static org.junit.Assert.assertEquals;
  * The LocatePointCommand UnitTest
  * @author Jared Erickson
  */
-public class LocatePointCommandTest {
+public class LocatePointCommandTest extends BaseTest {
 
     @Test 
     public void execute() throws Exception {
@@ -27,5 +27,23 @@ public class LocatePointCommandTest {
         LocatePointCommand command = new LocatePointCommand();
         command.execute(options, reader, writer);
         assertEquals("0.25", writer.getBuffer().toString());
+    }
+
+    @Test
+    public void run() throws Exception {
+        // Geometry from options
+        String result = runApp(new String[]{
+                "locatepoint",
+                "-g", "LINESTRING (0 0, 5 5, 10 10)",
+                "-o", "POINT (2.5 2.5)"
+        }, null);
+        assertEquals(0.25, Double.parseDouble(result), 0.01);
+
+        // Geometry from input stream
+        result = runApp(new String[]{
+                "locatepoint",
+                "-o", "POINT (2.5 2.5)"
+        }, "LINESTRING (0 0, 5 5, 10 10)");
+        assertEquals(0.25, Double.parseDouble(result), 0.01);
     }
 }

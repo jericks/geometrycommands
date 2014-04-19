@@ -10,7 +10,7 @@ import static org.junit.Assert.assertEquals;
  * The MinimumDiameterCommand UnitTest
  * @author Jared Erickson
  */
-public class MinimumDiameterCommandTest {
+public class MinimumDiameterCommandTest extends BaseTest {
 
     @Test
     public void execute() throws Exception {
@@ -29,5 +29,29 @@ public class MinimumDiameterCommandTest {
         command.execute(options, reader, writer);
         assertEquals("LINESTRING (14.966024044129165 49.042379599235645, "
                 + "6.91162109375 52.5244140625)", writer.getBuffer().toString());
+    }
+
+    @Test
+    public void run() throws Exception {
+        // Geometry from options
+        String result = runApp(new String[]{
+                "mindiameter",
+                "-g", "POLYGON ((15.92041015625 51.25, 6.91162109375 "
+                + "52.5244140625, 12.36083984375 45.9765625, 5.46142578125 "
+                + "40.7470703125, 11.56982421875 41.1865234375, "
+                + "15.92041015625 51.25))",
+        }, null);
+        assertEquals("LINESTRING (14.966024044129165 49.042379599235645, "
+                + "6.91162109375 52.5244140625)", result);
+
+        // Geometry from input stream
+        result = runApp(new String[]{
+                "mindiameter"
+        }, "POLYGON ((15.92041015625 51.25, 6.91162109375 "
+                + "52.5244140625, 12.36083984375 45.9765625, 5.46142578125 "
+                + "40.7470703125, 11.56982421875 41.1865234375, "
+                + "15.92041015625 51.25))");
+        assertEquals("LINESTRING (14.966024044129165 49.042379599235645, "
+                + "6.91162109375 52.5244140625)", result);
     }
 }

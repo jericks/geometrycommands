@@ -10,7 +10,7 @@ import static org.junit.Assert.assertEquals;
  * The LineMergeCommand UnitTest
  * @author Jared Erickson
  */
-public class LineMergeCommandTest {
+public class LineMergeCommandTest extends BaseTest {
 
     @Test
     public void execute() throws Exception {
@@ -26,5 +26,21 @@ public class LineMergeCommandTest {
         command.execute(options, reader, writer);
         assertEquals("MULTILINESTRING ((-29 -27, -30 -29.7, -36 -31, -45 -33, -46 -32))",
                 writer.getBuffer().toString());
+    }
+
+    @Test
+    public void run() throws Exception {
+        // Geometry from options
+        String result = runApp(new String[]{
+                "linemerge",
+                "-g", "MULTILINESTRING((-29 -27,-30 -29.7,-36 -31,-45 -33),(-45 -33,-46 -32))"
+        }, null);
+        assertEquals("MULTILINESTRING ((-29 -27, -30 -29.7, -36 -31, -45 -33, -46 -32))", result);
+
+        // Geometry from input stream
+        result = runApp(new String[]{
+                "linemerge",
+        }, "MULTILINESTRING((-29 -27,-30 -29.7,-36 -31,-45 -33),(-45 -33,-46 -32))");
+        assertEquals("MULTILINESTRING ((-29 -27, -30 -29.7, -36 -31, -45 -33, -46 -32))", result);
     }
 }
