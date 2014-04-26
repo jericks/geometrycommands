@@ -11,7 +11,7 @@ import static org.junit.Assert.assertEquals;
  * The SineStarCommand UnitTest
  * @author Jared Erickson
  */
-public class SineStarCommandTest {
+public class SineStarCommandTest extends BaseTest {
 
     @Test
     public void execute() throws Exception {
@@ -35,5 +35,38 @@ public class SineStarCommandTest {
                 + "104.77457514062631 110.30536869268818, 125 125, "
                 + "132.72542485937367 101.22358709262116, 125 125, 150 125))",
                 writer.getBuffer().toString());
+    }
+
+    @Test
+    public void run() throws Exception {
+
+        // Geometry from options
+        String result = runApp(new String[]{
+                "sinestar",
+                "-g", "POINT (100 100)",
+                "-n", "5",
+                "-l", "5",
+                "-w", "50",
+                "-h", "40",
+                "-p", "10"
+        }, null);
+        assertEquals("POLYGON ((150 125, 125 125, 132.72542485937367 148.77641290737884, "
+                + "125 125, 104.77457514062633 139.69463130731182, 125 125, "
+                + "104.77457514062631 110.30536869268818, 125 125, "
+                + "132.72542485937367 101.22358709262116, 125 125, 150 125))", result);
+
+        // Geometry from input stream
+        result = runApp(new String[]{
+                "sinestar",
+                "-n", "5",
+                "-l", "5",
+                "-w", "50",
+                "-h", "40",
+                "-p", "10"
+        }, "POINT (100 100)");
+        assertEquals("POLYGON ((150 125, 125 125, 132.72542485937367 148.77641290737884, "
+                + "125 125, 104.77457514062633 139.69463130731182, 125 125, "
+                + "104.77457514062631 110.30536869268818, 125 125, "
+                + "132.72542485937367 101.22358709262116, 125 125, 150 125))", result);
     }
 }

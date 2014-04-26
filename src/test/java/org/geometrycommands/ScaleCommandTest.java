@@ -11,7 +11,7 @@ import static org.junit.Assert.assertEquals;
  * The ScaleCommand UnitTest
  * @author Jared Erickson
  */
-public class ScaleCommandTest {
+public class ScaleCommandTest extends BaseTest {
 
     @Test 
     public void execute() throws Exception {
@@ -29,5 +29,27 @@ public class ScaleCommandTest {
         command.execute(options, reader, writer);
         assertEquals("POLYGON ((0 0, 0 50, 20 50, "
                 + "20 0, 0 0))", writer.getBuffer().toString());
+    }
+
+    @Test
+    public void run() throws Exception {
+        // Geometry from options
+        String result = runApp(new String[]{
+                "scale",
+                "-g", "POLYGON ((0 0, 0 10, 10 10, 10 0, 0 0))",
+                "-s", "2",
+                "-t", "5"
+        }, null);
+        assertEquals("POLYGON ((0 0, 0 50, 20 50, "
+                + "20 0, 0 0))", result);
+
+        // Geometry from input stream
+        result = runApp(new String[]{
+                "scale",
+                "-s", "2",
+                "-t", "5"
+        }, "POLYGON ((0 0, 0 10, 10 10, 10 0, 0 0))");
+        assertEquals("POLYGON ((0 0, 0 50, 20 50, "
+                + "20 0, 0 0))", result);
     }
 }

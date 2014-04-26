@@ -5,12 +5,14 @@ import java.io.StringReader;
 import java.io.StringWriter;
 import org.junit.Test;
 import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.assertFalse;
+import static org.junit.Assert.assertTrue;
 
 /**
  * The OverlapsCommand UnitTest
  * @author Jared Erickson
  */
-public class OverlapsCommandTest {
+public class OverlapsCommandTest extends BaseTest {
 
     @Test 
     public void execute() throws Exception {
@@ -42,4 +44,28 @@ public class OverlapsCommandTest {
         command.execute(options, reader, writer);
         assertEquals("false", writer.getBuffer().toString());
     }
+
+    @Test
+    public void run() throws Exception {
+
+        String inputGeometry = "POLYGON ((0 0, 0 10, 10 10, 10 0, 0 0))";
+        String otherGeometry1 = "POLYGON ((2 2, 2 14, 14 14, 14 2, 2 2))";
+        String otherGeometry2 = "POINT (15 15)";
+
+        // Geometry from options
+        String result = runApp(new String[]{
+                "overlaps",
+                "-g", inputGeometry,
+                "-o", otherGeometry1
+        }, null);
+        assertTrue(Boolean.parseBoolean(result));
+
+        // Geometry from input stream
+        result = runApp(new String[]{
+                "overlaps",
+                "-o", otherGeometry2
+        }, inputGeometry);
+        assertFalse(Boolean.parseBoolean(result));
+    }
+
 }

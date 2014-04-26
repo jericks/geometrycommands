@@ -14,7 +14,7 @@ import static org.junit.Assert.*;
  * The TextCommand UnitTest
  * @author Jared Erickson
  */
-public class TextCommandTest {
+public class TextCommandTest extends BaseTest {
 
     @Test
     public void execute() throws Exception {
@@ -30,5 +30,21 @@ public class TextCommandTest {
         Geometry geom = new WKTReader().read(writer.getBuffer().toString());
         assertNotNull(geom);
         assertTrue(geom instanceof Polygon);
+    }
+
+    @Test
+    public void run() throws Exception {
+
+        // Geometry from options
+        String result = runApp(new String[]{
+                "text",
+                "-t", "J",
+                "-f", "Serif",
+                "-s", "32"
+        }, null);
+        Geometry geom = new WKTReader().read(result);
+        assertNotNull(geom);
+        assertTrue(geom instanceof Polygon);
+
     }
 }

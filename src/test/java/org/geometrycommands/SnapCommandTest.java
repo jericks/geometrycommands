@@ -11,7 +11,7 @@ import static org.junit.Assert.assertEquals;
  * The SnapCommand UnitTest
  * @author Jared Erickson
  */
-public class SnapCommandTest {
+public class SnapCommandTest extends BaseTest {
 
     @Test
     public void execute() throws Exception {
@@ -32,5 +32,32 @@ public class SnapCommandTest {
                 + "POLYGON ((0 0, 0 10, 11 11, 10 0, 0 0)), "
                 + "POLYGON ((11 11, 11 20, 20 20, 20 11, 11 11)))",
                 writer.getBuffer().toString());
+    }
+
+    @Test
+    public void run() throws Exception {
+
+        String inputGeometry = "POLYGON ((0 0, 0 10, 10 10, 10 0, 0 0))";
+        String otherGeometry = "POLYGON ((11 11, 11 20, 20 20, 20 11, 11 11))";
+        String resultGeometry = "GEOMETRYCOLLECTION ("
+                + "POLYGON ((0 0, 0 10, 11 11, 10 0, 0 0)), "
+                + "POLYGON ((11 11, 11 20, 20 20, 20 11, 11 11)))";
+
+        // Geometry from options
+        String result = runApp(new String[]{
+                "snap",
+                "-g", inputGeometry,
+                "-o", otherGeometry,
+                "-d", "1.5"
+        }, null);
+        assertEquals(resultGeometry, result);
+
+        // Geometry from input stream
+        result = runApp(new String[]{
+                "snap",
+                "-o", otherGeometry,
+                "-d", "1.5"
+        }, inputGeometry);
+        assertEquals(resultGeometry, result);
     }
 }

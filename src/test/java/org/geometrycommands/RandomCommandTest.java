@@ -8,12 +8,14 @@ import java.io.StringReader;
 import java.io.StringWriter;
 import org.junit.Test;
 import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.assertFalse;
+import static org.junit.Assert.assertTrue;
 
 /**
  * The RandomCommand UnitTest
  * @author Jared Erickson
  */
-public class RandomCommandTest {
+public class RandomCommandTest extends BaseTest {
 
     @Test
     public void execute() throws Exception {
@@ -30,6 +32,28 @@ public class RandomCommandTest {
         command.execute(options, reader, writer);
         String output = writer.getBuffer().toString();
         Geometry geometry = new WKTReader().read(output);
+        assertEquals("MultiPoint", geometry.getGeometryType());
+        assertEquals(10, geometry.getNumGeometries());
+    }
+
+    @Test
+    public void run() throws Exception {
+        // Geometry from options
+        String result = runApp(new String[]{
+                "random",
+                "-g", "POLYGON ((0 0, 0 10, 10 10, 10 0, 0 0))",
+                "-n", "10"
+        }, null);
+        Geometry geometry = new WKTReader().read(result);
+        assertEquals("MultiPoint", geometry.getGeometryType());
+        assertEquals(10, geometry.getNumGeometries());
+
+        // Geometry from input stream
+        result = runApp(new String[]{
+                "random",
+                "-n", "10"
+        }, "POLYGON ((0 0, 0 10, 10 10, 10 0, 0 0))");
+        geometry = new WKTReader().read(result);
         assertEquals("MultiPoint", geometry.getGeometryType());
         assertEquals(10, geometry.getNumGeometries());
     }

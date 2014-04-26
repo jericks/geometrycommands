@@ -10,7 +10,7 @@ import static org.junit.Assert.assertEquals;
  * The RectangleCommand UnitTest
  * @author Jared Erickson
  */
-public class RectangleCommandTest {
+public class RectangleCommandTest extends BaseTest {
 
     @Test
     public void execute() throws Exception {
@@ -30,5 +30,29 @@ public class RectangleCommandTest {
         assertEquals("POLYGON ((100 100, 125 100, 150 100, 150 120, 150 140, "
                 + "125 140, 100 140, 100 120, 100 100))",
                 writer.getBuffer().toString());
+    }
+
+    @Test
+    public void run() throws Exception {
+        // Geometry from options
+        String result = runApp(new String[]{
+                "rectangle",
+                "-g", "POINT (100 100)",
+                "-w", "50",
+                "-h", "40",
+                "-p", "10"
+        }, null);
+        assertEquals("POLYGON ((100 100, 125 100, 150 100, 150 120, 150 140, "
+                + "125 140, 100 140, 100 120, 100 100))", result);
+
+        // Geometry from input stream
+        result = runApp(new String[]{
+                "rectangle",
+                "-w", "50",
+                "-h", "40",
+                "-p", "10"
+        }, "POINT (100 100)");
+        assertEquals("POLYGON ((100 100, 125 100, 150 100, 150 120, 150 140, "
+                + "125 140, 100 140, 100 120, 100 100))", result);
     }
 }

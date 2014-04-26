@@ -11,7 +11,7 @@ import static org.junit.Assert.assertEquals;
  * The PointAtAngleCommand UnitTest
  * @author Jared Erickson
  */
-public class PointAtAngleCommandTest {
+public class PointAtAngleCommandTest extends BaseTest {
 
     @Test 
     public void execute() throws Exception {
@@ -40,5 +40,26 @@ public class PointAtAngleCommandTest {
         
         command.execute(options, reader, writer);
         assertEquals("POINT (13.535533905932738 13.535533905932738)", writer.getBuffer().toString());
+    }
+
+    @Test
+    public void run() throws Exception {
+
+        // Geometry from options
+        String result = runApp(new String[]{
+                "pointatangle",
+                "-g", "POINT (10 10)",
+                "-a", "90",
+                "-d", "10"
+        }, null);
+        assertEquals("POINT (10 20)", result);
+
+        // Geometry from input stream
+        result = runApp(new String[]{
+                "pointatangle",
+                "-a", "45",
+                "-d", "5"
+        }, "POINT (10 10)");
+        assertEquals("POINT (13.535533905932738 13.535533905932738)", result);
     }
 }

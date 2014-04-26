@@ -11,7 +11,7 @@ import static org.junit.Assert.assertEquals;
  * The SimplifyCommand UnitTest
  * @author Jared Erickson
  */
-public class SimplifyCommandTest {
+public class SimplifyCommandTest extends BaseTest {
 
     @Test 
     public void execute() throws Exception {
@@ -46,4 +46,33 @@ public class SimplifyCommandTest {
         command.execute(options, reader, writer);
         assertEquals("LINESTRING (1 1, 12 12)", writer.getBuffer().toString());
     }
+
+    @Test
+    public void run() throws Exception {
+
+        String inputGeometry = "LINESTRING (1 1, 2.3333333333333335 2.3333333333333335, "
+                + "3.666666666666667 3.666666666666667, 5 5, 6.4 6.4, "
+                + "7.800000000000001 7.800000000000001, 9.200000000000001 "
+                + "9.200000000000001, 10.600000000000001 10.600000000000001, "
+                + "12 12)";
+        String otherGeometry = "POLYGON ((2 2, 2 14, 14 14, 14 2, 2 2))";
+
+        // Geometry from options
+        String result = runApp(new String[]{
+                "simplify",
+                "-g", inputGeometry,
+                "-a", "douglaspeucker",
+                "-d", "2"
+        }, null);
+        assertEquals("LINESTRING (1 1, 12 12)", result);
+
+        // Geometry from input stream
+        result = runApp(new String[]{
+                "simplify",
+                "-a", "topologypreserving",
+                "-d", "2"
+        }, inputGeometry);
+        assertEquals("LINESTRING (1 1, 12 12)", result);
+    }
+
 }

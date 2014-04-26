@@ -10,7 +10,7 @@ import static org.junit.Assert.assertEquals;
  * The WithinCommand UnitTest
  * @author Jared Erickson
  */
-public class WithinCommandTest {
+public class WithinCommandTest extends BaseTest {
 
     @Test 
     public void execute() throws Exception {
@@ -41,5 +41,24 @@ public class WithinCommandTest {
         
         command.execute(options, reader, writer);
         assertEquals("false", writer.getBuffer().toString());
+    }
+
+    @Test
+    public void run() throws Exception {
+
+        // Geometry from options
+        String result = runApp(new String[]{
+                "within",
+                "-g", "POINT (5 5)",
+                "-o", "POLYGON ((0 0, 0 10, 10 10, 10 0, 0 0))"
+        }, null);
+        assertEquals("true", result);
+
+        // Geometry from input stream
+        result = runApp(new String[]{
+                "within",
+                "-o", "POLYGON ((0 0, 0 10, 10 10, 10 0, 0 0))"
+        }, "POINT (15 15)");
+        assertEquals("false", result);
     }
 }

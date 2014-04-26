@@ -11,7 +11,7 @@ import static org.junit.Assert.assertEquals;
  * The RotateCommand UnitTest
  * @author Jared Erickson
  */
-public class RotateCommandTest {
+public class RotateCommandTest extends BaseTest {
 
     @Test 
     public void execute() throws Exception {
@@ -29,5 +29,27 @@ public class RotateCommandTest {
         assertEquals("POLYGON ((0 0, -7.071067811865475 7.0710678118654755, "
                 + "0.0000000000000009 14.142135623730951, 7.0710678118654755 "
                 + "7.071067811865475, 0 0))", writer.getBuffer().toString());
+    }
+
+    @Test
+    public void run() throws Exception {
+        // Geometry from options
+        String result = runApp(new String[]{
+                "rotate",
+                "-g", "POLYGON ((0 0, 0 10, 10 10, 10 0, 0 0))",
+                "-t", String.valueOf(Math.toRadians(45))
+        }, null);
+        assertEquals("POLYGON ((0 0, -7.071067811865475 7.0710678118654755, "
+                + "0.0000000000000009 14.142135623730951, 7.0710678118654755 "
+                + "7.071067811865475, 0 0))", result);
+
+        // Geometry from input stream
+        result = runApp(new String[]{
+                "rotate",
+                "-t", String.valueOf(Math.toRadians(45))
+        }, "POLYGON ((0 0, 0 10, 10 10, 10 0, 0 0))");
+        assertEquals("POLYGON ((0 0, -7.071067811865475 7.0710678118654755, "
+                + "0.0000000000000009 14.142135623730951, 7.0710678118654755 "
+                + "7.071067811865475, 0 0))", result);
     }
 }

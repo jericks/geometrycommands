@@ -11,7 +11,7 @@ import static org.junit.Assert.assertEquals;
  * The RelateCommand UnitTest
  * @author Jared Erickson
  */
-public class RelateCommandTest {
+public class RelateCommandTest extends BaseTest {
 
     @Test 
     public void execute() throws Exception {
@@ -43,5 +43,28 @@ public class RelateCommandTest {
         
         command.execute(options, reader, writer);
         assertEquals("true", writer.getBuffer().toString());
+    }
+
+    @Test
+    public void run() throws Exception {
+
+        String inputGeometry = "POLYGON ((0 0, 0 10, 10 10, 10 0, 0 0))";
+        String otherGeometry = "POINT (5 5)";
+
+        // Geometry from options
+        String result = runApp(new String[]{
+                "relate",
+                "-g", inputGeometry,
+                "-o", otherGeometry
+        }, null);
+        assertEquals("0F2FF1FF2", result);
+
+        // Geometry from input stream
+        result = runApp(new String[]{
+                "relate",
+                "-o", otherGeometry,
+                "-m", "0F2FF1FF2"
+        }, inputGeometry);
+        assertEquals("true", result);
     }
 }

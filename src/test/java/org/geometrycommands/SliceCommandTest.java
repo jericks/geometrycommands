@@ -12,7 +12,7 @@ import java.io.StringWriter;
  * The SliceGeometryCommand Unit Test
  * @author Jared Erickson
  */
-public class SliceCommandTest {
+public class SliceCommandTest extends BaseTest {
 
    @Test
    public void execute() throws Exception {
@@ -61,5 +61,28 @@ public class SliceCommandTest {
        cmd.execute(options, reader, writer);
        assertEquals("MULTIPOINT ((1 1), (2 2), (3 3))", writer.toString());
    }
+
+    @Test
+    public void run() throws Exception {
+
+        String input = "MULTIPOINT ((1 1), (2 2), (3 3), (4 4), (5 5))";
+
+        // Geometry from options
+        String result = runApp(new String[]{
+                "slice",
+                "-g", input,
+                "-s", "1",
+                "-e", "3"
+        }, null);
+        assertEquals("MULTIPOINT ((2 2), (3 3))", result);
+
+        // Geometry from input stream
+        result = runApp(new String[]{
+                "slice",
+                "-s", "0",
+                "-e", "-2"
+        }, input);
+        assertEquals("MULTIPOINT ((1 1), (2 2), (3 3))", result);
+    }
 
 }

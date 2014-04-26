@@ -11,7 +11,7 @@ import static org.junit.Assert.assertEquals;
  * The ReflectCommand UnitTest
  * @author Jared Erickson
  */
-public class ReflectCommandTest {
+public class ReflectCommandTest extends BaseTest {
 
     @Test 
     public void execute() throws Exception {
@@ -30,5 +30,29 @@ public class ReflectCommandTest {
         assertEquals("POLYGON ((0 0, 6.8965517241379315 -7.241379310344829, "
                 + "14.137931034482762 -0.3448275862068977, "
                 + "7.241379310344829 6.8965517241379315, 0 0))", writer.getBuffer().toString());
+    }
+
+    @Test
+    public void run() throws Exception {
+        // Geometry from options
+        String result = runApp(new String[]{
+                "reflect",
+                "-g", "POLYGON ((0 0, 0 10, 10 10, 10 0, 0 0))",
+                "-0", "5",
+                "-1", "2"
+        }, null);
+        assertEquals("POLYGON ((0 0, 6.8965517241379315 -7.241379310344829, "
+                + "14.137931034482762 -0.3448275862068977, "
+                + "7.241379310344829 6.8965517241379315, 0 0))", result);
+
+        // Geometry from input stream
+        result = runApp(new String[]{
+                "reflect",
+                "--x0", "5",
+                "--y0", "2"
+        }, "POLYGON ((0 0, 0 10, 10 10, 10 0, 0 0))");
+        assertEquals("POLYGON ((0 0, 6.8965517241379315 -7.241379310344829, "
+                + "14.137931034482762 -0.3448275862068977, "
+                + "7.241379310344829 6.8965517241379315, 0 0))", result);
     }
 }

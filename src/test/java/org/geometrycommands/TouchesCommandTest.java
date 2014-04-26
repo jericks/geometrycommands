@@ -3,6 +3,7 @@ package org.geometrycommands;
 import java.io.Reader;
 import java.io.StringReader;
 import java.io.StringWriter;
+
 import org.junit.Test;
 import static org.junit.Assert.assertEquals;
 
@@ -10,7 +11,7 @@ import static org.junit.Assert.assertEquals;
  * The TouchesCommand UnitTest
  * @author Jared Erickson
  */
-public class TouchesCommandTest {
+public class TouchesCommandTest extends BaseTest {
 
     @Test 
     public void execute() throws Exception {
@@ -41,5 +42,24 @@ public class TouchesCommandTest {
         
         command.execute(options, reader, writer);
         assertEquals("false", writer.getBuffer().toString());
+    }
+
+    @Test
+    public void run() throws Exception {
+
+        // Geometry from options
+        String result = runApp(new String[]{
+                "touches",
+                "-g", "POLYGON ((0 0, 0 10, 10 10, 10 0, 0 0))",
+                "-o", "POLYGON ((10 10, 10 14, 14 14, 14 10, 10 10))"
+        }, null);
+        assertEquals("true", result);
+
+        // Geometry from input stream
+        result = runApp(new String[]{
+                "touches",
+                "-o", "POINT (15 15)"
+        }, "POLYGON ((0 0, 0 10, 10 10, 10 0, 0 0))");
+        assertEquals("false", result);
     }
 }

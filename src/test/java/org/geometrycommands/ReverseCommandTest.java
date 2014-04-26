@@ -10,7 +10,7 @@ import static org.junit.Assert.assertEquals;
  * The ReverseCommand UnitTest
  * @author Jared Erickson
  */
-public class ReverseCommandTest {
+public class ReverseCommandTest extends BaseTest {
 
     @Test 
     public void execute() throws Exception {
@@ -25,5 +25,21 @@ public class ReverseCommandTest {
         ReverseCommand command = new ReverseCommand();
         command.execute(options, reader, writer);
         assertEquals("LINESTRING (10 10, 5 5, 0 0)", writer.getBuffer().toString());
+    }
+
+    @Test
+    public void run() throws Exception {
+        // Geometry from options
+        String result = runApp(new String[]{
+                "reverse",
+                "-g", "LINESTRING (0 0, 5 5, 10 10)"
+        }, null);
+        assertEquals("LINESTRING (10 10, 5 5, 0 0)", result);
+
+        // Geometry from input stream
+        result = runApp(new String[]{
+                "reverse",
+        }, "LINESTRING (0 0, 5 5, 10 10)");
+        assertEquals("LINESTRING (10 10, 5 5, 0 0)", result);
     }
 }
