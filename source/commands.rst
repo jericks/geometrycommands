@@ -4,6 +4,7 @@ Geometry Commands
 .. toctree::
 
     commands/list.rst
+    commands/angle.rst
     commands/arc.rst
     commands/arcpoly.rst
     commands/area.rst
@@ -78,6 +79,7 @@ Geometry Commands
     commands/simplify.rst
     commands/sinestar.rst
     commands/slice.rst
+    commands/split.rst
     commands/snap.rst
     commands/squircle.rst
     commands/subline.rst
