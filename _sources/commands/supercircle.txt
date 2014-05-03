@@ -32,3 +32,6 @@ Create a super circle.
 **Example**::
 
     geom supercircle -g "POINT (100 100)" -p 30 -w 500 -h 500
+
+.. image:: images/supercircle.png
+    :alt: geom supercircle example
