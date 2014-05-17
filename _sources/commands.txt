@@ -36,6 +36,7 @@ Geometry Commands
     commands/interpolatepoint.rst
     commands/intersection.rst
     commands/intersects.rst
+    commands/isccw.rst
     commands/isclosed.rst
     commands/isempty.rst
     commands/isrectangle.rst
