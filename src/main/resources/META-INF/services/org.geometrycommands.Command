@@ -31,6 +31,7 @@ org.geometrycommands.InteriorPointCommand
 org.geometrycommands.InterpolatePointCommand
 org.geometrycommands.IntersectionCommand
 org.geometrycommands.IntersectsCommand
+org.geometrycommands.IsCounterClockwiseCommand
 org.geometrycommands.IsClosedCommand
 org.geometrycommands.IsEmptyCommand
 org.geometrycommands.IsRectangleCommand
