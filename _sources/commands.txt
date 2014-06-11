@@ -23,6 +23,7 @@ Geometry Commands
     commands/delaunay.rst
     commands/densify.rst
     commands/draw.rst
+    commands/drawbase64.rst
     commands/dump.rst
     commands/ellipse.rst
     commands/difference.rst

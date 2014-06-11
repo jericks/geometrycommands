@@ -6,7 +6,7 @@
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     
-    <title>split &mdash; Geometry Commands 0.1 documentation</title>
+    <title>drawbase64 &mdash; Geometry Commands 0.1 documentation</title>
     
     <link rel="stylesheet" href="../_static/default.css" type="text/css" />
     <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
@@ -23,10 +23,7 @@
     <script type="text/javascript" src="../_static/jquery.js"></script>
     <script type="text/javascript" src="../_static/underscore.js"></script>
     <script type="text/javascript" src="../_static/doctools.js"></script>
-    <link rel="top" title="Geometry Commands 0.1 documentation" href="../index.html" />
-    <link rel="up" title="Geometry Commands" href="../commands.html" />
-    <link rel="next" title="snap" href="snap.html" />
-    <link rel="prev" title="slice" href="slice.html" /> 
+    <link rel="top" title="Geometry Commands 0.1 documentation" href="../index.html" /> 
   </head>
   <body>
     <div class="related">
@@ -35,14 +32,7 @@
         <li class="right" style="margin-right: 10px">
           <a href="../genindex.html" title="General Index"
              accesskey="I">index</a></li>
-        <li class="right" >
-          <a href="snap.html" title="snap"
-             accesskey="N">next</a> |</li>
-        <li class="right" >
-          <a href="slice.html" title="slice"
-             accesskey="P">previous</a> |</li>
-        <li><a href="../index.html">Geometry Commands 0.1 documentation</a> &raquo;</li>
-          <li><a href="../commands.html" accesskey="U">Geometry Commands</a> &raquo;</li> 
+        <li><a href="../index.html">Geometry Commands 0.1 documentation</a> &raquo;</li> 
       </ul>
     </div>  
 
@@ -51,23 +41,37 @@
         <div class="bodywrapper">
           <div class="body">
             
-  <div class="section" id="split">
-<h1>split<a class="headerlink" href="#split" title="Permalink to this headline">¶</a></h1>
+  <div class="section" id="drawbase64">
+<h1>drawbase64<a class="headerlink" href="#drawbase64" title="Permalink to this headline">¶</a></h1>
 <p><strong>Name</strong>:</p>
-<p>geom split</p>
+<p>geom drawbase64</p>
 <p><strong>Description</strong>:</p>
-<p>Split a Geometry by another Geometry</p>
+<p>Draw the input geometry to a base 64 encoded string.</p>
 <p><strong>Arguments</strong>:</p>
 <blockquote>
 <div><ul class="simple">
-<li>-o &#8211;otherGeometry: The other geometry</li>
+<li>-y &#8211;type: The image type (png or jpeg)</li>
+<li>-p &#8211;prefix: The flag to include the prefix (<a class="reference external" href="data:image/png;base64">data:image/png;base64</a>,) or not</li>
+<li>-w &#8211;width: The image width</li>
+<li>-h &#8211;height: The image height</li>
+<li>-b &#8211;background: The background color</li>
+<li>-i &#8211;backgroundImage: The background image url or file</li>
+<li>-s &#8211;stroke: The stroke Color</li>
+<li>-t &#8211;strokeOpacity: The stroke opacity</li>
+<li>-r &#8211;strokeWidth: The stroke width</li>
+<li>-l &#8211;fill: The fill Color</li>
+<li>-o &#8211;fillOpacity: The fill opacity</li>
+<li>-m &#8211;shape: The marker shape (circle, square, ect..)</li>
+<li>-z &#8211;size: The marker size</li>
+<li>-c &#8211;drawCoords: The flag for drawing coordinates or not</li>
+<li>-e &#8211;envelope: The geographical bounds (minx, miny, maxx, maxy)</li>
 <li>-g &#8211;geometry: The input geometry</li>
 <li>&#8211;help : Print help message</li>
 <li>&#8211;args : Print argument list</li>
 </ul>
 </div></blockquote>
 <p><strong>Example</strong>:</p>
-<div class="highlight-python"><div class="highlight"><pre>geom split -g &quot;POLYGON ((0 0, 0 10, 10 10, 10 0, 0 0))&quot; -o &quot;LINESTRING (0 0, 10 10)&quot;
+<div class="highlight-python"><div class="highlight"><pre>geom drawbase64 -g &quot;POLYGON ((5 5, 5 15, 15 15, 15 5, 5 5))&quot;
 </pre></div>
 </div>
 </div>
@@ -78,15 +82,9 @@
       </div>
       <div class="sphinxsidebar">
         <div class="sphinxsidebarwrapper">
-  <h4>Previous topic</h4>
-  <p class="topless"><a href="slice.html"
-                        title="previous chapter">slice</a></p>
-  <h4>Next topic</h4>
-  <p class="topless"><a href="snap.html"
-                        title="next chapter">snap</a></p>
   <h3>This Page</h3>
   <ul class="this-page-menu">
-    <li><a href="../_sources/commands/split.txt"
+    <li><a href="../_sources/commands/drawbase64.txt"
            rel="nofollow">Show Source</a></li>
   </ul>
 <div id="searchbox" style="display: none">
@@ -112,14 +110,7 @@
         <li class="right" style="margin-right: 10px">
           <a href="../genindex.html" title="General Index"
              >index</a></li>
-        <li class="right" >
-          <a href="snap.html" title="snap"
-             >next</a> |</li>
-        <li class="right" >
-          <a href="slice.html" title="slice"
-             >previous</a> |</li>
-        <li><a href="../index.html">Geometry Commands 0.1 documentation</a> &raquo;</li>
-          <li><a href="../commands.html" >Geometry Commands</a> &raquo;</li> 
+        <li><a href="../index.html">Geometry Commands 0.1 documentation</a> &raquo;</li> 
       </ul>
     </div>
     <div class="footer">
