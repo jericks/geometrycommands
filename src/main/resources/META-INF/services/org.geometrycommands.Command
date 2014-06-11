@@ -18,6 +18,7 @@ org.geometrycommands.CrossesCommand
 org.geometrycommands.DelaunayTriangulationCommand
 org.geometrycommands.DensifyCommand
 org.geometrycommands.DrawCommand
+org.geometrycommands.DrawBase64Command
 org.geometrycommands.DumpCommand
 org.geometrycommands.EllipseCommand
 org.geometrycommands.DifferenceCommand
