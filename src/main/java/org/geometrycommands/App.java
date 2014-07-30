@@ -66,10 +66,6 @@ public class App {
                 System.out.println("geom " + command.getName() + ": " + command.getDescription());
                 cmdLineParser.printUsage(System.out);
             }
-            // Print the arguments on one line (for bash completion)
-            else if (options.isArgs()) {
-                System.out.println(getArgStringLine(cmdLineParser.printExample(ExampleMode.ALL)));
-            }
             else {
                 // If there are no errors, execute the command
                 Reader reader = new InputStreamReader(System.in);
@@ -87,10 +83,6 @@ public class App {
                 System.out.println("geom " + command.getName() + ": " + command.getDescription());
                 cmdLineParser.printUsage(System.out);
             }
-            // Print the arguments on one line (for bash completion)
-            else if (options.isArgs()) {
-                System.out.println(getArgStringLine(cmdLineParser.printExample(ExampleMode.ALL)));
-            }
             else {
                 // Oops, display the error messages to the user
                 System.err.println(e.getMessage());
@@ -99,16 +91,5 @@ public class App {
             }
 
         }
-    }
-
-    private static String getArgStringLine(String argStr) {
-        argStr = argStr.replaceAll("\\(","").replaceAll("\\)","");
-        StringBuilder b = new StringBuilder();
-        for(String str : argStr.split(" ")) {
-            if (str.startsWith("-")) {
-                b.append(str).append(" ");
-            }
-        }
-        return b.toString().trim();
     }
 }

@@ -49,6 +49,39 @@ List available geometry commands::
     envelope
     intersection
 
+Getting Help
+------------
+Each command contains a --help option::
+
+    >>> geom buffer --help
+    geom buffer: Buffer a geometry by a distance.
+    --help                    : Print help message
+    -c (--endCapStyle) VAL    : The end cap style (round, flat/butt, square)
+    -d (--distance) N         : The buffer distance
+    -g (--geometry) VAL       : The input geometry
+    -q (--quadrantSegments) N : The number of quadrant segments
+    -s (--singleSided)        : The flag for whether the buffer should be single sided
+
+There is a man page for each subcommand::
+
+    >>> man geom-buffer
+    geom-buffer(1)                                                  geom-buffer(1)
+
+    NAME
+           geom buffer
+
+    DESCRIPTION
+           Buffer a geometry by a distance.
+
+    USAGE
+           geom buffer -g "POINT (1 1)" -d 10
+
+Finally, there is a bash completion script which makes using geom with bash much easier.
+
+Install it in your .bash_profile::
+
+    source /Users/you/geom/shell/geom_bash_comp
+
 Build
 -----
 Geometry Commands depends on the Java Topology Suite (JTS) and Proj4j and uses Maven as a build tool.

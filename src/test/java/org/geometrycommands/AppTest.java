@@ -58,42 +58,8 @@ public class AppTest {
         }
         Map<String, String> values = capture.stop();
         assertEquals("geom centroid: Calculate the centroid of a Geometry." + NEW_LINE
-                + " --args              : Print argument list" + NEW_LINE
                 + " --help              : Print help message" + NEW_LINE
                 + " -g (--geometry) VAL : The input geometry", values.get("out"));
-    }
-
-    @Test
-    public void testArgs() {
-        CaptureOutput capture = CaptureOutput.createAndStart();
-        try {
-            App.main(new String[]{
-                    "centroid", "--args"
-            });
-        } catch (OverrideExitException ex) {
-        }
-        Map<String, String> values = capture.stop();
-        assertEquals("--args --help -g --geometry", values.get("out"));
-
-        capture = CaptureOutput.createAndStart();
-        try {
-            App.main(new String[]{
-                    "envelope", "--args"
-            });
-        } catch (OverrideExitException ex) {
-        }
-        values = capture.stop();
-        assertEquals("--args --help -e --expandBy -g --geometry", values.get("out"));
-
-        capture = CaptureOutput.createAndStart();
-        try {
-            App.main(new String[]{
-                    "buffer", "--args"
-            });
-        } catch (OverrideExitException ex) {
-        }
-        values = capture.stop();
-        assertEquals("--args --help -c --endCapStyle -d --distance -g --geometry -q --quadrantSegments -s --singleSided", values.get("out"));
     }
 
     @Test
@@ -108,7 +74,6 @@ public class AppTest {
         Map<String, String> values = capture.stop();
         assertEquals("\"--asdf\" is not a valid option" + NEW_LINE
                 + "Usage: geom <command> <args>" + NEW_LINE
-                + " --args              : Print argument list" + NEW_LINE
                 + " --help              : Print help message" + NEW_LINE
                 + " -g (--geometry) VAL : The input geometry", values.get("err"));
     }
