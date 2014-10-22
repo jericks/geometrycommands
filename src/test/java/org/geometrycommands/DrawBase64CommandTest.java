@@ -30,6 +30,7 @@ public class DrawBase64CommandTest extends BaseTest {
         DrawBase64Command command = new DrawBase64Command();
         command.execute(options, reader, writer);
         String result = writer.toString();
+        System.out.println(result);
         assertTrue(result.startsWith("iVBORw0KGgoAAAANSUhEUgAAAZAAAAGQCAYAAACAvzbMAAAGoUlEQVR42u3VsQkAIAxFQXfN"));
 
         // JPEG with prefix
@@ -44,6 +45,7 @@ public class DrawBase64CommandTest extends BaseTest {
         command = new DrawBase64Command();
         command.execute(options, reader, writer);
         result = writer.toString();
+        System.out.println(result);
         assertTrue(result.startsWith("data:image/jpeg;base64,/9j/2wBDAAgGBgcGBQgHBwcJCQgKDBQNDAsLDBkSEw8UHRofHh0aH"));
     }
 
@@ -54,6 +56,7 @@ public class DrawBase64CommandTest extends BaseTest {
                 "drawbase64",
                 "-g", "POLYGON ((0 0, 0 10, 10 10, 10 0, 0 0))"
         }, null);
+        System.out.println(result);
         assertTrue(result.startsWith("iVBORw0KGgoAAAANSUhEUgAAAZAAAAGQCAYAAACAvzbMAAAGoUlEQVR42u3VsQkAIAxFQXfN"));
 
         // JPEG with prefix, geometry from input stream
@@ -72,6 +75,7 @@ public class DrawBase64CommandTest extends BaseTest {
                 "-z", "12",
                 "-e", "0,0,10,10"
         }, "POLYGON ((0 0, 0 10, 10 10, 10 0, 0 0))");
+        System.out.println(result);
         assertTrue(result.startsWith("data:image/jpeg;base64,/9j/2wBDAAgGBgcGBQgHBwcJCQgKDBQNDAsLDBkSEw8UHRofHh0aH"));
     }
 }
