@@ -115,3 +115,6 @@ Presentations
 License
 -------
 Geometry Commands is open source and licensed under the MIT License.
+
+.. image:: https://travis-ci.org/jericks/geometrycommands.svg?branch=master
+    :target: https://travis-ci.org/jericks/geometrycommands
