@@ -45,7 +45,7 @@ public class DrawBase64CommandTest extends BaseTest {
 
         command = new DrawBase64Command();
         command.execute(options, reader, writer);
-        result = writer.toString().trim();
+        result = writer.toString();
         assertTrue(result.length() > 0);
         assertTrue(result.startsWith("data:image/jpeg;base64"));
     }
@@ -56,27 +56,8 @@ public class DrawBase64CommandTest extends BaseTest {
         String result = runApp(new String[]{
                 "drawbase64",
                 "-g", "POLYGON ((0 0, 0 10, 10 10, 10 0, 0 0))"
-        }, null).trim();
+        }, null);
         assertTrue(result.length() > 0);
         assertFalse(result.startsWith("data:image/jpeg;base64"));
-
-        // JPEG with prefix, geometry from input stream
-        result = runApp(new String[]{
-                "drawbase64",
-                "-y", "jpeg",
-                "-p",
-                "-w", "300",
-                "-h", "250",
-                "-b", "0,0,0",
-                "-s", "255,255,255",
-                "-t", "0.75",
-                "-l", "255,255,0",
-                "-o", "0.55",
-                "-m", "square",
-                "-z", "12",
-                "-e", "0,0,10,10"
-        }, "POLYGON ((0 0, 0 10, 10 10, 10 0, 0 0))").trim();
-        assertTrue(result.length() > 0);
-        assertTrue(result.startsWith("data:image/jpeg;base64"));
     }
 }
