@@ -14,37 +14,14 @@ It contains one command line application (geom) with numerous subcommands (buffe
 
 Geometry Commands is open source under the MIT license.  I hope you find it useful.  The code is available at `github <https://github.com/jericks/geometrycommands>`_. If you find any bugs or would like any enhancements please use the GitHub `issue tracker <https://github.com/jericks/geometrycommands/issues>`_.
 
-To install, simple download the latest `zip file <https://github.com/jericks/geometrycommands/downloads>`_ and place the **bin** directory in your path. You should then be able to run the **geom** command.
-
-Usage
------
-
-View a list of all geom commands::
-
-    geom list
-
-Buffer a geometry::
-
-    echo "POINT (1 1)" | geom buffer -d 10
-
-Reproject a geometry::
-
-    echo "POINT (1 1)" | geom project -s "EPSG:4326" -t "EPSG:2927"
-
-Generate random points::
-
-    echo "POINT (1 1)" | geom buffer -d 100 | geom random -n 200
-
-Draw a geometry to an image::
-
-    echo "POINT (1 1)" | geom buffer -d 100 | geom draw && open image.png
-
 Command Documentation
 ---------------------
 
 .. toctree::
    :maxdepth: 2
 
+   install.rst
+   usage.rst
    commands.rst
 
 

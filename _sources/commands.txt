@@ -1,5 +1,5 @@
-Geometry Commands
-=================
+Commands
+========
 
 .. toctree::
 
@@ -27,6 +27,7 @@ Geometry Commands
     commands/dump.rst
     commands/ellipse.rst
     commands/difference.rst
+    commands/dimension.rst
     commands/hausdorffdistance.rst
     commands/disjoint.rst
     commands/distance.rst

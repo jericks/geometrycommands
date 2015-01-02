@@ -1,55 +1,192 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
-  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 
 
-<html xmlns="http://www.w3.org/1999/xhtml">
-  <head>
-    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-    
-    <title>centroid &mdash; Geometry Commands 0.1 documentation</title>
-    
-    <link rel="stylesheet" href="../_static/default.css" type="text/css" />
-    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
-    
-    <script type="text/javascript">
-      var DOCUMENTATION_OPTIONS = {
-        URL_ROOT:    '../',
-        VERSION:     '0.1',
-        COLLAPSE_INDEX: false,
-        FILE_SUFFIX: '.html',
-        HAS_SOURCE:  true
-      };
-    </script>
-    <script type="text/javascript" src="../_static/jquery.js"></script>
-    <script type="text/javascript" src="../_static/underscore.js"></script>
-    <script type="text/javascript" src="../_static/doctools.js"></script>
-    <link rel="top" title="Geometry Commands 0.1 documentation" href="../index.html" />
-    <link rel="up" title="Geometry Commands" href="../commands.html" />
-    <link rel="next" title="combine" href="combine.html" />
-    <link rel="prev" title="buffer" href="buffer.html" /> 
-  </head>
-  <body>
-    <div class="related">
-      <h3>Navigation</h3>
-      <ul>
-        <li class="right" style="margin-right: 10px">
-          <a href="../genindex.html" title="General Index"
-             accesskey="I">index</a></li>
-        <li class="right" >
-          <a href="combine.html" title="combine"
-             accesskey="N">next</a> |</li>
-        <li class="right" >
-          <a href="buffer.html" title="buffer"
-             accesskey="P">previous</a> |</li>
-        <li><a href="../index.html">Geometry Commands 0.1 documentation</a> &raquo;</li>
-          <li><a href="../commands.html" accesskey="U">Geometry Commands</a> &raquo;</li> 
-      </ul>
-    </div>  
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>centroid &mdash; Geometry Commands 0.1 documentation</title>
+  
 
-    <div class="document">
-      <div class="documentwrapper">
-        <div class="bodywrapper">
-          <div class="body">
+  
+  
+
+  
+  <link href='https://fonts.googleapis.com/css?family=Lato:400,700|Roboto+Slab:400,700|Inconsolata:400,700' rel='stylesheet' type='text/css'>
+
+  
+  
+    
+
+  
+
+  
+  
+    <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  
+
+  
+    <link rel="top" title="Geometry Commands 0.1 documentation" href="../index.html"/>
+        <link rel="up" title="Geometry Commands" href="../commands.html"/>
+        <link rel="next" title="combine" href="combine.html"/>
+        <link rel="prev" title="buffer" href="buffer.html"/> 
+
+  
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/modernizr/2.6.2/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-nav-search">
+        <a href="../index.html" class="fa fa-home"> Geometry Commands</a>
+        <div role="search">
+  <form id ="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+        
+        
+            <ul class="current">
+<li class="toctree-l1 current"><a class="reference internal" href="../commands.html">Geometry Commands</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="list.html">list</a></li>
+<li class="toctree-l2"><a class="reference internal" href="angle.html">angle</a></li>
+<li class="toctree-l2"><a class="reference internal" href="arc.html">arc</a></li>
+<li class="toctree-l2"><a class="reference internal" href="arcpoly.html">arcpoly</a></li>
+<li class="toctree-l2"><a class="reference internal" href="area.html">area</a></li>
+<li class="toctree-l2"><a class="reference internal" href="boundary.html">boundary</a></li>
+<li class="toctree-l2"><a class="reference internal" href="buffer.html">buffer</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="">centroid</a></li>
+<li class="toctree-l2"><a class="reference internal" href="combine.html">combine</a></li>
+<li class="toctree-l2"><a class="reference internal" href="contains.html">contains</a></li>
+<li class="toctree-l2"><a class="reference internal" href="convexHull.html">convexHull</a></li>
+<li class="toctree-l2"><a class="reference internal" href="coordinates.html">coordinates</a></li>
+<li class="toctree-l2"><a class="reference internal" href="count.html">count</a></li>
+<li class="toctree-l2"><a class="reference internal" href="countpoints.html">countpoints</a></li>
+<li class="toctree-l2"><a class="reference internal" href="coveredby.html">coveredby</a></li>
+<li class="toctree-l2"><a class="reference internal" href="covers.html">covers</a></li>
+<li class="toctree-l2"><a class="reference internal" href="crosses.html">crosses</a></li>
+<li class="toctree-l2"><a class="reference internal" href="delaunay.html">delaunay</a></li>
+<li class="toctree-l2"><a class="reference internal" href="densify.html">densify</a></li>
+<li class="toctree-l2"><a class="reference internal" href="draw.html">draw</a></li>
+<li class="toctree-l2"><a class="reference internal" href="drawbase64.html">drawbase64</a></li>
+<li class="toctree-l2"><a class="reference internal" href="dump.html">dump</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ellipse.html">ellipse</a></li>
+<li class="toctree-l2"><a class="reference internal" href="difference.html">difference</a></li>
+<li class="toctree-l2"><a class="reference internal" href="hausdorffdistance.html">hausdorffdistance</a></li>
+<li class="toctree-l2"><a class="reference internal" href="disjoint.html">disjoint</a></li>
+<li class="toctree-l2"><a class="reference internal" href="distance.html">distance</a></li>
+<li class="toctree-l2"><a class="reference internal" href="distanceline.html">distanceline</a></li>
+<li class="toctree-l2"><a class="reference internal" href="envelope.html">envelope</a></li>
+<li class="toctree-l2"><a class="reference internal" href="equals.html">equals</a></li>
+<li class="toctree-l2"><a class="reference internal" href="interiorpoint.html">interiorpoint</a></li>
+<li class="toctree-l2"><a class="reference internal" href="interpolatepoint.html">interpolatepoint</a></li>
+<li class="toctree-l2"><a class="reference internal" href="intersection.html">intersection</a></li>
+<li class="toctree-l2"><a class="reference internal" href="intersects.html">intersects</a></li>
+<li class="toctree-l2"><a class="reference internal" href="isccw.html">isccw</a></li>
+<li class="toctree-l2"><a class="reference internal" href="isclosed.html">isclosed</a></li>
+<li class="toctree-l2"><a class="reference internal" href="isempty.html">isempty</a></li>
+<li class="toctree-l2"><a class="reference internal" href="isrectangle.html">isrectangle</a></li>
+<li class="toctree-l2"><a class="reference internal" href="isring.html">isring</a></li>
+<li class="toctree-l2"><a class="reference internal" href="issimple.html">issimple</a></li>
+<li class="toctree-l2"><a class="reference internal" href="isvalid.html">isvalid</a></li>
+<li class="toctree-l2"><a class="reference internal" href="iswithindistance.html">iswithindistance</a></li>
+<li class="toctree-l2"><a class="reference internal" href="kochsnowflake.html">kochsnowflake</a></li>
+<li class="toctree-l2"><a class="reference internal" href="linemerge.html">linemerge</a></li>
+<li class="toctree-l2"><a class="reference internal" href="locatepoint.html">locatepoint</a></li>
+<li class="toctree-l2"><a class="reference internal" href="type.html">type</a></li>
+<li class="toctree-l2"><a class="reference internal" href="grid.html">grid</a></li>
+<li class="toctree-l2"><a class="reference internal" href="endpoint.html">endpoint</a></li>
+<li class="toctree-l2"><a class="reference internal" href="get.html">get</a></li>
+<li class="toctree-l2"><a class="reference internal" href="startpoint.html">startpoint</a></li>
+<li class="toctree-l2"><a class="reference internal" href="mincircle.html">mincircle</a></li>
+<li class="toctree-l2"><a class="reference internal" href="minclearance.html">minclearance</a></li>
+<li class="toctree-l2"><a class="reference internal" href="mindiameter.html">mindiameter</a></li>
+<li class="toctree-l2"><a class="reference internal" href="minrect.html">minrect</a></li>
+<li class="toctree-l2"><a class="reference internal" href="nearestpoints.html">nearestpoints</a></li>
+<li class="toctree-l2"><a class="reference internal" href="node.html">node</a></li>
+<li class="toctree-l2"><a class="reference internal" href="normalize.html">normalize</a></li>
+<li class="toctree-l2"><a class="reference internal" href="octagonalenvelope.html">octagonalenvelope</a></li>
+<li class="toctree-l2"><a class="reference internal" href="overlaps.html">overlaps</a></li>
+<li class="toctree-l2"><a class="reference internal" href="placepoint.html">placepoint</a></li>
+<li class="toctree-l2"><a class="reference internal" href="pointatangle.html">pointatangle</a></li>
+<li class="toctree-l2"><a class="reference internal" href="polygonize.html">polygonize</a></li>
+<li class="toctree-l2"><a class="reference internal" href="reduceprecision.html">reduceprecision</a></li>
+<li class="toctree-l2"><a class="reference internal" href="project.html">project</a></li>
+<li class="toctree-l2"><a class="reference internal" href="random.html">random</a></li>
+<li class="toctree-l2"><a class="reference internal" href="randomwalk.html">randomwalk</a></li>
+<li class="toctree-l2"><a class="reference internal" href="rectangle.html">rectangle</a></li>
+<li class="toctree-l2"><a class="reference internal" href="reflect.html">reflect</a></li>
+<li class="toctree-l2"><a class="reference internal" href="relate.html">relate</a></li>
+<li class="toctree-l2"><a class="reference internal" href="reverse.html">reverse</a></li>
+<li class="toctree-l2"><a class="reference internal" href="rotate.html">rotate</a></li>
+<li class="toctree-l2"><a class="reference internal" href="scale.html">scale</a></li>
+<li class="toctree-l2"><a class="reference internal" href="shear.html">shear</a></li>
+<li class="toctree-l2"><a class="reference internal" href="sierpinskicarpet.html">sierpinskicarpet</a></li>
+<li class="toctree-l2"><a class="reference internal" href="similarity.html">similarity</a></li>
+<li class="toctree-l2"><a class="reference internal" href="simplify.html">simplify</a></li>
+<li class="toctree-l2"><a class="reference internal" href="sinestar.html">sinestar</a></li>
+<li class="toctree-l2"><a class="reference internal" href="slice.html">slice</a></li>
+<li class="toctree-l2"><a class="reference internal" href="split.html">split</a></li>
+<li class="toctree-l2"><a class="reference internal" href="snap.html">snap</a></li>
+<li class="toctree-l2"><a class="reference internal" href="squircle.html">squircle</a></li>
+<li class="toctree-l2"><a class="reference internal" href="subline.html">subline</a></li>
+<li class="toctree-l2"><a class="reference internal" href="supercircle.html">supercircle</a></li>
+<li class="toctree-l2"><a class="reference internal" href="symdifference.html">symdifference</a></li>
+<li class="toctree-l2"><a class="reference internal" href="text.html">text</a></li>
+<li class="toctree-l2"><a class="reference internal" href="touches.html">touches</a></li>
+<li class="toctree-l2"><a class="reference internal" href="translate.html">translate</a></li>
+<li class="toctree-l2"><a class="reference internal" href="union.html">union</a></li>
+<li class="toctree-l2"><a class="reference internal" href="voronoi.html">voronoi</a></li>
+<li class="toctree-l2"><a class="reference internal" href="within.html">within</a></li>
+</ul>
+</li>
+</ul>
+
+        
+      </div>
+      &nbsp;
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+        <a href="../index.html">Geometry Commands</a>
+      </nav>
+
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="../index.html">Docs</a> &raquo;</li>
+      
+          <li><a href="../commands.html">Geometry Commands</a> &raquo;</li>
+      
+    <li>centroid</li>
+      <li class="wy-breadcrumbs-aside">
+        
+          <a href="../_sources/commands/centroid.txt" rel="nofollow"> View page source</a>
+        
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main">
             
   <div class="section" id="centroid">
 <h1>centroid<a class="headerlink" href="#centroid" title="Permalink to this headline">¶</a></h1>
@@ -73,57 +210,67 @@
 
 
           </div>
-        </div>
-      </div>
-      <div class="sphinxsidebar">
-        <div class="sphinxsidebarwrapper">
-  <h4>Previous topic</h4>
-  <p class="topless"><a href="buffer.html"
-                        title="previous chapter">buffer</a></p>
-  <h4>Next topic</h4>
-  <p class="topless"><a href="combine.html"
-                        title="next chapter">combine</a></p>
-  <h3>This Page</h3>
-  <ul class="this-page-menu">
-    <li><a href="../_sources/commands/centroid.txt"
-           rel="nofollow">Show Source</a></li>
-  </ul>
-<div id="searchbox" style="display: none">
-  <h3>Quick search</h3>
-    <form class="search" action="../search.html" method="get">
-      <input type="text" name="q" />
-      <input type="submit" value="Go" />
-      <input type="hidden" name="check_keywords" value="yes" />
-      <input type="hidden" name="area" value="default" />
-    </form>
-    <p class="searchtip" style="font-size: 90%">
-    Enter search terms or a module, class or function name.
-    </p>
-</div>
-<script type="text/javascript">$('#searchbox').show(0);</script>
-        </div>
-      </div>
-      <div class="clearer"></div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="combine.html" class="btn btn-neutral float-right" title="combine"/>Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="buffer.html" class="btn btn-neutral" title="buffer"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
     </div>
-    <div class="related">
-      <h3>Navigation</h3>
-      <ul>
-        <li class="right" style="margin-right: 10px">
-          <a href="../genindex.html" title="General Index"
-             >index</a></li>
-        <li class="right" >
-          <a href="combine.html" title="combine"
-             >next</a> |</li>
-        <li class="right" >
-          <a href="buffer.html" title="buffer"
-             >previous</a> |</li>
-        <li><a href="../index.html">Geometry Commands 0.1 documentation</a> &raquo;</li>
-          <li><a href="../commands.html" >Geometry Commands</a> &raquo;</li> 
-      </ul>
-    </div>
-    <div class="footer">
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
         &copy; Copyright 2012, Jared Erickson.
-      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.2.2.
-    </div>
-  </body>
+    </p>
+  </div>
+
+  <a href="https://github.com/snide/sphinx_rtd_theme">Sphinx theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>
+</footer>
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  
+
+    <script type="text/javascript">
+        var DOCUMENTATION_OPTIONS = {
+            URL_ROOT:'../',
+            VERSION:'0.1',
+            COLLAPSE_INDEX:false,
+            FILE_SUFFIX:'.html',
+            HAS_SOURCE:  true
+        };
+    </script>
+      <script type="text/javascript" src="../_static/jquery.js"></script>
+      <script type="text/javascript" src="../_static/underscore.js"></script>
+      <script type="text/javascript" src="../_static/doctools.js"></script>
+
+  
+
+  
+  
+    <script type="text/javascript" src="../_static/js/theme.js"></script>
+  
+
+  
+  
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.StickyNav.enable();
+      });
+  </script>
+   
+
+</body>
 </html>
