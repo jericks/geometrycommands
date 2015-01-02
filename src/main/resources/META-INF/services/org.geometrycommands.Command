@@ -17,6 +17,7 @@ org.geometrycommands.CoversCommand
 org.geometrycommands.CrossesCommand
 org.geometrycommands.DelaunayTriangulationCommand
 org.geometrycommands.DensifyCommand
+org.geometrycommands.DimensionCommand
 org.geometrycommands.DrawCommand
 org.geometrycommands.DrawBase64Command
 org.geometrycommands.DumpCommand
