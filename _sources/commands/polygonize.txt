@@ -11,6 +11,8 @@ Creates polygons from lines.
 
 **Arguments**:
 
+   * -f --full: Whether to include a full report (polygons, cutEdges, dangles, and invalidRingLines)
+
    * -g --geometry: The input geometry
 
    * --help : Print help message

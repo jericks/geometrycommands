@@ -20,6 +20,3 @@ Calculate the centroid of a Geometry.
 **Example**::
 
     geom centroid -g "POLYGON ((1 1, 1 10, 10 10, 10 1, 1 1))"
-
-.. image:: images/centroid.png
-    :alt: geom centroid example

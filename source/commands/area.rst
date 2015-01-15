@@ -15,9 +15,8 @@ Calculate the area of a Geometry.
 
    * --help : Print help message
 
+
+
 **Example**::
 
     geom area -g "POLYGON ((1 1, 1 10, 10 10, 10 1, 1 1))"
-
-.. image:: images/area.png
-    :alt: geom area example

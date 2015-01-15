@@ -15,9 +15,8 @@ Calculate the boundary of a Geometry.
 
    * --help : Print help message
 
+
+
 **Example**::
 
     geom boundary -g "POLYGON ((1 1, 1 10, 10 10, 10 1, 1 1))"
-
-.. image:: images/boundary.png
-    :alt: geom boundar example

@@ -7,7 +7,7 @@ geom isccw
 
 **Description**:
 
-Determine if the input geometry's coordinates are oriented counter clockwise or not 
+Is the geometry's coordinates oriented counter clockwise of not.
 
 **Arguments**:
 

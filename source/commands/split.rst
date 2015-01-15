@@ -17,11 +17,8 @@ Split a Geometry by another Geometry
 
    * --help : Print help message
 
-   * --args : Print argument list
-
 
 
 **Example**::
 
     geom split -g "POLYGON ((0 0, 0 10, 10 10, 10 0, 0 0))" -o "LINESTRING (0 0, 10 10)"
-    

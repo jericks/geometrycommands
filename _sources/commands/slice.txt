@@ -7,18 +7,20 @@ geom slice
 
 **Description**:
 
-Get a subset of geometries from a geometrycollection.
+Get a subset of geometries using a start and end index.
 
 **Arguments**:
 
-   * -s --start The start index 
-     
-   * -e --end The end index 
+   * -s --start: The start index number
+
+   * -e --end: The end index number
 
    * -g --geometry: The input geometry
 
    * --help : Print help message
 
+
+
 **Example**::
 
-    geom slice -g "MULTIPOINT ((1 1), (2 2), (3 3), (4 4), (5 5))" -s 1 -e 3
+    null

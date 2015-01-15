@@ -30,6 +30,3 @@ Create an ellipse of circle around the input geometry.
 **Example**::
 
     geom ellipse -g "POINT (100 100)" -p 30 -w 500 -h 500
-
-.. image:: images/ellipse.png
-    :alt: geom ellipse example

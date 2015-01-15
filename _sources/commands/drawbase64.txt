@@ -45,8 +45,6 @@ Draw the input geometry to a base 64 encoded string.
 
    * --help : Print help message
 
-   * --args : Print argument list
-
 
 
 **Example**::
