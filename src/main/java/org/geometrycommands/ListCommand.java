@@ -1,15 +1,18 @@
 package org.geometrycommands;
 
+import org.kohsuke.args4j.Option;
+
 import java.io.Reader;
 import java.io.Writer;
 import java.util.*;
+import org.geometrycommands.ListCommand.ListOptions;
 
 /**
  * List all Commands
  *
  * @author Jared Erickson
  */
-public class ListCommand implements Command<Options> {
+public class ListCommand implements Command<ListOptions> {
 
     /**
      * Get the name of the command
@@ -37,8 +40,8 @@ public class ListCommand implements Command<Options> {
      * @return A new Options
      */
     @Override
-    public Options getOptions() {
-        return new Options();
+    public ListOptions getOptions() {
+        return new ListOptions();
     }
 
     /**
@@ -50,27 +53,64 @@ public class ListCommand implements Command<Options> {
      * @throws Exception if an error occurs
      */
     @Override
-    public void execute(Options options, Reader reader, Writer writer) throws Exception {
+    public void execute(ListOptions options, Reader reader, Writer writer) throws Exception {
         // Find all of the registered Commands
         final ServiceLoader<Command> commandServiceLoader = ServiceLoader.load(Command.class);
-        // Collect their names
-        List<String> names = new ArrayList<String>();
+        // Collect the Commands
+        List<Command> commands = new ArrayList<Command>();
         for (Iterator<Command> it = commandServiceLoader.iterator(); it.hasNext(); ) {
             Command cmd = it.next();
-            names.add(cmd.getName());
+            commands.add(cmd);
         }
-        // Sort the names
-        Collections.sort(names);
+        // Sort the Commands by name
+        Collections.sort(commands, new Comparator<Command>() {
+            @Override
+            public int compare(Command c1, Command c2) {
+                return c1.getName().compareTo(c2.getName());
+            }
+        });
         // Write the names
         String NEW_LINE = System.getProperty("line.separator");
         StringBuilder builder = new StringBuilder();
-        for (Iterator<String> it = names.iterator(); it.hasNext(); ) {
-            String name = it.next();
-            builder.append(name);
+        for (Iterator<Command> it = commands.iterator(); it.hasNext(); ) {
+            Command cmd = it.next();
+            builder.append(cmd.getName());
+            if (options.isIncludingDescription()) {
+                builder.append(" = ").append(cmd.getDescription());
+            }
             if (it.hasNext()) {
                 builder.append(NEW_LINE);
             }
         }
         writer.write(builder.toString());
     }
+
+    /**
+     * ListCommand Options
+     */
+    public static class ListOptions extends Options {
+
+        /**
+         * Whether to include the description or not
+         */
+        @Option(name = "-d", aliases = "--description", usage = "Include the description", required = false)
+        private boolean includingDescription = false;
+
+        /**
+         * Get whether to include the description or not
+         * @return Whether to include the description or not
+         */
+        public boolean isIncludingDescription() {
+            return includingDescription;
+        }
+
+        /**
+         * Set whether to include the description or not
+         * @param includingDescription Whether to include the description or not
+         */
+        public void setIncludingDescription(boolean includingDescription) {
+            this.includingDescription = includingDescription;
+        }
+    }
+
 }

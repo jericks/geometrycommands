@@ -101,7 +101,7 @@ _geom()
     elif [[ "$line" == *"geom linemerge "* ]]; then
         COMPREPLY=($(compgen -W '--help -g --geometry' -- $cur))
     elif [[ "$line" == *"geom list "* ]]; then
-        COMPREPLY=($(compgen -W '--help' -- $cur))
+        COMPREPLY=($(compgen -W '--help -d --description' -- $cur))
     elif [[ "$line" == *"geom locatepoint "* ]]; then
         COMPREPLY=($(compgen -W '--help -g --geometry -o --otherGeometry' -- $cur))
     elif [[ "$line" == *"geom mincircle "* ]]; then
