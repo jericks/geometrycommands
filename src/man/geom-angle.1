@@ -1,16 +1,16 @@
-.TH "geom-angle" "1" "7 October 2013" "version 0.2"
+.TH "geom-angle" "1" "4 May 2012" "version 0.1"
 .SH NAME
 geom angle
 .SH DESCRIPTION
-Calculate the angle between two points
+Calculate the angle between two Points
 .SH USAGE
-geom angle -g "POINT (1 1)" -o "POINT (10 10)" -t degrees
+geom angle -g "POINT (1 1)" -o "POINT (10 10)"
 .SH OPTIONS
--g --geometry: The first Point
+-t --type: The type can be degrees (default) or radians
 .PP
--o --otherGeometry: The second Point
+-o --otherGeometry: The other geometry
 .PP
--t --type: The output units (degrees or radians)
+-g --geometry: The input geometry
 .PP
 --help : Print help message
 .PP
