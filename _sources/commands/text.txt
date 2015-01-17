@@ -24,3 +24,5 @@ Create a geometry from a string.
 **Example**::
 
     geom text -t "JTS"
+
+.. image:: text.png

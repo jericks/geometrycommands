@@ -22,3 +22,5 @@ Get the coordinates of the geometry.
 **Example**::
 
     geom coordinates -g "POLYGON ((1 1, 1 10, 10 10, 10 1, 1 1))"
+
+.. image:: coordinates.png

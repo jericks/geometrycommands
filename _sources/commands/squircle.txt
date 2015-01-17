@@ -30,3 +30,5 @@ Create a squircle.
 **Example**::
 
     geom squircle -g "POINT (100 100)" -p 30 -w 500 -h 500
+
+.. image:: squircle.png

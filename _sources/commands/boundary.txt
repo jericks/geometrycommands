@@ -20,3 +20,5 @@ Calculate the boundary of a Geometry.
 **Example**::
 
     geom boundary -g "POLYGON ((1 1, 1 10, 10 10, 10 1, 1 1))"
+
+.. image:: boundary.png

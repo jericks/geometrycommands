@@ -36,3 +36,5 @@ Creates an arc polygon from a start angle and an angle extent.
 **Example**::
 
     geom arcpoly -g "POINT (100 100)" -a 45 -e 90 -d -p 20 -w 500 -h 500
+
+.. image:: arcpoly.png

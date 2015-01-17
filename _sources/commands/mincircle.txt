@@ -20,3 +20,5 @@ Calculate the minimum bounding circle of the input geometry.
 **Example**::
 
     geom mincircle -g "POLYGON ((0 0, 0 10, 10 10, 10 0, 0 0))"
+
+.. image:: mincircle.png

@@ -20,3 +20,5 @@ Calculate the minimum rectangle of the input geometry.
 **Example**::
 
     geom minrect -g "POLYGON ((16 51, 7 53, 12 46, 5 41, 12 41, 16 51))"
+
+.. image:: minrect.png

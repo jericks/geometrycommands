@@ -28,3 +28,5 @@ Buffer a geometry by a distance.
 **Example**::
 
     geom buffer -g "POINT (1 1)" -d 10
+
+.. image:: buffer.png

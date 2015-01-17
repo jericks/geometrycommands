@@ -20,3 +20,5 @@ Calculate the area of a Geometry.
 **Example**::
 
     geom area -g "POLYGON ((1 1, 1 10, 10 10, 10 1, 1 1))"
+
+.. image:: area.png

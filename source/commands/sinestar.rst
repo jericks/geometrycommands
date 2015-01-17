@@ -34,3 +34,5 @@ Create a sine star.
 **Example**::
 
     geom sinestar -l 0.9 -n 12 -p 1000 -w 500 -h 500 -g "POINT (100 100)"
+
+.. image:: sinestar.png
