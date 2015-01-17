@@ -7,7 +7,7 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>rotate &mdash; Geometry Commands 0.1 documentation</title>
+  <title>spoke &mdash; Geometry Commands 0.1 documentation</title>
   
 
   
@@ -30,8 +30,8 @@
   
     <link rel="top" title="Geometry Commands 0.1 documentation" href="../index.html"/>
         <link rel="up" title="Commands" href="../commands.html"/>
-        <link rel="next" title="scale" href="scale.html"/>
-        <link rel="prev" title="reverse" href="reverse.html"/> 
+        <link rel="next" title="snap" href="snap.html"/>
+        <link rel="prev" title="split" href="split.html"/> 
 
   
   <script src="https://cdnjs.cloudflare.com/ajax/libs/modernizr/2.6.2/modernizr.min.js"></script>
@@ -133,7 +133,7 @@
 <li class="toctree-l2"><a class="reference internal" href="reflect.html">reflect</a></li>
 <li class="toctree-l2"><a class="reference internal" href="relate.html">relate</a></li>
 <li class="toctree-l2"><a class="reference internal" href="reverse.html">reverse</a></li>
-<li class="toctree-l2 current"><a class="current reference internal" href="">rotate</a></li>
+<li class="toctree-l2"><a class="reference internal" href="rotate.html">rotate</a></li>
 <li class="toctree-l2"><a class="reference internal" href="scale.html">scale</a></li>
 <li class="toctree-l2"><a class="reference internal" href="shear.html">shear</a></li>
 <li class="toctree-l2"><a class="reference internal" href="sierpinskicarpet.html">sierpinskicarpet</a></li>
@@ -142,7 +142,7 @@
 <li class="toctree-l2"><a class="reference internal" href="sinestar.html">sinestar</a></li>
 <li class="toctree-l2"><a class="reference internal" href="slice.html">slice</a></li>
 <li class="toctree-l2"><a class="reference internal" href="split.html">split</a></li>
-<li class="toctree-l2"><a class="reference internal" href="spoke.html">spoke</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="">spoke</a></li>
 <li class="toctree-l2"><a class="reference internal" href="snap.html">snap</a></li>
 <li class="toctree-l2"><a class="reference internal" href="squircle.html">squircle</a></li>
 <li class="toctree-l2"><a class="reference internal" href="subline.html">subline</a></li>
@@ -181,10 +181,10 @@
       
           <li><a href="../commands.html">Commands</a> &raquo;</li>
       
-    <li>rotate</li>
+    <li>spoke</li>
       <li class="wy-breadcrumbs-aside">
         
-          <a href="../_sources/commands/rotate.txt" rel="nofollow"> View page source</a>
+          <a href="../_sources/commands/spoke.txt" rel="nofollow"> View page source</a>
         
       </li>
   </ul>
@@ -192,26 +192,22 @@
 </div>
           <div role="main">
             
-  <div class="section" id="rotate">
-<h1>rotate<a class="headerlink" href="#rotate" title="Permalink to this headline">¶</a></h1>
+  <div class="section" id="spoke">
+<h1>spoke<a class="headerlink" href="#spoke" title="Permalink to this headline">¶</a></h1>
 <p><strong>Name</strong>:</p>
-<p>geom rotate</p>
+<p>geom spoke</p>
 <p><strong>Description</strong>:</p>
-<p>Create a new geometry by rotating the input geometry</p>
+<p>Create a spoke diagram with lines between a single Geometry to other Geometries</p>
 <p><strong>Arguments</strong>:</p>
 <blockquote>
 <div><ul class="simple">
-<li>-t &#8211;theta: The rotation angle, in radians</li>
-<li>-x &#8211;xCoordinate: The x-ordinate of the rotation point</li>
-<li>-y &#8211;yCoordinate: The y-ordinate of the rotation point</li>
-<li>-s &#8211;sine: The sine of the rotation angle</li>
-<li>-c &#8211;cosine: The cosine of the rotation angle</li>
+<li>-o &#8211;otherGeometry: The other geometry</li>
 <li>-g &#8211;geometry: The input geometry</li>
 <li>&#8211;help : Print help message</li>
 </ul>
 </div></blockquote>
 <p><strong>Example</strong>:</p>
-<div class="highlight-python"><div class="highlight"><pre>geom rotate -g &quot;POLYGON ((0 0, 0 10, 10 10, 10 0, 0 0))&quot; -t 0.785398163
+<div class="highlight-python"><div class="highlight"><pre>geom spoke -g &quot;MULTIPOINT ((5.875473869469681 1.0101660098606535), (19.64273518313129 8.032868631563336), (19.397302929472787 10.139284609662209), (12.61792804667091 17.61654337241537), (4.802498121787375 9.17962232316298))&quot; -o &quot;POINT (5 5)&quot;
 </pre></div>
 </div>
 </div>
@@ -222,10 +218,10 @@
   
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
       
-        <a href="scale.html" class="btn btn-neutral float-right" title="scale"/>Next <span class="fa fa-arrow-circle-right"></span></a>
+        <a href="snap.html" class="btn btn-neutral float-right" title="snap"/>Next <span class="fa fa-arrow-circle-right"></span></a>
       
       
-        <a href="reverse.html" class="btn btn-neutral" title="reverse"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+        <a href="split.html" class="btn btn-neutral" title="split"><span class="fa fa-arrow-circle-left"></span> Previous</a>
       
     </div>
   

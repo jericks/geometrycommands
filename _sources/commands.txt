@@ -83,6 +83,7 @@ Commands
     commands/sinestar.rst
     commands/slice.rst
     commands/split.rst
+    commands/spoke.rst
     commands/snap.rst
     commands/squircle.rst
     commands/subline.rst
