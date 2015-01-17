@@ -5,7 +5,7 @@ _geom()
     local line=${COMP_LINE}
     COMPREPLY=()
     if [[ "$line" == *"geom " ]]; then
-        COMPREPLY=($(compgen -W 'angle arc arcpoly area boundary buffer centroid combine contains convexHull coordinates count countpoints coveredby covers crosses delaunay densify difference dimension disjoint distance distanceline draw drawbase64 dump ellipse endpoint envelope equals get grid hausdorffdistance interiorpoint interpolatepoint intersection intersects isccw isclosed isempty isrectangle isring issimple isvalid iswithindistance kochsnowflake linemerge list locatepoint mincircle minclearance mindiameter minrect nearestpoints node normalize octagonalenvelope overlaps placepoint pointatangle polygonize project random randomwalk rectangle reduceprecision reflect relate reverse rotate scale shear sierpinskicarpet similarity simplify sinestar slice snap split squircle startpoint subline supercircle symdifference text touches translate type union voronoi within' -- $cur))
+        COMPREPLY=($(compgen -W 'angle arc arcpoly area boundary buffer centroid combine contains convexHull coordinates count countpoints coveredby covers crosses delaunay densify difference dimension disjoint distance distanceline draw drawbase64 dump ellipse endpoint envelope equals get grid hausdorffdistance interiorpoint interpolatepoint intersection intersects isccw isclosed isempty isrectangle isring issimple isvalid iswithindistance kochsnowflake linemerge list locatepoint mincircle minclearance mindiameter minrect nearestpoints node normalize octagonalenvelope overlaps placepoint pointatangle polygonize project random randomwalk rectangle reduceprecision reflect relate reverse rotate scale shear sierpinskicarpet similarity simplify sinestar slice snap split spoke squircle startpoint subline supercircle symdifference text touches translate type union voronoi within' -- $cur))
     elif [[ "$line" == *"geom angle "* ]]; then
         COMPREPLY=($(compgen -W '--help -g --geometry -o --otherGeometry -t --type' -- $cur))
     elif [[ "$line" == *"geom arc "* ]]; then
@@ -163,6 +163,8 @@ _geom()
     elif [[ "$line" == *"geom snap "* ]]; then
         COMPREPLY=($(compgen -W '--help -d --distance -g --geometry -o --otherGeometry' -- $cur))
     elif [[ "$line" == *"geom split "* ]]; then
+        COMPREPLY=($(compgen -W '--help -g --geometry -o --otherGeometry' -- $cur))
+    elif [[ "$line" == *"geom spoke "* ]]; then
         COMPREPLY=($(compgen -W '--help -g --geometry -o --otherGeometry' -- $cur))
     elif [[ "$line" == *"geom squircle "* ]]; then
         COMPREPLY=($(compgen -W '--help -c --center -g --geometry -h --height -p --numberOfPoints -r --rotation -w --width' -- $cur))
@@ -426,6 +428,9 @@ _geom()
         fi
         if [[ "split" == "$nm"* ]]; then
             COMPREPLY=("${COMPREPLY[@]}" $(compgen -W 'split'))
+        fi
+        if [[ "spoke" == "$nm"* ]]; then
+            COMPREPLY=("${COMPREPLY[@]}" $(compgen -W 'spoke'))
         fi
         if [[ "squircle" == "$nm"* ]]; then
             COMPREPLY=("${COMPREPLY[@]}" $(compgen -W 'squircle'))

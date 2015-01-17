@@ -79,6 +79,7 @@ org.geometrycommands.SineStarCommand
 org.geometrycommands.SliceCommand
 org.geometrycommands.SnapCommand
 org.geometrycommands.SplitCommand
+org.geometrycommands.SpokeCommand
 org.geometrycommands.SquircleCommand
 org.geometrycommands.SubLineCommand
 org.geometrycommands.SuperCircleCommand
