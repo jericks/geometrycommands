@@ -1,5 +1,6 @@
 package org.geometrycommands;
 
+import org.geometrycommands.ConvexHullCommand.ConvexHullOptions;
 import com.vividsolutions.jts.geom.Geometry;
 import java.io.Reader;
 import java.io.Writer;
@@ -8,7 +9,7 @@ import java.io.Writer;
  * A Command to calculate the convex hull of the input geometry
  * @author Jared Erickson
  */
-public class ConvexHullCommand extends GeometryCommand<GeometryOptions> {
+public class ConvexHullCommand extends GeometryCommand<ConvexHullOptions> {
 
      /**
      * Get the name of the Command
@@ -29,25 +30,31 @@ public class ConvexHullCommand extends GeometryCommand<GeometryOptions> {
     }
 
     /**
-     * Get the new OtherGeometryOptions
-     * @return A new OtherGeometryOptions
+     * Get the new ConvexHullOptions
+     * @return A new ConvexHullOptions
      */
     @Override
-    public GeometryOptions getOptions() {
-        return new GeometryOptions();
+    public ConvexHullOptions getOptions() {
+        return new ConvexHullOptions();
     }
 
     /**
      * Calculate the convex hull of the input geometry
      * @param geometry The input geometry
-     * @param options The GeometryOptions
+     * @param options The ConvexHullOptions
      * @param reader The java.io.Reader
      * @param writer The java.io.Writer 
      * @throws Exception if an error occurs
      */
     @Override
-    protected void processGeometry(Geometry geometry, GeometryOptions options, Reader reader, Writer writer) throws Exception {
+    protected void processGeometry(Geometry geometry, ConvexHullOptions options, Reader reader, Writer writer) throws Exception {
         Geometry outputGeometry = geometry.convexHull();
         writer.write(writeGeometry(outputGeometry, options));
+    }
+
+    /**
+     * The ConvexHullOptions
+     */
+    public static class ConvexHullOptions extends GeometryOptions {
     }
 }

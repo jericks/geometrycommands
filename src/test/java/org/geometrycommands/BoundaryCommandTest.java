@@ -1,5 +1,6 @@
 package org.geometrycommands;
 
+import org.geometrycommands.BoundaryCommand.BoundaryOptions;
 import java.io.Reader;
 import java.io.StringReader;
 import java.io.StringWriter;
@@ -16,7 +17,7 @@ public class BoundaryCommandTest extends BaseTest {
     public void execute() throws Exception {
         
         String inputGeometry = "POLYGON ((0 0, 0 10, 10 10, 10 0, 0 0))";
-        GeometryOptions options = new GeometryOptions();
+        BoundaryOptions options = new BoundaryOptions();
         options.setGeometry(inputGeometry);
         
         Reader reader = new StringReader(inputGeometry);

@@ -1,5 +1,6 @@
 package org.geometrycommands;
 
+import org.geometrycommands.AreaCommand.AreaOptions;
 import java.io.Reader;
 import java.io.StringReader;
 import java.io.StringWriter;
@@ -15,7 +16,7 @@ public class AreaCommandTest extends BaseTest {
     @Test 
     public void executeWithOption() throws Exception {
         String inputGeometry = "POLYGON ((0 0, 0 10, 10 10, 10 0, 0 0))";
-        GeometryOptions options = new GeometryOptions();
+        AreaOptions options = new AreaOptions();
         options.setGeometry(inputGeometry);
         
         Reader reader = new StringReader("");
@@ -29,7 +30,7 @@ public class AreaCommandTest extends BaseTest {
     @Test
     public void executeWithReader() throws Exception {
         String inputGeometry = "POLYGON ((0 0, 0 10, 10 10, 10 0, 0 0))";
-        GeometryOptions options = new GeometryOptions();
+        AreaOptions options = new AreaOptions();
 
         Reader reader = new StringReader(inputGeometry);
         StringWriter writer = new StringWriter();

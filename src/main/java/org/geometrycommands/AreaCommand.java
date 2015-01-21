@@ -1,5 +1,6 @@
 package org.geometrycommands;
 
+import org.geometrycommands.AreaCommand.AreaOptions;
 import com.vividsolutions.jts.geom.Geometry;
 import java.io.Reader;
 import java.io.Writer;
@@ -8,7 +9,7 @@ import java.io.Writer;
  * Calculate the area of a Geometry
  * @author Jared Erickson
  */
-public class AreaCommand extends GeometryCommand<GeometryOptions> {
+public class AreaCommand extends GeometryCommand<AreaOptions> {
 
     /**
      * Get the name of the command
@@ -29,25 +30,31 @@ public class AreaCommand extends GeometryCommand<GeometryOptions> {
     }
 
     /**
-     * Get a new GeometryOptions
-     * @return A new GeometryOptions
+     * Get a new AreaOptions
+     * @return A new AreaOptions
      */
     @Override
-    public GeometryOptions getOptions() {
-        return new GeometryOptions();
+    public AreaOptions getOptions() {
+        return new AreaOptions();
     }
 
     /**
      * Calculate the area of a Geometry
      * @param geometry The Geometry
-     * @param options The GeometryOptions
+     * @param options The AreaOptions
      * @param reader The java.io.Reader
      * @param writer The java.io.Writer
      * @throws Exception if an error occurs
      */
     @Override
-    protected void processGeometry(Geometry geometry, GeometryOptions options, Reader reader, Writer writer) throws Exception {
+    protected void processGeometry(Geometry geometry, AreaOptions options, Reader reader, Writer writer) throws Exception {
         double distance = geometry.getArea();
         writer.write(String.valueOf(distance));
+    }
+
+    /**
+     * The AreaOptions
+     */
+    public static class AreaOptions extends GeometryOptions {
     }
 }

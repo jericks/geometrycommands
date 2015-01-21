@@ -1,5 +1,6 @@
 package org.geometrycommands;
 
+import org.geometrycommands.CombineCommand.CombineOptions;
 import com.vividsolutions.jts.geom.Geometry;
 import com.vividsolutions.jts.geom.util.GeometryCombiner;
 import com.vividsolutions.jts.io.WKTReader;
@@ -14,7 +15,7 @@ import java.util.List;
  * from them.
  * @author Jared Erickson
  */
-public class CombineCommand implements Command<Options> {
+public class CombineCommand implements Command<CombineOptions> {
 
     /**
      * The WKTReader
@@ -40,23 +41,23 @@ public class CombineCommand implements Command<Options> {
     }
 
     /**
-     * Get the Options
-     * @return The Options
+     * Get the CombineOptions
+     * @return The CombineOptions
      */
     @Override
-    public Options getOptions() {
-        return new Options();
+    public CombineOptions getOptions() {
+        return new CombineOptions();
     }
 
     /**
      * Collect all Geometries on separate lines and create a GeometryCollection.
-     * @param options The Options
+     * @param options The CombineOptions
      * @param reader The java.io.Reader
      * @param writer The java.io.Writer
      * @throws Exception if an error occurs
      */
     @Override
-    public void execute(Options options, Reader reader, Writer writer) throws Exception {
+    public void execute(CombineOptions options, Reader reader, Writer writer) throws Exception {
         List<Geometry> geometries = new ArrayList<Geometry>();
         BufferedReader bReader = new BufferedReader(reader);
         String str;
@@ -66,5 +67,11 @@ public class CombineCommand implements Command<Options> {
         GeometryCombiner combiner = new GeometryCombiner(geometries);
         Geometry outputGeometry = combiner.combine();
         writer.write(outputGeometry.toText());
+    }
+
+    /**
+     * The CombineOptions
+     */
+    public static class CombineOptions extends Options {
     }
 }

@@ -1,12 +1,11 @@
 package org.geometrycommands;
 
+import org.geometrycommands.ContainsCommand.ContainsOptions;
 import java.io.Reader;
 import java.io.StringReader;
 import java.io.StringWriter;
 import org.junit.Test;
-import static org.junit.Assert.assertEquals;
-import static org.junit.Assert.assertFalse;
-import static org.junit.Assert.assertTrue;
+import static org.junit.Assert.*;
 
 /**
  * The ContainsCommand UnitTest
@@ -20,7 +19,7 @@ public class ContainsCommandTest extends BaseTest {
         // true
         String inputGeometry = "POLYGON ((0 0, 0 10, 10 10, 10 0, 0 0))";
         String otherGeometry = "POINT (5 5)";
-        OtherGeometryOptions options = new OtherGeometryOptions();
+        ContainsOptions options = new ContainsOptions();
         options.setGeometry(inputGeometry);
         options.setOtherGeometry(otherGeometry);
         
@@ -34,7 +33,7 @@ public class ContainsCommandTest extends BaseTest {
         // false
         inputGeometry = "POLYGON ((0 0, 0 10, 10 10, 10 0, 0 0))";
         otherGeometry = "POINT (15 15)";
-        options = new OtherGeometryOptions();
+        options = new ContainsOptions();
         options.setGeometry(inputGeometry);
         options.setOtherGeometry(otherGeometry);
         

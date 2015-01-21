@@ -1,5 +1,6 @@
 package org.geometrycommands;
 
+import org.geometrycommands.ContainsCommand.ContainsOptions;
 import com.vividsolutions.jts.geom.Geometry;
 import java.io.Reader;
 import java.io.Writer;
@@ -8,7 +9,7 @@ import java.io.Writer;
  * A Command to calculate whether the first geometry contains the other geometry
  * @author Jared Erickson
  */
-public class ContainsCommand extends OtherGeometryCommand<OtherGeometryOptions> {
+public class ContainsCommand extends OtherGeometryCommand<ContainsOptions> {
 
     /**
      * Get the name of the Command
@@ -29,26 +30,32 @@ public class ContainsCommand extends OtherGeometryCommand<OtherGeometryOptions> 
     }
 
     /**
-     * Get the new OtherGeometryOptions
-     * @return A new OtherGeometryOptions
+     * Get the new ContainsOptions
+     * @return A new ContainsOptions
      */
     @Override
-    public OtherGeometryOptions getOptions() {
-        return new OtherGeometryOptions();
+    public ContainsOptions getOptions() {
+        return new ContainsOptions();
     }
 
     /**
      * Calculate whether the first geometry contains the other geometry
      * @param geometry The input geometry
      * @param other The other geometry
-     * @param options The OtherGeometryOptions
+     * @param options The ContainsOptions
      * @param reader The java.io.Reader
      * @param writer The java.io.Writer
      * @throws Exception if an error occurs
      */
     @Override
-    protected void processGeometries(Geometry geometry, Geometry other, OtherGeometryOptions options, Reader reader, Writer writer) throws Exception {
+    protected void processGeometries(Geometry geometry, Geometry other, ContainsOptions options, Reader reader, Writer writer) throws Exception {
         boolean contains = geometry.contains(other);
         writer.write(String.valueOf(contains));
+    }
+
+    /**
+     * The ContainsOptions
+     */
+    public static class ContainsOptions extends OtherGeometryOptions {
     }
 }

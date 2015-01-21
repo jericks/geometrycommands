@@ -1,11 +1,10 @@
 package org.geometrycommands;
 
-import org.junit.Test;
-
 import java.io.Reader;
 import java.io.StringReader;
 import java.io.StringWriter;
-
+import org.geometrycommands.CentroidCommand.CentroidOptions;
+import org.junit.Test;
 import static org.junit.Assert.assertEquals;
 
 /**
@@ -18,7 +17,7 @@ public class CentroidCommandTest extends BaseTest {
     @Test
     public void executeWithOption() throws Exception {
         String inputGeometry = "POLYGON ((0 0, 0 10, 10 10, 10 0, 0 0))";
-        GeometryOptions options = new GeometryOptions();
+        CentroidOptions options = new CentroidOptions();
         options.setGeometry(inputGeometry);
 
         Reader reader = new StringReader("");
@@ -32,7 +31,7 @@ public class CentroidCommandTest extends BaseTest {
     @Test
     public void executeWithReader() throws Exception {
         String inputGeometry = "POLYGON ((0 0, 0 10, 10 10, 10 0, 0 0))";
-        GeometryOptions options = new GeometryOptions();
+        CentroidOptions options = new CentroidOptions();
 
         Reader reader = new StringReader(inputGeometry);
         StringWriter writer = new StringWriter();

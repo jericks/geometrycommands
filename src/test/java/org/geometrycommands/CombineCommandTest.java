@@ -1,5 +1,6 @@
 package org.geometrycommands;
 
+import org.geometrycommands.CombineCommand.CombineOptions;
 import java.io.Reader;
 import java.io.StringReader;
 import java.io.StringWriter;
@@ -16,8 +17,8 @@ public class CombineCommandTest extends BaseTest {
     
     @Test 
     public void execute() throws Exception {
-        
-        Options options = new Options();
+
+        CombineOptions options = new CombineOptions();
         CombineCommand command = new CombineCommand();
         
         // Two Points

@@ -1,12 +1,11 @@
 package org.geometrycommands;
 
+import org.geometrycommands.CrossesCommand.CrossesOptions;
 import java.io.Reader;
 import java.io.StringReader;
 import java.io.StringWriter;
 import org.junit.Test;
-import static org.junit.Assert.assertEquals;
-import static org.junit.Assert.assertFalse;
-import static org.junit.Assert.assertTrue;
+import static org.junit.Assert.*;
 
 /**
  * The CrossesCommand UnitTest
@@ -20,7 +19,7 @@ public class CrossesCommandTest extends BaseTest {
         // true
         String inputGeometry = "LINESTRING (5 5, 5 15)";
         String otherGeometry = "POLYGON ((0 0, 0 10, 10 10, 10 0, 0 0))";
-        OtherGeometryOptions options = new OtherGeometryOptions();
+        CrossesOptions options = new CrossesOptions();
         options.setGeometry(inputGeometry);
         options.setOtherGeometry(otherGeometry);
         
@@ -34,7 +33,7 @@ public class CrossesCommandTest extends BaseTest {
         // false
         inputGeometry = "POLYGON ((0 0, 0 10, 10 10, 10 0, 0 0))";
         otherGeometry = "LINESTRING (15 15, 20 20)";
-        options = new OtherGeometryOptions();
+        options = new CrossesOptions();
         options.setGeometry(inputGeometry);
         options.setOtherGeometry(otherGeometry);
         

@@ -1,5 +1,6 @@
 package org.geometrycommands;
 
+import org.geometrycommands.CrossesCommand.CrossesOptions;
 import com.vividsolutions.jts.geom.Geometry;
 import java.io.Reader;
 import java.io.Writer;
@@ -8,7 +9,7 @@ import java.io.Writer;
  * A Command to calculate whether one geometry crosses another
  * @author Jared Erickson
  */
-public class CrossesCommand extends OtherGeometryCommand<OtherGeometryOptions> {
+public class CrossesCommand extends OtherGeometryCommand<CrossesOptions> {
 
     /**
      * Get the name of the Command
@@ -29,26 +30,32 @@ public class CrossesCommand extends OtherGeometryCommand<OtherGeometryOptions> {
     }
 
     /**
-     * Get the new OtherGeometryOptions
-     * @return A new OtherGeometryOptions
+     * Get the new CrossesOptions
+     * @return A new CrossesOptions
      */
     @Override
-    public OtherGeometryOptions getOptions() {
-        return new OtherGeometryOptions();
+    public CrossesOptions getOptions() {
+        return new CrossesOptions();
     }
     
     /**
      * Calculate whether the first geometry crosses the other geometry.
      * @param geometry The input geometry
      * @param other The other geometry
-     * @param options The OtherGeometryOptions
+     * @param options The CrossesOptions
      * @param reader The java.io.Reader
      * @param writer The java.io.Writer
      * @throws Exception if an error occurs
      */
     @Override
-    protected void processGeometries(Geometry geometry, Geometry other, OtherGeometryOptions options, Reader reader, Writer writer) throws Exception {
+    protected void processGeometries(Geometry geometry, Geometry other, CrossesOptions options, Reader reader, Writer writer) throws Exception {
         boolean crosses = geometry.crosses(other);
         writer.write(String.valueOf(crosses));
+    }
+
+    /**
+     * The CrossesOptions
+     */
+    public static class CrossesOptions extends OtherGeometryOptions {
     }
 }

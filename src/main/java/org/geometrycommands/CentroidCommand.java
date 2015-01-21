@@ -1,5 +1,6 @@
 package org.geometrycommands;
 
+import org.geometrycommands.CentroidCommand.CentroidOptions;
 import com.vividsolutions.jts.geom.Geometry;
 import java.io.Reader;
 import java.io.Writer;
@@ -8,7 +9,7 @@ import java.io.Writer;
  * A Command for calculating the centroind of a Geometry.
  * @author Jared Erickson
  */
-public class CentroidCommand extends GeometryCommand<GeometryOptions> {
+public class CentroidCommand extends GeometryCommand<CentroidOptions> {
 
     /**
      * Get the command name
@@ -29,25 +30,31 @@ public class CentroidCommand extends GeometryCommand<GeometryOptions> {
     }
 
     /**
-     * Get a new GeometryOptions
-     * @return A new GeometryOptions
+     * Get a new CentroidOptions
+     * @return A new CentroidOptions
      */
     @Override
-    public GeometryOptions getOptions() {
-        return new GeometryOptions();
+    public CentroidOptions getOptions() {
+        return new CentroidOptions();
     }
 
     /**
      * Calculate the centroid of the input geometry
      * @param geometry The input geometry
-     * @param options The GeometryOptions
+     * @param options The CentroidOptions
      * @param reader The java.io.Reader
      * @param writer The java.io.Writer 
      * @throws Exception if an error occurs
      */
     @Override
-    protected void processGeometry(Geometry geometry, GeometryOptions options, Reader reader, Writer writer) throws Exception {
+    protected void processGeometry(Geometry geometry, CentroidOptions options, Reader reader, Writer writer) throws Exception {
         Geometry outputGeometry = geometry.getCentroid();
         writer.write(writeGeometry(outputGeometry, options));
+    }
+
+    /**
+     * The CentroidOptions
+     */
+    public static class CentroidOptions extends GeometryOptions {
     }
 }

@@ -1,5 +1,6 @@
 package org.geometrycommands;
 
+import org.geometrycommands.CoveredByCommand.CoveredByOptions;
 import com.vividsolutions.jts.geom.Geometry;
 import java.io.Reader;
 import java.io.Writer;
@@ -8,7 +9,7 @@ import java.io.Writer;
  * A Command to calculate whether the first geometry is covered the other geometry.
  * @author Jared Erickson
  */
-public class CoveredByCommand extends OtherGeometryCommand<OtherGeometryOptions> {
+public class CoveredByCommand extends OtherGeometryCommand<CoveredByOptions> {
 
     /**
      * Get the name of the Command
@@ -29,26 +30,32 @@ public class CoveredByCommand extends OtherGeometryCommand<OtherGeometryOptions>
     }
 
     /**
-     * Get the new OtherGeometryOptions
-     * @return A new OtherGeometryOptions
+     * Get the new CoveredByOptions
+     * @return A new CoveredByOptions
      */
     @Override
-    public OtherGeometryOptions getOptions() {
-        return new OtherGeometryOptions();
+    public CoveredByOptions getOptions() {
+        return new CoveredByOptions();
     }
 
     /**
      * Calculate whether the first geometry is covered the other geometry.
      * @param geometry The input geometry
      * @param other The other geometry
-     * @param options The OtherGeometryOptions
+     * @param options The CoveredByOptions
      * @param reader The java.io.Reader
      * @param writer The java.io.Writer
      * @throws Exception if an error occurs
      */
     @Override
-    protected void processGeometries(Geometry geometry, Geometry other, OtherGeometryOptions options, Reader reader, Writer writer) throws Exception {
+    protected void processGeometries(Geometry geometry, Geometry other, CoveredByOptions options, Reader reader, Writer writer) throws Exception {
         boolean coveredBy = geometry.coveredBy(other);
         writer.write(String.valueOf(coveredBy));
+    }
+
+    /**
+     * The CoveredByOptions
+     */
+    public static class CoveredByOptions extends OtherGeometryOptions {
     }
 }

@@ -1,5 +1,6 @@
 package org.geometrycommands;
 
+import org.geometrycommands.BoundaryCommand.BoundaryOptions;
 import com.vividsolutions.jts.geom.Geometry;
 import java.io.Reader;
 import java.io.Writer;
@@ -8,7 +9,7 @@ import java.io.Writer;
  * A Command for calculating the boundary of a Geometry.
  * @author Jared Erickson
  */
-public class BoundaryCommand extends GeometryCommand<GeometryOptions> {
+public class BoundaryCommand extends GeometryCommand<BoundaryOptions> {
 
     /**
      * Get the command name
@@ -29,25 +30,31 @@ public class BoundaryCommand extends GeometryCommand<GeometryOptions> {
     }
 
     /**
-     * Get a new GeometryOptions
-     * @return A new GeometryOptions
+     * Get a new BoundaryOptions
+     * @return A new BoundaryOptions
      */
     @Override
-    public GeometryOptions getOptions() {
-        return new GeometryOptions();
+    public BoundaryOptions getOptions() {
+        return new BoundaryOptions();
     }
 
     /**
      * Calculate the boundary of the input geometry
      * @param geometry The input geometry
-     * @param options The GeometryOptions
+     * @param options The BoundaryOptions
      * @param reader The java.io.Reader
      * @param writer The java.io.Writer
      * @throws Exception if an error occurs
      */
     @Override
-    protected void processGeometry(Geometry geometry, GeometryOptions options, Reader reader, Writer writer) throws Exception {
+    protected void processGeometry(Geometry geometry, BoundaryOptions options, Reader reader, Writer writer) throws Exception {
         Geometry outputGeometry = geometry.getBoundary();
         writer.write(writeGeometry(outputGeometry, options));
+    }
+
+    /**
+     * The BoundaryOptions
+     */
+    public static class BoundaryOptions extends GeometryOptions {
     }
 }

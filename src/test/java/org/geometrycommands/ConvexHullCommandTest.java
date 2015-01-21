@@ -1,16 +1,14 @@
 package org.geometrycommands;
 
-import org.junit.Test;
-
 import java.io.Reader;
 import java.io.StringReader;
 import java.io.StringWriter;
-
+import org.geometrycommands.ConvexHullCommand.ConvexHullOptions;
+import org.junit.Test;
 import static org.junit.Assert.assertEquals;
 
 /**
  * The ConvexHullCommand UnitTest
- *
  * @author Jared Erickson
  */
 public class ConvexHullCommandTest extends BaseTest {
@@ -23,7 +21,7 @@ public class ConvexHullCommandTest extends BaseTest {
                 + "(6.857126638942733 8.821305316892328), "
                 + "(9.260874914207697 13.087320259444919), "
                 + "(8.017822881853032 7.492806794533148))";
-        GeometryOptions options = new GeometryOptions();
+        ConvexHullOptions options = new ConvexHullOptions();
         options.setGeometry(inputGeometry);
 
         Reader reader = new StringReader(inputGeometry);
