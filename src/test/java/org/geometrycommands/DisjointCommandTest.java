@@ -1,12 +1,11 @@
 package org.geometrycommands;
 
 import org.junit.Test;
-
 import java.io.Reader;
 import java.io.StringReader;
 import java.io.StringWriter;
-
 import static org.junit.Assert.*;
+import org.geometrycommands.DisjointCommand.DisjointOptions;
 
 /**
  * The DisjointCommand UnitTest
@@ -21,7 +20,7 @@ public class DisjointCommandTest extends BaseTest {
         // false
         String inputGeometry = "POLYGON ((0 0, 0 10, 10 10, 10 0, 0 0))";
         String otherGeometry = "LINESTRING (5 5, 5 15)";
-        OtherGeometryOptions options = new OtherGeometryOptions();
+        DisjointOptions options = new DisjointOptions();
         options.setGeometry(inputGeometry);
         options.setOtherGeometry(otherGeometry);
 
@@ -35,7 +34,7 @@ public class DisjointCommandTest extends BaseTest {
         // true
         inputGeometry = "POLYGON ((0 0, 0 10, 10 10, 10 0, 0 0))";
         otherGeometry = "LINESTRING (15 15, 20 20)";
-        options = new OtherGeometryOptions();
+        options = new DisjointOptions();
         options.setGeometry(inputGeometry);
         options.setOtherGeometry(otherGeometry);
 

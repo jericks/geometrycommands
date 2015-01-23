@@ -1,5 +1,6 @@
 package org.geometrycommands;
 
+import org.geometrycommands.DisjointCommand.DisjointOptions;
 import com.vividsolutions.jts.geom.Geometry;
 import java.io.Reader;
 import java.io.Writer;
@@ -8,7 +9,7 @@ import java.io.Writer;
  * Determine whether the first geometry is disjoint from the other geometry.
  * @author Jared Erickson
  */
-public class DisjointCommand extends OtherGeometryCommand<OtherGeometryOptions> {
+public class DisjointCommand extends OtherGeometryCommand<DisjointOptions> {
 
     /**
      * Get the name of the command
@@ -29,26 +30,32 @@ public class DisjointCommand extends OtherGeometryCommand<OtherGeometryOptions> 
     }
 
     /**
-     * Get a new OtherGeometryOptions
-     * @return A new OtherGeometryOptions
+     * Get a new DisjointOptions
+     * @return A new DisjointOptions
      */
     @Override
-    public OtherGeometryOptions getOptions() {
-        return new OtherGeometryOptions();
+    public DisjointOptions getOptions() {
+        return new DisjointOptions();
     }
 
     /**
      * Determine whether the first geometry is disjoint from the other geometry.
      * @param geometry The Geometry
      * @param other The other Geometry
-     * @param options The OtherGeometryOptions
+     * @param options The DisjointOptions
      * @param reader The java.io.Reader
      * @param writer The java.io.Writer
      * @throws Exception if an error occurs
      */
     @Override
-    protected void processGeometries(Geometry geometry, Geometry other, OtherGeometryOptions options, Reader reader, Writer writer) throws Exception {
+    protected void processGeometries(Geometry geometry, Geometry other, DisjointOptions options, Reader reader, Writer writer) throws Exception {
         boolean disjoint = geometry.disjoint(other);
         writer.write(String.valueOf(disjoint));
+    }
+
+    /**
+     * The DisjointOptions
+     */
+    public static class DisjointOptions extends OtherGeometryOptions {
     }
 }

@@ -1,5 +1,6 @@
 package org.geometrycommands;
 
+import org.geometrycommands.DistanceCommand.DistanceOptions;
 import com.vividsolutions.jts.geom.Geometry;
 import java.io.Reader;
 import java.io.Writer;
@@ -8,7 +9,7 @@ import java.io.Writer;
  * Calculate the distance between two Geometries
  * @author Jared Erickson
  */
-public class DistanceCommand extends OtherGeometryCommand<OtherGeometryOptions> {
+public class DistanceCommand extends OtherGeometryCommand<DistanceOptions> {
 
     /**
      * Get the name of the command
@@ -29,26 +30,32 @@ public class DistanceCommand extends OtherGeometryCommand<OtherGeometryOptions> 
     }
 
     /**
-     * Get a new OtherGeometryOptions
-     * @return A new OtherGeometryOptions
+     * Get a new DistanceOptions
+     * @return A new DistanceOptions
      */
     @Override
-    public OtherGeometryOptions getOptions() {
-        return new OtherGeometryOptions();
+    public DistanceOptions getOptions() {
+        return new DistanceOptions();
     }
 
     /**
      * Calculate the distance between two Geometries
      * @param geometry The Geometry
      * @param other The other Geometry
-     * @param options The OtherGeometryOptions
+     * @param options The DistanceOptions
      * @param reader The java.io.Reader
      * @param writer The java.io.Writer
      * @throws Exception if an error occurs
      */
     @Override
-    protected void processGeometries(Geometry geometry, Geometry other, OtherGeometryOptions options, Reader reader, Writer writer) throws Exception {
+    protected void processGeometries(Geometry geometry, Geometry other, DistanceOptions options, Reader reader, Writer writer) throws Exception {
         double distance = geometry.distance(other);
         writer.write(String.valueOf(distance));
+    }
+
+    /**
+     * The DistanceOptions
+     */
+    public static class DistanceOptions extends OtherGeometryOptions {
     }
 }

@@ -1,5 +1,6 @@
 package org.geometrycommands;
 
+import org.geometrycommands.DifferenceCommand.DifferenceOptions;
 import com.vividsolutions.jts.geom.Geometry;
 import java.io.Reader;
 import java.io.Writer;
@@ -8,7 +9,7 @@ import java.io.Writer;
  * A Command for calculating the difference between two Geometries
  * @author jericks
  */
-public class DifferenceCommand extends OtherGeometryCommand<OtherGeometryOptions> {
+public class DifferenceCommand extends OtherGeometryCommand<DifferenceOptions> {
 
     /**
      * Get the name of the Command
@@ -29,26 +30,32 @@ public class DifferenceCommand extends OtherGeometryCommand<OtherGeometryOptions
     }
 
     /**
-     * Get the new OtherGeometryOptions
-     * @return A new OtherGeometryOptions
+     * Get the new DifferenceOptions
+     * @return A new DifferenceOptions
      */
     @Override
-    public OtherGeometryOptions getOptions() {
-        return new OtherGeometryOptions();
+    public DifferenceOptions getOptions() {
+        return new DifferenceOptions();
     }
 
     /**
      * Calculate the difference between two Geometries
      * @param geometry The input Geometry
      * @param other The other Geometry
-     * @param options The OtherGeometryOptions
+     * @param options The DifferenceOptions
      * @param reader The java.io.Reader
      * @param writer The java.io.Writer
      * @throws Exception if an error occurs
      */
     @Override
-    protected void processGeometries(Geometry geometry, Geometry other, OtherGeometryOptions options, Reader reader, Writer writer) throws Exception {
+    protected void processGeometries(Geometry geometry, Geometry other, DifferenceOptions options, Reader reader, Writer writer) throws Exception {
         Geometry differenceGeometry = geometry.difference(other);
         writer.write(writeGeometry(differenceGeometry, options));
+    }
+
+    /**
+     * The DifferenceOptions
+     */
+    public static class DifferenceOptions extends OtherGeometryOptions {
     }
 }

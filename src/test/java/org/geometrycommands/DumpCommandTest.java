@@ -5,6 +5,7 @@ import java.io.StringReader;
 import java.io.StringWriter;
 import org.junit.Test;
 import static org.junit.Assert.assertEquals;
+import org.geometrycommands.DumpCommand.DumpOptions;
 
 /**
  * The DumpCommand UnitTest
@@ -19,7 +20,7 @@ public class DumpCommandTest extends BaseTest {
         
         // Single MultiPoint
         String inputGeometry = "MULTIPOINT ((1 1), (2 2))";
-        GeometryOptions options = new GeometryOptions();
+        DumpOptions options = new DumpOptions();
         options.setGeometry(inputGeometry);
         
         Reader reader = new StringReader(inputGeometry);

@@ -1,5 +1,6 @@
 package org.geometrycommands;
 
+import org.geometrycommands.DumpCommand.DumpOptions;
 import com.vividsolutions.jts.geom.Geometry;
 import java.io.Reader;
 import java.io.Writer;
@@ -9,7 +10,7 @@ import java.io.Writer;
  * on it's own line.
  * @author Jared Erickson
  */
-public class DumpCommand extends GeometryCommand<GeometryOptions> {
+public class DumpCommand extends GeometryCommand<DumpOptions> {
 
     /**
      * Get the Command's name
@@ -30,24 +31,24 @@ public class DumpCommand extends GeometryCommand<GeometryOptions> {
     }
 
     /**
-     * Get the GeometryOptions
-     * @return The GeometryOptions
+     * Get the DumpOptions
+     * @return The DumpOptions
      */
     @Override
-    public GeometryOptions getOptions() {
-        return new GeometryOptions();
+    public DumpOptions getOptions() {
+        return new DumpOptions();
     }
 
     /**
      * Write the input Geometry, one Geometry per line.
      * @param geometry The input Geometry
-     * @param options The GeometryOptions
+     * @param options The DumpOptions
      * @param reader The java.io.Reader
      * @param writer The java.io.Writer
      * @throws Exception if an error occurs
      */
     @Override
-    protected void processGeometry(Geometry geometry, GeometryOptions options, Reader reader, Writer writer) throws Exception {
+    protected void processGeometry(Geometry geometry, DumpOptions options, Reader reader, Writer writer) throws Exception {
         write(geometry, options, writer);
     }
     
@@ -59,11 +60,11 @@ public class DumpCommand extends GeometryCommand<GeometryOptions> {
     /**
      * Recursively write each sub Geometry to it's own line
      * @param geometry The Geometry
-     * @param options The GeometryOptions
+     * @param options The DumpOptions
      * @param writer The java.io.Writer
      * @throws Exception if an error occurs
      */
-    private void write(Geometry geometry, GeometryOptions options, Writer writer) throws Exception {
+    private void write(Geometry geometry, DumpOptions options, Writer writer) throws Exception {
         int num = geometry.getNumGeometries();
         if (num == 1) {
             writer.write(writeGeometry(geometry, options));
@@ -76,5 +77,10 @@ public class DumpCommand extends GeometryCommand<GeometryOptions> {
             }
         }
     }
-    
+
+    /**
+     * The DumpOptions
+     */
+    public static class DumpOptions extends GeometryOptions {
+    }
 }

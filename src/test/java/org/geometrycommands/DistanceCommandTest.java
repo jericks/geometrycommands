@@ -1,12 +1,11 @@
 package org.geometrycommands;
 
 import org.junit.Test;
-
 import java.io.Reader;
 import java.io.StringReader;
 import java.io.StringWriter;
-
 import static org.junit.Assert.assertEquals;
+import org.geometrycommands.DistanceCommand.DistanceOptions;
 
 /**
  * The DistanceCommand UnitTest
@@ -20,7 +19,7 @@ public class DistanceCommandTest extends BaseTest {
 
         String inputGeometry = "POINT (1 1)";
         String otherGeometry = "POINT (20 23)";
-        OtherGeometryOptions options = new OtherGeometryOptions();
+        DistanceOptions options = new DistanceOptions();
         options.setGeometry(inputGeometry);
         options.setOtherGeometry(otherGeometry);
 

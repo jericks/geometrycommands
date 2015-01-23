@@ -1,5 +1,6 @@
 package org.geometrycommands;
 
+import org.geometrycommands.DifferenceCommand.DifferenceOptions;
 import java.io.Reader;
 import java.io.StringReader;
 import java.io.StringWriter;
@@ -17,7 +18,7 @@ public class DifferenceCommandTest extends BaseTest {
 
         String inputGeometry = "POLYGON ((0 0, 0 10, 10 10, 10 0, 0 0))";
         String otherGeometry = "POLYGON ((5 5, 5 20, 20 20, 20 5, 5 5))";
-        OtherGeometryOptions options = new OtherGeometryOptions();
+        DifferenceOptions options = new DifferenceOptions();
         options.setGeometry(inputGeometry);
         options.setOtherGeometry(otherGeometry);
 

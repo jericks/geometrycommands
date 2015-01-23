@@ -1,5 +1,6 @@
 package org.geometrycommands;
 
+import org.geometrycommands.DiscreteHausdorffDistanceCommand.DiscreteHausdorffDistanceOptions;
 import java.io.Reader;
 import java.io.StringReader;
 import java.io.StringWriter;
@@ -17,7 +18,7 @@ public class DiscreteHausdorffDistanceCommandTest extends BaseTest {
 
         String inputGeometry = "POINT (1 1)";
         String otherGeometry = "POINT (20 23)";
-        OtherGeometryOptions options = new OtherGeometryOptions();
+        DiscreteHausdorffDistanceOptions options = new DiscreteHausdorffDistanceOptions();
         options.setGeometry(inputGeometry);
         options.setOtherGeometry(otherGeometry);
 

@@ -1,16 +1,14 @@
 package org.geometrycommands;
 
 import org.junit.Test;
-
 import java.io.Reader;
 import java.io.StringReader;
 import java.io.StringWriter;
-
 import static org.junit.Assert.assertEquals;
+import org.geometrycommands.DistanceLineStringCommand.DistanceLineStringOptions;
 
 /**
  * The DistanceLineStringCommand UnitTest
- *
  * @author Jared Erickson
  */
 public class DistanceLineStringCommandTest extends BaseTest {
@@ -20,7 +18,7 @@ public class DistanceLineStringCommandTest extends BaseTest {
 
         String inputGeometry = "POINT (1 1)";
         String otherGeometry = "POINT (20 23)";
-        OtherGeometryOptions options = new OtherGeometryOptions();
+        DistanceLineStringOptions options = new DistanceLineStringOptions();
         options.setGeometry(inputGeometry);
         options.setOtherGeometry(otherGeometry);
 

@@ -1,5 +1,6 @@
 package org.geometrycommands;
 
+import org.geometrycommands.DiscreteHausdorffDistanceCommand.DiscreteHausdorffDistanceOptions;
 import com.vividsolutions.jts.algorithm.distance.DiscreteHausdorffDistance;
 import com.vividsolutions.jts.geom.Geometry;
 import java.io.Reader;
@@ -9,7 +10,7 @@ import java.io.Writer;
  * Calculate the discrete hausdorff distance between two Geometries
  * @author Jared Erickson
  */
-public class DiscreteHausdorffDistanceCommand extends OtherGeometryCommand<OtherGeometryOptions> {
+public class DiscreteHausdorffDistanceCommand extends OtherGeometryCommand<DiscreteHausdorffDistanceOptions> {
 
     /**
      * Get the name of the command
@@ -30,26 +31,32 @@ public class DiscreteHausdorffDistanceCommand extends OtherGeometryCommand<Other
     }
 
     /**
-     * Get a new OtherGeometryOptions
-     * @return A new OtherGeometryOptions
+     * Get a new DiscreteHausdorffDistanceOptions
+     * @return A new DiscreteHausdorffDistanceOptions
      */
     @Override
-    public OtherGeometryOptions getOptions() {
-        return new OtherGeometryOptions();
+    public DiscreteHausdorffDistanceOptions getOptions() {
+        return new DiscreteHausdorffDistanceOptions();
     }
 
     /**
      * Calculate the discrete hausdorff distance between two Geometries
      * @param geometry The Geometry
      * @param other The other Geometry
-     * @param options The OtherGeometryOptions
+     * @param options The DiscreteHausdorffDistanceOptions
      * @param reader The java.io.Reader
      * @param writer The java.io.Writer
      * @throws Exception if an error occurs
      */
     @Override
-    protected void processGeometries(Geometry geometry, Geometry other, OtherGeometryOptions options, Reader reader, Writer writer) throws Exception {
+    protected void processGeometries(Geometry geometry, Geometry other, DiscreteHausdorffDistanceOptions options, Reader reader, Writer writer) throws Exception {
         double distance = DiscreteHausdorffDistance.distance(geometry, other);
         writer.write(String.valueOf(distance));
+    }
+
+    /**
+     * The DiscreteHausdorffDistanceOptions
+     */
+    public static class DiscreteHausdorffDistanceOptions extends OtherGeometryOptions {
     }
 }
