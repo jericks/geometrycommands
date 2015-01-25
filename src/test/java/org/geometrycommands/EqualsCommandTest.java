@@ -45,6 +45,51 @@ public class EqualsCommandTest extends BaseTest {
         command = new EqualsCommand();
         command.execute(options, reader, writer);
         assertEquals("false", writer.getBuffer().toString());
+
+        // exact
+        inputGeometry = "POLYGON ((0 0, 0 10, 10 10, 10 0, 0 0))";
+        otherGeometry = "POLYGON ((0 0, 0 10, 10 10, 10 0, 0 0))";
+        options = new EqualsOptions();
+        options.setGeometry(inputGeometry);
+        options.setOtherGeometry(otherGeometry);
+        options.setType("exact");
+
+        reader = new StringReader(inputGeometry);
+        writer = new StringWriter();
+
+        command = new EqualsCommand();
+        command.execute(options, reader, writer);
+        assertEquals("true", writer.getBuffer().toString());
+
+        // norm
+        inputGeometry = "POLYGON ((0 0, 0 10, 10 10, 10 0, 0 0))";
+        otherGeometry = "POLYGON ((0 0, 0 10, 10 10, 10 0, 0 0))";
+        options = new EqualsOptions();
+        options.setGeometry(inputGeometry);
+        options.setOtherGeometry(otherGeometry);
+        options.setType("norm");
+
+        reader = new StringReader(inputGeometry);
+        writer = new StringWriter();
+
+        command = new EqualsCommand();
+        command.execute(options, reader, writer);
+        assertEquals("true", writer.getBuffer().toString());
+
+        // topo
+        inputGeometry = "POLYGON ((0 0, 0 10, 10 10, 10 0, 0 0))";
+        otherGeometry = "POLYGON ((0 0, 0 10, 10 10, 10 0, 0 0))";
+        options = new EqualsOptions();
+        options.setGeometry(inputGeometry);
+        options.setOtherGeometry(otherGeometry);
+        options.setType("topo");
+
+        reader = new StringReader(inputGeometry);
+        writer = new StringWriter();
+
+        command = new EqualsCommand();
+        command.execute(options, reader, writer);
+        assertEquals("true", writer.getBuffer().toString());
     }
 
     @Test
