@@ -37,6 +37,25 @@ public class RandomCommandTest extends BaseTest {
     }
 
     @Test
+    public void executeGriddedWithLineString() throws Exception {
+        String inputGeometry = "LINESTRING (0 0, 10 10)";
+        RandomOptions options = new RandomOptions();
+        options.setGeometry(inputGeometry);
+        options.setGridded(true);
+        options.setNumber(10);
+
+        Reader reader = new StringReader(inputGeometry);
+        StringWriter writer = new StringWriter();
+
+        RandomCommand command = new RandomCommand();
+        command.execute(options, reader, writer);
+        String output = writer.getBuffer().toString();
+        Geometry geometry = new WKTReader().read(output);
+        assertEquals("MultiPoint", geometry.getGeometryType());
+        assertEquals(16, geometry.getNumGeometries());
+    }
+
+    @Test
     public void run() throws Exception {
         // Geometry from options
         String result = runApp(new String[]{
