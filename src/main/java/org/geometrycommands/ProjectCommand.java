@@ -113,8 +113,6 @@ public class ProjectCommand extends GeometryCommand<ProjectOptions> {
             return transformPolygon(transform, (Polygon) g);
         } else if (g instanceof MultiPoint) {
             return transformMultiPoint(transform, (MultiPoint) g);
-        } else if (g instanceof MultiPoint) {
-            return transformMultiPoint(transform, (MultiPoint) g);
         } else if (g instanceof MultiLineString) {
             return transformMultiLineString(transform, (MultiLineString) g);
         } else if (g instanceof MultiPolygon) {
@@ -215,6 +213,15 @@ public class ProjectCommand extends GeometryCommand<ProjectOptions> {
      * Options for the ProjectOptions
      */
     public static class ProjectOptions extends GeometryOptions {
+
+        public ProjectOptions() {
+        }
+
+        public ProjectOptions(String geometry, String sourceProjection, String targetProjection) {
+            setGeometry(geometry);
+            this.source = sourceProjection;
+            this.target = targetProjection;
+        }
 
         /**
          * The source projection
