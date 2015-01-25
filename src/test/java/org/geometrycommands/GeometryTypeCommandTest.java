@@ -5,6 +5,7 @@ import java.io.StringReader;
 import java.io.StringWriter;
 import org.junit.Test;
 import static org.junit.Assert.assertEquals;
+import org.geometrycommands.GeometryTypeCommand.GeometryTypeOptions;
 
 /**
  * The GeometryTypeCommand UnitTest
@@ -17,7 +18,7 @@ public class GeometryTypeCommandTest extends BaseTest {
         
         // Polygon
         String inputGeometry = "POLYGON ((0 0, 0 10, 10 10, 10 0, 0 0))";
-        GeometryOptions options = new GeometryOptions();
+        GeometryTypeOptions options = new GeometryTypeOptions();
         options.setGeometry(inputGeometry);
         
         Reader reader = new StringReader(inputGeometry);
@@ -29,7 +30,7 @@ public class GeometryTypeCommandTest extends BaseTest {
         
         // Point
         inputGeometry = "POINT (5 5)";
-        options = new GeometryOptions();
+        options = new GeometryTypeOptions();
         options.setGeometry(inputGeometry);
         
         reader = new StringReader(inputGeometry);

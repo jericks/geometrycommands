@@ -4,9 +4,8 @@ import java.io.Reader;
 import java.io.StringReader;
 import java.io.StringWriter;
 import org.junit.Test;
-import static org.junit.Assert.assertEquals;
-import static org.junit.Assert.assertFalse;
-import static org.junit.Assert.assertTrue;
+import static org.junit.Assert.*;
+import org.geometrycommands.IsSimpleCommand.IsSimpleOptions;
 
 /**
  * The IsSimpleCommand UnitTest
@@ -19,7 +18,7 @@ public class IsSimpleCommandTest extends BaseTest {
 
         // true
         String inputGeometry = "POLYGON ((0 0, 0 10, 10 10, 10 0, 0 0))";
-        GeometryOptions options = new GeometryOptions();
+        IsSimpleOptions options = new IsSimpleOptions();
         options.setGeometry(inputGeometry);
 
         Reader reader = new StringReader(inputGeometry);
@@ -33,7 +32,7 @@ public class IsSimpleCommandTest extends BaseTest {
         inputGeometry = "LINESTRING (8.14208984375 48.0419921875, "
                 + "10.60302734375 51.6015625, 11.56982421875 47.91015625, "
                 + "8.36181640625 50.72265625)";
-        options = new OtherGeometryOptions();
+        options = new IsSimpleOptions();
         options.setGeometry(inputGeometry);
 
         reader = new StringReader(inputGeometry);

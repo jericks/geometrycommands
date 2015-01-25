@@ -5,6 +5,7 @@ import java.io.StringReader;
 import java.io.StringWriter;
 import org.junit.Test;
 import static org.junit.Assert.assertEquals;
+import org.geometrycommands.LocatePointCommand.LocatePointOptions;
 
 /**
  * The LocatePointCommand UnitTest
@@ -17,7 +18,7 @@ public class LocatePointCommandTest extends BaseTest {
         
         String inputGeometry = "LINESTRING (0 0, 5 5, 10 10)";
         String otherGeometry = "POINT (2.5 2.5)";
-        OtherGeometryOptions options = new OtherGeometryOptions();
+        LocatePointOptions options = new LocatePointOptions();
         options.setGeometry(inputGeometry);
         options.setOtherGeometry(otherGeometry);
         

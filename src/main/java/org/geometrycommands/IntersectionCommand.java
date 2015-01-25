@@ -1,5 +1,6 @@
 package org.geometrycommands;
 
+import org.geometrycommands.IntersectionCommand.IntersectionOptions;
 import com.vividsolutions.jts.geom.Geometry;
 import java.io.Reader;
 import java.io.Writer;
@@ -8,7 +9,7 @@ import java.io.Writer;
  * Calculate the intersection between two geometries.
  * @author Jared Erickson
  */
-public class IntersectionCommand extends OtherGeometryCommand<OtherGeometryOptions> {
+public class IntersectionCommand extends OtherGeometryCommand<IntersectionOptions> {
 
     /**
      * Get the name of the command
@@ -29,26 +30,32 @@ public class IntersectionCommand extends OtherGeometryCommand<OtherGeometryOptio
     }
 
     /**
-     * Get a new OtherGeometryOptions
-     * @return A new OtherGeometryOptions
+     * Get a new IntersectionOptions
+     * @return A new IntersectionOptions
      */
     @Override
-    public OtherGeometryOptions getOptions() {
-        return new OtherGeometryOptions();
+    public IntersectionOptions getOptions() {
+        return new IntersectionOptions();
     }
 
     /**
      * Calculate the intersection between the two geometries
      * @param geometry The input Geometry
      * @param other The other Geometry
-     * @param options The OtherGeometryOptions
+     * @param options The IntersectionOptions
      * @param reader The java.io.Reader
      * @param writer The java.io.Writer 
      * @throws Exception if an error occurs
      */
     @Override
-    protected void processGeometries(Geometry geometry, Geometry other, OtherGeometryOptions options, Reader reader, Writer writer) throws Exception {
+    protected void processGeometries(Geometry geometry, Geometry other, IntersectionOptions options, Reader reader, Writer writer) throws Exception {
         Geometry intersectionGeometry = geometry.intersection(other);
         writer.write(writeGeometry(intersectionGeometry, options));
+    }
+
+    /**
+     * The IntersectionOptions
+     */
+    public static class IntersectionOptions extends OtherGeometryOptions {
     }
 }

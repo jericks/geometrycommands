@@ -4,9 +4,8 @@ import java.io.Reader;
 import java.io.StringReader;
 import java.io.StringWriter;
 import org.junit.Test;
-import static org.junit.Assert.assertEquals;
-import static org.junit.Assert.assertFalse;
-import static org.junit.Assert.assertTrue;
+import static org.junit.Assert.*;
+import org.geometrycommands.IsRingCommand.IsRingOptions;
 
 /**
  * The IsRingCommand UnitTest
@@ -19,7 +18,7 @@ public class IsRingCommandTest extends BaseTest {
 
         // true
         String inputGeometry = "LINESTRING (1 1, 1 5, 5 5, 5 1, 1 1)";
-        GeometryOptions options = new GeometryOptions();
+        IsRingOptions options = new IsRingOptions();
         options.setGeometry(inputGeometry);
 
         Reader reader = new StringReader(inputGeometry);
@@ -31,7 +30,7 @@ public class IsRingCommandTest extends BaseTest {
 
         // false
         inputGeometry = "LINESTRING (1 1, 5 5, 10 10)";
-        options = new OtherGeometryOptions();
+        options = new IsRingOptions();
         options.setGeometry(inputGeometry);
 
         reader = new StringReader(inputGeometry);

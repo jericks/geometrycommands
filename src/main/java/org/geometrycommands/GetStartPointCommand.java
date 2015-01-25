@@ -1,5 +1,6 @@
 package org.geometrycommands;
 
+import org.geometrycommands.GetStartPointCommand.GetStartPointOptions;
 import com.vividsolutions.jts.geom.Geometry;
 import com.vividsolutions.jts.geom.LineString;
 import com.vividsolutions.jts.geom.Lineal;
@@ -12,7 +13,7 @@ import java.io.Writer;
  * A Command to get the start point of a LineString or a MultiLineString.
  * @author Jared Erickson
  */
-public class GetStartPointCommand extends GeometryCommand<GeometryOptions> {
+public class GetStartPointCommand extends GeometryCommand<GetStartPointOptions> {
 
     /**
      * Get the Command's name
@@ -33,24 +34,24 @@ public class GetStartPointCommand extends GeometryCommand<GeometryOptions> {
     }
 
     /**
-     * Get the GeometryOptions
-     * @return The GeometryOptions
+     * Get the GetStartPointOptions
+     * @return The GetStartPointOptions
      */
     @Override
-    public GeometryOptions getOptions() {
-        return new GeometryOptions();
+    public GetStartPointOptions getOptions() {
+        return new GetStartPointOptions();
     }
 
     /**
      * Get the start Point of a LineString or a MultiLineString
      * @param geometry The Geometry
-     * @param options The GeometryOptions
+     * @param options The GetStartPointOptions
      * @param reader The java.io.Reader
      * @param writer The java.io.Writer
      * @throws Exception if an error occurs especially if the input Geometry is not Lineal
      */
     @Override
-    protected void processGeometry(Geometry geometry, GeometryOptions options, Reader reader, Writer writer) throws Exception {
+    protected void processGeometry(Geometry geometry, GetStartPointOptions options, Reader reader, Writer writer) throws Exception {
         if (!(geometry instanceof Lineal)) {
             throw new IllegalArgumentException("The input geometry a LineString or a MultiLineString!");
         }
@@ -63,5 +64,11 @@ public class GetStartPointCommand extends GeometryCommand<GeometryOptions> {
         }
         Point point = lineString.getStartPoint();
         writer.write(writeGeometry(point, options));
+    }
+
+    /**
+     * The GetStartOptions
+     */
+    public static class GetStartPointOptions extends GeometryOptions {
     }
 }

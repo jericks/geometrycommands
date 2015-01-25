@@ -5,6 +5,7 @@ import java.io.StringReader;
 import java.io.StringWriter;
 import org.junit.Test;
 import static org.junit.Assert.assertEquals;
+import org.geometrycommands.GetEndPointCommand.GetEndPointOptions;
 
 /**
  * The GetEndPointCommand UnitTest
@@ -16,7 +17,7 @@ public class GetEndPointCommandTest extends BaseTest {
     public void execute() throws Exception {
         
         String inputGeometry = "LINESTRING (1 1, 5 5, 10 10)";
-        GeometryOptions options = new GeometryOptions();
+        GetEndPointOptions options = new GetEndPointOptions();
         options.setGeometry(inputGeometry);
         
         Reader reader = new StringReader(inputGeometry);
@@ -27,7 +28,7 @@ public class GetEndPointCommandTest extends BaseTest {
         assertEquals("POINT (10 10)", writer.getBuffer().toString());
         
         inputGeometry = "MULTILINESTRING ((1 1, 5 5, 10 10), (20 20, 30 30, 40 40))";
-        options = new GeometryOptions();
+        options = new GetEndPointOptions();
         options.setGeometry(inputGeometry);
         
         reader = new StringReader(inputGeometry);

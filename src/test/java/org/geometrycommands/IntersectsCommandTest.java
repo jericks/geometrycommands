@@ -4,9 +4,8 @@ import java.io.Reader;
 import java.io.StringReader;
 import java.io.StringWriter;
 import org.junit.Test;
-import static org.junit.Assert.assertEquals;
-import static org.junit.Assert.assertFalse;
-import static org.junit.Assert.assertTrue;
+import static org.junit.Assert.*;
+import org.geometrycommands.IntersectsCommand.IntersectsOptions;
 
 /**
  * The IntersectsCommand UnitTest
@@ -20,7 +19,7 @@ public class IntersectsCommandTest extends BaseTest {
         // true
         String inputGeometry = "POLYGON ((0 0, 0 10, 10 10, 10 0, 0 0))";
         String otherGeometry = "POINT (5 5)";
-        OtherGeometryOptions options = new OtherGeometryOptions();
+        IntersectsOptions options = new IntersectsOptions();
         options.setGeometry(inputGeometry);
         options.setOtherGeometry(otherGeometry);
         
@@ -34,7 +33,7 @@ public class IntersectsCommandTest extends BaseTest {
         // false
         inputGeometry = "POLYGON ((0 0, 0 10, 10 10, 10 0, 0 0))";
         otherGeometry = "POINT (15 15)";
-        options = new OtherGeometryOptions();
+        options = new IntersectsOptions();
         options.setGeometry(inputGeometry);
         options.setOtherGeometry(otherGeometry);
         

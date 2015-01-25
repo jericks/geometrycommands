@@ -1,5 +1,6 @@
 package org.geometrycommands;
 
+import org.geometrycommands.MinimumRectangleCommand.MinimumRectangleOptions;
 import com.vividsolutions.jts.algorithm.MinimumDiameter;
 import com.vividsolutions.jts.geom.Geometry;
 import java.io.Reader;
@@ -9,7 +10,7 @@ import java.io.Writer;
  * Calculate the minimum rectangle of the input Geometry.
  * @author Jared Erickson
  */
-public class MinimumRectangleCommand extends GeometryCommand<GeometryOptions> {
+public class MinimumRectangleCommand extends GeometryCommand<MinimumRectangleOptions> {
 
     /**
      * Get the Command's name
@@ -30,26 +31,32 @@ public class MinimumRectangleCommand extends GeometryCommand<GeometryOptions> {
     }
 
     /**
-     * Get a new GeometryOptions
-     * @return A new GeometryOptions
+     * Get a new MinimumRectangleOptions
+     * @return A new MinimumRectangleOptions
      */
     @Override
-    public GeometryOptions getOptions() {
-        return new GeometryOptions();
+    public MinimumRectangleOptions getOptions() {
+        return new MinimumRectangleOptions();
     }
 
     /**
      * Calculate the minimum rectangle of the input Geometry.
      * @param geometry The input Geometry
-     * @param options The GeometryOptions
+     * @param options The MinimumRectangleOptions
      * @param reader The java.io.Reader
      * @param writer The java.io.Writer
      * @throws Exception if an error occurs
      */
     @Override
-    protected void processGeometry(Geometry geometry, GeometryOptions options, Reader reader, Writer writer) throws Exception {
+    protected void processGeometry(Geometry geometry, MinimumRectangleOptions options, Reader reader, Writer writer) throws Exception {
         MinimumDiameter minimumDiameter = new MinimumDiameter(geometry);
         Geometry outputGeometry = minimumDiameter.getMinimumRectangle();
         writer.write(writeGeometry(outputGeometry, options));
+    }
+
+    /**
+     * The MinimumRectangleOptions
+     */
+    public static class MinimumRectangleOptions extends GeometryOptions {
     }
 }

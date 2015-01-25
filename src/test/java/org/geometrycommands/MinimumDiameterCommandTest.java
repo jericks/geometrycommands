@@ -5,6 +5,7 @@ import java.io.StringReader;
 import java.io.StringWriter;
 import org.junit.Test;
 import static org.junit.Assert.assertEquals;
+import org.geometrycommands.MinimumDiameterCommand.MinimumDiameterOptions;
 
 /**
  * The MinimumDiameterCommand UnitTest
@@ -19,7 +20,7 @@ public class MinimumDiameterCommandTest extends BaseTest {
                 + "52.5244140625, 12.36083984375 45.9765625, 5.46142578125 "
                 + "40.7470703125, 11.56982421875 41.1865234375, "
                 + "15.92041015625 51.25))";
-        GeometryOptions options = new GeometryOptions();
+        MinimumDiameterOptions options = new MinimumDiameterOptions();
         options.setGeometry(inputGeometry);
 
         Reader reader = new StringReader(inputGeometry);

@@ -1,5 +1,6 @@
 package org.geometrycommands;
 
+import org.geometrycommands.IsRingCommand.IsRingOptions;
 import com.vividsolutions.jts.geom.Geometry;
 import com.vividsolutions.jts.geom.LineString;
 import java.io.Reader;
@@ -9,7 +10,7 @@ import java.io.Writer;
  * A Command that determines if the input Geometry is a ring or not.
  * @author Jared Erickson
  */
-public class IsRingCommand extends GeometryCommand<GeometryOptions> {
+public class IsRingCommand extends GeometryCommand<IsRingOptions> {
 
     /**
      * Get the name of the command
@@ -30,28 +31,34 @@ public class IsRingCommand extends GeometryCommand<GeometryOptions> {
     }
 
     /**
-     * Get a new GeometryOptions
-     * @return A new GeometryOptions
+     * Get a new IsRingOptions
+     * @return A new IsRingOptions
      */
     @Override
-    public GeometryOptions getOptions() {
-        return new GeometryOptions();
+    public IsRingOptions getOptions() {
+        return new IsRingOptions();
     }
 
     /**
      * Determine if the input Geometry is a ring or not.
      * @param geometry The input Geometry
-     * @param options The GeometryOptions
+     * @param options The IsRingOptions
      * @param reader The java.io.Reader
      * @param writer The java.io.Writer 
      * @throws Exception if an error occurs
      */
     @Override
-    protected void processGeometry(Geometry geometry, GeometryOptions options, Reader reader, Writer writer) throws Exception {
+    protected void processGeometry(Geometry geometry, IsRingOptions options, Reader reader, Writer writer) throws Exception {
         if (!(geometry instanceof LineString)) {
             throw new IllegalArgumentException("Input geometry must be a LineString!");
         }
         boolean isRing = ((LineString) geometry).isRing();
         writer.write(String.valueOf(isRing));
+    }
+
+    /**
+     * The IsRingOptions
+     */
+    public static class IsRingOptions extends GeometryOptions {
     }
 }

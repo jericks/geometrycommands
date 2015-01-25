@@ -5,6 +5,7 @@ import java.io.StringReader;
 import java.io.StringWriter;
 import org.junit.Test;
 import static org.junit.Assert.assertEquals;
+import org.geometrycommands.LineMergeCommand.LineMergeOptions;
 
 /**
  * The LineMergeCommand UnitTest
@@ -16,7 +17,7 @@ public class LineMergeCommandTest extends BaseTest {
     public void execute() throws Exception {
 
         String inputGeometry = "MULTILINESTRING((-29 -27,-30 -29.7,-36 -31,-45 -33),(-45 -33,-46 -32))";
-        GeometryOptions options = new GeometryOptions();
+        LineMergeOptions options = new LineMergeOptions();
         options.setGeometry(inputGeometry);
 
         Reader reader = new StringReader(inputGeometry);

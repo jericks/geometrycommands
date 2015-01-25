@@ -1,5 +1,6 @@
 package org.geometrycommands;
 
+import org.geometrycommands.IsRectangleCommand.IsRectangleOptions;
 import com.vividsolutions.jts.geom.Geometry;
 import java.io.Reader;
 import java.io.Writer;
@@ -8,7 +9,7 @@ import java.io.Writer;
  * A Command that determines if the input Geometry is a rectangle or not.
  * @author Jared Erickson
  */
-public class IsRectangleCommand extends GeometryCommand<GeometryOptions> {
+public class IsRectangleCommand extends GeometryCommand<IsRectangleOptions> {
 
     /**
      * Get the name of the command
@@ -29,25 +30,31 @@ public class IsRectangleCommand extends GeometryCommand<GeometryOptions> {
     }
 
     /**
-     * Get a new GeometryOptions
-     * @return A new GeometryOptions
+     * Get a new IsRectangleOptions
+     * @return A new IsRectangleOptions
      */
     @Override
-    public GeometryOptions getOptions() {
-        return new GeometryOptions();
+    public IsRectangleOptions getOptions() {
+        return new IsRectangleOptions();
     }
 
     /**
      * Determine if the input Geometry is a rectangle or not.
      * @param geometry The input Geometry
-     * @param options The GeometryOptions
+     * @param options The IsRectangleOptions
      * @param reader The java.io.Reader
      * @param writer The java.io.Writer
      * @throws Exception if an error occurs
      */
     @Override
-    protected void processGeometry(Geometry geometry, GeometryOptions options, Reader reader, Writer writer) throws Exception {
+    protected void processGeometry(Geometry geometry, IsRectangleOptions options, Reader reader, Writer writer) throws Exception {
         boolean rectangle = geometry.isRectangle();
         writer.write(String.valueOf(rectangle));
+    }
+
+    /**
+     * The IsRectangleOptions
+     */
+    public static class IsRectangleOptions extends GeometryOptions {
     }
 }

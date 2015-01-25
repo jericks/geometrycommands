@@ -1,5 +1,6 @@
 package org.geometrycommands;
 
+import org.geometrycommands.MinimumDiameterCommand.MinimumDiameterOptions;
 import com.vividsolutions.jts.algorithm.MinimumDiameter;
 import com.vividsolutions.jts.geom.Geometry;
 import java.io.Reader;
@@ -9,7 +10,7 @@ import java.io.Writer;
  * Calculate the minimum diameter of the input Geometry.
  * @author Jared Erickson
  */
-public class MinimumDiameterCommand extends GeometryCommand<GeometryOptions> {
+public class MinimumDiameterCommand extends GeometryCommand<MinimumDiameterOptions> {
 
     /**
      * Get the Command's name
@@ -30,12 +31,12 @@ public class MinimumDiameterCommand extends GeometryCommand<GeometryOptions> {
     }
 
     /**
-     * Get a new GeometryOptions
-     * @return A new GeometryOptions
+     * Get a new MinimumDiameterOptions
+     * @return A new MinimumDiameterOptions
      */
     @Override
-    public GeometryOptions getOptions() {
-        return new GeometryOptions();
+    public MinimumDiameterOptions getOptions() {
+        return new MinimumDiameterOptions();
     }
 
     /**
@@ -47,9 +48,15 @@ public class MinimumDiameterCommand extends GeometryCommand<GeometryOptions> {
      * @throws Exception if an error occurs
      */
     @Override
-    protected void processGeometry(Geometry geometry, GeometryOptions options, Reader reader, Writer writer) throws Exception {
+    protected void processGeometry(Geometry geometry, MinimumDiameterOptions options, Reader reader, Writer writer) throws Exception {
         MinimumDiameter minimumDiameter = new MinimumDiameter(geometry);
         Geometry outputGeometry = minimumDiameter.getDiameter();
         writer.write(writeGeometry(outputGeometry, options));
+    }
+
+    /**
+     * The MinimumDiameterOptions
+     */
+    public static class MinimumDiameterOptions extends GeometryOptions {
     }
 }

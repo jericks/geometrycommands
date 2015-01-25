@@ -4,9 +4,8 @@ import java.io.Reader;
 import java.io.StringReader;
 import java.io.StringWriter;
 import org.junit.Test;
-import static org.junit.Assert.assertEquals;
-import static org.junit.Assert.assertFalse;
-import static org.junit.Assert.assertTrue;
+import static org.junit.Assert.*;
+import org.geometrycommands.IsRectangleCommand.IsRectangleOptions;
 
 /**
  * The IsRectangleCommand UnitTest
@@ -19,7 +18,7 @@ public class IsRectangleCommandTest extends BaseTest {
 
         // true
         String inputGeometry = "POLYGON ((0 0, 0 10, 10 10, 10 0, 0 0))";
-        GeometryOptions options = new GeometryOptions();
+        IsRectangleOptions options = new IsRectangleOptions();
         options.setGeometry(inputGeometry);
 
         Reader reader = new StringReader(inputGeometry);
@@ -31,7 +30,7 @@ public class IsRectangleCommandTest extends BaseTest {
 
         // false
         inputGeometry = "POLYGON ((0 0, 0 10, 10 0, 0 0))";
-        options = new OtherGeometryOptions();
+        options = new IsRectangleOptions();
         options.setGeometry(inputGeometry);
 
         reader = new StringReader(inputGeometry);

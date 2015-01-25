@@ -1,5 +1,6 @@
 package org.geometrycommands;
 
+import org.geometrycommands.LineMergeCommand.LineMergeOptions;
 import com.vividsolutions.jts.geom.Geometry;
 import com.vividsolutions.jts.geom.LineString;
 import com.vividsolutions.jts.geom.MultiLineString;
@@ -12,7 +13,7 @@ import java.util.Collection;
  * A Command to merge the lines of the input Geometry.
  * @author Jared Erickson
  */
-public class LineMergeCommand extends GeometryCommand<GeometryOptions> {
+public class LineMergeCommand extends GeometryCommand<LineMergeOptions> {
 
     /**
      * Get the name of the command
@@ -33,24 +34,24 @@ public class LineMergeCommand extends GeometryCommand<GeometryOptions> {
     }
 
     /**
-     * Get a new GeometryOptions
-     * @return A new GeometryOptions
+     * Get a new LineMergeOptions
+     * @return A new LineMergeOptions
      */
     @Override
-    public GeometryOptions getOptions() {
-        return new GeometryOptions();
+    public LineMergeOptions getOptions() {
+        return new LineMergeOptions();
     }
 
     /**
      * Merge the lines of the input Geometry.
      * @param geometry The input Geometry
-     * @param options The GeometryOptions
+     * @param options The LineMergeOptions
      * @param reader The java.io.Reader
      * @param writer The java.io.Writer
      * @throws Exception if an error occurs
      */
     @Override
-    protected void processGeometry(Geometry geometry, GeometryOptions options, Reader reader, Writer writer) throws Exception {
+    protected void processGeometry(Geometry geometry, LineMergeOptions options, Reader reader, Writer writer) throws Exception {
         LineMerger lineMerger = new LineMerger();
         int n = geometry.getNumGeometries();
         for (int i = 0; i < n; i++) {
@@ -60,5 +61,11 @@ public class LineMergeCommand extends GeometryCommand<GeometryOptions> {
         Collection lines = lineMerger.getMergedLineStrings();
         MultiLineString multiLineString = geometry.getFactory().createMultiLineString((LineString[]) lines.toArray(new LineString[]{}));
         writer.write(writeGeometry(multiLineString, options));
+    }
+
+    /**
+     * The LineMergeOptions
+     */
+    public static class LineMergeOptions extends GeometryOptions {
     }
 }

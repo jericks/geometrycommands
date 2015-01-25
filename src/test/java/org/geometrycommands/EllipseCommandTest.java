@@ -5,6 +5,7 @@ import java.io.StringReader;
 import java.io.StringWriter;
 import org.junit.Test;
 import static org.junit.Assert.assertEquals;
+import org.geometrycommands.EllipseCommand.EllipseOptions;
 
 /**
  * The EllipseCommand UnitTest
@@ -16,7 +17,7 @@ public class EllipseCommandTest extends BaseTest {
     public void execute() throws Exception {
 
         String inputGeometry = "POINT (100 100)";
-        ShapeFactoryOptions options = new ShapeFactoryOptions();
+        EllipseOptions options = new EllipseOptions();
         options.setGeometry(inputGeometry);
         options.setWidth(50);
         options.setHeight(40);

@@ -4,9 +4,8 @@ import java.io.Reader;
 import java.io.StringReader;
 import java.io.StringWriter;
 import org.junit.Test;
-import static org.junit.Assert.assertEquals;
-import static org.junit.Assert.assertFalse;
-import static org.junit.Assert.assertTrue;
+import static org.junit.Assert.*;
+import org.geometrycommands.IsEmptyCommand.IsEmptyOptions;
 
 /**
  * The IsEmptyCommand UnitTest
@@ -19,7 +18,7 @@ public class IsEmptyCommandTest extends BaseTest {
 
         // true
         String inputGeometry = "POINT EMPTY";
-        GeometryOptions options = new GeometryOptions();
+        IsEmptyOptions options = new IsEmptyOptions();
         options.setGeometry(inputGeometry);
 
         Reader reader = new StringReader(inputGeometry);
@@ -31,7 +30,7 @@ public class IsEmptyCommandTest extends BaseTest {
 
         // false
         inputGeometry = "POINT (15 15)";
-        options = new OtherGeometryOptions();
+        options = new IsEmptyOptions();
         options.setGeometry(inputGeometry);
 
         reader = new StringReader(inputGeometry);

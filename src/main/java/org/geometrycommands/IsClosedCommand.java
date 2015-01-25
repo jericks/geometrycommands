@@ -1,5 +1,6 @@
 package org.geometrycommands;
 
+import org.geometrycommands.IsClosedCommand.IsClosedOptions;
 import com.vividsolutions.jts.geom.Geometry;
 import com.vividsolutions.jts.geom.LineString;
 import com.vividsolutions.jts.geom.Lineal;
@@ -11,7 +12,7 @@ import java.io.Writer;
  * A Command that determines if the input Geometry is closed or not.
  * @author Jared Erickson
  */
-public class IsClosedCommand extends GeometryCommand<GeometryOptions> {
+public class IsClosedCommand extends GeometryCommand<IsClosedOptions> {
 
     /**
      * Get the name of the command
@@ -32,24 +33,24 @@ public class IsClosedCommand extends GeometryCommand<GeometryOptions> {
     }
 
     /**
-     * Get a new GeometryOptions
-     * @return A new GeometryOptions
+     * Get a new IsClosedOptions
+     * @return A new IsClosedOptions
      */
     @Override
-    public GeometryOptions getOptions() {
-        return new GeometryOptions();
+    public IsClosedOptions getOptions() {
+        return new IsClosedOptions();
     }
 
     /**
      * Determine if the input Geometry is closed or not.
      * @param geometry The input Geometry
-     * @param options The GeometryOptions
+     * @param options The IsClosedOptions
      * @param reader The java.io.Reader
      * @param writer The java.io.Writer 
      * @throws Exception if an error occurs
      */
     @Override
-    protected void processGeometry(Geometry geometry, GeometryOptions options, Reader reader, Writer writer) throws Exception {
+    protected void processGeometry(Geometry geometry, IsClosedOptions options, Reader reader, Writer writer) throws Exception {
         if (!(geometry instanceof Lineal)) {
             throw new IllegalArgumentException("Input geometry must be a LineString or a MultiLineString!");
         }
@@ -60,5 +61,11 @@ public class IsClosedCommand extends GeometryCommand<GeometryOptions> {
             closed = ((MultiLineString) geometry).isClosed();
         }
         writer.write(String.valueOf(closed));
+    }
+
+    /**
+     * The IsClosedOptions
+     */
+    public static class IsClosedOptions extends GeometryOptions {
     }
 }

@@ -5,6 +5,7 @@ import java.io.StringReader;
 import java.io.StringWriter;
 import org.junit.Test;
 import static org.junit.Assert.assertEquals;
+import org.geometrycommands.MinimumBoundingCircleCommand.MinimumBoundingCircleOptions;
 
 /**
  * The MinimumBoundingCircleCommand UnitTest
@@ -44,7 +45,7 @@ public class MinimumBoundingCircleCommandTest extends BaseTest {
 
     @Test
     public void execute() throws Exception {
-        GeometryOptions options = new GeometryOptions();
+        MinimumBoundingCircleOptions options = new MinimumBoundingCircleOptions();
         options.setGeometry(inputGeometry);
 
         Reader reader = new StringReader(inputGeometry);

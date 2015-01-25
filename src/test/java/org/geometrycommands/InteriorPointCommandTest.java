@@ -5,6 +5,7 @@ import java.io.StringReader;
 import java.io.StringWriter;
 import org.junit.Test;
 import static org.junit.Assert.assertEquals;
+import org.geometrycommands.InteriorPointCommand.InteriorPointOptions;
 
 /**
  * The InteriorPointCommand UnitTest
@@ -20,7 +21,7 @@ public class InteriorPointCommandTest extends BaseTest {
                 + "15.48095703125 43.251953125, 8.97705078125 43.251953125, "
                 + "9.24072265625 40.615234375, 19.61181640625 40.5712890625, "
                 + "18.38134765625 52.4365234375, 9.89990234375 52.7880859375))";
-        GeometryOptions options = new GeometryOptions();
+        InteriorPointOptions options = new InteriorPointOptions();
         options.setGeometry(inputGeometry);
         
         Reader reader = new StringReader(inputGeometry);

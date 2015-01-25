@@ -1,5 +1,6 @@
 package org.geometrycommands;
 
+import org.geometrycommands.LocatePointCommand.LocatePointOptions;
 import com.vividsolutions.jts.geom.Geometry;
 import com.vividsolutions.jts.geom.Lineal;
 import com.vividsolutions.jts.geom.Point;
@@ -11,7 +12,7 @@ import java.io.Writer;
  * A Command to locate the position of a Point on the input linear Geometry as a percentage of the distance.
  * @author Jared Erickson
  */
-public class LocatePointCommand extends OtherGeometryCommand<OtherGeometryOptions> {
+public class LocatePointCommand extends OtherGeometryCommand<LocatePointOptions> {
 
     /**
      * Get the Command's name
@@ -32,25 +33,25 @@ public class LocatePointCommand extends OtherGeometryCommand<OtherGeometryOption
     }
 
     /**
-     * Get a new OtherGeometryOptions
-     * @return A new OtherGeometryOptions
+     * Get a new LocatePointOptions
+     * @return A new LocatePointOptions
      */
     @Override
-    public OtherGeometryOptions getOptions() {
-        return new OtherGeometryOptions();
+    public LocatePointOptions getOptions() {
+        return new LocatePointOptions();
     }
 
     /**
      * Locate the position of a Point on the input linear Geometry as a percentage of the distance.
      * @param geometry The input Geometry
      * @param other The other Geometry
-     * @param options The OtherGeometryOptions
+     * @param options The LocatePointOptions
      * @param reader The java.io.Reader
      * @param writer The java.io.Writer
      * @throws Exception if an error occurs
      */
     @Override
-    protected void processGeometries(Geometry geometry, Geometry other, OtherGeometryOptions options, Reader reader, Writer writer) throws Exception {
+    protected void processGeometries(Geometry geometry, Geometry other, LocatePointOptions options, Reader reader, Writer writer) throws Exception {
         
         Point point = null;
         Geometry line = null;
@@ -77,4 +78,9 @@ public class LocatePointCommand extends OtherGeometryCommand<OtherGeometryOption
         writer.write(String.valueOf(percentAlong));
     }
 
+    /**
+     * The LocatePointOptions
+     */
+    public static class LocatePointOptions extends OtherGeometryOptions {
+    }
 }

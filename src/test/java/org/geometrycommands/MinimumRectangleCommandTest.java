@@ -5,6 +5,7 @@ import java.io.StringReader;
 import java.io.StringWriter;
 import org.junit.Test;
 import static org.junit.Assert.assertEquals;
+import org.geometrycommands.MinimumRectangleCommand.MinimumRectangleOptions;
 
 /**
  * The MinimumRectangleCommand UnitTest
@@ -20,7 +21,7 @@ public class MinimumRectangleCommandTest extends BaseTest {
                 + "(6.857126638942733 8.821305316892328), "
                 + "(9.260874914207697 13.087320259444919), "
                 + "(8.017822881853032 7.492806794533148))";
-        GeometryOptions options = new GeometryOptions();
+        MinimumRectangleOptions options = new MinimumRectangleOptions();
         options.setGeometry(inputGeometry);
 
         Reader reader = new StringReader(inputGeometry);

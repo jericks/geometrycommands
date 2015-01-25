@@ -1,5 +1,6 @@
 package org.geometrycommands;
 
+import org.geometrycommands.EllipseCommand.EllipseOptions;
 import com.vividsolutions.jts.geom.Geometry;
 import com.vividsolutions.jts.util.GeometricShapeFactory;
 import java.io.Reader;
@@ -9,7 +10,7 @@ import java.io.Writer;
  * A Command to create an Ellipse or Circle 
  * @author Jared Erickson
  */
-public class EllipseCommand extends ShapeFactoryCommand<ShapeFactoryOptions> {
+public class EllipseCommand extends ShapeFactoryCommand<EllipseOptions> {
 
     /**
      * Get the command's name
@@ -30,26 +31,32 @@ public class EllipseCommand extends ShapeFactoryCommand<ShapeFactoryOptions> {
     }
 
     /**
-     * Get the ShapeFactoryOptions
-     * @return The ShapeFactoryOptions
+     * Get the EllipseOptions
+     * @return The EllipseOptions
      */
     @Override
-    public ShapeFactoryOptions getOptions() {
-        return new ShapeFactoryOptions();
+    public EllipseOptions getOptions() {
+        return new EllipseOptions();
     }
 
     /**
      * Create an Ellipse or Circle Geometry 
      * @param shapeFactory The preconfigured GeometricShapeFactory
      * @param geometry The input Geometry
-     * @param options The ShapeFactoryOptions
+     * @param options The EllipseOptions
      * @param reader The java.io.Reader
      * @param writer The java.io.Writer
      * @throws Exception if an error occurs
      */
     @Override
-    protected void processGeometryWithGeometricShapeFactory(GeometricShapeFactory shapeFactory, Geometry geometry, ShapeFactoryOptions options, Reader reader, Writer writer) throws Exception {
+    protected void processGeometryWithGeometricShapeFactory(GeometricShapeFactory shapeFactory, Geometry geometry, EllipseOptions options, Reader reader, Writer writer) throws Exception {
         Geometry outputGeometry = shapeFactory.createEllipse();
         writer.write(writeGeometry(outputGeometry, options));
+    }
+
+    /**
+     * The EllipseOptions
+     */
+    public static class EllipseOptions extends ShapeFactoryOptions {
     }
 }

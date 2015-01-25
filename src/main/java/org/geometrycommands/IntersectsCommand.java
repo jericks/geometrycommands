@@ -1,5 +1,6 @@
 package org.geometrycommands;
 
+import org.geometrycommands.IntersectsCommand.IntersectsOptions;
 import com.vividsolutions.jts.geom.Geometry;
 import java.io.Reader;
 import java.io.Writer;
@@ -8,7 +9,7 @@ import java.io.Writer;
  * A Command that determines if the input Geometry intersects the other Geometry.
  * @author Jared Erickson
  */
-public class IntersectsCommand extends OtherGeometryCommand<OtherGeometryOptions> {
+public class IntersectsCommand extends OtherGeometryCommand<IntersectsOptions> {
 
     /**
      * Get the name of the command
@@ -29,26 +30,32 @@ public class IntersectsCommand extends OtherGeometryCommand<OtherGeometryOptions
     }
 
     /**
-     * Get a new OtherGeometryOptions
-     * @return A new OtherGeometryOptions
+     * Get a new IntersectsOptions
+     * @return A new IntersectsOptions
      */
     @Override
-    public OtherGeometryOptions getOptions() {
-        return new OtherGeometryOptions();
+    public IntersectsOptions getOptions() {
+        return new IntersectsOptions();
     }
 
     /**
      * Determine if the input Geometry intersects the other Geometry.
      * @param geometry The input Geometry
      * @param other The other Geometry
-     * @param options The OtherGeometryOptions
+     * @param options The IntersectsOptions
      * @param reader The java.io.Reader
      * @param writer The java.io.Writer
      * @throws Exception if an error occurs
      */
     @Override
-    protected void processGeometries(Geometry geometry, Geometry other, OtherGeometryOptions options, Reader reader, Writer writer) throws Exception {
+    protected void processGeometries(Geometry geometry, Geometry other, IntersectsOptions options, Reader reader, Writer writer) throws Exception {
         boolean intersects = geometry.intersects(other);
         writer.write(String.valueOf(intersects));
+    }
+
+    /**
+     * The IntersectsOptions
+     */
+    public static class IntersectsOptions extends OtherGeometryOptions {
     }
 }

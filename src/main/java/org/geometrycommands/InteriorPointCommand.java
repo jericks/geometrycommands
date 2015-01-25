@@ -1,5 +1,6 @@
 package org.geometrycommands;
 
+import org.geometrycommands.InteriorPointCommand.InteriorPointOptions;
 import com.vividsolutions.jts.geom.Geometry;
 import java.io.Reader;
 import java.io.Writer;
@@ -8,7 +9,7 @@ import java.io.Writer;
  * A Command to get the interior Point of the input Geometry
  * @author Jared Erickson
  */
-public class InteriorPointCommand extends GeometryCommand<GeometryOptions> {
+public class InteriorPointCommand extends GeometryCommand<InteriorPointOptions> {
 
     /**
      * Get the Command's name
@@ -29,25 +30,31 @@ public class InteriorPointCommand extends GeometryCommand<GeometryOptions> {
     }
 
     /**
-     * Get a new GeometryOptions
-     * @return A new GeometryOptions
+     * Get a new InteriorPointOptions
+     * @return A new InteriorPointOptions
      */
     @Override
-    public GeometryOptions getOptions() {
-        return new GeometryOptions();
+    public InteriorPointOptions getOptions() {
+        return new InteriorPointOptions();
     }
 
     /**
      * Get the interior point of the input Geometry.
      * @param geometry The input Geometry
-     * @param options The GeometryOptions
+     * @param options The InteriorPointOptions
      * @param reader The java.io.Reader
      * @param writer The java.io.Writer
      * @throws Exception if an error occurs
      */
     @Override
-    protected void processGeometry(Geometry geometry, GeometryOptions options, Reader reader, Writer writer) throws Exception {
+    protected void processGeometry(Geometry geometry, InteriorPointOptions options, Reader reader, Writer writer) throws Exception {
         Geometry outputGeometry = geometry.getInteriorPoint();
         writer.write(writeGeometry(outputGeometry, options));
+    }
+
+    /**
+     * The InteriorPointOptions
+     */
+    public static class InteriorPointOptions extends GeometryOptions {
     }
 }

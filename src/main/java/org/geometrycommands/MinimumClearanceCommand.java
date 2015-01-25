@@ -1,5 +1,6 @@
 package org.geometrycommands;
 
+import org.geometrycommands.MinimumClearanceCommand.MinimumClearanceOptions;
 import com.vividsolutions.jts.geom.Geometry;
 import com.vividsolutions.jts.precision.MinimumClearance;
 import java.io.Reader;
@@ -9,7 +10,7 @@ import java.io.Writer;
  * Calculate the minimum clearance of the input Geometry.
  * @author Jared Erickson
  */
-public class MinimumClearanceCommand extends GeometryCommand<GeometryOptions> {
+public class MinimumClearanceCommand extends GeometryCommand<MinimumClearanceOptions> {
 
     /**
      * Get the Command's name
@@ -30,26 +31,32 @@ public class MinimumClearanceCommand extends GeometryCommand<GeometryOptions> {
     }
 
     /**
-     * Get a new GeometryOptions
-     * @return A new GeometryOptions
+     * Get a new MinimumClearanceOptions
+     * @return A new MinimumClearanceOptions
      */
     @Override
-    public GeometryOptions getOptions() {
-        return new GeometryOptions();
+    public MinimumClearanceOptions getOptions() {
+        return new MinimumClearanceOptions();
     }
 
     /**
      * Calculate the minimum clearance of the input Geometry.
      * @param geometry The input Geometry
-     * @param options The GeometryOptions
+     * @param options The MinimumClearanceOptions
      * @param reader The java.io.Reader
      * @param writer The java.io.Writer 
      * @throws Exception if an error occurs
      */
     @Override
-    protected void processGeometry(Geometry geometry, GeometryOptions options, Reader reader, Writer writer) throws Exception {
+    protected void processGeometry(Geometry geometry, MinimumClearanceOptions options, Reader reader, Writer writer) throws Exception {
         MinimumClearance minimumClearance = new MinimumClearance(geometry);
         Geometry outputGeometry = minimumClearance.getLine();
         writer.write(writeGeometry(outputGeometry, options));
+    }
+
+    /**
+     * The MinimumClearanceOptions
+     */
+    public static class MinimumClearanceOptions extends GeometryOptions {
     }
 }
