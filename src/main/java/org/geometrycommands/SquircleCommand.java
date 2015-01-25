@@ -1,5 +1,6 @@
 package org.geometrycommands;
 
+import org.geometrycommands.SquircleCommand.SquircleOptions;
 import com.vividsolutions.jts.geom.Coordinate;
 import com.vividsolutions.jts.geom.Geometry;
 import com.vividsolutions.jts.geom.Point;
@@ -11,7 +12,7 @@ import java.io.Writer;
  * A Command to create a squircle
  * @author Jared Erickson
  */
-public class SquircleCommand extends ShapeFactoryCommand<ShapeFactoryOptions> {
+public class SquircleCommand extends ShapeFactoryCommand<SquircleOptions> {
 
     /**
      * Get the command's name
@@ -32,25 +33,25 @@ public class SquircleCommand extends ShapeFactoryCommand<ShapeFactoryOptions> {
     }
 
     /**
-     * Get the ShapeFactoryOptions
-     * @return The ShapeFactoryOptions
+     * Get the SquircleOptions
+     * @return The SquircleOptions
      */
     @Override
-    public ShapeFactoryOptions getOptions() {
-        return new ShapeFactoryOptions();
+    public SquircleOptions getOptions() {
+        return new SquircleOptions();
     }
 
     /**
      * Create a squircle Geometry 
      * @param shapeFactory The preconfigured GeometricShapeFactory
      * @param geometry The input Geometry
-     * @param options The ShapeFactoryOptions
+     * @param options The SquircleOptions
      * @param reader The java.io.Reader
      * @param writer The java.io.Writer
      * @throws Exception if an error occurs
      */
     @Override
-    protected void processGeometryWithGeometricShapeFactory(GeometricShapeFactory shapeFactory, Geometry geometry, ShapeFactoryOptions options, Reader reader, Writer writer) throws Exception {
+    protected void processGeometryWithGeometricShapeFactory(GeometricShapeFactory shapeFactory, Geometry geometry, SquircleOptions options, Reader reader, Writer writer) throws Exception {
         // There is a bug in JTS when creating Squircles with base
         if (geometry instanceof Point && !options.isCenter()) {
             Point point = (Point) geometry;
@@ -59,5 +60,11 @@ public class SquircleCommand extends ShapeFactoryCommand<ShapeFactoryOptions> {
         }
         Geometry outputGeometry = shapeFactory.createSquircle();
         writer.write(writeGeometry(outputGeometry, options));
+    }
+
+    /**
+     * The SquircleOptions
+     */
+    public static class SquircleOptions extends ShapeFactoryOptions {
     }
 }

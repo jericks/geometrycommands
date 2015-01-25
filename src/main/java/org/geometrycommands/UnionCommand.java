@@ -1,5 +1,6 @@
 package org.geometrycommands;
 
+import org.geometrycommands.UnionCommand.UnionOptions;
 import com.vividsolutions.jts.geom.Geometry;
 import java.io.Reader;
 import java.io.Writer;
@@ -8,7 +9,7 @@ import java.io.Writer;
  * A Command to calculate the union of the input Geometry and the other Geometry.
  * @author Jared Erickson
  */
-public class UnionCommand extends OtherGeometryCommand<OtherGeometryOptions> {
+public class UnionCommand extends OtherGeometryCommand<UnionOptions> {
 
     /**
      * Get the name of the command
@@ -29,26 +30,32 @@ public class UnionCommand extends OtherGeometryCommand<OtherGeometryOptions> {
     }
 
     /**
-     * Get a new OtherGeometryOptions
-     * @return A new OtherGeometryOptions
+     * Get a new UnionOptions
+     * @return A new UnionOptions
      */
     @Override
-    public OtherGeometryOptions getOptions() {
-        return new OtherGeometryOptions();
+    public UnionOptions getOptions() {
+        return new UnionOptions();
     }
 
     /**
      * Calculate the union of the input Geometry and the other Geometry.
      * @param geometry The input Geometry
      * @param other The other Geometry
-     * @param options The OtherGeometryOptions
+     * @param options The UnionOptions
      * @param reader The java.io.Reader
      * @param writer The java.io.Writer
      * @throws Exception if an error occurs
      */
     @Override
-    protected void processGeometries(Geometry geometry, Geometry other, OtherGeometryOptions options, Reader reader, Writer writer) throws Exception {
+    protected void processGeometries(Geometry geometry, Geometry other, UnionOptions options, Reader reader, Writer writer) throws Exception {
         Geometry unionedGeometry = geometry.union(other);
         writer.write(writeGeometry(unionedGeometry, options));
+    }
+
+    /**
+     * The UnionOptions
+     */
+    public static class UnionOptions extends OtherGeometryOptions {
     }
 }

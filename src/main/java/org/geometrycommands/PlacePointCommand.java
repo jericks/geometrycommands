@@ -1,5 +1,6 @@
 package org.geometrycommands;
 
+import org.geometrycommands.PlacePointCommand.PlacePointOptions;
 import com.vividsolutions.jts.geom.Coordinate;
 import com.vividsolutions.jts.geom.Geometry;
 import com.vividsolutions.jts.geom.GeometryFactory;
@@ -13,7 +14,7 @@ import java.io.Writer;
  * A Command to place a Point on the input linear Geometry.
  * @author Jared Erickson
  */
-public class PlacePointCommand extends OtherGeometryCommand<OtherGeometryOptions> {
+public class PlacePointCommand extends OtherGeometryCommand<PlacePointOptions> {
 
     /**
      * Get the Command's name
@@ -34,25 +35,25 @@ public class PlacePointCommand extends OtherGeometryCommand<OtherGeometryOptions
     }
 
     /**
-     * Get a new OtherGeometryOptions
-     * @return A new OtherGeometryOptions
+     * Get a new PlacePointOptions
+     * @return A new PlacePointOptions
      */
     @Override
-    public OtherGeometryOptions getOptions() {
-        return new OtherGeometryOptions();
+    public PlacePointOptions getOptions() {
+        return new PlacePointOptions();
     }
 
     /**
      * Locate a Point on the input linear Geometry.
      * @param geometry The input Geometry
      * @param other The other Geometry
-     * @param options The OtherGeometryOptions
+     * @param options The PlacePointOptions
      * @param reader The java.io.Reader
      * @param writer The java.io.Writer
      * @throws Exception if an error occurs
      */
     @Override
-    protected void processGeometries(Geometry geometry, Geometry other, OtherGeometryOptions options, Reader reader, Writer writer) throws Exception {
+    protected void processGeometries(Geometry geometry, Geometry other, PlacePointOptions options, Reader reader, Writer writer) throws Exception {
 
         Point point = null;
         Geometry line = null;
@@ -78,5 +79,11 @@ public class PlacePointCommand extends OtherGeometryCommand<OtherGeometryOptions
         GeometryFactory factory = new GeometryFactory();
         Point snappedPoint = factory.createPoint(coord);
         writer.write(writeGeometry(snappedPoint, options));
+    }
+
+    /**
+     * The PlacePointOptions
+     */
+    public static class PlacePointOptions extends OtherGeometryOptions {
     }
 }

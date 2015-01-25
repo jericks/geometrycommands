@@ -5,6 +5,7 @@ import java.io.StringReader;
 import java.io.StringWriter;
 import org.junit.Test;
 import static org.junit.Assert.assertEquals;
+import org.geometrycommands.SquircleCommand.SquircleOptions;
 
 /**
  * The SquircleCommand UnitTest
@@ -16,7 +17,7 @@ public class SquircleCommandTest extends BaseTest {
     public void execute() throws Exception {
 
         String inputGeometry = "POINT (100 100)";
-        ShapeFactoryOptions options = new ShapeFactoryOptions();
+        SquircleOptions options = new SquircleOptions();
         options.setGeometry(inputGeometry);
         options.setWidth(50);
         options.setHeight(40);

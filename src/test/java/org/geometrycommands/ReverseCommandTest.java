@@ -5,6 +5,7 @@ import java.io.StringReader;
 import java.io.StringWriter;
 import org.junit.Test;
 import static org.junit.Assert.assertEquals;
+import org.geometrycommands.ReverseCommand.ReverseOptions;
 
 /**
  * The ReverseCommand UnitTest
@@ -16,7 +17,7 @@ public class ReverseCommandTest extends BaseTest {
     public void execute() throws Exception {
         
         String inputGeometry = "LINESTRING (0 0, 5 5, 10 10)";
-        GeometryOptions options = new GeometryOptions();
+        ReverseOptions options = new ReverseOptions();
         options.setGeometry(inputGeometry);
         
         Reader reader = new StringReader(inputGeometry);

@@ -1,12 +1,11 @@
 package org.geometrycommands;
 
 import org.junit.Test;
-
 import java.io.Reader;
 import java.io.StringReader;
 import java.io.StringWriter;
-
 import static org.junit.Assert.assertEquals;
+import org.geometrycommands.UnionCommand.UnionOptions;
 
 /**
  * The UnionCommand UnitTest
@@ -19,7 +18,7 @@ public class UnionCommandTest extends BaseTest {
 
         String inputGeometry = "POLYGON ((0 0, 0 10, 10 10, 10 0, 0 0))";
         String otherGeometry = "POLYGON ((10 10, 10 14, 14 14, 14 10, 10 10))";
-        OtherGeometryOptions options = new OtherGeometryOptions();
+        UnionOptions options = new UnionOptions();
         options.setGeometry(inputGeometry);
         options.setOtherGeometry(otherGeometry);
 

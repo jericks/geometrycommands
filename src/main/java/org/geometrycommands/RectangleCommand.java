@@ -1,5 +1,6 @@
 package org.geometrycommands;
 
+import org.geometrycommands.RectangleCommand.RectangleOptions;
 import com.vividsolutions.jts.geom.Geometry;
 import com.vividsolutions.jts.util.GeometricShapeFactory;
 import java.io.Reader;
@@ -9,7 +10,7 @@ import java.io.Writer;
  * A Command to create a Rectangle 
  * @author Jared Erickson
  */
-public class RectangleCommand extends ShapeFactoryCommand<ShapeFactoryOptions> {
+public class RectangleCommand extends ShapeFactoryCommand<RectangleOptions> {
 
     /**
      * Get the command's name
@@ -30,26 +31,32 @@ public class RectangleCommand extends ShapeFactoryCommand<ShapeFactoryOptions> {
     }
 
     /**
-     * Get the ShapeFactoryOptions
-     * @return The ShapeFactoryOptions
+     * Get the RectangleOptions
+     * @return The RectangleOptions
      */
     @Override
-    public ShapeFactoryOptions getOptions() {
-        return new ShapeFactoryOptions();
+    public RectangleOptions getOptions() {
+        return new RectangleOptions();
     }
 
     /**
      * Create a Rectangle Geometry 
      * @param shapeFactory The preconfigured GeometricShapeFactory
      * @param geometry The input Geometry
-     * @param options The ShapeFactoryOptions
+     * @param options The RectangleOptions
      * @param reader The java.io.Reader
      * @param writer The java.io.Writer
      * @throws Exception if an error occurs
      */
     @Override
-    protected void processGeometryWithGeometricShapeFactory(GeometricShapeFactory shapeFactory, Geometry geometry, ShapeFactoryOptions options, Reader reader, Writer writer) throws Exception {
+    protected void processGeometryWithGeometricShapeFactory(GeometricShapeFactory shapeFactory, Geometry geometry, RectangleOptions options, Reader reader, Writer writer) throws Exception {
         Geometry outputGeometry = shapeFactory.createRectangle();
         writer.write(writeGeometry(outputGeometry, options));
+    }
+
+    /**
+     * The RectangleOptions
+     */
+    public static class RectangleOptions extends ShapeFactoryOptions {
     }
 }

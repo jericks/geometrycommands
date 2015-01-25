@@ -3,9 +3,9 @@ package org.geometrycommands;
 import java.io.Reader;
 import java.io.StringReader;
 import java.io.StringWriter;
-
 import org.junit.Test;
 import static org.junit.Assert.assertEquals;
+import org.geometrycommands.TouchesCommand.TouchesOptions;
 
 /**
  * The TouchesCommand UnitTest
@@ -19,7 +19,7 @@ public class TouchesCommandTest extends BaseTest {
         // true
         String inputGeometry = "POLYGON ((0 0, 0 10, 10 10, 10 0, 0 0))";
         String otherGeometry = "POLYGON ((10 10, 10 14, 14 14, 14 10, 10 10))";
-        OtherGeometryOptions options = new OtherGeometryOptions();
+        TouchesOptions options = new TouchesOptions();
         options.setGeometry(inputGeometry);
         options.setOtherGeometry(otherGeometry);
         
@@ -33,7 +33,7 @@ public class TouchesCommandTest extends BaseTest {
         // false
         inputGeometry = "POLYGON ((0 0, 0 10, 10 10, 10 0, 0 0))";
         otherGeometry = "POINT (15 15)";
-        options = new OtherGeometryOptions();
+        options = new TouchesOptions();
         options.setGeometry(inputGeometry);
         options.setOtherGeometry(otherGeometry);
         

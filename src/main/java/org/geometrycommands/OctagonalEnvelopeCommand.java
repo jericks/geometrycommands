@@ -1,5 +1,6 @@
 package org.geometrycommands;
 
+import org.geometrycommands.OctagonalEnvelopeCommand.OctagonalEnvelopeOptions;
 import com.vividsolutions.jts.geom.Geometry;
 import com.vividsolutions.jts.geom.OctagonalEnvelope;
 import java.io.Reader;
@@ -9,7 +10,7 @@ import java.io.Writer;
  * Calculate the octagonal envelope of the input Geometry.
  * @author Jared Erickson
  */
-public class OctagonalEnvelopeCommand extends GeometryCommand<GeometryOptions> {
+public class OctagonalEnvelopeCommand extends GeometryCommand<OctagonalEnvelopeOptions> {
 
     /**
      * Get the Command's name
@@ -30,26 +31,32 @@ public class OctagonalEnvelopeCommand extends GeometryCommand<GeometryOptions> {
     }
 
     /**
-     * Get a new GeometryOptions
-     * @return A new GeometryOptions
+     * Get a new OctagonalEnvelopeOptions
+     * @return A new OctagonalEnvelopeOptions
      */
     @Override
-    public GeometryOptions getOptions() {
-        return new GeometryOptions();
+    public OctagonalEnvelopeOptions getOptions() {
+        return new OctagonalEnvelopeOptions();
     }
 
     /**
      * Calculate the octagonal envelope of the input Geometry.
      * @param geometry The input Geometry
-     * @param options The GeometryOptions
+     * @param options The OctagonalEnvelopeOptions
      * @param reader The java.io.Reader
      * @param writer The java.io.Writer 
      * @throws Exception if an error occurs
      */
     @Override
-    protected void processGeometry(Geometry geometry, GeometryOptions options, Reader reader, Writer writer) throws Exception {
+    protected void processGeometry(Geometry geometry, OctagonalEnvelopeOptions options, Reader reader, Writer writer) throws Exception {
         OctagonalEnvelope octagonalEnvelope = new OctagonalEnvelope(geometry);
         Geometry outputGeometry = octagonalEnvelope.toGeometry(geometry.getFactory());
         writer.write(writeGeometry(outputGeometry, options));
+    }
+
+    /**
+     * The OctagonalEnvelopeOptions
+     */
+    public static class OctagonalEnvelopeOptions extends GeometryOptions {
     }
 }

@@ -1,5 +1,6 @@
 package org.geometrycommands;
 
+import org.geometrycommands.ReverseCommand.ReverseOptions;
 import com.vividsolutions.jts.geom.Geometry;
 import java.io.Reader;
 import java.io.Writer;
@@ -8,7 +9,7 @@ import java.io.Writer;
  * A Command for reversing the coordinates in the input Geometry.
  * @author Jared Erickson
  */
-public class ReverseCommand extends GeometryCommand<GeometryOptions> {
+public class ReverseCommand extends GeometryCommand<ReverseOptions> {
 
     /**
      * Get the command name
@@ -29,24 +30,30 @@ public class ReverseCommand extends GeometryCommand<GeometryOptions> {
     }
 
     /**
-     * Get a new GeometryOptions
-     * @return A new GeometryOptions
+     * Get a new ReverseOptions
+     * @return A new ReverseOptions
      */
     @Override
-    public GeometryOptions getOptions() {
-        return new GeometryOptions();
+    public ReverseOptions getOptions() {
+        return new ReverseOptions();
     }
 
     /**
      * Reverse the coordinates in the input Geometry
      * @param geometry The input geometry
-     * @param options The GeometryOptions
+     * @param options The ReverseOptions
      * @param reader The java.io.Reader
      * @param writer The java.io.Writer
      * @throws Exception if an error occurs
      */
     @Override
-    protected void processGeometry(Geometry geometry, GeometryOptions options, Reader reader, Writer writer) throws Exception {
+    protected void processGeometry(Geometry geometry, ReverseOptions options, Reader reader, Writer writer) throws Exception {
         writer.write(writeGeometry(geometry.reverse(), options));
+    }
+
+    /**
+     * The ReverseOptions
+     */
+    public static class ReverseOptions extends GeometryOptions {
     }
 }

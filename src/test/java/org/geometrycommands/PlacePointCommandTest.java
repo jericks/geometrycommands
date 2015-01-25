@@ -5,8 +5,7 @@ import java.io.StringReader;
 import java.io.StringWriter;
 import org.junit.Test;
 import static org.junit.Assert.assertEquals;
-import static org.junit.Assert.assertFalse;
-import static org.junit.Assert.assertTrue;
+import org.geometrycommands.PlacePointCommand.PlacePointOptions;
 
 /**
  * The PlacePointCommand UnitTest
@@ -19,7 +18,7 @@ public class PlacePointCommandTest extends BaseTest {
         
         String inputGeometry = "LINESTRING (0 0, 5 5, 10 10)";
         String otherGeometry = "POINT (3 4.5)";
-        OtherGeometryOptions options = new OtherGeometryOptions();
+        PlacePointOptions options = new PlacePointOptions();
         options.setGeometry(inputGeometry);
         options.setOtherGeometry(otherGeometry);
         

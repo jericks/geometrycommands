@@ -5,6 +5,7 @@ import java.io.StringReader;
 import java.io.StringWriter;
 import org.junit.Test;
 import static org.junit.Assert.assertEquals;
+import org.geometrycommands.SymDifferenceCommand.SymDifferenceOptions;
 
 /**
  * The SymDifferenceCommand UnitTest
@@ -17,7 +18,7 @@ public class SymDifferenceCommandTest extends BaseTest {
 
         String inputGeometry = "POLYGON ((0 0, 0 10, 10 10, 10 0, 0 0))";
         String otherGeometry = "POLYGON ((5 5, 5 20, 20 20, 20 5, 5 5))";
-        OtherGeometryOptions options = new OtherGeometryOptions();
+        SymDifferenceOptions options = new SymDifferenceOptions();
         options.setGeometry(inputGeometry);
         options.setOtherGeometry(otherGeometry);
 

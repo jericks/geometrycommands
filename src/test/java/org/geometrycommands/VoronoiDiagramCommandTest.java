@@ -5,6 +5,7 @@ import java.io.StringReader;
 import java.io.StringWriter;
 import org.junit.Test;
 import static org.junit.Assert.assertEquals;
+import org.geometrycommands.VoronoiDiagramCommand.VoronoiDiagramOptions;
 
 /**
  * The VoronoiDiagramCommand UnitTest
@@ -42,7 +43,7 @@ public class VoronoiDiagramCommandTest extends BaseTest {
 
     @Test
     public void execute() throws Exception {
-        GeometryOptions options = new GeometryOptions();
+        VoronoiDiagramOptions options = new VoronoiDiagramOptions();
         options.setGeometry(inputGeometry);
 
         Reader reader = new StringReader(inputGeometry);

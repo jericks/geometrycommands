@@ -5,6 +5,7 @@ import java.io.StringReader;
 import java.io.StringWriter;
 import org.junit.Test;
 import static org.junit.Assert.assertEquals;
+import org.geometrycommands.WithinCommand.WithinOptions;
 
 /**
  * The WithinCommand UnitTest
@@ -18,7 +19,7 @@ public class WithinCommandTest extends BaseTest {
         // true
         String inputGeometry = "POINT (5 5)";
         String otherGeometry = "POLYGON ((0 0, 0 10, 10 10, 10 0, 0 0))";
-        OtherGeometryOptions options = new OtherGeometryOptions();
+        WithinOptions options = new WithinOptions();
         options.setGeometry(inputGeometry);
         options.setOtherGeometry(otherGeometry);
         
@@ -32,7 +33,7 @@ public class WithinCommandTest extends BaseTest {
         // false
         inputGeometry = "POLYGON ((0 0, 0 10, 10 10, 10 0, 0 0))";
         otherGeometry = "POINT (15 15)";
-        options = new OtherGeometryOptions();
+        options = new WithinOptions();
         options.setGeometry(inputGeometry);
         options.setOtherGeometry(otherGeometry);
         
