@@ -86,6 +86,7 @@ org.geometrycommands.SuperCircleCommand
 org.geometrycommands.SymDifferenceCommand
 org.geometrycommands.TextCommand
 org.geometrycommands.TouchesCommand
+org.geometrycommands.ToWkbCommand
 org.geometrycommands.TranslateCommand
 org.geometrycommands.UnionCommand
 org.geometrycommands.VoronoiDiagramCommand
