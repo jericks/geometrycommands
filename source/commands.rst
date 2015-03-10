@@ -91,6 +91,7 @@ Commands
     commands/symdifference.rst
     commands/text.rst
     commands/touches.rst
+    commands/towkb.rst
     commands/translate.rst
     commands/union.rst
     commands/voronoi.rst
