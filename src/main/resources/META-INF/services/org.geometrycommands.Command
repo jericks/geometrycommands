@@ -29,6 +29,7 @@ org.geometrycommands.DistanceCommand
 org.geometrycommands.DistanceLineStringCommand
 org.geometrycommands.EnvelopeCommand
 org.geometrycommands.EqualsCommand
+org.geometrycommands.FromWkbCommand
 org.geometrycommands.InteriorPointCommand
 org.geometrycommands.InterpolatePointCommand
 org.geometrycommands.IntersectionCommand
