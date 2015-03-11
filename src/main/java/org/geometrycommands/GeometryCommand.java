@@ -19,11 +19,6 @@ public abstract class GeometryCommand<T extends GeometryOptions> implements Comm
      * The WKTReader
      */
     private final WKTReader wktReader = new WKTReader();
-    
-    /**
-     * The WKBReader
-     */
-    private final WKBReader wkbReader = new WKBReader();
 
     /**
      * Execute the Command against at least one input Geometry
