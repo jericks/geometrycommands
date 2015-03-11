@@ -7,7 +7,7 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>voronoi &mdash; Geometry Commands 0.1 documentation</title>
+  <title>fromwkb &mdash; Geometry Commands 0.1 documentation</title>
   
 
   
@@ -30,8 +30,8 @@
   
     <link rel="top" title="Geometry Commands 0.1 documentation" href="../index.html"/>
         <link rel="up" title="Commands" href="../commands.html"/>
-        <link rel="next" title="within" href="within.html"/>
-        <link rel="prev" title="union" href="union.html"/> 
+        <link rel="next" title="interiorpoint" href="interiorpoint.html"/>
+        <link rel="prev" title="equals" href="equals.html"/> 
 
   
   <script src="https://cdnjs.cloudflare.com/ajax/libs/modernizr/2.6.2/modernizr.min.js"></script>
@@ -93,7 +93,7 @@
 <li class="toctree-l2"><a class="reference internal" href="distanceline.html">distanceline</a></li>
 <li class="toctree-l2"><a class="reference internal" href="envelope.html">envelope</a></li>
 <li class="toctree-l2"><a class="reference internal" href="equals.html">equals</a></li>
-<li class="toctree-l2"><a class="reference internal" href="fromwkb.html">fromwkb</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="">fromwkb</a></li>
 <li class="toctree-l2"><a class="reference internal" href="interiorpoint.html">interiorpoint</a></li>
 <li class="toctree-l2"><a class="reference internal" href="interpolatepoint.html">interpolatepoint</a></li>
 <li class="toctree-l2"><a class="reference internal" href="intersection.html">intersection</a></li>
@@ -154,7 +154,7 @@
 <li class="toctree-l2"><a class="reference internal" href="towkb.html">towkb</a></li>
 <li class="toctree-l2"><a class="reference internal" href="translate.html">translate</a></li>
 <li class="toctree-l2"><a class="reference internal" href="union.html">union</a></li>
-<li class="toctree-l2 current"><a class="current reference internal" href="">voronoi</a></li>
+<li class="toctree-l2"><a class="reference internal" href="voronoi.html">voronoi</a></li>
 <li class="toctree-l2"><a class="reference internal" href="within.html">within</a></li>
 </ul>
 </li>
@@ -183,10 +183,10 @@
       
           <li><a href="../commands.html">Commands</a> &raquo;</li>
       
-    <li>voronoi</li>
+    <li>fromwkb</li>
       <li class="wy-breadcrumbs-aside">
         
-          <a href="../_sources/commands/voronoi.txt" rel="nofollow"> View page source</a>
+          <a href="../_sources/commands/fromwkb.txt" rel="nofollow"> View page source</a>
         
       </li>
   </ul>
@@ -194,24 +194,23 @@
 </div>
           <div role="main">
             
-  <div class="section" id="voronoi">
-<h1>voronoi<a class="headerlink" href="#voronoi" title="Permalink to this headline">¶</a></h1>
+  <div class="section" id="fromwkb">
+<h1>fromwkb<a class="headerlink" href="#fromwkb" title="Permalink to this headline">¶</a></h1>
 <p><strong>Name</strong>:</p>
-<p>geom voronoi</p>
+<p>geom fromwkb</p>
 <p><strong>Description</strong>:</p>
-<p>Generate a voronoi diagram.</p>
+<p>Convert a WKB to a WKT Geometry.</p>
 <p><strong>Arguments</strong>:</p>
 <blockquote>
 <div><ul class="simple">
-<li>-g &#8211;geometry: The input geometry</li>
+<li>-b &#8211;wkb: The WKB text</li>
 <li>&#8211;help : Print help message</li>
 </ul>
 </div></blockquote>
 <p><strong>Example</strong>:</p>
-<div class="highlight-python"><div class="highlight"><pre>geom voronoi -g &quot;MULTIPOINT ((12.5 12.5), (13.5 7.5), (7 9), (9.5 13), (8 7))&quot;
+<div class="highlight-python"><div class="highlight"><pre>geom fromwkb -b 00000000013FF00000000000004000000000000000
 </pre></div>
 </div>
-<img alt="../_images/voronoi.png" src="../_images/voronoi.png" />
 </div>
 
 
@@ -220,10 +219,10 @@
   
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
       
-        <a href="within.html" class="btn btn-neutral float-right" title="within"/>Next <span class="fa fa-arrow-circle-right"></span></a>
+        <a href="interiorpoint.html" class="btn btn-neutral float-right" title="interiorpoint"/>Next <span class="fa fa-arrow-circle-right"></span></a>
       
       
-        <a href="union.html" class="btn btn-neutral" title="union"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+        <a href="equals.html" class="btn btn-neutral" title="equals"><span class="fa fa-arrow-circle-left"></span> Previous</a>
       
     </div>
   

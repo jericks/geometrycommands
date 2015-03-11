@@ -34,6 +34,7 @@ Commands
     commands/distanceline.rst
     commands/envelope.rst
     commands/equals.rst
+    commands/fromwkb.rst
     commands/interiorpoint.rst
     commands/interpolatepoint.rst
     commands/intersection.rst
