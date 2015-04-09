@@ -6,6 +6,7 @@ org.geometrycommands.AreaCommand
 org.geometrycommands.BoundaryCommand
 org.geometrycommands.BufferCommand
 org.geometrycommands.CentroidCommand
+org.geometrycommands.CloseLineStringCommand
 org.geometrycommands.CombineCommand
 org.geometrycommands.ContainsCommand
 org.geometrycommands.ConvexHullCommand
