@@ -11,6 +11,7 @@ Commands
     commands/boundary.rst
     commands/buffer.rst
     commands/centroid.rst
+    commands/closelinestring.rst
     commands/combine.rst
     commands/contains.rst
     commands/convexHull.rst

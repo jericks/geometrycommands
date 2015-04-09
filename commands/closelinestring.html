@@ -7,7 +7,7 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>within &mdash; Geometry Commands 0.1 documentation</title>
+  <title>closelinestring &mdash; Geometry Commands 0.1 documentation</title>
   
 
   
@@ -30,7 +30,8 @@
   
     <link rel="top" title="Geometry Commands 0.1 documentation" href="../index.html"/>
         <link rel="up" title="Commands" href="../commands.html"/>
-        <link rel="prev" title="voronoi" href="voronoi.html"/> 
+        <link rel="next" title="combine" href="combine.html"/>
+        <link rel="prev" title="centroid" href="centroid.html"/> 
 
   
   <script src="https://cdnjs.cloudflare.com/ajax/libs/modernizr/2.6.2/modernizr.min.js"></script>
@@ -69,7 +70,7 @@
 <li class="toctree-l2"><a class="reference internal" href="boundary.html">boundary</a></li>
 <li class="toctree-l2"><a class="reference internal" href="buffer.html">buffer</a></li>
 <li class="toctree-l2"><a class="reference internal" href="centroid.html">centroid</a></li>
-<li class="toctree-l2"><a class="reference internal" href="closelinestring.html">closelinestring</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="">closelinestring</a></li>
 <li class="toctree-l2"><a class="reference internal" href="combine.html">combine</a></li>
 <li class="toctree-l2"><a class="reference internal" href="contains.html">contains</a></li>
 <li class="toctree-l2"><a class="reference internal" href="convexHull.html">convexHull</a></li>
@@ -155,7 +156,7 @@
 <li class="toctree-l2"><a class="reference internal" href="translate.html">translate</a></li>
 <li class="toctree-l2"><a class="reference internal" href="union.html">union</a></li>
 <li class="toctree-l2"><a class="reference internal" href="voronoi.html">voronoi</a></li>
-<li class="toctree-l2 current"><a class="current reference internal" href="">within</a></li>
+<li class="toctree-l2"><a class="reference internal" href="within.html">within</a></li>
 </ul>
 </li>
 </ul>
@@ -183,10 +184,10 @@
       
           <li><a href="../commands.html">Commands</a> &raquo;</li>
       
-    <li>within</li>
+    <li>closelinestring</li>
       <li class="wy-breadcrumbs-aside">
         
-          <a href="../_sources/commands/within.txt" rel="nofollow"> View page source</a>
+          <a href="../_sources/commands/closelinestring.txt" rel="nofollow"> View page source</a>
         
       </li>
   </ul>
@@ -194,22 +195,21 @@
 </div>
           <div role="main">
             
-  <div class="section" id="within">
-<h1>within<a class="headerlink" href="#within" title="Permalink to this headline">¶</a></h1>
+  <div class="section" id="closelinestring">
+<h1>closelinestring<a class="headerlink" href="#closelinestring" title="Permalink to this headline">¶</a></h1>
 <p><strong>Name</strong>:</p>
-<p>geom within</p>
+<p>geom closelinestring</p>
 <p><strong>Description</strong>:</p>
-<p>Determine if the input geometry is within the other geometry.</p>
+<p>Close an open LineString.</p>
 <p><strong>Arguments</strong>:</p>
 <blockquote>
 <div><ul class="simple">
-<li>-o &#8211;otherGeometry: The other geometry</li>
 <li>-g &#8211;geometry: The input geometry</li>
 <li>&#8211;help : Print help message</li>
 </ul>
 </div></blockquote>
 <p><strong>Example</strong>:</p>
-<div class="highlight-python"><div class="highlight"><pre>geom within -g &quot;POINT (2 2)&quot; -o &quot;POLYGON ((1 1, 1 10, 10 10, 10 1, 1 1))&quot;
+<div class="highlight-python"><div class="highlight"><pre>geom closelinestring -g &quot;LINESTRING (0 0, 4 0, 4 4, 0 4)&quot;
 </pre></div>
 </div>
 </div>
@@ -220,8 +220,10 @@
   
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
       
+        <a href="combine.html" class="btn btn-neutral float-right" title="combine"/>Next <span class="fa fa-arrow-circle-right"></span></a>
       
-        <a href="voronoi.html" class="btn btn-neutral" title="voronoi"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+        <a href="centroid.html" class="btn btn-neutral" title="centroid"><span class="fa fa-arrow-circle-left"></span> Previous</a>
       
     </div>
   
