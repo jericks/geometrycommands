@@ -7,7 +7,7 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>nearestpoints &mdash; Geometry Commands 0.1 documentation</title>
+  <title>narrow &mdash; Geometry Commands 0.1 documentation</title>
   
 
   
@@ -30,8 +30,8 @@
   
     <link rel="top" title="Geometry Commands 0.1 documentation" href="../index.html"/>
         <link rel="up" title="Commands" href="../commands.html"/>
-        <link rel="next" title="node" href="node.html"/>
-        <link rel="prev" title="narrow" href="narrow.html"/> 
+        <link rel="next" title="nearestpoints" href="nearestpoints.html"/>
+        <link rel="prev" title="minrect" href="minrect.html"/> 
 
   
   <script src="https://cdnjs.cloudflare.com/ajax/libs/modernizr/2.6.2/modernizr.min.js"></script>
@@ -119,8 +119,8 @@
 <li class="toctree-l2"><a class="reference internal" href="minclearance.html">minclearance</a></li>
 <li class="toctree-l2"><a class="reference internal" href="mindiameter.html">mindiameter</a></li>
 <li class="toctree-l2"><a class="reference internal" href="minrect.html">minrect</a></li>
-<li class="toctree-l2"><a class="reference internal" href="narrow.html">narrow</a></li>
-<li class="toctree-l2 current"><a class="current reference internal" href="">nearestpoints</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="">narrow</a></li>
+<li class="toctree-l2"><a class="reference internal" href="nearestpoints.html">nearestpoints</a></li>
 <li class="toctree-l2"><a class="reference internal" href="node.html">node</a></li>
 <li class="toctree-l2"><a class="reference internal" href="normalize.html">normalize</a></li>
 <li class="toctree-l2"><a class="reference internal" href="octagonalenvelope.html">octagonalenvelope</a></li>
@@ -185,10 +185,10 @@
       
           <li><a href="../commands.html">Commands</a> &raquo;</li>
       
-    <li>nearestpoints</li>
+    <li>narrow</li>
       <li class="wy-breadcrumbs-aside">
         
-          <a href="../_sources/commands/nearestpoints.txt" rel="nofollow"> View page source</a>
+          <a href="../_sources/commands/narrow.txt" rel="nofollow"> View page source</a>
         
       </li>
   </ul>
@@ -196,22 +196,21 @@
 </div>
           <div role="main">
             
-  <div class="section" id="nearestpoints">
-<h1>nearestpoints<a class="headerlink" href="#nearestpoints" title="Permalink to this headline">¶</a></h1>
+  <div class="section" id="narrow">
+<h1>narrow<a class="headerlink" href="#narrow" title="Permalink to this headline">¶</a></h1>
 <p><strong>Name</strong>:</p>
-<p>geom nearestpoints</p>
+<p>geom narrow</p>
 <p><strong>Description</strong>:</p>
-<p>Get the nearest points between two geometries</p>
+<p>Convert a geometry collection to it&#8217;s most specific type.</p>
 <p><strong>Arguments</strong>:</p>
 <blockquote>
 <div><ul class="simple">
-<li>-o &#8211;otherGeometry: The other geometry</li>
 <li>-g &#8211;geometry: The input geometry</li>
 <li>&#8211;help : Print help message</li>
 </ul>
 </div></blockquote>
 <p><strong>Example</strong>:</p>
-<div class="highlight-python"><div class="highlight"><pre><span class="n">null</span>
+<div class="highlight-python"><div class="highlight"><pre>geom narrow -g &quot;GEOMETRYCOLLECTION (POINT (1 1), POINT(10 10))&quot;
 </pre></div>
 </div>
 </div>
@@ -222,10 +221,10 @@
   
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
       
-        <a href="node.html" class="btn btn-neutral float-right" title="node"/>Next <span class="fa fa-arrow-circle-right"></span></a>
+        <a href="nearestpoints.html" class="btn btn-neutral float-right" title="nearestpoints"/>Next <span class="fa fa-arrow-circle-right"></span></a>
       
       
-        <a href="narrow.html" class="btn btn-neutral" title="narrow"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+        <a href="minrect.html" class="btn btn-neutral" title="minrect"><span class="fa fa-arrow-circle-left"></span> Previous</a>
       
     </div>
   

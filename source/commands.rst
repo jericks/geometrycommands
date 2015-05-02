@@ -60,6 +60,7 @@ Commands
     commands/minclearance.rst
     commands/mindiameter.rst
     commands/minrect.rst
+    commands/narrow.rst
     commands/nearestpoints.rst
     commands/node.rst
     commands/normalize.rst
