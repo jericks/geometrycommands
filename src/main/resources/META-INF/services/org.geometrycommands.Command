@@ -55,6 +55,7 @@ org.geometrycommands.MinimumBoundingCircleCommand
 org.geometrycommands.MinimumClearanceCommand
 org.geometrycommands.MinimumDiameterCommand
 org.geometrycommands.MinimumRectangleCommand
+org.geometrycommands.NarrowCommand
 org.geometrycommands.NearestPointsCommand
 org.geometrycommands.NodeCommand
 org.geometrycommands.NormalizeCommand
