@@ -3,6 +3,7 @@ org.geometrycommands.AngleCommand
 org.geometrycommands.ArcCommand
 org.geometrycommands.ArcPolygonCommand
 org.geometrycommands.AreaCommand
+org.geometrycommands.AsciiArtCommand
 org.geometrycommands.BoundaryCommand
 org.geometrycommands.BufferCommand
 org.geometrycommands.CentroidCommand
