@@ -7,7 +7,7 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>kochsnowflake &mdash; Geometry Commands 0.1 documentation</title>
+  <title>asciiart &mdash; Geometry Commands 0.1 documentation</title>
   
 
   
@@ -30,8 +30,8 @@
   
     <link rel="top" title="Geometry Commands 0.1 documentation" href="../index.html"/>
         <link rel="up" title="Commands" href="../commands.html"/>
-        <link rel="next" title="linemerge" href="linemerge.html"/>
-        <link rel="prev" title="iswithindistance" href="iswithindistance.html"/> 
+        <link rel="next" title="boundary" href="boundary.html"/>
+        <link rel="prev" title="area" href="area.html"/> 
 
   
   <script src="https://cdnjs.cloudflare.com/ajax/libs/modernizr/2.6.2/modernizr.min.js"></script>
@@ -67,7 +67,7 @@
 <li class="toctree-l2"><a class="reference internal" href="arc.html">arc</a></li>
 <li class="toctree-l2"><a class="reference internal" href="arcpoly.html">arcpoly</a></li>
 <li class="toctree-l2"><a class="reference internal" href="area.html">area</a></li>
-<li class="toctree-l2"><a class="reference internal" href="asciiart.html">asciiart</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="">asciiart</a></li>
 <li class="toctree-l2"><a class="reference internal" href="boundary.html">boundary</a></li>
 <li class="toctree-l2"><a class="reference internal" href="buffer.html">buffer</a></li>
 <li class="toctree-l2"><a class="reference internal" href="centroid.html">centroid</a></li>
@@ -108,7 +108,7 @@
 <li class="toctree-l2"><a class="reference internal" href="issimple.html">issimple</a></li>
 <li class="toctree-l2"><a class="reference internal" href="isvalid.html">isvalid</a></li>
 <li class="toctree-l2"><a class="reference internal" href="iswithindistance.html">iswithindistance</a></li>
-<li class="toctree-l2 current"><a class="current reference internal" href="">kochsnowflake</a></li>
+<li class="toctree-l2"><a class="reference internal" href="kochsnowflake.html">kochsnowflake</a></li>
 <li class="toctree-l2"><a class="reference internal" href="linemerge.html">linemerge</a></li>
 <li class="toctree-l2"><a class="reference internal" href="locatepoint.html">locatepoint</a></li>
 <li class="toctree-l2"><a class="reference internal" href="type.html">type</a></li>
@@ -186,10 +186,10 @@
       
           <li><a href="../commands.html">Commands</a> &raquo;</li>
       
-    <li>kochsnowflake</li>
+    <li>asciiart</li>
       <li class="wy-breadcrumbs-aside">
         
-          <a href="../_sources/commands/kochsnowflake.txt" rel="nofollow"> View page source</a>
+          <a href="../_sources/commands/asciiart.txt" rel="nofollow"> View page source</a>
         
       </li>
   </ul>
@@ -197,25 +197,23 @@
 </div>
           <div role="main">
             
-  <div class="section" id="kochsnowflake">
-<h1>kochsnowflake<a class="headerlink" href="#kochsnowflake" title="Permalink to this headline">¶</a></h1>
+  <div class="section" id="asciiart">
+<h1>asciiart<a class="headerlink" href="#asciiart" title="Permalink to this headline">¶</a></h1>
 <p><strong>Name</strong>:</p>
-<p>geom kochsnowflake</p>
+<p>geom asciiart</p>
 <p><strong>Description</strong>:</p>
-<p>Generate a koch snow flake.</p>
+<p>Get the Geometry as WKT ASCII Art</p>
 <p><strong>Arguments</strong>:</p>
 <blockquote>
 <div><ul class="simple">
-<li>-n &#8211;number: The number of points.</li>
 <li>-g &#8211;geometry: The input geometry</li>
 <li>&#8211;help : Print help message</li>
 </ul>
 </div></blockquote>
 <p><strong>Example</strong>:</p>
-<div class="highlight-python"><div class="highlight"><pre>geom kochsnowflake -g &quot;POLYGON ((0 0, 0 10, 10 10, 10 0, 0 0))&quot; -n 100
+<div class="highlight-python"><div class="highlight"><pre>geom asciiart -g &quot;POINT (10 10)&quot;
 </pre></div>
 </div>
-<img alt="../_images/kochsnowflake.png" src="../_images/kochsnowflake.png" />
 </div>
 
 
@@ -224,10 +222,10 @@
   
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
       
-        <a href="linemerge.html" class="btn btn-neutral float-right" title="linemerge"/>Next <span class="fa fa-arrow-circle-right"></span></a>
+        <a href="boundary.html" class="btn btn-neutral float-right" title="boundary"/>Next <span class="fa fa-arrow-circle-right"></span></a>
       
       
-        <a href="iswithindistance.html" class="btn btn-neutral" title="iswithindistance"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+        <a href="area.html" class="btn btn-neutral" title="area"><span class="fa fa-arrow-circle-left"></span> Previous</a>
       
     </div>
   

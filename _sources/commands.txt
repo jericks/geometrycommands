@@ -8,6 +8,7 @@ Commands
     commands/arc.rst
     commands/arcpoly.rst
     commands/area.rst
+    commands/asciiart.rst
     commands/boundary.rst
     commands/buffer.rst
     commands/centroid.rst
