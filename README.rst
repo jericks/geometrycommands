@@ -85,25 +85,8 @@ Install it in your .bash_profile::
 Build
 -----
 Geometry Commands depends on the Java Topology Suite (JTS) and Proj4j and uses Maven as a build tool.
-Unfortunately, Proj4j is not in a Maven repository.  So, to build Geometry Commands you must first
-checkout Proj4j, build the jar, and install it in your local Maven repository.
-
-Checkout source code:: 
-
-    svn checkout http://svn.osgeo.org/metacrs/proj4j/trunk/ proj4j
-
-Build it:: 
     
-    cd proj4j/src
-    ant
-
-Install it::
-
-    cd proj4j/
-    mvn install:install-file -Dfile=build/distro/lib/proj4j-0.1.0.jar -DgroupId=org.osgeo -DartifactId=proj4j -Dversion=0.1.0 -Dpackaging=jar
-
-Now you can build Geometry Commands using Maven:: 
-
+    git checkout https://github.com/jericks/geometrycommands.git
     cd /geometrycommands
     mvn clean install
 
