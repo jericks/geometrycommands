@@ -63,6 +63,21 @@ public class BufferCommandTest extends BaseTest {
         command = new BufferCommand();
         command.execute(options, reader, writer);
         assertEquals(polygonWkt, writer.getBuffer().toString());
+
+        // Single sided
+        options = new BufferOptions();
+        options.setDistance(10);
+        options.setSingleSided(true);
+        options.setEndCapStyle("square");
+        options.setQuadrantSegements(6);
+
+        reader = new StringReader("LINESTRING (0 1, 2 3, 4 5)");
+        writer = new StringWriter();
+
+        command = new BufferCommand();
+        command.execute(options, reader, writer);
+        assertEquals("POLYGON ((4 5, 2 3, 0 1, -7.071067811865475 8.071067811865476, " +
+                "-3.0710678118654746 12.071067811865476, 4 5))", writer.getBuffer().toString());
     }
 
     @Test
@@ -81,6 +96,36 @@ public class BufferCommandTest extends BaseTest {
                 "-d", "10"
         }, "POINT (100 100)");
         assertEquals(polygonWkt, result);
+
+        // Butt
+        result = runApp(new String[]{
+                "buffer",
+                "-d", "10",
+                "-c", "butt"
+        }, "LINESTRING (0 1, 2 3, 4 5)");
+        assertEquals("POLYGON ((-3.0710678118654746 12.071067811865476, 11.071067811865476 -2.0710678118654746, " +
+                "7.071067811865475 -6.071067811865475, -7.071067811865475 8.071067811865476, " +
+                "-3.0710678118654746 12.071067811865476))", result);
+
+        // Flat
+        result = runApp(new String[]{
+                "buffer",
+                "-d", "10",
+                "-c", "flat"
+        }, "LINESTRING (0 1, 2 3, 4 5)");
+        assertEquals("POLYGON ((-3.0710678118654746 12.071067811865476, 11.071067811865476 -2.0710678118654746, " +
+                "7.071067811865475 -6.071067811865475, -7.071067811865475 8.071067811865476, " +
+                "-3.0710678118654746 12.071067811865476))", result);
+
+        // Square
+        result = runApp(new String[]{
+                "buffer",
+                "-d", "10",
+                "-c", "square"
+        }, "LINESTRING (0 1, 2 3, 4 5)");
+        assertEquals("POLYGON ((-3.0710678118654746 12.071067811865476, 4.000000000000001 19.14213562373095, " +
+                "18.14213562373095 5, 7.071067811865475 -6.071067811865475, 0 -13.142135623730951, " +
+                "-14.14213562373095 1, -3.0710678118654746 12.071067811865476))", result);
     }
 
 }
