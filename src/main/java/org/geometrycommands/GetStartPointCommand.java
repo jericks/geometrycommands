@@ -53,7 +53,7 @@ public class GetStartPointCommand extends GeometryCommand<GetStartPointOptions> 
     @Override
     protected void processGeometry(Geometry geometry, GetStartPointOptions options, Reader reader, Writer writer) throws Exception {
         if (!(geometry instanceof Lineal)) {
-            throw new IllegalArgumentException("The input geometry a LineString or a MultiLineString!");
+            throw new IllegalArgumentException("The input geometry must be a LineString or a MultiLineString!");
         }
         LineString lineString;
         if (geometry instanceof MultiLineString) {

@@ -4,6 +4,8 @@ import org.geometrycommands.PrecisionReducerCommand.PrecisionReducerOptions;
 import java.io.Reader;
 import java.io.StringReader;
 import java.io.StringWriter;
+import java.util.Map;
+
 import org.junit.Test;
 import static org.junit.Assert.assertEquals;
 
@@ -23,6 +25,8 @@ public class PrecisionReducerCommandTest extends BaseTest {
         PrecisionReducerOptions options = new PrecisionReducerOptions();
         options.setGeometry(inputGeometry);
         options.setPrecisionModelType("floating");
+        options.setPointwise(false);
+        options.setRemoveCollapsed(false);
 
         Reader reader = new StringReader(inputGeometry);
         StringWriter writer = new StringWriter();
@@ -76,5 +80,24 @@ public class PrecisionReducerCommandTest extends BaseTest {
                 "-s", "10"
         }, inputGeometry);
         assertEquals("POINT (5.2 51.1)", result);
+    }
+
+    @Test
+    public void runWithWrongGeometryType() throws Exception {
+        Map<String,String> result = runAppWithOutAndErr(new String[]{
+                "reduceprecision",
+                "-g", "POLYGON EMPTY",
+                "-t", "ASDF"
+        }, null);
+        assertEquals("Unsupported Precision Model Type: 'ASDF'!" + NEW_LINE +
+                "Usage: geom <command> <args>" + NEW_LINE +
+                " --help                 : Print help message" + NEW_LINE +
+                " -g (--geometry) VAL    : The input geometry" + NEW_LINE +
+                " -p (--pointWise)       : Whether the precision reducer operates pointwise" + NEW_LINE +
+                " -r (--removeCollapsed) : Whether the precision reducer should remove collapsed" + NEW_LINE +
+                "                          geometry" + NEW_LINE +
+                " -s (--scale) N         : The precision model scale when type is FLOATING" + NEW_LINE +
+                " -t (--type) VAL        : The precision model type (FIXED, FLOATING," + NEW_LINE +
+                "                          FLOATING_SINGLE)", result.get("err"));
     }
 }

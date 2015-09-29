@@ -3,6 +3,8 @@ package org.geometrycommands;
 import java.io.Reader;
 import java.io.StringReader;
 import java.io.StringWriter;
+import java.util.Map;
+
 import org.junit.Test;
 import static org.junit.Assert.assertEquals;
 import org.geometrycommands.GetEndPointCommand.GetEndPointOptions;
@@ -53,4 +55,17 @@ public class GetEndPointCommandTest extends BaseTest {
         }, "MULTILINESTRING ((1 1, 5 5, 10 10), (20 20, 30 30, 40 40))");
         assertEquals("POINT (40 40)", result);
     }
+
+    @Test
+    public void runWithWrongGeometryType() throws Exception {
+        Map<String,String> result = runAppWithOutAndErr(new String[]{
+                "endpoint",
+                "-g", "POINT (1 1)"
+        }, null);
+        assertEquals("The input geometry must be a LineString or a MultiLineString!" + NEW_LINE +
+                "Usage: geom <command> <args>" + NEW_LINE +
+                " --help              : Print help message" + NEW_LINE +
+                " -g (--geometry) VAL : The input geometry", result.get("err"));
+    }
+
 }

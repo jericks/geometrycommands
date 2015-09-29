@@ -52,7 +52,7 @@ public class IsClosedCommand extends GeometryCommand<IsClosedOptions> {
     @Override
     protected void processGeometry(Geometry geometry, IsClosedOptions options, Reader reader, Writer writer) throws Exception {
         if (!(geometry instanceof Lineal)) {
-            throw new IllegalArgumentException("Input geometry must be a LineString or a MultiLineString!");
+            throw new IllegalArgumentException("The input geometry must be a LineString or a MultiLineString!");
         }
         boolean closed = false;
         if (geometry instanceof LineString) {

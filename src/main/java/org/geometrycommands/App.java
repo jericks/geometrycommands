@@ -11,7 +11,6 @@ import java.util.ServiceLoader;
 
 /**
  * The command line application
- *
  * @author Jared Erickson
  */
 public class App {

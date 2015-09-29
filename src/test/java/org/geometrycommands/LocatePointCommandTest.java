@@ -3,6 +3,8 @@ package org.geometrycommands;
 import java.io.Reader;
 import java.io.StringReader;
 import java.io.StringWriter;
+import java.util.Map;
+
 import org.junit.Test;
 import static org.junit.Assert.assertEquals;
 import org.geometrycommands.LocatePointCommand.LocatePointOptions;
@@ -46,5 +48,36 @@ public class LocatePointCommandTest extends BaseTest {
                 "-o", "POINT (2.5 2.5)"
         }, "LINESTRING (0 0, 5 5, 10 10)");
         assertEquals(0.25, Double.parseDouble(result), 0.01);
+
+        result = runApp(new String[]{
+                "locatepoint",
+                "-o", "LINESTRING (0 0, 5 5, 10 10)"
+        }, "POINT (2.5 2.5)");
+        assertEquals(0.25, Double.parseDouble(result), 0.01);
+    }
+
+    @Test
+    public void runWithWrongGeometryType() throws Exception {
+        Map<String,String> result = runAppWithOutAndErr(new String[]{
+                "locatepoint",
+                "-g", "POLYGON EMPTY",
+                "-o", "POINT EMPTY"
+        }, null);
+        assertEquals("Please provide a Point and a Linear Geometry!" + NEW_LINE +
+                "Usage: geom <command> <args>" + NEW_LINE +
+                " --help                   : Print help message" + NEW_LINE +
+                " -g (--geometry) VAL      : The input geometry" + NEW_LINE +
+                " -o (--otherGeometry) VAL : The other geometry", result.get("err"));
+
+        result = runAppWithOutAndErr(new String[]{
+                "locatepoint",
+                "-g", "LINESTRING EMPTY",
+                "-o", "POLYGON EMPTY"
+        }, null);
+        assertEquals("Please provide a Point and a Linear Geometry!" + NEW_LINE +
+                "Usage: geom <command> <args>" + NEW_LINE +
+                " --help                   : Print help message" + NEW_LINE +
+                " -g (--geometry) VAL      : The input geometry" + NEW_LINE +
+                " -o (--otherGeometry) VAL : The other geometry", result.get("err"));
     }
 }

@@ -90,6 +90,22 @@ public class EqualsCommandTest extends BaseTest {
         command = new EqualsCommand();
         command.execute(options, reader, writer);
         assertEquals("true", writer.getBuffer().toString());
+
+        // exact with tolerance
+        inputGeometry = "POLYGON ((0 0, 0 10, 10 10, 10 0, 0 0))";
+        otherGeometry = "POLYGON ((0 0, 0 10, 10 10, 10 0, 0 0))";
+        options = new EqualsOptions();
+        options.setGeometry(inputGeometry);
+        options.setOtherGeometry(otherGeometry);
+        options.setType("exact");
+        options.setTolerance(1.1);
+
+        reader = new StringReader(inputGeometry);
+        writer = new StringWriter();
+
+        command = new EqualsCommand();
+        command.execute(options, reader, writer);
+        assertEquals("true", writer.getBuffer().toString());
     }
 
     @Test
@@ -106,6 +122,14 @@ public class EqualsCommandTest extends BaseTest {
         result = runApp(new String[]{
                 "equals",
                 "-o", "POLYGON ((1 1, 1 10, 10 10, 10 1, 1 1))"
+        }, "POLYGON ((0 0, 0 10, 10 10, 10 0, 0 0))");
+        assertFalse(Boolean.parseBoolean(result));
+
+        // topo
+        result = runApp(new String[]{
+                "equals",
+                "-o", "POLYGON ((1 1, 1 10, 10 10, 10 1, 1 1))",
+                "-t", "topo"
         }, "POLYGON ((0 0, 0 10, 10 10, 10 0, 0 0))");
         assertFalse(Boolean.parseBoolean(result));
     }

@@ -3,6 +3,8 @@ package org.geometrycommands;
 import java.io.Reader;
 import java.io.StringReader;
 import java.io.StringWriter;
+import java.util.Map;
+
 import org.junit.Test;
 import static org.junit.Assert.*;
 import org.geometrycommands.IsRingCommand.IsRingOptions;
@@ -54,5 +56,17 @@ public class IsRingCommandTest extends BaseTest {
                 "isring"
         }, "LINESTRING (1 1, 5 5, 10 10)");
         assertFalse(Boolean.parseBoolean(result));
+    }
+
+    @Test
+    public void runWithWrongGeometryType() throws Exception {
+        Map<String,String> result = runAppWithOutAndErr(new String[]{
+                "isring",
+                "-g", "POINT (1 1)"
+        }, null);
+        assertEquals("The input geometry must be a LineString!" + NEW_LINE +
+                "Usage: geom <command> <args>" + NEW_LINE +
+                " --help              : Print help message" + NEW_LINE +
+                " -g (--geometry) VAL : The input geometry", result.get("err"));
     }
 }

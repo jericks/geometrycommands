@@ -58,12 +58,13 @@ public class LocatePointCommand extends OtherGeometryCommand<LocatePointOptions>
         
         if (geometry instanceof Point) {
             point = (Point)geometry;
-        }else if (other instanceof Point) {
+        } else if (other instanceof Point) {
             point = (Point)other;
         }
+
         if (geometry instanceof Lineal) {
             line = geometry;
-        }else if (other instanceof Lineal) {
+        } else if (other instanceof Lineal) {
             line = other;
         }
         

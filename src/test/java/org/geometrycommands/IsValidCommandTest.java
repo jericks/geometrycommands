@@ -4,6 +4,8 @@ import org.geometrycommands.IsValidCommand.IsValidOptions;
 import java.io.Reader;
 import java.io.StringReader;
 import java.io.StringWriter;
+import java.util.Map;
+
 import org.junit.Test;
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertFalse;
@@ -53,7 +55,16 @@ public class IsValidCommandTest extends BaseTest {
 
         command.execute(options, reader, writer);
         assertEquals("Self-intersection", writer.getBuffer().toString());
-        
+
+        options.setGeometry(inputGeometry);
+        options.setType("message");
+
+        reader = new StringReader(inputGeometry);
+        writer = new StringWriter();
+
+        command.execute(options, reader, writer);
+        assertEquals("Self-intersection", writer.getBuffer().toString());
+
         // location
         options.setGeometry(inputGeometry);
         options.setType("loc");
@@ -63,6 +74,34 @@ public class IsValidCommandTest extends BaseTest {
 
         command.execute(options, reader, writer);
         assertEquals("POINT (15.42700884375309 46.45115927637351)", writer.getBuffer().toString());
+
+        options.setGeometry(inputGeometry);
+        options.setType("location");
+
+        reader = new StringReader(inputGeometry);
+        writer = new StringWriter();
+
+        command.execute(options, reader, writer);
+        assertEquals("POINT (15.42700884375309 46.45115927637351)", writer.getBuffer().toString());
+
+        // validity
+        options.setGeometry(inputGeometry);
+        options.setType("val");
+
+        reader = new StringReader(inputGeometry);
+        writer = new StringWriter();
+
+        command.execute(options, reader, writer);
+        assertEquals("false", writer.getBuffer().toString());
+
+        options.setGeometry(inputGeometry);
+        options.setType("validity");
+
+        reader = new StringReader(inputGeometry);
+        writer = new StringWriter();
+
+        command.execute(options, reader, writer);
+        assertEquals("false", writer.getBuffer().toString());
     }
 
     @Test
@@ -102,5 +141,20 @@ public class IsValidCommandTest extends BaseTest {
                 + "13.45947265625 48.1298828125, 17.06298828125 "
                 + "49.7998046875))");
         assertEquals("POINT (15.42700884375309 46.45115927637351)", result);
+    }
+
+    @Test
+    public void runWithWrongType() throws Exception {
+        Map<String,String> result = runAppWithOutAndErr(new String[]{
+                "isvalid",
+                "-g", "POINT (1 1)",
+                "-t", "ASDF"
+        }, null);
+        assertEquals("Unknown type!" + NEW_LINE +
+                "Usage: geom <command> <args>" + NEW_LINE +
+                " --help              : Print help message" + NEW_LINE +
+                " -g (--geometry) VAL : The input geometry" + NEW_LINE +
+                " -t (--type) VAL     : The flag to show the validation error message, the error" + NEW_LINE +
+                "                       location, or validity (msg, loc, or val)", result.get("err"));
     }
 }

@@ -63,6 +63,26 @@ public class AppTest {
     }
 
     @Test
+    public void testHelpWhenRequiredArgsNotPresent() {
+        CaptureOutput capture = CaptureOutput.createAndStart();
+        try {
+            App.main(new String[]{
+                    "buffer", "--help"
+            });
+        } catch (OverrideExitException ex) {
+        }
+        Map<String, String> values = capture.stop();
+        assertEquals("geom buffer: Buffer a geometry by a distance." + NEW_LINE +
+                " --help                    : Print help message" + NEW_LINE +
+                " -c (--endCapStyle) VAL    : The end cap style (round, flat/butt, square)" + NEW_LINE +
+                " -d (--distance) N         : The buffer distance" + NEW_LINE +
+                " -g (--geometry) VAL       : The input geometry" + NEW_LINE +
+                " -q (--quadrantSegments) N : The number of quadrant segments" + NEW_LINE +
+                " -s (--singleSided)        : The flag for whether the buffer should be single" + NEW_LINE +
+                "                             sided", values.get("out"));
+    }
+
+    @Test
     public void testArgumentError() {
         CaptureOutput capture = CaptureOutput.createAndStart();
         try {

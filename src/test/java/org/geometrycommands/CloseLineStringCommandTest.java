@@ -5,6 +5,8 @@ import org.junit.Test;
 import java.io.Reader;
 import java.io.StringReader;
 import java.io.StringWriter;
+import java.util.Map;
+
 import org.geometrycommands.CloseLineStringCommand.CloseLineStringOptions;
 import static org.junit.Assert.assertEquals;
 
@@ -55,6 +57,35 @@ public class CloseLineStringCommandTest extends BaseTest {
                 "closelinestring"
         }, "LINESTRING (0 0, 0 4, 4 4, 4 0)");
         assertEquals("LINEARRING (0 0, 0 4, 4 4, 4 0, 0 0)", result);
+
+        // Geometry from input stream
+        result = runApp(new String[]{
+                "closelinestring"
+        }, "LINESTRING (0 0, 0 4, 4 4, 4 0, 0 0)");
+        assertEquals("LINEARRING (0 0, 0 4, 4 4, 4 0, 0 0)", result);
     }
 
+    @Test
+    public void runWithWrongGeometry() throws Exception {
+        Map<String,String> outputs = runAppWithOutAndErr(new String[]{
+                "closelinestring",
+                "-g", "POINT (0 0)"
+        }, null);
+        assertEquals("Input geometry must be a LineString!" + NEW_LINE +
+                "Usage: geom <command> <args>" + NEW_LINE +
+                " --help              : Print help message" + NEW_LINE +
+                " -g (--geometry) VAL : The input geometry", outputs.get("err"));
+    }
+
+    @Test
+    public void runWithLineStringTooShort() throws Exception {
+        Map<String,String> outputs = runAppWithOutAndErr(new String[]{
+                "closelinestring",
+                "-g", "LINESTRING (0 0, 10 10)"
+        }, null);
+        assertEquals("You need at least three points to close a LineString!" + NEW_LINE +
+                "Usage: geom <command> <args>" + NEW_LINE +
+                " --help              : Print help message" + NEW_LINE +
+                " -g (--geometry) VAL : The input geometry", outputs.get("err"));
+    }
 }

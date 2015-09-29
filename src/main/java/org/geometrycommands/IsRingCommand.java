@@ -50,7 +50,7 @@ public class IsRingCommand extends GeometryCommand<IsRingOptions> {
     @Override
     protected void processGeometry(Geometry geometry, IsRingOptions options, Reader reader, Writer writer) throws Exception {
         if (!(geometry instanceof LineString)) {
-            throw new IllegalArgumentException("Input geometry must be a LineString!");
+            throw new IllegalArgumentException("The input geometry must be a LineString!");
         }
         boolean isRing = ((LineString) geometry).isRing();
         writer.write(String.valueOf(isRing));

@@ -3,6 +3,8 @@ package org.geometrycommands;
 import java.io.Reader;
 import java.io.StringReader;
 import java.io.StringWriter;
+import java.util.Map;
+
 import org.junit.Test;
 import static org.junit.Assert.assertEquals;
 import org.geometrycommands.PlacePointCommand.PlacePointOptions;
@@ -45,11 +47,43 @@ public class PlacePointCommandTest extends BaseTest {
         }, null);
         assertEquals(resultGeometry, result);
 
+        result = runApp(new String[]{
+                "placepoint",
+                "-g", otherGeometry,
+                "-o", inputGeometry
+        }, null);
+        assertEquals(resultGeometry, result);
+
         // Geometry from input stream
         result = runApp(new String[]{
                 "placepoint",
                 "-o", otherGeometry
         }, inputGeometry);
         assertEquals(resultGeometry, result);
+    }
+
+    @Test
+    public void runWithWrongGeometryType() throws Exception {
+        Map<String,String> result = runAppWithOutAndErr(new String[]{
+                "placepoint",
+                "-g", "POLYGON EMPTY",
+                "-o", "POINT EMPTY"
+        }, null);
+        assertEquals("Please provide a Point and a Linear Geometry!" + NEW_LINE +
+                "Usage: geom <command> <args>" + NEW_LINE +
+                " --help                   : Print help message" + NEW_LINE +
+                " -g (--geometry) VAL      : The input geometry" + NEW_LINE +
+                " -o (--otherGeometry) VAL : The other geometry", result.get("err"));
+
+        result = runAppWithOutAndErr(new String[]{
+                "placepoint",
+                "-g", "LINESTRING EMPTY",
+                "-o", "POLYGON EMPTY"
+        }, null);
+        assertEquals("Please provide a Point and a Linear Geometry!" + NEW_LINE +
+                "Usage: geom <command> <args>" + NEW_LINE +
+                " --help                   : Print help message" + NEW_LINE +
+                " -g (--geometry) VAL      : The input geometry" + NEW_LINE +
+                " -o (--otherGeometry) VAL : The other geometry", result.get("err"));
     }
 }

@@ -20,12 +20,25 @@ public class FromWkbCommandTest extends BaseTest {
         String wkb = "0000000003000000010000000500000000000000000000000000000000000000000000000040240000" +
                 "000000004024000000000000402400000000000040240000000000000000000000000000000000000000000" +
                 "00000000000000000";
+
+        // From standard input stream
         FromWkbOptions options = new FromWkbOptions();
 
         Reader reader = new StringReader(wkb);
         StringWriter writer = new StringWriter();
 
         FromWkbCommand command = new FromWkbCommand();
+        command.execute(options, reader, writer);
+        assertEquals("POLYGON ((0 0, 0 10, 10 10, 10 0, 0 0))", writer.getBuffer().toString());
+
+        // From Options
+        options = new FromWkbOptions();
+        options.setWkb(wkb);
+
+        reader = new StringReader("");
+        writer = new StringWriter();
+
+        command = new FromWkbCommand();
         command.execute(options, reader, writer);
         assertEquals("POLYGON ((0 0, 0 10, 10 10, 10 0, 0 0))", writer.getBuffer().toString());
     }

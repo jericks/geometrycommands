@@ -57,7 +57,7 @@ public class InterpolatePointCommand extends GeometryCommand<InterpolatePointOpt
     @Override
     protected void processGeometry(Geometry geometry, InterpolatePointOptions options, Reader reader, Writer writer) throws Exception {
         if (!(geometry instanceof Lineal)) {
-            throw new IllegalArgumentException("The input geometry a LineString or a MultiLineString!");
+            throw new IllegalArgumentException("The input geometry must be a LineString or a MultiLineString!");
         }
         LengthIndexedLine indexedLine = new LengthIndexedLine(geometry);
         double length = geometry.getLength();
