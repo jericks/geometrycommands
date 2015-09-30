@@ -21,6 +21,8 @@ public class TextCommandTest extends BaseTest {
 
         TextOptions options = new TextOptions();
         options.setText("J");
+        options.setPointSize(24);
+        options.setFontName("SanSerif");
 
         Reader reader = new StringReader("");
         StringWriter writer = new StringWriter();

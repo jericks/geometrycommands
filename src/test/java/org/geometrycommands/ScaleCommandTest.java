@@ -15,7 +15,6 @@ public class ScaleCommandTest extends BaseTest {
 
     @Test 
     public void execute() throws Exception {
-        
         String inputGeometry = "POLYGON ((0 0, 0 10, 10 10, 10 0, 0 0))";
         ScaleOptions options = new ScaleOptions();
         options.setGeometry(inputGeometry);
@@ -29,6 +28,46 @@ public class ScaleCommandTest extends BaseTest {
         command.execute(options, reader, writer);
         assertEquals("POLYGON ((0 0, 0 50, 20 50, "
                 + "20 0, 0 0))", writer.getBuffer().toString());
+
+        options = new ScaleOptions();
+        options.setGeometry(inputGeometry);
+        options.setXScale(2);
+        options.setYScale(5);
+        options.setX(35);
+        options.setY(30);
+
+        reader = new StringReader(inputGeometry);
+        writer = new StringWriter();
+
+        command.execute(options, reader, writer);
+        assertEquals("POLYGON ((-35 -120, -35 -70, -15 -70, " +
+                "-15 -120, -35 -120))", writer.getBuffer().toString());
+
+        options = new ScaleOptions();
+        options.setGeometry(inputGeometry);
+        options.setXScale(2);
+        options.setYScale(5);
+        options.setX(Double.NaN);
+        options.setY(30);
+
+        reader = new StringReader(inputGeometry);
+        writer = new StringWriter();
+
+        command.execute(options, reader, writer);
+        assertEquals("POLYGON ((0 0, 0 50, 20 50, 20 0, 0 0))", writer.getBuffer().toString());
+
+        options = new ScaleOptions();
+        options.setGeometry(inputGeometry);
+        options.setXScale(2);
+        options.setYScale(5);
+        options.setX(30);
+        options.setY(Double.NaN);
+
+        reader = new StringReader(inputGeometry);
+        writer = new StringWriter();
+
+        command.execute(options, reader, writer);
+        assertEquals("POLYGON ((0 0, 0 50, 20 50, 20 0, 0 0))", writer.getBuffer().toString());
     }
 
     @Test

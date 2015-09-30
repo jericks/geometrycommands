@@ -4,6 +4,8 @@ import java.io.Reader;
 import org.geometrycommands.SubLineCommand.SubLineOptions;
 import java.io.StringReader;
 import java.io.StringWriter;
+import java.util.Map;
+
 import org.junit.Test;
 import static org.junit.Assert.assertEquals;
 
@@ -49,5 +51,37 @@ public class SubLineCommandTest extends BaseTest {
                 "-e", "0.75"
         }, "LINESTRING (0 0, 10 10, 20 20)");
         assertEquals("LINESTRING (5 5, 10 10, 15 15)", result);
+    }
+
+    @Test
+    public void runWithWrongGeometryType() throws Exception {
+        Map<String,String> result = runAppWithOutAndErr(new String[]{
+                "subline",
+                "-g", "POINT (1 1)",
+                "-s", "0.25",
+                "-e", "0.75"
+        }, null);
+        assertEquals("The input geometry must be a LineString or a MultiLineString!" + NEW_LINE +
+                "Usage: geom <command> <args>" + NEW_LINE +
+                " --help               : Print help message" + NEW_LINE +
+                " -e (endPosition) N   : The end position between 0 and 1" + NEW_LINE +
+                " -g (--geometry) VAL  : The input geometry" + NEW_LINE +
+                " -s (startPosition) N : The start position between 0 and 1", result.get("err"));
+    }
+
+    @Test
+    public void runWithInvalidStartAndEnd() throws Exception {
+        Map<String,String> result = runAppWithOutAndErr(new String[]{
+                "subline",
+                "-g", "LINESTRING (1 1, 10 10)",
+                "-s", "0.75",
+                "-e", "0.25"
+        }, null);
+        assertEquals("The start position must be less than the end position!" + NEW_LINE +
+                "Usage: geom <command> <args>" + NEW_LINE +
+                " --help               : Print help message" + NEW_LINE +
+                " -e (endPosition) N   : The end position between 0 and 1" + NEW_LINE +
+                " -g (--geometry) VAL  : The input geometry" + NEW_LINE +
+                " -s (startPosition) N : The start position between 0 and 1", result.get("err"));
     }
 }

@@ -4,6 +4,8 @@ import org.geometrycommands.SimplifyCommand.SimplifyOptions;
 import java.io.Reader;
 import java.io.StringReader;
 import java.io.StringWriter;
+import java.util.Map;
+
 import org.junit.Test;
 import static org.junit.Assert.assertEquals;
 
@@ -66,6 +68,14 @@ public class SimplifyCommandTest extends BaseTest {
         }, null);
         assertEquals("LINESTRING (1 1, 12 12)", result);
 
+        result = runApp(new String[]{
+                "simplify",
+                "-g", inputGeometry,
+                "-a", "dp",
+                "-d", "2"
+        }, null);
+        assertEquals("LINESTRING (1 1, 12 12)", result);
+
         // Geometry from input stream
         result = runApp(new String[]{
                 "simplify",
@@ -73,6 +83,29 @@ public class SimplifyCommandTest extends BaseTest {
                 "-d", "2"
         }, inputGeometry);
         assertEquals("LINESTRING (1 1, 12 12)", result);
+
+        result = runApp(new String[]{
+                "simplify",
+                "-a", "tp",
+                "-d", "2"
+        }, inputGeometry);
+        assertEquals("LINESTRING (1 1, 12 12)", result);
     }
 
+    @Test
+    public void runWithInvalidAlgorithm() throws Exception {
+        Map<String,String> result = runAppWithOutAndErr(new String[]{
+                "simplify",
+                "-g", "LINESTRING (1 1, 10 10)",
+                "-a", "ASDF",
+                "-d", "2"
+        }, null);
+        assertEquals("Unknown simplifier algorithm!" + NEW_LINE +
+                "Usage: geom <command> <args>" + NEW_LINE +
+                " --help               : Print help message" + NEW_LINE +
+                " -a (--algorithm) VAL : The distance tolerance (douglaspeucker/dp or" + NEW_LINE +
+                "                        topologypreserving/tp)" + NEW_LINE +
+                " -d (--distance) N    : The distance tolerance" + NEW_LINE +
+                " -g (--geometry) VAL  : The input geometry", result.get("err"));
+    }
 }

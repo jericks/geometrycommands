@@ -48,8 +48,8 @@ public class ToWkbCommandTest extends BaseTest {
         // Geometry from input stream
         result = runApp(new String[]{
                 "towkb",
-                "-b", "2",
-                "-d", "4"
+                "-b", "1",
+                "-d", "2"
         }, "POLYGON ((0 0, 0 10, 10 10, 10 0, 0 0))");
         assertEquals("0000000003000000010000000500000000000000000000000000000000000000000000000040" +
                 "240000000000004024000000000000402400000000000040240000000000000000000000000000000" +

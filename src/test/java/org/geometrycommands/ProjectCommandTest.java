@@ -4,10 +4,9 @@ import org.geometrycommands.ProjectCommand.ProjectOptions;
 import java.io.Reader;
 import java.io.StringReader;
 import java.io.StringWriter;
+
 import org.junit.Test;
 import static org.junit.Assert.assertEquals;
-import static org.junit.Assert.assertFalse;
-import static org.junit.Assert.assertTrue;
 
 /**
  * The ProjectCommand UnitTest
@@ -50,6 +49,20 @@ public class ProjectCommandTest extends BaseTest {
                 "-t", "EPSG:4326"
         }, "POINT (1186683.01 641934.58)");
         assertEquals("POINT (-122.32131937934592 47.07927009358412)", result);
+
+        result = runApp(new String[]{
+                "project",
+                "-s", "EPSG:2927",
+                "-t", "+title=long/lat:WGS84 +proj=longlat +ellps=WGS84 +datum=WGS84 +units=degrees"
+        }, "POINT (1186683.009999998 641934.5799999853)");
+        assertEquals("POINT (-122.32131937934592 47.07927009358407)", result);
+
+        result = runApp(new String[]{
+                "project",
+                "-s", "+title=long/lat:WGS84 +proj=longlat +ellps=WGS84 +datum=WGS84 +units=degrees",
+                "-t", "EPSG:2927"
+        }, "POINT (-122.32131937934592 47.07927009358412)");
+        assertEquals("POINT (1186683.009999998 641934.5799999853)", result);
     }
 
     @Test

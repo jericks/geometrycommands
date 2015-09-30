@@ -52,7 +52,7 @@ public class SubLineCommand extends GeometryCommand<SubLineOptions> {
     @Override
     protected void processGeometry(Geometry geometry, SubLineOptions options, Reader reader, Writer writer) throws Exception {
         if (!(geometry instanceof Lineal)) {
-            throw new IllegalArgumentException("The input geometry a LineString or a MultiLineString!");
+            throw new IllegalArgumentException("The input geometry must be a LineString or a MultiLineString!");
         }
         if (options.getStartPosition() > options.getEndPosition()) {
             throw new IllegalArgumentException("The start position must be less than the end position!");

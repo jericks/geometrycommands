@@ -4,6 +4,8 @@ import org.geometrycommands.SimilarityCommand.SimilarityOptions;
 import java.io.Reader;
 import java.io.StringReader;
 import java.io.StringWriter;
+import java.util.Map;
+
 import org.junit.Test;
 import static org.junit.Assert.assertEquals;
 
@@ -61,6 +63,14 @@ public class SimilarityCommandTest extends BaseTest {
         }, null);
         assertEquals("0.35555555555555557", result);
 
+        result = runApp(new String[]{
+                "similarity",
+                "-g", inputGeometry,
+                "-o", otherGeometry,
+                "-a", "a"
+        }, null);
+        assertEquals("0.35555555555555557", result);
+
         // Geometry from input stream
         result = runApp(new String[]{
                 "similarity",
@@ -68,5 +78,28 @@ public class SimilarityCommandTest extends BaseTest {
                 "-a", "hausdorff"
         }, inputGeometry);
         assertEquals("0.7142857142857142", result);
+
+        result = runApp(new String[]{
+                "similarity",
+                "-o", otherGeometry,
+                "-a", "h"
+        }, inputGeometry);
+        assertEquals("0.7142857142857142", result);
+    }
+
+    @Test
+    public void runWithInvalidAlgorithm() throws Exception {
+        Map<String,String> result = runAppWithOutAndErr(new String[]{
+                "similarity",
+                "-g", "LINESTRING (1 1, 10 10)",
+                "-o", "POINT (1 1)",
+                "-a", "ASDF"
+        }, null);
+        assertEquals("Unknown similarity measure algorithm!" + NEW_LINE +
+                "Usage: geom <command> <args>" + NEW_LINE +
+                " --help                   : Print help message" + NEW_LINE +
+                " -a (--algorithm) VAL     : The algorithm (area/a or hausdorff/h)" + NEW_LINE +
+                " -g (--geometry) VAL      : The input geometry" + NEW_LINE +
+                " -o (--otherGeometry) VAL : The other geometry", result.get("err"));
     }
 }

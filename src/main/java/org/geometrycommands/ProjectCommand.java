@@ -82,7 +82,7 @@ public class ProjectCommand extends GeometryCommand<ProjectOptions> {
             targetCrs = csFactory.createFromName(options.getTarget());
         } else {
             targetCrs = csFactory.createFromParameters(null, options.getTarget());
-        }  
+        }
 
         CoordinateTransform transform = ctFactory.createTransform(sourceCrs, targetCrs);
         Geometry projectedGeometry = transformGeometry(transform, geometry);

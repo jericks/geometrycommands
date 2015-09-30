@@ -51,7 +51,7 @@ public class ToWkbCommand extends GeometryCommand<ToWkbOptions> {
      */
     @Override
     protected void processGeometry(Geometry geometry, ToWkbOptions options, Reader reader, Writer writer) throws Exception {
-        WKBWriter wkbWriter = new WKBWriter();
+        WKBWriter wkbWriter = new WKBWriter(options.getOutputDimension(), options.getByteOrder());
         writer.write(WKBWriter.toHex(wkbWriter.write(geometry)));
     }
 
