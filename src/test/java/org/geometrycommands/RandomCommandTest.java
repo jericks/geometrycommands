@@ -102,14 +102,15 @@ public class RandomCommandTest extends BaseTest {
         }, null);
         assertEquals("Geometry must be a Polygon or MultiPolygon!" + NEW_LINE +
                 "Usage: geom <command> <args>" + NEW_LINE +
-                " --help                  : Print help message" + NEW_LINE +
+                " --help                  : Print help message (default: false)" + NEW_LINE +
                 " -c (--constrained)      : The flag for whether the random points should be" + NEW_LINE +
-                "                           constrained to a circle when gridded." + NEW_LINE +
+                "                           constrained to a circle when gridded. (default:" + NEW_LINE +
+                "                           false)" + NEW_LINE +
                 " -f (--gutterFraction) N : The gutter distance or padding for random points" + NEW_LINE +
-                "                           when gridded." + NEW_LINE +
-                " -g (--geometry) VAL     : The input geometry" + NEW_LINE +
+                "                           when gridded. (default: NaN)" + NEW_LINE +
+                " -g (--geometry) VAL     : The input geometry (default: POINT (1 1))" + NEW_LINE +
                 " -n (--number) N         : The number of points" + NEW_LINE +
                 " -r (--gridded)          : The flag for whether the random points should be" + NEW_LINE +
-                "                           gridded.", result.get("err"));
+                "                           gridded. (default: false)", result.get("err"));
     }
 }

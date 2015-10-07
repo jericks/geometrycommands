@@ -102,10 +102,10 @@ public class SimplifyCommandTest extends BaseTest {
         }, null);
         assertEquals("Unknown simplifier algorithm!" + NEW_LINE +
                 "Usage: geom <command> <args>" + NEW_LINE +
-                " --help               : Print help message" + NEW_LINE +
+                " --help               : Print help message (default: false)" + NEW_LINE +
                 " -a (--algorithm) VAL : The distance tolerance (douglaspeucker/dp or" + NEW_LINE +
                 "                        topologypreserving/tp)" + NEW_LINE +
                 " -d (--distance) N    : The distance tolerance" + NEW_LINE +
-                " -g (--geometry) VAL  : The input geometry", result.get("err"));
+                " -g (--geometry) VAL  : The input geometry (default: LINESTRING (1 1, 10 10))", result.get("err"));
     }
 }

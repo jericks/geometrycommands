@@ -91,12 +91,14 @@ public class PrecisionReducerCommandTest extends BaseTest {
         }, null);
         assertEquals("Unsupported Precision Model Type: 'ASDF'!" + NEW_LINE +
                 "Usage: geom <command> <args>" + NEW_LINE +
-                " --help                 : Print help message" + NEW_LINE +
-                " -g (--geometry) VAL    : The input geometry" + NEW_LINE +
+                " --help                 : Print help message (default: false)" + NEW_LINE +
+                " -g (--geometry) VAL    : The input geometry (default: POLYGON EMPTY)" + NEW_LINE +
                 " -p (--pointWise)       : Whether the precision reducer operates pointwise" + NEW_LINE +
+                "                          (default: false)" + NEW_LINE +
                 " -r (--removeCollapsed) : Whether the precision reducer should remove collapsed" + NEW_LINE +
-                "                          geometry" + NEW_LINE +
+                "                          geometry (default: false)" + NEW_LINE +
                 " -s (--scale) N         : The precision model scale when type is FLOATING" + NEW_LINE +
+                "                          (default: 0.0)" + NEW_LINE +
                 " -t (--type) VAL        : The precision model type (FIXED, FLOATING," + NEW_LINE +
                 "                          FLOATING_SINGLE)", result.get("err"));
     }

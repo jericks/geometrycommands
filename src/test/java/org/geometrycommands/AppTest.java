@@ -57,9 +57,9 @@ public class AppTest {
         } catch (OverrideExitException ex) {
         }
         Map<String, String> values = capture.stop();
-        assertEquals("geom centroid: Calculate the centroid of a Geometry." + NEW_LINE
-                + " --help              : Print help message" + NEW_LINE
-                + " -g (--geometry) VAL : The input geometry", values.get("out"));
+        assertEquals("geom centroid: Calculate the centroid of a Geometry." + NEW_LINE +
+                " --help              : Print help message (default: true)" + NEW_LINE +
+                " -g (--geometry) VAL : The input geometry", values.get("out"));
     }
 
     @Test
@@ -73,13 +73,14 @@ public class AppTest {
         }
         Map<String, String> values = capture.stop();
         assertEquals("geom buffer: Buffer a geometry by a distance." + NEW_LINE +
-                " --help                    : Print help message" + NEW_LINE +
+                " --help                    : Print help message (default: true)" + NEW_LINE +
                 " -c (--endCapStyle) VAL    : The end cap style (round, flat/butt, square)" + NEW_LINE +
+                "                             (default: round)" + NEW_LINE +
                 " -d (--distance) N         : The buffer distance" + NEW_LINE +
                 " -g (--geometry) VAL       : The input geometry" + NEW_LINE +
-                " -q (--quadrantSegments) N : The number of quadrant segments" + NEW_LINE +
+                " -q (--quadrantSegments) N : The number of quadrant segments (default: 8)" + NEW_LINE +
                 " -s (--singleSided)        : The flag for whether the buffer should be single" + NEW_LINE +
-                "                             sided", values.get("out"));
+                "                             sided (default: false)", values.get("out"));
     }
 
     @Test
@@ -92,10 +93,10 @@ public class AppTest {
         } catch (OverrideExitException ex) {
         }
         Map<String, String> values = capture.stop();
-        assertEquals("\"--asdf\" is not a valid option" + NEW_LINE
-                + "Usage: geom <command> <args>" + NEW_LINE
-                + " --help              : Print help message" + NEW_LINE
-                + " -g (--geometry) VAL : The input geometry", values.get("err"));
+        assertEquals("\"--asdf\" is not a valid option" + NEW_LINE +
+                "Usage: geom <command> <args>" + NEW_LINE +
+                " --help              : Print help message (default: false)" + NEW_LINE +
+                " -g (--geometry) VAL : The input geometry", values.get("err"));
     }
 
     @Test

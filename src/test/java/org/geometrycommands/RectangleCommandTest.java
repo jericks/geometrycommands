@@ -91,13 +91,14 @@ public class RectangleCommandTest extends BaseTest {
         }, null);
         assertEquals("When the Geometry is a point, then width and height are required!" + NEW_LINE +
                 "Usage: geom <command> <args>" + NEW_LINE +
-                " --help                  : Print help message" + NEW_LINE +
+                " --help                  : Print help message (default: false)" + NEW_LINE +
                 " -c (--center)           : The flag to use center (true) or the base (false)" + NEW_LINE +
-                " -g (--geometry) VAL     : The input geometry" + NEW_LINE +
-                " -h (--height) N         : The height" + NEW_LINE +
-                " -p (--numberOfPoints) N : The number of points" + NEW_LINE +
-                " -r (--rotation) N       : The rotation" + NEW_LINE +
-                " -w (--width) N          : The width", result.get("err"));
+                "                           (default: false)" + NEW_LINE +
+                " -g (--geometry) VAL     : The input geometry (default: POINT (100 100))" + NEW_LINE +
+                " -h (--height) N         : The height (default: 0)" + NEW_LINE +
+                " -p (--numberOfPoints) N : The number of points (default: 10)" + NEW_LINE +
+                " -r (--rotation) N       : The rotation (default: 0.0)" + NEW_LINE +
+                " -w (--width) N          : The width (default: 0)", result.get("err"));
 
         result = runAppWithOutAndErr(new String[]{
                 "rectangle",
@@ -107,13 +108,14 @@ public class RectangleCommandTest extends BaseTest {
         }, null);
         assertEquals("When the Geometry is a point, then width and height are required!" + NEW_LINE +
                 "Usage: geom <command> <args>" + NEW_LINE +
-                " --help                  : Print help message" + NEW_LINE +
+                " --help                  : Print help message (default: false)" + NEW_LINE +
                 " -c (--center)           : The flag to use center (true) or the base (false)" + NEW_LINE +
-                " -g (--geometry) VAL     : The input geometry" + NEW_LINE +
-                " -h (--height) N         : The height" + NEW_LINE +
-                " -p (--numberOfPoints) N : The number of points" + NEW_LINE +
-                " -r (--rotation) N       : The rotation" + NEW_LINE +
-                " -w (--width) N          : The width", result.get("err"));
+                "                           (default: false)" + NEW_LINE +
+                " -g (--geometry) VAL     : The input geometry (default: POINT (100 100))" + NEW_LINE +
+                " -h (--height) N         : The height (default: 0)" + NEW_LINE +
+                " -p (--numberOfPoints) N : The number of points (default: 10)" + NEW_LINE +
+                " -r (--rotation) N       : The rotation (default: 0.0)" + NEW_LINE +
+                " -w (--width) N          : The width (default: 10)", result.get("err"));
 
         result = runAppWithOutAndErr(new String[]{
                 "rectangle",
@@ -123,12 +125,13 @@ public class RectangleCommandTest extends BaseTest {
         }, null);
         assertEquals("When the Geometry is a point, then width and height are required!" + NEW_LINE +
                 "Usage: geom <command> <args>" + NEW_LINE +
-                " --help                  : Print help message" + NEW_LINE +
+                " --help                  : Print help message (default: false)" + NEW_LINE +
                 " -c (--center)           : The flag to use center (true) or the base (false)" + NEW_LINE +
-                " -g (--geometry) VAL     : The input geometry" + NEW_LINE +
-                " -h (--height) N         : The height" + NEW_LINE +
-                " -p (--numberOfPoints) N : The number of points" + NEW_LINE +
-                " -r (--rotation) N       : The rotation" + NEW_LINE +
-                " -w (--width) N          : The width", result.get("err"));
+                "                           (default: false)" + NEW_LINE +
+                " -g (--geometry) VAL     : The input geometry (default: POINT (100 100))" + NEW_LINE +
+                " -h (--height) N         : The height (default: 10)" + NEW_LINE +
+                " -p (--numberOfPoints) N : The number of points (default: 10)" + NEW_LINE +
+                " -r (--rotation) N       : The rotation (default: 0.0)" + NEW_LINE +
+                " -w (--width) N          : The width (default: 0)", result.get("err"));
     }
 }

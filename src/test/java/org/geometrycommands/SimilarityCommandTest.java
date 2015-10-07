@@ -97,9 +97,10 @@ public class SimilarityCommandTest extends BaseTest {
         }, null);
         assertEquals("Unknown similarity measure algorithm!" + NEW_LINE +
                 "Usage: geom <command> <args>" + NEW_LINE +
-                " --help                   : Print help message" + NEW_LINE +
+                " --help                   : Print help message (default: false)" + NEW_LINE +
                 " -a (--algorithm) VAL     : The algorithm (area/a or hausdorff/h)" + NEW_LINE +
-                " -g (--geometry) VAL      : The input geometry" + NEW_LINE +
+                " -g (--geometry) VAL      : The input geometry (default: LINESTRING (1 1, 10" + NEW_LINE +
+                "                            10))" + NEW_LINE +
                 " -o (--otherGeometry) VAL : The other geometry", result.get("err"));
     }
 }

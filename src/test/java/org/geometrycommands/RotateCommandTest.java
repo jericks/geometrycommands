@@ -149,13 +149,14 @@ public class RotateCommandTest extends BaseTest {
         }, null);
         assertEquals("Illegal combination of arguments (theta | theta,x,y | sinTheta, cosTheta, x, y | sinTheta, cosTheta" + NEW_LINE +
                 "Usage: geom <command> <args>" + NEW_LINE +
-                " --help               : Print help message" + NEW_LINE +
-                " -c (--cosine) N      : The cosine of the rotation angle" + NEW_LINE +
-                " -g (--geometry) VAL  : The input geometry" + NEW_LINE +
-                " -s (--sine) N        : The sine of the rotation angle" + NEW_LINE +
-                " -t (--theta) N       : The rotation angle, in radians" + NEW_LINE +
-                " -x (--xCoordinate) N : The x-ordinate of the rotation point" + NEW_LINE +
-                " -y (--yCoordinate) N : The y-ordinate of the rotation point", result.get("err"));
+                " --help               : Print help message (default: false)" + NEW_LINE +
+                " -c (--cosine) N      : The cosine of the rotation angle (default: NaN)" + NEW_LINE +
+                " -g (--geometry) VAL  : The input geometry (default: POLYGON ((0 0, 0 10, 10" + NEW_LINE +
+                "                        10, 10 0, 0 0)))" + NEW_LINE +
+                " -s (--sine) N        : The sine of the rotation angle (default: 10.0)" + NEW_LINE +
+                " -t (--theta) N       : The rotation angle, in radians (default: NaN)" + NEW_LINE +
+                " -x (--xCoordinate) N : The x-ordinate of the rotation point (default: 2.0)" + NEW_LINE +
+                " -y (--yCoordinate) N : The y-ordinate of the rotation point (default: NaN)", result.get("err"));
 
         result = runAppWithOutAndErr(new String[]{
                 "rotate",
@@ -165,12 +166,13 @@ public class RotateCommandTest extends BaseTest {
         }, null);
         assertEquals("Illegal combination of arguments (theta | theta,x,y | sinTheta, cosTheta, x, y | sinTheta, cosTheta" + NEW_LINE +
                 "Usage: geom <command> <args>" + NEW_LINE +
-                " --help               : Print help message" + NEW_LINE +
-                " -c (--cosine) N      : The cosine of the rotation angle" + NEW_LINE +
-                " -g (--geometry) VAL  : The input geometry" + NEW_LINE +
-                " -s (--sine) N        : The sine of the rotation angle" + NEW_LINE +
-                " -t (--theta) N       : The rotation angle, in radians" + NEW_LINE +
-                " -x (--xCoordinate) N : The x-ordinate of the rotation point" + NEW_LINE +
-                " -y (--yCoordinate) N : The y-ordinate of the rotation point", result.get("err"));
+                " --help               : Print help message (default: false)" + NEW_LINE +
+                " -c (--cosine) N      : The cosine of the rotation angle (default: 10.0)" + NEW_LINE +
+                " -g (--geometry) VAL  : The input geometry (default: POLYGON ((0 0, 0 10, 10" + NEW_LINE +
+                "                        10, 10 0, 0 0)))" + NEW_LINE +
+                " -s (--sine) N        : The sine of the rotation angle (default: NaN)" + NEW_LINE +
+                " -t (--theta) N       : The rotation angle, in radians (default: NaN)" + NEW_LINE +
+                " -x (--xCoordinate) N : The x-ordinate of the rotation point (default: 2.0)" + NEW_LINE +
+                " -y (--yCoordinate) N : The y-ordinate of the rotation point (default: NaN)", result.get("err"));
     }
 }

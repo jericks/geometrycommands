@@ -71,8 +71,8 @@ public class PlacePointCommandTest extends BaseTest {
         }, null);
         assertEquals("Please provide a Point and a Linear Geometry!" + NEW_LINE +
                 "Usage: geom <command> <args>" + NEW_LINE +
-                " --help                   : Print help message" + NEW_LINE +
-                " -g (--geometry) VAL      : The input geometry" + NEW_LINE +
+                " --help                   : Print help message (default: false)" + NEW_LINE +
+                " -g (--geometry) VAL      : The input geometry (default: POLYGON EMPTY)" + NEW_LINE +
                 " -o (--otherGeometry) VAL : The other geometry", result.get("err"));
 
         result = runAppWithOutAndErr(new String[]{
@@ -82,8 +82,8 @@ public class PlacePointCommandTest extends BaseTest {
         }, null);
         assertEquals("Please provide a Point and a Linear Geometry!" + NEW_LINE +
                 "Usage: geom <command> <args>" + NEW_LINE +
-                " --help                   : Print help message" + NEW_LINE +
-                " -g (--geometry) VAL      : The input geometry" + NEW_LINE +
+                " --help                   : Print help message (default: false)" + NEW_LINE +
+                " -g (--geometry) VAL      : The input geometry (default: LINESTRING EMPTY)" + NEW_LINE +
                 " -o (--otherGeometry) VAL : The other geometry", result.get("err"));
     }
 }

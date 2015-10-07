@@ -152,9 +152,9 @@ public class IsValidCommandTest extends BaseTest {
         }, null);
         assertEquals("Unknown type!" + NEW_LINE +
                 "Usage: geom <command> <args>" + NEW_LINE +
-                " --help              : Print help message" + NEW_LINE +
-                " -g (--geometry) VAL : The input geometry" + NEW_LINE +
+                " --help              : Print help message (default: false)" + NEW_LINE +
+                " -g (--geometry) VAL : The input geometry (default: POINT (1 1))" + NEW_LINE +
                 " -t (--type) VAL     : The flag to show the validation error message, the error" + NEW_LINE +
-                "                       location, or validity (msg, loc, or val)", result.get("err"));
+                "                       location, or validity (msg, loc, or val) (default: ASDF)", result.get("err"));
     }
 }

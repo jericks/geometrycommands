@@ -96,9 +96,10 @@ public class SliceCommandTest extends BaseTest {
         }, null);
         assertEquals("Start index can not be more than the number of items!" + NEW_LINE +
                 "Usage: geom <command> <args>" + NEW_LINE +
-                " --help              : Print help message" + NEW_LINE +
-                " -e (--end) N        : The end index number" + NEW_LINE +
-                " -g (--geometry) VAL : The input geometry" + NEW_LINE +
+                " --help              : Print help message (default: false)" + NEW_LINE +
+                " -e (--end) N        : The end index number (default: 2)" + NEW_LINE +
+                " -g (--geometry) VAL : The input geometry (default: MULTIPOINT ((1 1), (2 2)," + NEW_LINE +
+                "                       (3 3)))" + NEW_LINE +
                 " -s (--start) N      : The start index number", result.get("err"));
     }
 
@@ -112,9 +113,10 @@ public class SliceCommandTest extends BaseTest {
         }, null);
         assertEquals("End index can not be more than the number of items!" + NEW_LINE +
                 "Usage: geom <command> <args>" + NEW_LINE +
-                " --help              : Print help message" + NEW_LINE +
-                " -e (--end) N        : The end index number" + NEW_LINE +
-                " -g (--geometry) VAL : The input geometry" + NEW_LINE +
+                " --help              : Print help message (default: false)" + NEW_LINE +
+                " -e (--end) N        : The end index number (default: 5)" + NEW_LINE +
+                " -g (--geometry) VAL : The input geometry (default: MULTIPOINT ((1 1), (2 2)," + NEW_LINE +
+                "                       (3 3)))" + NEW_LINE +
                 " -s (--start) N      : The start index number", result.get("err"));
     }
 }
