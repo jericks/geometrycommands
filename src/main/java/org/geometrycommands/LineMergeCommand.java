@@ -59,7 +59,7 @@ public class LineMergeCommand extends GeometryCommand<LineMergeOptions> {
             lineMerger.add(g);
         }
         Collection lines = lineMerger.getMergedLineStrings();
-        MultiLineString multiLineString = geometry.getFactory().createMultiLineString((LineString[]) lines.toArray(new LineString[]{}));
+        MultiLineString multiLineString = geometry.getFactory().createMultiLineString((LineString[]) lines.toArray(new LineString[lines.size()]));
         writer.write(writeGeometry(multiLineString, options));
     }
 
