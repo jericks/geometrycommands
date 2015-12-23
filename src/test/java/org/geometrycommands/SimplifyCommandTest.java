@@ -47,6 +47,18 @@ public class SimplifyCommandTest extends BaseTest {
         
         command.execute(options, reader, writer);
         assertEquals("LINESTRING (1 1, 12 12)", writer.getBuffer().toString());
+
+        // visvalingamwhyat
+        options = new SimplifyOptions();
+        options.setGeometry(inputGeometry);
+        options.setDistanceTolerance(2);
+        options.setAlgorithm("visvalingamwhyat");
+
+        reader = new StringReader(inputGeometry);
+        writer = new StringWriter();
+
+        command.execute(options, reader, writer);
+        assertEquals("LINESTRING (1 1, 12 12)", writer.getBuffer().toString());
     }
 
     @Test
@@ -57,7 +69,6 @@ public class SimplifyCommandTest extends BaseTest {
                 + "7.800000000000001 7.800000000000001, 9.200000000000001 "
                 + "9.200000000000001, 10.600000000000001 10.600000000000001, "
                 + "12 12)";
-        String otherGeometry = "POLYGON ((2 2, 2 14, 14 14, 14 2, 2 2))";
 
         // Geometry from options
         String result = runApp(new String[]{
@@ -86,7 +97,21 @@ public class SimplifyCommandTest extends BaseTest {
 
         result = runApp(new String[]{
                 "simplify",
-                "-a", "tp",
+                "-a", "vw",
+                "-d", "2"
+        }, inputGeometry);
+        assertEquals("LINESTRING (1 1, 12 12)", result);
+
+        result = runApp(new String[]{
+                "simplify",
+                "-a", "topologypreserving",
+                "-d", "2"
+        }, inputGeometry);
+        assertEquals("LINESTRING (1 1, 12 12)", result);
+
+        result = runApp(new String[]{
+                "simplify",
+                "-a", "visvalingamwhyat",
                 "-d", "2"
         }, inputGeometry);
         assertEquals("LINESTRING (1 1, 12 12)", result);
@@ -104,7 +129,7 @@ public class SimplifyCommandTest extends BaseTest {
                 "Usage: geom <command> <args>" + NEW_LINE +
                 " --help               : Print help message (default: false)" + NEW_LINE +
                 " -a (--algorithm) VAL : The distance tolerance (douglaspeucker/dp or" + NEW_LINE +
-                "                        topologypreserving/tp)" + NEW_LINE +
+                "                        topologypreserving/tp or visvalingamwhyat/vw)" + NEW_LINE +
                 " -d (--distance) N    : The distance tolerance" + NEW_LINE +
                 " -g (--geometry) VAL  : The input geometry (default: LINESTRING (1 1, 10 10))", result.get("err"));
     }

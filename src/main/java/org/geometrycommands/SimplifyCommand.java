@@ -5,6 +5,8 @@ import com.vividsolutions.jts.simplify.DouglasPeuckerSimplifier;
 import com.vividsolutions.jts.simplify.TopologyPreservingSimplifier;
 import java.io.Reader;
 import java.io.Writer;
+
+import com.vividsolutions.jts.simplify.VWSimplifier;
 import org.geometrycommands.SimplifyCommand.SimplifyOptions;
 import org.kohsuke.args4j.Option;
 
@@ -58,6 +60,9 @@ public class SimplifyCommand extends GeometryCommand<SimplifyOptions> {
         } else if (options.getAlgorithm().equalsIgnoreCase("topologypreserving")
                 || options.getAlgorithm().equalsIgnoreCase("tp")) {
             outputGeometry = TopologyPreservingSimplifier.simplify(geometry, options.getDistanceTolerance());
+        } else if (options.getAlgorithm().equalsIgnoreCase("visvalingamwhyat")
+                || options.getAlgorithm().equalsIgnoreCase("vw")) {
+            outputGeometry = VWSimplifier.simplify(geometry, options.getDistanceTolerance());
         } else {
             throw new IllegalArgumentException("Unknown simplifier algorithm!");
         }
@@ -70,9 +75,9 @@ public class SimplifyCommand extends GeometryCommand<SimplifyOptions> {
     public static class SimplifyOptions extends GeometryOptions {
 
         /**
-         * The algorithm (douglaspeucker/dp or topologypreserving/tp)
+         * The algorithm (douglaspeucker/dp or topologypreserving/tp or visvalingamwhyat/vw)
          */
-        @Option(name = "-a", aliases = "--algorithm",  usage = "The distance tolerance (douglaspeucker/dp or topologypreserving/tp)", required = true)
+        @Option(name = "-a", aliases = "--algorithm",  usage = "The distance tolerance (douglaspeucker/dp or topologypreserving/tp or visvalingamwhyat/vw)", required = true)
         private String algorithm;
 
         /**
