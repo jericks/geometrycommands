@@ -54,7 +54,7 @@ public class IsClosedCommand extends GeometryCommand<IsClosedOptions> {
         if (!(geometry instanceof Lineal)) {
             throw new IllegalArgumentException("The input geometry must be a LineString or a MultiLineString!");
         }
-        boolean closed = false;
+        boolean closed;
         if (geometry instanceof LineString) {
             closed = ((LineString) geometry).isClosed();
         } else {

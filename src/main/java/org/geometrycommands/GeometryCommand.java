@@ -1,10 +1,8 @@
 package org.geometrycommands;
 
 import com.vividsolutions.jts.geom.Geometry;
-import com.vividsolutions.jts.io.WKBReader;
 import com.vividsolutions.jts.io.WKTReader;
 import java.io.BufferedReader;
-import java.io.InputStreamReader;
 import java.io.Reader;
 import java.io.Writer;
 

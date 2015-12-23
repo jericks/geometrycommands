@@ -61,7 +61,7 @@ public class NodeCommand extends GeometryCommand<NodeOptions> {
             geometries.add(geometry.getGeometryN(i));
         }
         List lineStrings = noder.node(geometries);
-        Geometry nodedGeometry = geometry.getFactory().createMultiLineString((LineString[])lineStrings.toArray(new LineString[]{}));
+        Geometry nodedGeometry = geometry.getFactory().createMultiLineString((LineString[]) lineStrings.toArray(new LineString[lineStrings.size()]));
         writer.write(writeGeometry(nodedGeometry, options));
     }
 

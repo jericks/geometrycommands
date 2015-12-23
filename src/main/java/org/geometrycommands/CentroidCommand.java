@@ -6,7 +6,7 @@ import java.io.Reader;
 import java.io.Writer;
 
 /**
- * A Command for calculating the centroind of a Geometry.
+ * A Command for calculating the centroid of a Geometry.
  * @author Jared Erickson
  */
 public class CentroidCommand extends GeometryCommand<CentroidOptions> {

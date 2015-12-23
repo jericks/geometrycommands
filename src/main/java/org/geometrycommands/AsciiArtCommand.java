@@ -80,7 +80,7 @@ public class AsciiArtCommand extends GeometryCommand<AsciiArtOptions> {
     public static class AsciiArtOptions extends GeometryOptions {
     }
 
-    private static String[] zero = new String[]{
+    private static final String[] zero = new String[]{
             "  ___  ",
             " / _ \\ ",
             "| | | |",
@@ -88,14 +88,14 @@ public class AsciiArtCommand extends GeometryCommand<AsciiArtOptions> {
             " \\___/ ",
     };
 
-    private static String[] one = new String[]{
+    private static final String[] one = new String[]{
             " _ ",
             "/ |",
             "| |",
             "| |",
             "|_|"
     };
-    private static String[] two = new String[]{
+    private static final String[] two = new String[]{
             " ____  ",
             "|___ \\ ",
             "  __) |",
@@ -103,7 +103,7 @@ public class AsciiArtCommand extends GeometryCommand<AsciiArtOptions> {
             "|_____|"
     };
 
-    private static String[] three = new String[]{
+    private static final String[] three = new String[]{
             " _____ ",
             "|___ / ",
             "  |_ \\ ",
@@ -111,7 +111,7 @@ public class AsciiArtCommand extends GeometryCommand<AsciiArtOptions> {
             "|____/ "
     };
 
-    private static String[] four = new String[]{
+    private static final String[] four = new String[]{
             " _  _   ",
             "| || |  ",
             "| || |_ ",
@@ -119,7 +119,7 @@ public class AsciiArtCommand extends GeometryCommand<AsciiArtOptions> {
             "   |_|  "
     };
 
-    private static String[] five = new String[]{
+    private static final String[] five = new String[]{
             " ____  ",
             "| ___| ",
             "|___ \\ ",
@@ -127,7 +127,7 @@ public class AsciiArtCommand extends GeometryCommand<AsciiArtOptions> {
             "|____/ "
     };
 
-    private static String[] six = new String[]{
+    private static final String[] six = new String[]{
             "  __   ",
             " / /_  ",
             "| '_ \\ ",
@@ -135,7 +135,7 @@ public class AsciiArtCommand extends GeometryCommand<AsciiArtOptions> {
             " \\___/ "
     };
 
-    private static String[] seven = new String[]{
+    private static final String[] seven = new String[]{
             "  _____ ",
             " |___  |",
             "    / / ",
@@ -143,7 +143,7 @@ public class AsciiArtCommand extends GeometryCommand<AsciiArtOptions> {
             "  /_/   "
     };
 
-    private static String[] eight = new String[]{
+    private static final String[] eight = new String[]{
             "  ___  ",
             " ( _ ) ",
             " / _ \\ ",
@@ -151,7 +151,7 @@ public class AsciiArtCommand extends GeometryCommand<AsciiArtOptions> {
             " \\___/ "
     };
 
-    private static String[] nine = new String[]{
+    private static final String[] nine = new String[]{
             "  ___  ",
             " / _ \\ ",
             "| (_) |",
@@ -159,7 +159,7 @@ public class AsciiArtCommand extends GeometryCommand<AsciiArtOptions> {
             "   /_/ "
     };
 
-    private static String[] p = new String[]{
+    private static final String[] p = new String[]{
             " ____  ",
             "|  _ \\ ",
             "| |_) |",
@@ -167,7 +167,7 @@ public class AsciiArtCommand extends GeometryCommand<AsciiArtOptions> {
             "|_|    ",
     };
 
-    private static String[] o = new String[]{
+    private static final String[] o = new String[]{
             "  ___  ",
             " / _ \\ ",
             "| | | |",
@@ -176,7 +176,7 @@ public class AsciiArtCommand extends GeometryCommand<AsciiArtOptions> {
     };
 
 
-    private static String[] i = new String[]{
+    private static final String[] i = new String[]{
             " ___ ",
             "|_ _|",
             " | | ",
@@ -184,7 +184,7 @@ public class AsciiArtCommand extends GeometryCommand<AsciiArtOptions> {
             "|___|"
     };
 
-    private static String[] n = new String[]{
+    private static final String[] n = new String[]{
             " _   _ ",
             "| \\ | |",
             "|  \\| |",
@@ -193,7 +193,7 @@ public class AsciiArtCommand extends GeometryCommand<AsciiArtOptions> {
 
     };
 
-    private static String[] t = new String[]{
+    private static final String[] t = new String[]{
             " _____ ",
             "|_   _|",
             "  | |  ",
@@ -201,7 +201,7 @@ public class AsciiArtCommand extends GeometryCommand<AsciiArtOptions> {
             "  |_|  "
     };
 
-    private static String[] l = new String[]{
+    private static final String[] l = new String[]{
             " _     ",
             "| |    ",
             "| |    ",
@@ -209,7 +209,7 @@ public class AsciiArtCommand extends GeometryCommand<AsciiArtOptions> {
             "|_____|"
     };
 
-    private static String[] e = new String[]{
+    private static final String[] e = new String[]{
             " _____ ",
             "| ____|",
             "|  _|  ",
@@ -217,7 +217,7 @@ public class AsciiArtCommand extends GeometryCommand<AsciiArtOptions> {
             "|_____|"
     };
 
-    private static String[] g = new String[]{
+    private static final String[] g = new String[]{
             "  ____ ",
             " / ___|",
             "| |  _ ",
@@ -225,7 +225,7 @@ public class AsciiArtCommand extends GeometryCommand<AsciiArtOptions> {
             " \\____|"
     };
 
-    private static String[] r = new String[]{
+    private static final String[] r = new String[]{
             " ____  ",
             "|  _ \\ ",
             "| |_) |",
@@ -233,7 +233,7 @@ public class AsciiArtCommand extends GeometryCommand<AsciiArtOptions> {
             "|_| \\_\\"
     };
 
-    private static String[] s = new String[]{
+    private static final String[] s = new String[]{
             " ____  ",
             "/ ___| ",
             "\\___ \\ ",
@@ -249,7 +249,7 @@ public class AsciiArtCommand extends GeometryCommand<AsciiArtOptions> {
             "  |_|  ",
     };
 
-    private static String[] m = new String[]{
+    private static final String[] m = new String[]{
             " __  __ ",
             "|  \\/  |",
             "| |\\/| |",
@@ -257,7 +257,7 @@ public class AsciiArtCommand extends GeometryCommand<AsciiArtOptions> {
             "|_|  |_|",
     };
 
-    private static String[] u = new String[]{
+    private static final String[] u = new String[]{
             " _   _ ",
             "| | | |",
             "| | | |",
@@ -265,7 +265,7 @@ public class AsciiArtCommand extends GeometryCommand<AsciiArtOptions> {
             " \\___/ "
     };
 
-    private static String[] c = new String[]{
+    private static final String[] c = new String[]{
             "  ____ ",
             " / ___|",
             "| |    ",
@@ -273,7 +273,7 @@ public class AsciiArtCommand extends GeometryCommand<AsciiArtOptions> {
             " \\____|"
     };
 
-    private static String[] space = new String[]{
+    private static final String[] space = new String[]{
             "  ",
             "  ",
             "  ",
@@ -281,7 +281,7 @@ public class AsciiArtCommand extends GeometryCommand<AsciiArtOptions> {
             "  "
     };
 
-    private static String[] leftparan = new String[]{
+    private static final String[] leftparan = new String[]{
             "  __",
             " / /",
             "| | ",
@@ -289,7 +289,7 @@ public class AsciiArtCommand extends GeometryCommand<AsciiArtOptions> {
             " \\_\\"
     };
 
-    private static String[] rightparan = new String[]{
+    private static final String[] rightparan = new String[]{
             "__  ",
             "\\ \\ ",
             " | |",
@@ -297,7 +297,7 @@ public class AsciiArtCommand extends GeometryCommand<AsciiArtOptions> {
             "/_/ "
     };
 
-    private static String[] comma = new String[]{
+    private static final String[] comma = new String[]{
             "   ",
             "   ",
             " _ ",
@@ -305,7 +305,7 @@ public class AsciiArtCommand extends GeometryCommand<AsciiArtOptions> {
             "|/ "
     };
 
-    private static String[] period = new String[]{
+    private static final String[] period = new String[]{
             "   ",
             "   ",
             "   ",
@@ -313,7 +313,7 @@ public class AsciiArtCommand extends GeometryCommand<AsciiArtOptions> {
             "(_)"
     };
 
-    private static Map<String, String[]> art = new HashMap<String, String[]>();
+    private static final Map<String, String[]> art = new HashMap<String, String[]>();
 
     static {
         art.put("0", zero);

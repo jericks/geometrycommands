@@ -204,7 +204,7 @@ public class ProjectCommand extends GeometryCommand<ProjectOptions> {
         int num = gc.getNumGeometries();
         Geometry[] geometries = new Geometry[num];
         for (int i = 0; i < num; i++) {
-            geometries[i] = transformGeometry(transform, (Geometry) gc.getGeometryN(i));
+            geometries[i] = transformGeometry(transform, gc.getGeometryN(i));
         }
         return gc.getFactory().createGeometryCollection(geometries);
     }

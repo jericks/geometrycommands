@@ -57,7 +57,7 @@ public class GetStartPointCommand extends GeometryCommand<GetStartPointOptions> 
         }
         LineString lineString;
         if (geometry instanceof MultiLineString) {
-            lineString = (LineString)((MultiLineString)geometry).getGeometryN(0);
+            lineString = (LineString)(geometry).getGeometryN(0);
         }
         else {
             lineString = (LineString)geometry;

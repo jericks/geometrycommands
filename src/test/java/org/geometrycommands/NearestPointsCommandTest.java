@@ -6,7 +6,6 @@ import org.junit.Assert;
 import org.junit.Test;
 import org.geometrycommands.NearestPointsCommand.NearestPointsOptions;
 
-import java.io.Reader;
 import java.io.StringReader;
 import java.io.StringWriter;
 

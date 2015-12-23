@@ -7,7 +7,6 @@ import java.io.StringWriter;
 import org.geometrycommands.DrawCommand.DrawOptions;
 import org.junit.Test;
 
-import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertTrue;
 
 /**
@@ -85,7 +84,7 @@ public class DrawCommandTest extends BaseTest {
     public void run() throws Exception {
         // Geometry from options
         File file = File.createTempFile("image", ".png");
-        String result = runApp(new String[]{
+        runApp(new String[]{
                 "draw",
                 "-g", "POLYGON ((0 0, 0 10, 10 10, 10 0, 0 0))",
                 "-f", file.getAbsolutePath()
@@ -95,7 +94,7 @@ public class DrawCommandTest extends BaseTest {
 
         // Geometry from input stream
         file = File.createTempFile("image", ".png");
-        result = runApp(new String[]{
+        runApp(new String[]{
                 "draw",
                 "-w", "300",
                 "-h", "250",
@@ -113,7 +112,7 @@ public class DrawCommandTest extends BaseTest {
         assertTrue(file.length() > 0);
 
         file = File.createTempFile("image", ".png");
-        result = runApp(new String[]{
+        runApp(new String[]{
                 "draw",
                 "-g", "POLYGON ((0 0, 0 10, 10 10, 10 0, 0 0))",
                 "-f", file.getAbsolutePath(),
@@ -124,7 +123,7 @@ public class DrawCommandTest extends BaseTest {
         assertTrue(file.length() > 0);
 
         file = File.createTempFile("image", ".png");
-        result = runApp(new String[]{
+        runApp(new String[]{
                 "draw",
                 "-g", "POLYGON ((0 0, 0 10, 10 10, 10 0, 0 0))",
                 "-f", file.getAbsolutePath(),
@@ -135,7 +134,7 @@ public class DrawCommandTest extends BaseTest {
         assertTrue(file.length() > 0);
 
         file = File.createTempFile("image", ".png");
-        result = runApp(new String[]{
+        runApp(new String[]{
                 "draw",
                 "-g", "POINT (5 5)",
                 "-f", file.getAbsolutePath(),
@@ -146,7 +145,7 @@ public class DrawCommandTest extends BaseTest {
         assertTrue(file.length() > 0);
 
         file = File.createTempFile("image", ".png");
-        result = runApp(new String[]{
+        runApp(new String[]{
                 "draw",
                 "-g", "LINESTRING (0 0, 10 20)",
                 "-f", file.getAbsolutePath(),

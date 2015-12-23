@@ -50,7 +50,7 @@ public class RotateCommand extends GeometryCommand<RotateOptions> {
      */
     @Override
     protected void processGeometry(Geometry geometry, RotateOptions options, Reader reader, Writer writer) throws Exception {
-        AffineTransformation transformation = null;
+        AffineTransformation transformation;
         // theta, x, y
         if (!Double.isNaN(options.getTheta()) && !Double.isNaN(options.getX()) && !Double.isNaN(options.getY())) {
             transformation = AffineTransformation.rotationInstance(options.getTheta(), options.getX(), options.getY());

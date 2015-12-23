@@ -7,7 +7,6 @@ import org.junit.Test;
 import static org.junit.Assert.*;
 import org.geometrycommands.SpokeCommand.SpokeOptions;
 
-import java.io.Reader;
 import java.io.StringReader;
 import java.io.StringWriter;
 

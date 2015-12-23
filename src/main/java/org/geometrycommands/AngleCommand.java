@@ -61,7 +61,7 @@ public class AngleCommand extends OtherGeometryCommand<AngleOptions> {
     }
 
     /**
-     * The AngleCommand Optionss
+     * The AngleCommand Options
      */
     public static class AngleOptions extends OtherGeometryOptions {
 

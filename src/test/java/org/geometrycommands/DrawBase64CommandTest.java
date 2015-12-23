@@ -3,7 +3,6 @@ package org.geometrycommands;
 import org.geometrycommands.DrawBase64Command.DrawOptions;
 import org.junit.Test;
 
-import java.io.File;
 import java.io.Reader;
 import java.io.StringReader;
 import java.io.StringWriter;

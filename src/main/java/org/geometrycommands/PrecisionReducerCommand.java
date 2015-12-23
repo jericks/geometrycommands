@@ -52,7 +52,7 @@ public class PrecisionReducerCommand extends GeometryCommand<PrecisionReducerOpt
     @Override
     protected void processGeometry(Geometry geometry, PrecisionReducerOptions options, Reader reader, Writer writer) throws Exception {
 
-        PrecisionModel precisionModel = null;
+        PrecisionModel precisionModel;
         if (options.getPrecisionModelType().equalsIgnoreCase("fixed")) {
             precisionModel = new PrecisionModel(options.getPrecisionModelScale());
         } else if (options.getPrecisionModelType().equalsIgnoreCase("floating")) {

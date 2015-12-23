@@ -6,6 +6,7 @@ import org.kohsuke.args4j.Option;
 import org.geometrycommands.PolygonizeCommand.PolygonizeOptions;
 import java.io.Reader;
 import java.io.Writer;
+import java.util.Collection;
 
 /**
  * A Command to create Polygons from Lines
@@ -53,6 +54,7 @@ public class PolygonizeCommand extends GeometryCommand<PolygonizeOptions> {
      * @param writer   The java.io.Writer
      * @throws Exception if an error occurs
      */
+    @SuppressWarnings("unchecked")
     @Override
     protected void processGeometry(Geometry geometry, PolygonizeOptions options, Reader reader, Writer writer) throws Exception {
         Polygonizer polygonizer = new Polygonizer();
@@ -62,18 +64,28 @@ public class PolygonizeCommand extends GeometryCommand<PolygonizeOptions> {
             polygonizer.add(g);
         }
         Geometry geomToWrite;
-        MultiPolygon multiPolygon = geometry.getFactory().createMultiPolygon((Polygon[]) polygonizer.getPolygons().toArray(new Polygon[]{}));
+        Collection polys = polygonizer.getPolygons();
+        MultiPolygon multiPolygon = geometry.getFactory().createMultiPolygon((Polygon[]) polys.toArray(new Polygon[polys.size()]));
         if (!options.isFull()) {
             geomToWrite = multiPolygon;
         } else {
-            MultiLineString cutEdges = geometry.getFactory().createMultiLineString((LineString[]) polygonizer.getCutEdges().toArray(new LineString[]{}));
-            MultiLineString dangles = geometry.getFactory().createMultiLineString((LineString[]) polygonizer.getDangles().toArray(new LineString[]{}));
-            MultiLineString invalidRingLines = geometry.getFactory().createMultiLineString((LineString[]) polygonizer.getInvalidRingLines().toArray(new LineString[]{}));
+            MultiLineString cutEdges = geometry.getFactory().createMultiLineString(convert(polygonizer.getCutEdges()));
+            MultiLineString dangles = geometry.getFactory().createMultiLineString(convert(polygonizer.getDangles()));
+            MultiLineString invalidRingLines = geometry.getFactory().createMultiLineString(convert(polygonizer.getInvalidRingLines()));
             geomToWrite = geometry.getFactory().createGeometryCollection(new Geometry[]{
                     multiPolygon, cutEdges, dangles, invalidRingLines
             });
         }
         writer.write(writeGeometry(geomToWrite, options));
+    }
+
+    /**
+     * Convert a Collection of LinesStrings to an Array of LineStrings
+     * @param lines The Collection of LineStrings
+     * @return An Array of LineStrings
+     */
+    private LineString[] convert(Collection<LineString> lines) {
+        return lines.toArray(new LineString[lines.size()]);
     }
 
     /**

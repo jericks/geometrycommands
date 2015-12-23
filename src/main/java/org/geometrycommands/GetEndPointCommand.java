@@ -58,7 +58,7 @@ public class GetEndPointCommand extends GeometryCommand<GetEndPointOptions> {
         LineString lineString;
         if (geometry instanceof MultiLineString) {
             int i = geometry.getNumGeometries() - 1;
-            lineString = (LineString)((MultiLineString)geometry).getGeometryN(i);
+            lineString = (LineString)(geometry).getGeometryN(i);
         }
         else {
             lineString = (LineString)geometry;

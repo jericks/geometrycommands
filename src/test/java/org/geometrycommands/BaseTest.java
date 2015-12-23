@@ -2,7 +2,6 @@ package org.geometrycommands;
 
 import java.io.*;
 import java.util.HashMap;
-import java.util.List;
 import java.util.Map;
 
 /**
@@ -57,7 +56,7 @@ public abstract class BaseTest {
         System.setOut(sysout);
         System.setErr(syserr);
         // Return the captured output
-        Map<String,String> outputs =new HashMap<String, String>();
+        Map<String,String> outputs = new HashMap<String, String>();
         outputs.put("out", out.toString("UTF-8").trim());
         outputs.put("err", err.toString("UTF-8").trim());
         return outputs;

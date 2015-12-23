@@ -1,7 +1,6 @@
 package org.geometrycommands;
 
 import com.vividsolutions.jts.geom.Geometry;
-import com.vividsolutions.jts.geom.MultiLineString;
 import com.vividsolutions.jts.geom.MultiPolygon;
 import com.vividsolutions.jts.geom.Polygon;
 import com.vividsolutions.jts.operation.polygonize.Polygonizer;
@@ -58,12 +57,12 @@ public class SplitCommand extends OtherGeometryCommand<SplitOptions> {
     @Override
     protected void processGeometries(Geometry geometry, Geometry other, SplitOptions options, Reader reader, Writer writer) throws Exception {
         Geometry polygons = polygonize(geometry.getBoundary().union(other));
-        List polygonsToKeep = new ArrayList();
+        List<Polygon> polygonsToKeep = new ArrayList<Polygon>();
         int num = polygons.getNumGeometries();
         for(int i=0; i<num; i++) {
             Geometry g = polygons.getGeometryN(i);
             if (polygons.contains(g.getInteriorPoint())) {
-                polygonsToKeep.add(g);
+                polygonsToKeep.add((Polygon) g);
             }
         }
         Geometry splitGeom = polygonsToKeep.size() > 1 ? geometry.getFactory().createMultiPolygon(toPolygonArray(polygonsToKeep)) : (Geometry) polygonsToKeep.get(0);
@@ -76,12 +75,12 @@ public class SplitCommand extends OtherGeometryCommand<SplitOptions> {
         for(int i=0; i<num; i++) {
             polygonizer.add(lineString.getGeometryN(i));
         }
-        Collection polygons = polygonizer.getPolygons();
+        Collection<Polygon> polygons = polygonizer.getPolygons();
         return lineString.getFactory().createMultiPolygon(toPolygonArray(polygons));
     }
 
     private Polygon[] toPolygonArray(Collection<Polygon> polygons) {
-        return (Polygon[]) polygons.toArray(new Polygon[]{});
+        return polygons.toArray(new Polygon[polygons.size()]);
     }
 
     /**

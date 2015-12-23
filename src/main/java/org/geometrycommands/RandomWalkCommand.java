@@ -67,8 +67,8 @@ public class RandomWalkCommand extends GeometryCommand<RandomWalkOptions> {
         for (int i = 0; i < options.getNumberOfWalks(); i++) {
             Random random = new Random();
             double r = random.nextDouble();
-            boolean changeDirection = (r <= options.getProbability()) ? true : false;
-            int angle = previousAngle;
+            boolean changeDirection = r <= options.getProbability();
+            int angle;
             if (previousAngle > -1 || changeDirection) {
                 while ((angle = random.nextInt(angleRange) * options.getAngleIncrement()) == getOpposite(previousAngle)) {
                     // Don't go back
@@ -80,7 +80,7 @@ public class RandomWalkCommand extends GeometryCommand<RandomWalkOptions> {
             previousCoord = getCoordinateAtAngle(previousCoord, angle, options.getDistance());
             coordinates.add(previousCoord);
         }
-        LineString lineString = geometry.getFactory().createLineString((Coordinate[]) coordinates.toArray(new Coordinate[]{}));
+        LineString lineString = geometry.getFactory().createLineString(coordinates.toArray(new Coordinate[coordinates.size()]));
         writer.write(writeGeometry(lineString, options));
 
     }
