@@ -45,6 +45,7 @@ org.geometrycommands.IsSimpleCommand
 org.geometrycommands.IsValidCommand
 org.geometrycommands.IsWithinDistanceCommand
 org.geometrycommands.KochSnowflakeCommand
+org.geometrycommands.LineDissolverCommand
 org.geometrycommands.LineMergeCommand
 org.geometrycommands.LocatePointCommand
 org.geometrycommands.GeometryTypeCommand
