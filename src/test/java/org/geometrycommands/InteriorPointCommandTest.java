@@ -29,7 +29,7 @@ public class InteriorPointCommandTest extends BaseTest {
         
         InteriorPointCommand command = new InteriorPointCommand();
         command.execute(options, reader, writer);
-        assertEquals("POINT (17.205851236979164 46.6796875)", writer.getBuffer().toString());
+        assertEquals("POINT (17.221354166666664 46.416015625)", writer.getBuffer().toString());
     }
 
     @Test
@@ -43,7 +43,7 @@ public class InteriorPointCommandTest extends BaseTest {
                 + "9.24072265625 40.615234375, 19.61181640625 40.5712890625, "
                 + "18.38134765625 52.4365234375, 9.89990234375 52.7880859375))"
         }, null);
-        assertEquals("POINT (17.205851236979164 46.6796875)", result);
+        assertEquals("POINT (17.221354166666664 46.416015625)", result);
 
         // Geometry from input stream
         result = runApp(new String[]{
@@ -53,6 +53,6 @@ public class InteriorPointCommandTest extends BaseTest {
                 + "15.48095703125 43.251953125, 8.97705078125 43.251953125, "
                 + "9.24072265625 40.615234375, 19.61181640625 40.5712890625, "
                 + "18.38134765625 52.4365234375, 9.89990234375 52.7880859375))");
-        assertEquals("POINT (17.205851236979164 46.6796875)", result);
+        assertEquals("POINT (17.221354166666664 46.416015625)", result);
     }
 }
