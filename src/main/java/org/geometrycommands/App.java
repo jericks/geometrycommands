@@ -1,7 +1,6 @@
 package org.geometrycommands;
 
 import org.kohsuke.args4j.CmdLineParser;
-import org.kohsuke.args4j.ExampleMode;
 
 import java.io.InputStreamReader;
 import java.io.Reader;
