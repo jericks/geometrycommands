@@ -11,7 +11,7 @@ Simplify the input geometry.
 
 **Arguments**:
 
-   * -a --algorithm: The distance tolerance (douglaspeucker/dp or topologypreserving/tp)
+   * -a --algorithm: The distance tolerance (douglaspeucker/dp or topologypreserving/tp or visvalingamwhyat/vw)
 
    * -d --distance: The distance tolerance
 

@@ -7,7 +7,7 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>dimension &mdash; Geometry Commands 0.4 documentation</title>
+  <title>linedissolve &mdash; Geometry Commands 0.4 documentation</title>
   
 
   
@@ -30,8 +30,8 @@
   
     <link rel="top" title="Geometry Commands 0.4 documentation" href="../index.html"/>
         <link rel="up" title="Commands" href="../commands.html"/>
-        <link rel="next" title="hausdorffdistance" href="hausdorffdistance.html"/>
-        <link rel="prev" title="difference" href="difference.html"/> 
+        <link rel="next" title="linemerge" href="linemerge.html"/>
+        <link rel="prev" title="kochsnowflake" href="kochsnowflake.html"/> 
 
   
   <script src="https://cdnjs.cloudflare.com/ajax/libs/modernizr/2.6.2/modernizr.min.js"></script>
@@ -88,7 +88,7 @@
 <li class="toctree-l2"><a class="reference internal" href="dump.html">dump</a></li>
 <li class="toctree-l2"><a class="reference internal" href="ellipse.html">ellipse</a></li>
 <li class="toctree-l2"><a class="reference internal" href="difference.html">difference</a></li>
-<li class="toctree-l2 current"><a class="current reference internal" href="">dimension</a></li>
+<li class="toctree-l2"><a class="reference internal" href="dimension.html">dimension</a></li>
 <li class="toctree-l2"><a class="reference internal" href="hausdorffdistance.html">hausdorffdistance</a></li>
 <li class="toctree-l2"><a class="reference internal" href="disjoint.html">disjoint</a></li>
 <li class="toctree-l2"><a class="reference internal" href="distance.html">distance</a></li>
@@ -109,7 +109,7 @@
 <li class="toctree-l2"><a class="reference internal" href="isvalid.html">isvalid</a></li>
 <li class="toctree-l2"><a class="reference internal" href="iswithindistance.html">iswithindistance</a></li>
 <li class="toctree-l2"><a class="reference internal" href="kochsnowflake.html">kochsnowflake</a></li>
-<li class="toctree-l2"><a class="reference internal" href="linedissolve.html">linedissolve</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="">linedissolve</a></li>
 <li class="toctree-l2"><a class="reference internal" href="linemerge.html">linemerge</a></li>
 <li class="toctree-l2"><a class="reference internal" href="locatepoint.html">locatepoint</a></li>
 <li class="toctree-l2"><a class="reference internal" href="type.html">type</a></li>
@@ -187,10 +187,10 @@
       
           <li><a href="../commands.html">Commands</a> &raquo;</li>
       
-    <li>dimension</li>
+    <li>linedissolve</li>
       <li class="wy-breadcrumbs-aside">
         
-          <a href="../_sources/commands/dimension.txt" rel="nofollow"> View page source</a>
+          <a href="../_sources/commands/linedissolve.txt" rel="nofollow"> View page source</a>
         
       </li>
   </ul>
@@ -198,12 +198,12 @@
 </div>
           <div role="main">
             
-  <div class="section" id="dimension">
-<h1>dimension<a class="headerlink" href="#dimension" title="Permalink to this headline">¶</a></h1>
+  <div class="section" id="linedissolve">
+<h1>linedissolve<a class="headerlink" href="#linedissolve" title="Permalink to this headline">¶</a></h1>
 <p><strong>Name</strong>:</p>
-<p>geom dimension</p>
+<p>geom linedissolve</p>
 <p><strong>Description</strong>:</p>
-<p>Get the dimension of the Geometry.</p>
+<p>Dissolve LinesStrings</p>
 <p><strong>Arguments</strong>:</p>
 <blockquote>
 <div><ul class="simple">
@@ -212,7 +212,7 @@
 </ul>
 </div></blockquote>
 <p><strong>Example</strong>:</p>
-<div class="highlight-python"><div class="highlight"><pre>geom dimension -g &quot;POINT (1 1)&quot;
+<div class="highlight-python"><div class="highlight"><pre>geom linedissolve -g &quot;LINESTRING (1143429.5177049513 646812.5700195221, 1148620.8088546866 646812.5700195221, 1149092.7444137533 643980.956665121, 1150980.4866500208 640677.4077516531)&quot;
 </pre></div>
 </div>
 </div>
@@ -223,10 +223,10 @@
   
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
       
-        <a href="hausdorffdistance.html" class="btn btn-neutral float-right" title="hausdorffdistance"/>Next <span class="fa fa-arrow-circle-right"></span></a>
+        <a href="linemerge.html" class="btn btn-neutral float-right" title="linemerge"/>Next <span class="fa fa-arrow-circle-right"></span></a>
       
       
-        <a href="difference.html" class="btn btn-neutral" title="difference"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+        <a href="kochsnowflake.html" class="btn btn-neutral" title="kochsnowflake"><span class="fa fa-arrow-circle-left"></span> Previous</a>
       
     </div>
   
