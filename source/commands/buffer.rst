@@ -19,6 +19,12 @@ Buffer a geometry by a distance.
 
    * -s --singleSided: The flag for whether the buffer should be single sided
 
+   * -f --simplifyFactor: The simplify factor
+
+   * -m --mitreLimit: The mitre limit
+
+   * -j --joinStyle: The join style (round, mitre, bevel)
+
    * -g --geometry: The input geometry
 
    * --help : Print help message
