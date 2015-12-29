@@ -77,7 +77,11 @@ public class AppTest {
                 " -c (--endCapStyle) VAL    : The end cap style (round, flat/butt, square)" + NEW_LINE +
                 "                             (default: round)" + NEW_LINE +
                 " -d (--distance) N         : The buffer distance" + NEW_LINE +
+                " -f (--simplifyFactor) N   : The simplify factor (default: 0.01)" + NEW_LINE +
                 " -g (--geometry) VAL       : The input geometry" + NEW_LINE +
+                " -j (--joinStyle) VAL      : The join style (round, mitre, bevel) (default:" + NEW_LINE +
+                "                             round)" + NEW_LINE +
+                " -m (--mitreLimit) N       : The mitre limit (default: 5.0)" + NEW_LINE +
                 " -q (--quadrantSegments) N : The number of quadrant segments (default: 8)" + NEW_LINE +
                 " -s (--singleSided)        : The flag for whether the buffer should be single" + NEW_LINE +
                 "                             sided (default: false)", values.get("out"));

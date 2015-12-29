@@ -19,7 +19,7 @@ _geom()
     elif [[ "$line" == *"geom boundary "* ]]; then
         COMPREPLY=($(compgen -W '--help -g --geometry' -- $cur))
     elif [[ "$line" == *"geom buffer "* ]]; then
-        COMPREPLY=($(compgen -W '--help -c --endCapStyle -d --distance -g --geometry -q --quadrantSegments -s --singleSided' -- $cur))
+        COMPREPLY=($(compgen -W '--help -c --endCapStyle -d --distance -f --simplifyFactor -g --geometry -j --joinStyle -m --mitreLimit -q --quadrantSegments -s --singleSided' -- $cur))
     elif [[ "$line" == *"geom centroid "* ]]; then
         COMPREPLY=($(compgen -W '--help -g --geometry' -- $cur))
     elif [[ "$line" == *"geom closelinestring "* ]]; then

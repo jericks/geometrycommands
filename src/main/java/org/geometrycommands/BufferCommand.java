@@ -60,11 +60,23 @@ public class BufferCommand extends GeometryCommand<BufferOptions> {
         } else {
             capStyle = BufferParameters.CAP_ROUND;
         }
-        
+
+        int joinStyle;
+        if (options.getJoinStyle().equalsIgnoreCase("mitre")) {
+            joinStyle = BufferParameters.JOIN_MITRE;
+        } else if (options.getJoinStyle().equalsIgnoreCase("bevel")) {
+            joinStyle = BufferParameters.JOIN_BEVEL;
+        } else {
+            joinStyle = BufferParameters.JOIN_ROUND;
+        }
+
         BufferParameters params = new BufferParameters();
         params.setSingleSided(options.isSingleSided());
         params.setQuadrantSegments(options.getQuadrantSegements());
         params.setEndCapStyle(capStyle);
+        params.setSimplifyFactor(options.getSimplifyFactor());
+        params.setMitreLimit(options.getMitreLimit());
+        params.setJoinStyle(joinStyle);
         
         BufferOp bufferOp = new BufferOp(geometry, params);
         Geometry bufferedGeometry = bufferOp.getResultGeometry(options.getDistance());
@@ -100,6 +112,24 @@ public class BufferCommand extends GeometryCommand<BufferOptions> {
          */
         @Option(name = "-s", aliases = "--singleSided", usage = "The flag for whether the buffer should be single sided", required = false)
         private boolean singleSided;
+
+        /**
+         * The simplify factor
+         */
+        @Option(name = "-f", aliases = "--simplifyFactor", usage = "The simplify factor", required = false)
+        private double simplifyFactor = BufferParameters.DEFAULT_SIMPLIFY_FACTOR;
+
+        /**
+         * The mitre limit
+         */
+        @Option(name = "-m", aliases = "--mitreLimit", usage = "The mitre limit", required = false)
+        private double mitreLimit = BufferParameters.DEFAULT_MITRE_LIMIT;
+
+        /**
+         * The join style
+         */
+        @Option(name = "-j", aliases = "--joinStyle", usage = "The join style (round, mitre, bevel)", required = false)
+        private String joinStyle = "round";
 
         /**
          * Get the buffer distance
@@ -163,6 +193,54 @@ public class BufferCommand extends GeometryCommand<BufferOptions> {
          */
         public void setSingleSided(boolean singleSided) {
             this.singleSided = singleSided;
+        }
+
+        /**
+         * Get the simplify factor
+         * @return The simplify factor
+         */
+        public double getSimplifyFactor() {
+            return simplifyFactor;
+        }
+
+        /**
+         * Set the simplify factor
+         * @param simplifyFactor
+         */
+        public void setSimplifyFactor(double simplifyFactor) {
+            this.simplifyFactor = simplifyFactor;
+        }
+
+        /**
+         * Get the mitre limit
+         * @return The mitre limit
+         */
+        public double getMitreLimit() {
+            return mitreLimit;
+        }
+
+        /**
+         * Set the mitre limit
+         * @param mitreLimit The mitre limit
+         */
+        public void setMitreLimit(double mitreLimit) {
+            this.mitreLimit = mitreLimit;
+        }
+
+        /**
+         * Get the join style
+         * @return The join style
+         */
+        public String getJoinStyle() {
+            return joinStyle;
+        }
+
+        /**
+         * Set the join style
+         * @param joinStyle The join style
+         */
+        public void setJoinStyle(String joinStyle) {
+            this.joinStyle = joinStyle;
         }
     }
 }
