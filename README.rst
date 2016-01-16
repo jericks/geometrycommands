@@ -84,7 +84,7 @@ Install it in your .bash_profile::
 
 Build
 -----
-Geometry Commands depends on the Java Topology Suite (JTS) and Proj4j and uses Maven as a build tool.
+Geometry Commands depends on the Java Topology Suite (JTS) and Proj4j and uses Maven as a build tool.::
     
     git checkout https://github.com/jericks/geometrycommands.git
     cd /geometrycommands
