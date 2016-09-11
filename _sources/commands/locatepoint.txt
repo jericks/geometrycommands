@@ -17,6 +17,8 @@ Locate the position of a point on the linear geometry as a percentage of the dis
 
    * --help : Print help message
 
+   * --web-help : Open help in a web browser
+
 
 
 **Example**::

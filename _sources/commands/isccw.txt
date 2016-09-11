@@ -15,6 +15,8 @@ Is the geometry's coordinates oriented counter clockwise of not.
 
    * --help : Print help message
 
+   * --web-help : Open help in a web browser
+
 
 
 **Example**::

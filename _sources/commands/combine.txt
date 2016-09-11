@@ -13,6 +13,8 @@ Combine geometries on separate lines to create a GeometryCollection.
 
    * --help : Print help message
 
+   * --web-help : Open help in a web browser
+
 
 
 **Example**::

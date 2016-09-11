@@ -17,6 +17,8 @@ Get a sub geometry from a geometry collection by index.
 
    * --help : Print help message
 
+   * --web-help : Open help in a web browser
+
 
 
 **Example**::

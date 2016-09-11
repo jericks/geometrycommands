@@ -15,6 +15,8 @@ Get the Geometry as WKT ASCII Art
 
    * --help : Print help message
 
+   * --web-help : Open help in a web browser
+
 
 
 **Example**::

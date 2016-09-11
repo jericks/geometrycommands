@@ -19,6 +19,8 @@ Get a subset of geometries using a start and end index.
 
    * --help : Print help message
 
+   * --web-help : Open help in a web browser
+
 
 
 **Example**::

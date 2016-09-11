@@ -43,6 +43,8 @@ Draw the input geometry to an image file.
 
    * --help : Print help message
 
+   * --web-help : Open help in a web browser
+
 
 
 **Example**::

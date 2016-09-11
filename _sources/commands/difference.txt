@@ -17,6 +17,8 @@ Calculate the difference between the input geometries.
 
    * --help : Print help message
 
+   * --web-help : Open help in a web browser
+
 
 
 **Example**::

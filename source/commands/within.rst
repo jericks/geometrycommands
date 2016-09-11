@@ -17,6 +17,8 @@ Determine if the input geometry is within the other geometry.
 
    * --help : Print help message
 
+   * --web-help : Open help in a web browser
+
 
 
 **Example**::

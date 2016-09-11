@@ -15,6 +15,8 @@ Convert a geometry collection to it's most specific type.
 
    * --help : Print help message
 
+   * --web-help : Open help in a web browser
+
 
 
 **Example**::

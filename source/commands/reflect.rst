@@ -23,6 +23,8 @@ Create a new geometry by applying the reflect affine transformation on the input
 
    * --help : Print help message
 
+   * --web-help : Open help in a web browser
+
 
 
 **Example**::

@@ -15,6 +15,8 @@ Put each geometry from a GeometryCollection on it's own line.
 
    * --help : Print help message
 
+   * --web-help : Open help in a web browser
+
 
 
 **Example**::

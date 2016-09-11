@@ -19,6 +19,8 @@ Calculate a point at a given angle distance from the input point.
 
    * --help : Print help message
 
+   * --web-help : Open help in a web browser
+
 
 
 **Example**::

@@ -19,6 +19,8 @@ Create a geometry from a string.
 
    * --help : Print help message
 
+   * --web-help : Open help in a web browser
+
 
 
 **Example**::

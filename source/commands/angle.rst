@@ -19,6 +19,8 @@ Calculate the angle between two Points
 
    * --help : Print help message
 
+   * --web-help : Open help in a web browser
+
 
 
 **Example**::

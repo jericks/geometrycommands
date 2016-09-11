@@ -19,6 +19,8 @@ Create a new geometry by applying the translate affine transformation on the inp
 
    * --help : Print help message
 
+   * --web-help : Open help in a web browser
+
 
 
 **Example**::

@@ -19,6 +19,8 @@ Project the input geometry from one coordinate system to another.
 
    * --help : Print help message
 
+   * --web-help : Open help in a web browser
+
 
 
 **Example**::

@@ -17,6 +17,8 @@ Interpolate the location of a point on the input linear geometry given a percent
 
    * --help : Print help message
 
+   * --web-help : Open help in a web browser
+
 
 
 **Example**::

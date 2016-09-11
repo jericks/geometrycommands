@@ -19,6 +19,8 @@ Write a Geometry to WKB.
 
    * --help : Print help message
 
+   * --web-help : Open help in a web browser
+
 
 
 **Example**::

@@ -19,6 +19,8 @@ Create a new geometry by apply a shear affine transformation to the input geomet
 
    * --help : Print help message
 
+   * --web-help : Open help in a web browser
+
 
 
 **Example**::

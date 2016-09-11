@@ -15,6 +15,8 @@ Determine if the input geometry is simple or not.
 
    * --help : Print help message
 
+   * --web-help : Open help in a web browser
+
 
 
 **Example**::

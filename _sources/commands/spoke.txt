@@ -17,6 +17,8 @@ Create a spoke diagram with lines between a single Geometry to other Geometries
 
    * --help : Print help message
 
+   * --web-help : Open help in a web browser
+
 
 
 **Example**::

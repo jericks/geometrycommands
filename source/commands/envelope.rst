@@ -17,6 +17,8 @@ Calculate the envelope of a Geometry.
 
    * --help : Print help message
 
+   * --web-help : Open help in a web browser
+
 
 
 **Example**::

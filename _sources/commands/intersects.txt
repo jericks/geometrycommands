@@ -17,6 +17,8 @@ Determine if the first geometry intersects the second geometry.
 
    * --help : Print help message
 
+   * --web-help : Open help in a web browser
+
 
 
 **Example**::

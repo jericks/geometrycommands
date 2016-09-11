@@ -17,6 +17,8 @@ Determine whether the first geometry overlaps with the other geometry.
 
    * --help : Print help message
 
+   * --web-help : Open help in a web browser
+
 
 
 **Example**::

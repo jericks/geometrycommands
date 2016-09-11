@@ -19,6 +19,8 @@ Determine if the input geometry is within the given distance of the other geomet
 
    * --help : Print help message
 
+   * --web-help : Open help in a web browser
+
 
 
 **Example**::

@@ -15,6 +15,8 @@ Merge lines of the input geoemtry together.
 
    * --help : Print help message
 
+   * --web-help : Open help in a web browser
+
 
 
 **Example**::

@@ -17,6 +17,8 @@ Generate a LineString representing the shortest distance between two geometries.
 
    * --help : Print help message
 
+   * --web-help : Open help in a web browser
+
 
 
 **Example**::
