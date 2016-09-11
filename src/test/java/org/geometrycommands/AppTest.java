@@ -59,6 +59,7 @@ public class AppTest {
         Map<String, String> values = capture.stop();
         assertEquals("geom centroid: Calculate the centroid of a Geometry." + NEW_LINE +
                 " --help              : Print help message (default: true)" + NEW_LINE +
+                " --web-help          : Open help in a web browser (default: false)" + NEW_LINE +
                 " -g (--geometry) VAL : The input geometry", values.get("out"));
     }
 
@@ -74,6 +75,7 @@ public class AppTest {
         Map<String, String> values = capture.stop();
         assertEquals("geom buffer: Buffer a geometry by a distance." + NEW_LINE +
                 " --help                    : Print help message (default: true)" + NEW_LINE +
+                " --web-help                : Open help in a web browser (default: false)" + NEW_LINE +
                 " -c (--endCapStyle) VAL    : The end cap style (round, flat/butt, square)" + NEW_LINE +
                 "                             (default: round)" + NEW_LINE +
                 " -d (--distance) N         : The buffer distance" + NEW_LINE +
@@ -100,6 +102,7 @@ public class AppTest {
         assertEquals("\"--asdf\" is not a valid option" + NEW_LINE +
                 "Usage: geom <command> <args>" + NEW_LINE +
                 " --help              : Print help message (default: false)" + NEW_LINE +
+                " --web-help          : Open help in a web browser (default: false)" + NEW_LINE +
                 " -g (--geometry) VAL : The input geometry", values.get("err"));
     }
 

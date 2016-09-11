@@ -22,6 +22,12 @@ public class Options {
     private boolean help;
 
     /**
+     * The flag to print the help message
+     */
+    @Option(name = "--web-help", usage = "Open help in a web browser", required = false)
+    private boolean webHelp;
+
+    /**
      * Get the Command name
      * @return The Command name
      */
@@ -52,4 +58,21 @@ public class Options {
     public void setHelp(boolean help) {
         this.help = help;
     }
+
+    /**
+     * Get the flag to open help in a web browser
+     * @return The flag to open help in a web browser
+     */
+    public boolean isWebHelp() {
+        return webHelp;
+    }
+
+    /**
+     * Set the flag to open help in a web browser
+     * @param webHelp The flag to open help in a web browser
+     */
+    public void setWebHelp(boolean webHelp) {
+        this.webHelp = webHelp;
+    }
+
 }

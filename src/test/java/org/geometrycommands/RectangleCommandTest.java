@@ -92,6 +92,7 @@ public class RectangleCommandTest extends BaseTest {
         assertEquals("When the Geometry is a point, then width and height are required!" + NEW_LINE +
                 "Usage: geom <command> <args>" + NEW_LINE +
                 " --help                  : Print help message (default: false)" + NEW_LINE +
+                " --web-help              : Open help in a web browser (default: false)" + NEW_LINE +
                 " -c (--center)           : The flag to use center (true) or the base (false)" + NEW_LINE +
                 "                           (default: false)" + NEW_LINE +
                 " -g (--geometry) VAL     : The input geometry (default: POINT (100 100))" + NEW_LINE +
@@ -109,6 +110,7 @@ public class RectangleCommandTest extends BaseTest {
         assertEquals("When the Geometry is a point, then width and height are required!" + NEW_LINE +
                 "Usage: geom <command> <args>" + NEW_LINE +
                 " --help                  : Print help message (default: false)" + NEW_LINE +
+                " --web-help              : Open help in a web browser (default: false)" + NEW_LINE +
                 " -c (--center)           : The flag to use center (true) or the base (false)" + NEW_LINE +
                 "                           (default: false)" + NEW_LINE +
                 " -g (--geometry) VAL     : The input geometry (default: POINT (100 100))" + NEW_LINE +
@@ -126,6 +128,7 @@ public class RectangleCommandTest extends BaseTest {
         assertEquals("When the Geometry is a point, then width and height are required!" + NEW_LINE +
                 "Usage: geom <command> <args>" + NEW_LINE +
                 " --help                  : Print help message (default: false)" + NEW_LINE +
+                " --web-help              : Open help in a web browser (default: false)" + NEW_LINE +
                 " -c (--center)           : The flag to use center (true) or the base (false)" + NEW_LINE +
                 "                           (default: false)" + NEW_LINE +
                 " -g (--geometry) VAL     : The input geometry (default: POINT (100 100))" + NEW_LINE +

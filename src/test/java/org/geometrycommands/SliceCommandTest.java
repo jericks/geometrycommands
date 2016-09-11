@@ -97,6 +97,7 @@ public class SliceCommandTest extends BaseTest {
         assertEquals("Start index can not be more than the number of items!" + NEW_LINE +
                 "Usage: geom <command> <args>" + NEW_LINE +
                 " --help              : Print help message (default: false)" + NEW_LINE +
+                " --web-help          : Open help in a web browser (default: false)" + NEW_LINE +
                 " -e (--end) N        : The end index number (default: 2)" + NEW_LINE +
                 " -g (--geometry) VAL : The input geometry (default: MULTIPOINT ((1 1), (2 2)," + NEW_LINE +
                 "                       (3 3)))" + NEW_LINE +
@@ -114,6 +115,7 @@ public class SliceCommandTest extends BaseTest {
         assertEquals("End index can not be more than the number of items!" + NEW_LINE +
                 "Usage: geom <command> <args>" + NEW_LINE +
                 " --help              : Print help message (default: false)" + NEW_LINE +
+                " --web-help          : Open help in a web browser (default: false)" + NEW_LINE +
                 " -e (--end) N        : The end index number (default: 5)" + NEW_LINE +
                 " -g (--geometry) VAL : The input geometry (default: MULTIPOINT ((1 1), (2 2)," + NEW_LINE +
                 "                       (3 3)))" + NEW_LINE +

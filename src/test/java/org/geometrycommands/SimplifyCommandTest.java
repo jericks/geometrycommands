@@ -128,6 +128,7 @@ public class SimplifyCommandTest extends BaseTest {
         assertEquals("Unknown simplifier algorithm!" + NEW_LINE +
                 "Usage: geom <command> <args>" + NEW_LINE +
                 " --help               : Print help message (default: false)" + NEW_LINE +
+                " --web-help           : Open help in a web browser (default: false)" + NEW_LINE +
                 " -a (--algorithm) VAL : The distance tolerance (douglaspeucker/dp or" + NEW_LINE +
                 "                        topologypreserving/tp or visvalingamwhyat/vw)" + NEW_LINE +
                 " -d (--distance) N    : The distance tolerance" + NEW_LINE +

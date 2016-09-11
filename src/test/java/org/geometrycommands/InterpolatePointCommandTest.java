@@ -59,6 +59,7 @@ public class InterpolatePointCommandTest extends BaseTest {
         assertEquals("The input geometry must be a LineString or a MultiLineString!" + NEW_LINE +
                 "Usage: geom <command> <args>" + NEW_LINE +
                 " --help              : Print help message (default: false)" + NEW_LINE +
+                " --web-help          : Open help in a web browser (default: false)" + NEW_LINE +
                 " -g (--geometry) VAL : The input geometry (default: POINT (1 1))" + NEW_LINE +
                 " -p (--position) N   : The position between 0 and 1", result.get("err"));
     }

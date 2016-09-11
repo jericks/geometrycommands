@@ -67,6 +67,7 @@ public class IsRingCommandTest extends BaseTest {
         assertEquals("The input geometry must be a LineString!" + NEW_LINE +
                 "Usage: geom <command> <args>" + NEW_LINE +
                 " --help              : Print help message (default: false)" + NEW_LINE +
+                " --web-help          : Open help in a web browser (default: false)" + NEW_LINE +
                 " -g (--geometry) VAL : The input geometry (default: POINT (1 1))", result.get("err"));
     }
 }

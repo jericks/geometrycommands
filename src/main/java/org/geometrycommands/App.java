@@ -2,10 +2,13 @@ package org.geometrycommands;
 
 import org.kohsuke.args4j.CmdLineParser;
 
+import java.awt.*;
 import java.io.InputStreamReader;
 import java.io.Reader;
 import java.io.StringWriter;
 import java.io.Writer;
+import java.net.URI;
+import java.net.URISyntaxException;
 import java.util.ServiceLoader;
 
 /**
@@ -64,6 +67,10 @@ public class App {
                 System.out.println("geom " + command.getName() + ": " + command.getDescription());
                 cmdLineParser.printUsage(System.out);
             }
+            else if (options.isWebHelp()) {
+                URI uri = new URI("http://jericks.github.io/geometrycommands/commands/" + name + ".html");
+                Desktop.getDesktop().browse(uri);
+            }
             else {
                 // If there are no errors, execute the command
                 Reader reader = new InputStreamReader(System.in);
@@ -80,6 +87,15 @@ public class App {
             if (options.isHelp()) {
                 System.out.println("geom " + command.getName() + ": " + command.getDescription());
                 cmdLineParser.printUsage(System.out);
+            }
+            // Open help in a browser
+            else if (options.isWebHelp()) {
+                try {
+                    URI uri = new URI("http://jericks.github.io/geometrycommands/commands/" + name + ".html");
+                    Desktop.getDesktop().browse(uri);
+                } catch(Exception ex) {
+                    System.err.println("Unable to open help in web browser!");
+                }
             }
             else {
                 // Oops, display the error messages to the user

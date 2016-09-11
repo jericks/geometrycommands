@@ -150,6 +150,7 @@ public class RotateCommandTest extends BaseTest {
         assertEquals("Illegal combination of arguments (theta | theta,x,y | sinTheta, cosTheta, x, y | sinTheta, cosTheta" + NEW_LINE +
                 "Usage: geom <command> <args>" + NEW_LINE +
                 " --help               : Print help message (default: false)" + NEW_LINE +
+                " --web-help           : Open help in a web browser (default: false)" + NEW_LINE +
                 " -c (--cosine) N      : The cosine of the rotation angle (default: NaN)" + NEW_LINE +
                 " -g (--geometry) VAL  : The input geometry (default: POLYGON ((0 0, 0 10, 10" + NEW_LINE +
                 "                        10, 10 0, 0 0)))" + NEW_LINE +
@@ -167,6 +168,7 @@ public class RotateCommandTest extends BaseTest {
         assertEquals("Illegal combination of arguments (theta | theta,x,y | sinTheta, cosTheta, x, y | sinTheta, cosTheta" + NEW_LINE +
                 "Usage: geom <command> <args>" + NEW_LINE +
                 " --help               : Print help message (default: false)" + NEW_LINE +
+                " --web-help           : Open help in a web browser (default: false)" + NEW_LINE +
                 " -c (--cosine) N      : The cosine of the rotation angle (default: 10.0)" + NEW_LINE +
                 " -g (--geometry) VAL  : The input geometry (default: POLYGON ((0 0, 0 10, 10" + NEW_LINE +
                 "                        10, 10 0, 0 0)))" + NEW_LINE +

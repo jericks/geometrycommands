@@ -92,6 +92,7 @@ public class PrecisionReducerCommandTest extends BaseTest {
         assertEquals("Unsupported Precision Model Type: 'ASDF'!" + NEW_LINE +
                 "Usage: geom <command> <args>" + NEW_LINE +
                 " --help                 : Print help message (default: false)" + NEW_LINE +
+                " --web-help             : Open help in a web browser (default: false)" + NEW_LINE +
                 " -g (--geometry) VAL    : The input geometry (default: POLYGON EMPTY)" + NEW_LINE +
                 " -p (--pointWise)       : Whether the precision reducer operates pointwise" + NEW_LINE +
                 "                          (default: false)" + NEW_LINE +

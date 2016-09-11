@@ -74,6 +74,7 @@ public class CloseLineStringCommandTest extends BaseTest {
         assertEquals("Input geometry must be a LineString!" + NEW_LINE +
                 "Usage: geom <command> <args>" + NEW_LINE +
                 " --help              : Print help message (default: false)" + NEW_LINE +
+                " --web-help          : Open help in a web browser (default: false)" + NEW_LINE +
                 " -g (--geometry) VAL : The input geometry (default: POINT (0 0))", outputs.get("err"));
     }
 
@@ -86,6 +87,7 @@ public class CloseLineStringCommandTest extends BaseTest {
         assertEquals("You need at least three points to close a LineString!" + NEW_LINE +
                 "Usage: geom <command> <args>" + NEW_LINE +
                 " --help              : Print help message (default: false)" + NEW_LINE +
+                " --web-help          : Open help in a web browser (default: false)" + NEW_LINE +
                 " -g (--geometry) VAL : The input geometry (default: LINESTRING (0 0, 10 10))", outputs.get("err"));
     }
 }

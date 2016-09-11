@@ -7,201 +7,201 @@ _geom()
     if [[ "$line" == *"geom " ]]; then
         COMPREPLY=($(compgen -W 'angle arc arcpoly area asciiart boundary buffer centroid closelinestring combine contains convexHull coordinates count countpoints coveredby covers crosses delaunay densify difference dimension disjoint distance distanceline draw drawbase64 dump ellipse endpoint envelope equals fromwkb get grid hausdorffdistance interiorpoint interpolatepoint intersection intersects isccw isclosed isempty isrectangle isring issimple isvalid iswithindistance kochsnowflake linedissolve linemerge list locatepoint mincircle minclearance mindiameter minrect narrow nearestpoints node normalize octagonalenvelope overlaps placepoint pointatangle polygonize project random randomwalk rectangle reduceprecision reflect relate reverse rotate scale shear sierpinskicarpet similarity simplify sinestar slice snap split spoke squircle startpoint subline supercircle symdifference text touches towkb translate type union voronoi within' -- $cur))
     elif [[ "$line" == *"geom angle "* ]]; then
-        COMPREPLY=($(compgen -W '--help -g --geometry -o --otherGeometry -t --type' -- $cur))
+        COMPREPLY=($(compgen -W '--help --web-help -g --geometry -o --otherGeometry -t --type' -- $cur))
     elif [[ "$line" == *"geom arc "* ]]; then
-        COMPREPLY=($(compgen -W '--help -a --startAngle -c --center -d -degrees -e --angleExtent -g --geometry -h --height -p --numberOfPoints -r --rotation -w --width' -- $cur))
+        COMPREPLY=($(compgen -W '--help --web-help -a --startAngle -c --center -d -degrees -e --angleExtent -g --geometry -h --height -p --numberOfPoints -r --rotation -w --width' -- $cur))
     elif [[ "$line" == *"geom arcpoly "* ]]; then
-        COMPREPLY=($(compgen -W '--help -a --startAngle -c --center -d --degrees -e --angleExtent -g --geometry -h --height -p --numberOfPoints -r --rotation -w --width' -- $cur))
+        COMPREPLY=($(compgen -W '--help --web-help -a --startAngle -c --center -d --degrees -e --angleExtent -g --geometry -h --height -p --numberOfPoints -r --rotation -w --width' -- $cur))
     elif [[ "$line" == *"geom area "* ]]; then
-        COMPREPLY=($(compgen -W '--help -g --geometry' -- $cur))
+        COMPREPLY=($(compgen -W '--help --web-help -g --geometry' -- $cur))
     elif [[ "$line" == *"geom asciiart "* ]]; then
-        COMPREPLY=($(compgen -W '--help -g --geometry' -- $cur))
+        COMPREPLY=($(compgen -W '--help --web-help -g --geometry' -- $cur))
     elif [[ "$line" == *"geom boundary "* ]]; then
-        COMPREPLY=($(compgen -W '--help -g --geometry' -- $cur))
+        COMPREPLY=($(compgen -W '--help --web-help -g --geometry' -- $cur))
     elif [[ "$line" == *"geom buffer "* ]]; then
-        COMPREPLY=($(compgen -W '--help -c --endCapStyle -d --distance -f --simplifyFactor -g --geometry -j --joinStyle -m --mitreLimit -q --quadrantSegments -s --singleSided' -- $cur))
+        COMPREPLY=($(compgen -W '--help --web-help -c --endCapStyle -d --distance -f --simplifyFactor -g --geometry -j --joinStyle -m --mitreLimit -q --quadrantSegments -s --singleSided' -- $cur))
     elif [[ "$line" == *"geom centroid "* ]]; then
-        COMPREPLY=($(compgen -W '--help -g --geometry' -- $cur))
+        COMPREPLY=($(compgen -W '--help --web-help -g --geometry' -- $cur))
     elif [[ "$line" == *"geom closelinestring "* ]]; then
-        COMPREPLY=($(compgen -W '--help -g --geometry' -- $cur))
+        COMPREPLY=($(compgen -W '--help --web-help -g --geometry' -- $cur))
     elif [[ "$line" == *"geom combine "* ]]; then
-        COMPREPLY=($(compgen -W '--help' -- $cur))
+        COMPREPLY=($(compgen -W '--help --web-help' -- $cur))
     elif [[ "$line" == *"geom contains "* ]]; then
-        COMPREPLY=($(compgen -W '--help -g --geometry -o --otherGeometry' -- $cur))
+        COMPREPLY=($(compgen -W '--help --web-help -g --geometry -o --otherGeometry' -- $cur))
     elif [[ "$line" == *"geom convexHull "* ]]; then
-        COMPREPLY=($(compgen -W '--help -g --geometry' -- $cur))
+        COMPREPLY=($(compgen -W '--help --web-help -g --geometry' -- $cur))
     elif [[ "$line" == *"geom coordinates "* ]]; then
-        COMPREPLY=($(compgen -W '--help -g --geometry -u --unique' -- $cur))
+        COMPREPLY=($(compgen -W '--help --web-help -g --geometry -u --unique' -- $cur))
     elif [[ "$line" == *"geom count "* ]]; then
-        COMPREPLY=($(compgen -W '--help -g --geometry' -- $cur))
+        COMPREPLY=($(compgen -W '--help --web-help -g --geometry' -- $cur))
     elif [[ "$line" == *"geom countpoints "* ]]; then
-        COMPREPLY=($(compgen -W '--help -g --geometry' -- $cur))
+        COMPREPLY=($(compgen -W '--help --web-help -g --geometry' -- $cur))
     elif [[ "$line" == *"geom coveredby "* ]]; then
-        COMPREPLY=($(compgen -W '--help -g --geometry -o --otherGeometry' -- $cur))
+        COMPREPLY=($(compgen -W '--help --web-help -g --geometry -o --otherGeometry' -- $cur))
     elif [[ "$line" == *"geom covers "* ]]; then
-        COMPREPLY=($(compgen -W '--help -g --geometry -o --otherGeometry' -- $cur))
+        COMPREPLY=($(compgen -W '--help --web-help -g --geometry -o --otherGeometry' -- $cur))
     elif [[ "$line" == *"geom crosses "* ]]; then
-        COMPREPLY=($(compgen -W '--help -g --geometry -o --otherGeometry' -- $cur))
+        COMPREPLY=($(compgen -W '--help --web-help -g --geometry -o --otherGeometry' -- $cur))
     elif [[ "$line" == *"geom delaunay "* ]]; then
-        COMPREPLY=($(compgen -W '--help -c --conforming -g --geometry' -- $cur))
+        COMPREPLY=($(compgen -W '--help --web-help -c --conforming -g --geometry' -- $cur))
     elif [[ "$line" == *"geom densify "* ]]; then
-        COMPREPLY=($(compgen -W '--help -d --distance -g --geometry' -- $cur))
+        COMPREPLY=($(compgen -W '--help --web-help -d --distance -g --geometry' -- $cur))
     elif [[ "$line" == *"geom difference "* ]]; then
-        COMPREPLY=($(compgen -W '--help -g --geometry -o --otherGeometry' -- $cur))
+        COMPREPLY=($(compgen -W '--help --web-help -g --geometry -o --otherGeometry' -- $cur))
     elif [[ "$line" == *"geom dimension "* ]]; then
-        COMPREPLY=($(compgen -W '--help -g --geometry' -- $cur))
+        COMPREPLY=($(compgen -W '--help --web-help -g --geometry' -- $cur))
     elif [[ "$line" == *"geom disjoint "* ]]; then
-        COMPREPLY=($(compgen -W '--help -g --geometry -o --otherGeometry' -- $cur))
+        COMPREPLY=($(compgen -W '--help --web-help -g --geometry -o --otherGeometry' -- $cur))
     elif [[ "$line" == *"geom distance "* ]]; then
-        COMPREPLY=($(compgen -W '--help -g --geometry -o --otherGeometry' -- $cur))
+        COMPREPLY=($(compgen -W '--help --web-help -g --geometry -o --otherGeometry' -- $cur))
     elif [[ "$line" == *"geom distanceline "* ]]; then
-        COMPREPLY=($(compgen -W '--help -g --geometry -o --otherGeometry' -- $cur))
+        COMPREPLY=($(compgen -W '--help --web-help -g --geometry -o --otherGeometry' -- $cur))
     elif [[ "$line" == *"geom draw "* ]]; then
-        COMPREPLY=($(compgen -W '--help -b --background -c --drawCoords -e --envelope -f --file -g --geometry -h --height -i --backgroundImage -l --fill -m --shape -o --fillOpacity -r --strokeWidth -s --stroke -t --strokeOpacity -w --width -z --size' -- $cur))
+        COMPREPLY=($(compgen -W '--help --web-help -b --background -c --drawCoords -e --envelope -f --file -g --geometry -h --height -i --backgroundImage -l --fill -m --shape -o --fillOpacity -r --strokeWidth -s --stroke -t --strokeOpacity -w --width -z --size' -- $cur))
     elif [[ "$line" == *"geom drawbase64 "* ]]; then
-        COMPREPLY=($(compgen -W '--help -b --background -c --drawCoords -e --envelope -g --geometry -h --height -i --backgroundImage -l --fill -m --shape -o --fillOpacity -p --prefix -r --strokeWidth -s --stroke -t --strokeOpacity -w --width -y --type -z --size' -- $cur))
+        COMPREPLY=($(compgen -W '--help --web-help -b --background -c --drawCoords -e --envelope -g --geometry -h --height -i --backgroundImage -l --fill -m --shape -o --fillOpacity -p --prefix -r --strokeWidth -s --stroke -t --strokeOpacity -w --width -y --type -z --size' -- $cur))
     elif [[ "$line" == *"geom dump "* ]]; then
-        COMPREPLY=($(compgen -W '--help -g --geometry' -- $cur))
+        COMPREPLY=($(compgen -W '--help --web-help -g --geometry' -- $cur))
     elif [[ "$line" == *"geom ellipse "* ]]; then
-        COMPREPLY=($(compgen -W '--help -c --center -g --geometry -h --height -p --numberOfPoints -r --rotation -w --width' -- $cur))
+        COMPREPLY=($(compgen -W '--help --web-help -c --center -g --geometry -h --height -p --numberOfPoints -r --rotation -w --width' -- $cur))
     elif [[ "$line" == *"geom endpoint "* ]]; then
-        COMPREPLY=($(compgen -W '--help -g --geometry' -- $cur))
+        COMPREPLY=($(compgen -W '--help --web-help -g --geometry' -- $cur))
     elif [[ "$line" == *"geom envelope "* ]]; then
-        COMPREPLY=($(compgen -W '--help -e --expandBy -g --geometry' -- $cur))
+        COMPREPLY=($(compgen -W '--help --web-help -e --expandBy -g --geometry' -- $cur))
     elif [[ "$line" == *"geom equals "* ]]; then
-        COMPREPLY=($(compgen -W '--help -g --geometry -l --tolerance -o --otherGeometry -t --type' -- $cur))
+        COMPREPLY=($(compgen -W '--help --web-help -g --geometry -l --tolerance -o --otherGeometry -t --type' -- $cur))
     elif [[ "$line" == *"geom fromwkb "* ]]; then
-        COMPREPLY=($(compgen -W '--help -b --wkb' -- $cur))
+        COMPREPLY=($(compgen -W '--help --web-help -b --wkb' -- $cur))
     elif [[ "$line" == *"geom get "* ]]; then
-        COMPREPLY=($(compgen -W '--help -g --geometry -n --index' -- $cur))
+        COMPREPLY=($(compgen -W '--help --web-help -g --geometry -n --index' -- $cur))
     elif [[ "$line" == *"geom grid "* ]]; then
-        COMPREPLY=($(compgen -W '--help -c --columns -g --geometry -r --rows' -- $cur))
+        COMPREPLY=($(compgen -W '--help --web-help -c --columns -g --geometry -r --rows' -- $cur))
     elif [[ "$line" == *"geom hausdorffdistance "* ]]; then
-        COMPREPLY=($(compgen -W '--help -g --geometry -o --otherGeometry' -- $cur))
+        COMPREPLY=($(compgen -W '--help --web-help -g --geometry -o --otherGeometry' -- $cur))
     elif [[ "$line" == *"geom interiorpoint "* ]]; then
-        COMPREPLY=($(compgen -W '--help -g --geometry' -- $cur))
+        COMPREPLY=($(compgen -W '--help --web-help -g --geometry' -- $cur))
     elif [[ "$line" == *"geom interpolatepoint "* ]]; then
-        COMPREPLY=($(compgen -W '--help -g --geometry -p --position' -- $cur))
+        COMPREPLY=($(compgen -W '--help --web-help -g --geometry -p --position' -- $cur))
     elif [[ "$line" == *"geom intersection "* ]]; then
-        COMPREPLY=($(compgen -W '--help -g --geometry -o --otherGeometry' -- $cur))
+        COMPREPLY=($(compgen -W '--help --web-help -g --geometry -o --otherGeometry' -- $cur))
     elif [[ "$line" == *"geom intersects "* ]]; then
-        COMPREPLY=($(compgen -W '--help -g --geometry -o --otherGeometry' -- $cur))
+        COMPREPLY=($(compgen -W '--help --web-help -g --geometry -o --otherGeometry' -- $cur))
     elif [[ "$line" == *"geom isccw "* ]]; then
-        COMPREPLY=($(compgen -W '--help -g --geometry' -- $cur))
+        COMPREPLY=($(compgen -W '--help --web-help -g --geometry' -- $cur))
     elif [[ "$line" == *"geom isclosed "* ]]; then
-        COMPREPLY=($(compgen -W '--help -g --geometry' -- $cur))
+        COMPREPLY=($(compgen -W '--help --web-help -g --geometry' -- $cur))
     elif [[ "$line" == *"geom isempty "* ]]; then
-        COMPREPLY=($(compgen -W '--help -g --geometry' -- $cur))
+        COMPREPLY=($(compgen -W '--help --web-help -g --geometry' -- $cur))
     elif [[ "$line" == *"geom isrectangle "* ]]; then
-        COMPREPLY=($(compgen -W '--help -g --geometry' -- $cur))
+        COMPREPLY=($(compgen -W '--help --web-help -g --geometry' -- $cur))
     elif [[ "$line" == *"geom isring "* ]]; then
-        COMPREPLY=($(compgen -W '--help -g --geometry' -- $cur))
+        COMPREPLY=($(compgen -W '--help --web-help -g --geometry' -- $cur))
     elif [[ "$line" == *"geom issimple "* ]]; then
-        COMPREPLY=($(compgen -W '--help -g --geometry' -- $cur))
+        COMPREPLY=($(compgen -W '--help --web-help -g --geometry' -- $cur))
     elif [[ "$line" == *"geom isvalid "* ]]; then
-        COMPREPLY=($(compgen -W '--help -g --geometry -t --type' -- $cur))
+        COMPREPLY=($(compgen -W '--help --web-help -g --geometry -t --type' -- $cur))
     elif [[ "$line" == *"geom iswithindistance "* ]]; then
-        COMPREPLY=($(compgen -W '--help -d --distance -g --geometry -o --otherGeometry' -- $cur))
+        COMPREPLY=($(compgen -W '--help --web-help -d --distance -g --geometry -o --otherGeometry' -- $cur))
     elif [[ "$line" == *"geom kochsnowflake "* ]]; then
-        COMPREPLY=($(compgen -W '--help -g --geometry -n --number' -- $cur))
+        COMPREPLY=($(compgen -W '--help --web-help -g --geometry -n --number' -- $cur))
     elif [[ "$line" == *"geom linedissolve "* ]]; then
-        COMPREPLY=($(compgen -W '--help -g --geometry' -- $cur))
+        COMPREPLY=($(compgen -W '--help --web-help -g --geometry' -- $cur))
     elif [[ "$line" == *"geom linemerge "* ]]; then
-        COMPREPLY=($(compgen -W '--help -g --geometry' -- $cur))
+        COMPREPLY=($(compgen -W '--help --web-help -g --geometry' -- $cur))
     elif [[ "$line" == *"geom list "* ]]; then
-        COMPREPLY=($(compgen -W '--help -d --description' -- $cur))
+        COMPREPLY=($(compgen -W '--help --web-help -d --description' -- $cur))
     elif [[ "$line" == *"geom locatepoint "* ]]; then
-        COMPREPLY=($(compgen -W '--help -g --geometry -o --otherGeometry' -- $cur))
+        COMPREPLY=($(compgen -W '--help --web-help -g --geometry -o --otherGeometry' -- $cur))
     elif [[ "$line" == *"geom mincircle "* ]]; then
-        COMPREPLY=($(compgen -W '--help -g --geometry' -- $cur))
+        COMPREPLY=($(compgen -W '--help --web-help -g --geometry' -- $cur))
     elif [[ "$line" == *"geom minclearance "* ]]; then
-        COMPREPLY=($(compgen -W '--help -g --geometry' -- $cur))
+        COMPREPLY=($(compgen -W '--help --web-help -g --geometry' -- $cur))
     elif [[ "$line" == *"geom mindiameter "* ]]; then
-        COMPREPLY=($(compgen -W '--help -g --geometry' -- $cur))
+        COMPREPLY=($(compgen -W '--help --web-help -g --geometry' -- $cur))
     elif [[ "$line" == *"geom minrect "* ]]; then
-        COMPREPLY=($(compgen -W '--help -g --geometry' -- $cur))
+        COMPREPLY=($(compgen -W '--help --web-help -g --geometry' -- $cur))
     elif [[ "$line" == *"geom narrow "* ]]; then
-        COMPREPLY=($(compgen -W '--help -g --geometry' -- $cur))
+        COMPREPLY=($(compgen -W '--help --web-help -g --geometry' -- $cur))
     elif [[ "$line" == *"geom nearestpoints "* ]]; then
-        COMPREPLY=($(compgen -W '--help -g --geometry -o --otherGeometry' -- $cur))
+        COMPREPLY=($(compgen -W '--help --web-help -g --geometry -o --otherGeometry' -- $cur))
     elif [[ "$line" == *"geom node "* ]]; then
-        COMPREPLY=($(compgen -W '--help -g --geometry -n --number' -- $cur))
+        COMPREPLY=($(compgen -W '--help --web-help -g --geometry -n --number' -- $cur))
     elif [[ "$line" == *"geom normalize "* ]]; then
-        COMPREPLY=($(compgen -W '--help -g --geometry' -- $cur))
+        COMPREPLY=($(compgen -W '--help --web-help -g --geometry' -- $cur))
     elif [[ "$line" == *"geom octagonalenvelope "* ]]; then
-        COMPREPLY=($(compgen -W '--help -g --geometry' -- $cur))
+        COMPREPLY=($(compgen -W '--help --web-help -g --geometry' -- $cur))
     elif [[ "$line" == *"geom overlaps "* ]]; then
-        COMPREPLY=($(compgen -W '--help -g --geometry -o --otherGeometry' -- $cur))
+        COMPREPLY=($(compgen -W '--help --web-help -g --geometry -o --otherGeometry' -- $cur))
     elif [[ "$line" == *"geom placepoint "* ]]; then
-        COMPREPLY=($(compgen -W '--help -g --geometry -o --otherGeometry' -- $cur))
+        COMPREPLY=($(compgen -W '--help --web-help -g --geometry -o --otherGeometry' -- $cur))
     elif [[ "$line" == *"geom pointatangle "* ]]; then
-        COMPREPLY=($(compgen -W '--help -a --angle -d --distance -g --geometry' -- $cur))
+        COMPREPLY=($(compgen -W '--help --web-help -a --angle -d --distance -g --geometry' -- $cur))
     elif [[ "$line" == *"geom polygonize "* ]]; then
-        COMPREPLY=($(compgen -W '--help -f --full -g --geometry' -- $cur))
+        COMPREPLY=($(compgen -W '--help --web-help -f --full -g --geometry' -- $cur))
     elif [[ "$line" == *"geom project "* ]]; then
-        COMPREPLY=($(compgen -W '--help -g --geometry -s --source -t --target' -- $cur))
+        COMPREPLY=($(compgen -W '--help --web-help -g --geometry -s --source -t --target' -- $cur))
     elif [[ "$line" == *"geom random "* ]]; then
-        COMPREPLY=($(compgen -W '--help -c --constrained -f --gutterFraction -g --geometry -n --number -r --gridded' -- $cur))
+        COMPREPLY=($(compgen -W '--help --web-help -c --constrained -f --gutterFraction -g --geometry -n --number -r --gridded' -- $cur))
     elif [[ "$line" == *"geom randomwalk "* ]]; then
-        COMPREPLY=($(compgen -W '--help -a --angle -d --distance -g --geometry -n --number -p --probability' -- $cur))
+        COMPREPLY=($(compgen -W '--help --web-help -a --angle -d --distance -g --geometry -n --number -p --probability' -- $cur))
     elif [[ "$line" == *"geom rectangle "* ]]; then
-        COMPREPLY=($(compgen -W '--help -c --center -g --geometry -h --height -p --numberOfPoints -r --rotation -w --width' -- $cur))
+        COMPREPLY=($(compgen -W '--help --web-help -c --center -g --geometry -h --height -p --numberOfPoints -r --rotation -w --width' -- $cur))
     elif [[ "$line" == *"geom reduceprecision "* ]]; then
-        COMPREPLY=($(compgen -W '--help -g --geometry -p --pointWise -r --removeCollapsed -s --scale -t --type' -- $cur))
+        COMPREPLY=($(compgen -W '--help --web-help -g --geometry -p --pointWise -r --removeCollapsed -s --scale -t --type' -- $cur))
     elif [[ "$line" == *"geom reflect "* ]]; then
-        COMPREPLY=($(compgen -W '--help -0 --x0 -1 --y0 -2 --x1 -3 --y1 -g --geometry' -- $cur))
+        COMPREPLY=($(compgen -W '--help --web-help -0 --x0 -1 --y0 -2 --x1 -3 --y1 -g --geometry' -- $cur))
     elif [[ "$line" == *"geom relate "* ]]; then
-        COMPREPLY=($(compgen -W '--help -g --geometry -m --matrix -o --otherGeometry' -- $cur))
+        COMPREPLY=($(compgen -W '--help --web-help -g --geometry -m --matrix -o --otherGeometry' -- $cur))
     elif [[ "$line" == *"geom reverse "* ]]; then
-        COMPREPLY=($(compgen -W '--help -g --geometry' -- $cur))
+        COMPREPLY=($(compgen -W '--help --web-help -g --geometry' -- $cur))
     elif [[ "$line" == *"geom rotate "* ]]; then
-        COMPREPLY=($(compgen -W '--help -c --cosine -g --geometry -s --sine -t --theta -x --xCoordinate -y --yCoordinate' -- $cur))
+        COMPREPLY=($(compgen -W '--help --web-help -c --cosine -g --geometry -s --sine -t --theta -x --xCoordinate -y --yCoordinate' -- $cur))
     elif [[ "$line" == *"geom scale "* ]]; then
-        COMPREPLY=($(compgen -W '--help -g --geometry -s --xscale -t --yscale -x --xcoordinate -y --ycoordinate' -- $cur))
+        COMPREPLY=($(compgen -W '--help --web-help -g --geometry -s --xscale -t --yscale -x --xcoordinate -y --ycoordinate' -- $cur))
     elif [[ "$line" == *"geom shear "* ]]; then
-        COMPREPLY=($(compgen -W '--help -g --geometry -x --xDistance -y -yDistance' -- $cur))
+        COMPREPLY=($(compgen -W '--help --web-help -g --geometry -x --xDistance -y -yDistance' -- $cur))
     elif [[ "$line" == *"geom sierpinskicarpet "* ]]; then
-        COMPREPLY=($(compgen -W '--help -g --geometry -n --number' -- $cur))
+        COMPREPLY=($(compgen -W '--help --web-help -g --geometry -n --number' -- $cur))
     elif [[ "$line" == *"geom similarity "* ]]; then
-        COMPREPLY=($(compgen -W '--help -a --algorithm -g --geometry -o --otherGeometry' -- $cur))
+        COMPREPLY=($(compgen -W '--help --web-help -a --algorithm -g --geometry -o --otherGeometry' -- $cur))
     elif [[ "$line" == *"geom simplify "* ]]; then
-        COMPREPLY=($(compgen -W '--help -a --algorithm -d --distance -g --geometry' -- $cur))
+        COMPREPLY=($(compgen -W '--help --web-help -a --algorithm -d --distance -g --geometry' -- $cur))
     elif [[ "$line" == *"geom sinestar "* ]]; then
-        COMPREPLY=($(compgen -W '--help -c --center -g --geometry -h --height -l --armLengthRatio -n --numberOfArms -p --numberOfPoints -r --rotation -w --width' -- $cur))
+        COMPREPLY=($(compgen -W '--help --web-help -c --center -g --geometry -h --height -l --armLengthRatio -n --numberOfArms -p --numberOfPoints -r --rotation -w --width' -- $cur))
     elif [[ "$line" == *"geom slice "* ]]; then
-        COMPREPLY=($(compgen -W '--help -e --end -g --geometry -s --start' -- $cur))
+        COMPREPLY=($(compgen -W '--help --web-help -e --end -g --geometry -s --start' -- $cur))
     elif [[ "$line" == *"geom snap "* ]]; then
-        COMPREPLY=($(compgen -W '--help -d --distance -g --geometry -o --otherGeometry' -- $cur))
+        COMPREPLY=($(compgen -W '--help --web-help -d --distance -g --geometry -o --otherGeometry' -- $cur))
     elif [[ "$line" == *"geom split "* ]]; then
-        COMPREPLY=($(compgen -W '--help -g --geometry -o --otherGeometry' -- $cur))
+        COMPREPLY=($(compgen -W '--help --web-help -g --geometry -o --otherGeometry' -- $cur))
     elif [[ "$line" == *"geom spoke "* ]]; then
-        COMPREPLY=($(compgen -W '--help -g --geometry -o --otherGeometry' -- $cur))
+        COMPREPLY=($(compgen -W '--help --web-help -g --geometry -o --otherGeometry' -- $cur))
     elif [[ "$line" == *"geom squircle "* ]]; then
-        COMPREPLY=($(compgen -W '--help -c --center -g --geometry -h --height -p --numberOfPoints -r --rotation -w --width' -- $cur))
+        COMPREPLY=($(compgen -W '--help --web-help -c --center -g --geometry -h --height -p --numberOfPoints -r --rotation -w --width' -- $cur))
     elif [[ "$line" == *"geom startpoint "* ]]; then
-        COMPREPLY=($(compgen -W '--help -g --geometry' -- $cur))
+        COMPREPLY=($(compgen -W '--help --web-help -g --geometry' -- $cur))
     elif [[ "$line" == *"geom subline "* ]]; then
-        COMPREPLY=($(compgen -W '--help -e -g --geometry -s' -- $cur))
+        COMPREPLY=($(compgen -W '--help --web-help -e -g --geometry -s' -- $cur))
     elif [[ "$line" == *"geom supercircle "* ]]; then
-        COMPREPLY=($(compgen -W '--help -c --center -g --geometry -h --height -o --power -p --numberOfPoints -r --rotation -w --width' -- $cur))
+        COMPREPLY=($(compgen -W '--help --web-help -c --center -g --geometry -h --height -o --power -p --numberOfPoints -r --rotation -w --width' -- $cur))
     elif [[ "$line" == *"geom symdifference "* ]]; then
-        COMPREPLY=($(compgen -W '--help -g --geometry -o --otherGeometry' -- $cur))
+        COMPREPLY=($(compgen -W '--help --web-help -g --geometry -o --otherGeometry' -- $cur))
     elif [[ "$line" == *"geom text "* ]]; then
-        COMPREPLY=($(compgen -W '--help -f --fontName -s --pointSize -t --text' -- $cur))
+        COMPREPLY=($(compgen -W '--help --web-help -f --fontName -s --pointSize -t --text' -- $cur))
     elif [[ "$line" == *"geom touches "* ]]; then
-        COMPREPLY=($(compgen -W '--help -g --geometry -o --otherGeometry' -- $cur))
+        COMPREPLY=($(compgen -W '--help --web-help -g --geometry -o --otherGeometry' -- $cur))
     elif [[ "$line" == *"geom towkb "* ]]; then
-        COMPREPLY=($(compgen -W '--help -b --byte-order -d --dimension -g --geometry' -- $cur))
+        COMPREPLY=($(compgen -W '--help --web-help -b --byte-order -d --dimension -g --geometry' -- $cur))
     elif [[ "$line" == *"geom translate "* ]]; then
-        COMPREPLY=($(compgen -W '--help -g --geometry -x --xDistance -y --yDistance' -- $cur))
+        COMPREPLY=($(compgen -W '--help --web-help -g --geometry -x --xDistance -y --yDistance' -- $cur))
     elif [[ "$line" == *"geom type "* ]]; then
-        COMPREPLY=($(compgen -W '--help -g --geometry' -- $cur))
+        COMPREPLY=($(compgen -W '--help --web-help -g --geometry' -- $cur))
     elif [[ "$line" == *"geom union "* ]]; then
-        COMPREPLY=($(compgen -W '--help -g --geometry -o --otherGeometry' -- $cur))
+        COMPREPLY=($(compgen -W '--help --web-help -g --geometry -o --otherGeometry' -- $cur))
     elif [[ "$line" == *"geom voronoi "* ]]; then
-        COMPREPLY=($(compgen -W '--help -g --geometry' -- $cur))
+        COMPREPLY=($(compgen -W '--help --web-help -g --geometry' -- $cur))
     elif [[ "$line" == *"geom within "* ]]; then
-        COMPREPLY=($(compgen -W '--help -g --geometry -o --otherGeometry' -- $cur))
+        COMPREPLY=($(compgen -W '--help --web-help -g --geometry -o --otherGeometry' -- $cur))
     elif [[ "$line" == *"geom"[[:space:]][[:alpha:]]* ]]; then
         local nm="${line##*geom }"
         if [[ "angle" == "$nm"* ]]; then

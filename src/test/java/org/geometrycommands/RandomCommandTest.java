@@ -101,6 +101,7 @@ public class RandomCommandTest extends BaseTest {
         assertEquals("Geometry must be a Polygon or MultiPolygon!" + NEW_LINE +
                 "Usage: geom <command> <args>" + NEW_LINE +
                 " --help                  : Print help message (default: false)" + NEW_LINE +
+                " --web-help              : Open help in a web browser (default: false)" + NEW_LINE +
                 " -c (--constrained)      : The flag for whether the random points should be" + NEW_LINE +
                 "                           constrained to a circle when gridded. (default:" + NEW_LINE +
                 "                           false)" + NEW_LINE +
