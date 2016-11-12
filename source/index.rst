@@ -8,7 +8,7 @@ Geometry Commands
 
 Geometry Commands is a command line application for processing geometry. It is inspired by the wonderful Java Topology Suite (JTS) library and the Unix Philosophy. 
 
-It contains one command line application (geom) with numerous subcommands (buffer, centroid, envelope) that generally read WKT geometry from standard input and then write WKT geometry to standard output.  This enables several geometry commands to be chained otogether using pipes.::
+It contains one command line application (geom) with numerous subcommands (buffer, centroid, envelope) that generally read WKT geometry from standard input and then write WKT geometry to standard output.  This enables several geometry commands to be chained together using pipes.::
 
     echo "POINT (1 1)" | geom buffer -d 10 | geom envelope
 
