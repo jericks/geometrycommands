@@ -17,6 +17,8 @@ Geometry Commands is open source under the MIT license.  I hope you find it usef
 Command Documentation
 ---------------------
 
+`PDF <pdf/geom.pdf>`_
+
 .. toctree::
    :maxdepth: 2
 
