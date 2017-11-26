@@ -1,7 +1,7 @@
 package org.geometrycommands;
 
-import com.vividsolutions.jts.geom.Geometry;
-import com.vividsolutions.jts.io.WKBReader;
+import org.locationtech.jts.geom.Geometry;
+import org.locationtech.jts.io.WKBReader;
 import org.geometrycommands.FromWkbCommand.FromWkbOptions;
 import org.kohsuke.args4j.Option;
 

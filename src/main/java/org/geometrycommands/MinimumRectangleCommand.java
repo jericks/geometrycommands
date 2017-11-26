@@ -1,8 +1,8 @@
 package org.geometrycommands;
 
 import org.geometrycommands.MinimumRectangleCommand.MinimumRectangleOptions;
-import com.vividsolutions.jts.algorithm.MinimumDiameter;
-import com.vividsolutions.jts.geom.Geometry;
+import org.locationtech.jts.algorithm.MinimumDiameter;
+import org.locationtech.jts.geom.Geometry;
 import java.io.Reader;
 import java.io.Writer;
 

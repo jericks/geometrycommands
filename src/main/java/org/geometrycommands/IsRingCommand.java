@@ -1,8 +1,8 @@
 package org.geometrycommands;
 
 import org.geometrycommands.IsRingCommand.IsRingOptions;
-import com.vividsolutions.jts.geom.Geometry;
-import com.vividsolutions.jts.geom.LineString;
+import org.locationtech.jts.geom.Geometry;
+import org.locationtech.jts.geom.LineString;
 import java.io.Reader;
 import java.io.Writer;
 

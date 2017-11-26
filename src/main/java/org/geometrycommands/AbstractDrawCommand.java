@@ -1,12 +1,12 @@
 package org.geometrycommands;
 
-import com.vividsolutions.jts.awt.PointShapeFactory;
-import com.vividsolutions.jts.awt.PointTransformation;
-import com.vividsolutions.jts.awt.ShapeWriter;
-import com.vividsolutions.jts.geom.Coordinate;
-import com.vividsolutions.jts.geom.Envelope;
-import com.vividsolutions.jts.geom.Geometry;
-import com.vividsolutions.jts.geom.Lineal;
+import org.locationtech.jts.awt.PointShapeFactory;
+import org.locationtech.jts.awt.PointTransformation;
+import org.locationtech.jts.awt.ShapeWriter;
+import org.locationtech.jts.geom.Coordinate;
+import org.locationtech.jts.geom.Envelope;
+import org.locationtech.jts.geom.Geometry;
+import org.locationtech.jts.geom.Lineal;
 import org.geometrycommands.AbstractDrawCommand.DrawOptions;
 import org.kohsuke.args4j.Option;
 

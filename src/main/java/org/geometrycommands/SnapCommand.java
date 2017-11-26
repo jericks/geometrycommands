@@ -1,8 +1,8 @@
 package org.geometrycommands;
 
-import com.vividsolutions.jts.geom.Geometry;
-import com.vividsolutions.jts.geom.GeometryCollection;
-import com.vividsolutions.jts.operation.overlay.snap.GeometrySnapper;
+import org.locationtech.jts.geom.Geometry;
+import org.locationtech.jts.geom.GeometryCollection;
+import org.locationtech.jts.operation.overlay.snap.GeometrySnapper;
 import java.io.Reader;
 import java.io.Writer;
 import org.geometrycommands.SnapCommand.SnapOptions;

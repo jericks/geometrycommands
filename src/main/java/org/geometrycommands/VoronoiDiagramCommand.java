@@ -1,8 +1,8 @@
 package org.geometrycommands;
 
 import org.geometrycommands.VoronoiDiagramCommand.VoronoiDiagramOptions;
-import com.vividsolutions.jts.geom.Geometry;
-import com.vividsolutions.jts.triangulate.VoronoiDiagramBuilder;
+import org.locationtech.jts.geom.Geometry;
+import org.locationtech.jts.triangulate.VoronoiDiagramBuilder;
 import java.io.Reader;
 import java.io.Writer;
 

@@ -1,12 +1,12 @@
 package org.geometrycommands;
 
-import com.vividsolutions.jts.geom.Geometry;
-import com.vividsolutions.jts.simplify.DouglasPeuckerSimplifier;
-import com.vividsolutions.jts.simplify.TopologyPreservingSimplifier;
+import org.locationtech.jts.geom.Geometry;
+import org.locationtech.jts.simplify.DouglasPeuckerSimplifier;
+import org.locationtech.jts.simplify.TopologyPreservingSimplifier;
 import java.io.Reader;
 import java.io.Writer;
 
-import com.vividsolutions.jts.simplify.VWSimplifier;
+import org.locationtech.jts.simplify.VWSimplifier;
 import org.geometrycommands.SimplifyCommand.SimplifyOptions;
 import org.kohsuke.args4j.Option;
 

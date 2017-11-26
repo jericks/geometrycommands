@@ -1,8 +1,8 @@
 package org.geometrycommands;
 
-import com.vividsolutions.jts.geom.Geometry;
-import com.vividsolutions.jts.geom.LineString;
-import com.vividsolutions.jts.io.WKTReader;
+import org.locationtech.jts.geom.Geometry;
+import org.locationtech.jts.geom.LineString;
+import org.locationtech.jts.io.WKTReader;
 import org.geometrycommands.RandomWalkCommand.RandomWalkOptions;
 import java.io.Reader;
 import java.io.StringReader;

@@ -1,7 +1,7 @@
 package org.geometrycommands;
 
-import com.vividsolutions.jts.geom.Geometry;
-import com.vividsolutions.jts.geom.util.AffineTransformation;
+import org.locationtech.jts.geom.Geometry;
+import org.locationtech.jts.geom.util.AffineTransformation;
 import java.io.Reader;
 import java.io.Writer;
 import org.geometrycommands.ShearCommand.ShearOptions;

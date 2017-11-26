@@ -1,8 +1,8 @@
 package org.geometrycommands;
 
-import com.vividsolutions.jts.dissolve.LineDissolver;
+import org.locationtech.jts.dissolve.LineDissolver;
 import org.geometrycommands.LineDissolverCommand.LineDissolverOptions;
-import com.vividsolutions.jts.geom.Geometry;
+import org.locationtech.jts.geom.Geometry;
 import java.io.Reader;
 import java.io.Writer;
 

@@ -1,9 +1,9 @@
 package org.geometrycommands;
 
-import com.vividsolutions.jts.algorithm.match.AreaSimilarityMeasure;
-import com.vividsolutions.jts.algorithm.match.HausdorffSimilarityMeasure;
-import com.vividsolutions.jts.algorithm.match.SimilarityMeasure;
-import com.vividsolutions.jts.geom.Geometry;
+import org.locationtech.jts.algorithm.match.AreaSimilarityMeasure;
+import org.locationtech.jts.algorithm.match.HausdorffSimilarityMeasure;
+import org.locationtech.jts.algorithm.match.SimilarityMeasure;
+import org.locationtech.jts.geom.Geometry;
 import java.io.Reader;
 import java.io.Writer;
 import org.geometrycommands.SimilarityCommand.SimilarityOptions;

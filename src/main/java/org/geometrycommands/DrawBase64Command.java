@@ -1,6 +1,6 @@
 package org.geometrycommands;
 
-import com.vividsolutions.jts.geom.Geometry;
+import org.locationtech.jts.geom.Geometry;
 import org.apache.commons.codec.binary.Base64;
 import org.geometrycommands.DrawBase64Command.DrawOptions;
 import org.kohsuke.args4j.Option;

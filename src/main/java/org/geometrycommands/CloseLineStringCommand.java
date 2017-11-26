@@ -1,6 +1,6 @@
 package org.geometrycommands;
 
-import com.vividsolutions.jts.geom.*;
+import org.locationtech.jts.geom.*;
 
 import java.io.Reader;
 import java.io.Writer;

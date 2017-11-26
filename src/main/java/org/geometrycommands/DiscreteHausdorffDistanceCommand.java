@@ -1,8 +1,8 @@
 package org.geometrycommands;
 
 import org.geometrycommands.DiscreteHausdorffDistanceCommand.DiscreteHausdorffDistanceOptions;
-import com.vividsolutions.jts.algorithm.distance.DiscreteHausdorffDistance;
-import com.vividsolutions.jts.geom.Geometry;
+import org.locationtech.jts.algorithm.distance.DiscreteHausdorffDistance;
+import org.locationtech.jts.geom.Geometry;
 import java.io.Reader;
 import java.io.Writer;
 

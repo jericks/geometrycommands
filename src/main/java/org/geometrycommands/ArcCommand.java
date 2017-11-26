@@ -1,7 +1,7 @@
 package org.geometrycommands;
 
-import com.vividsolutions.jts.geom.Geometry;
-import com.vividsolutions.jts.util.GeometricShapeFactory;
+import org.locationtech.jts.geom.Geometry;
+import org.locationtech.jts.util.GeometricShapeFactory;
 import java.io.Reader;
 import java.io.Writer;
 import org.geometrycommands.ArcCommand.ArcOptions;

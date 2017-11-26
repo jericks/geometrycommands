@@ -1,7 +1,7 @@
 package org.geometrycommands;
 
-import com.vividsolutions.jts.geom.Envelope;
-import com.vividsolutions.jts.geom.Geometry;
+import org.locationtech.jts.geom.Envelope;
+import org.locationtech.jts.geom.Geometry;
 import java.io.Reader;
 import java.io.Writer;
 import org.geometrycommands.EnvelopeCommand.EnvelopeOptions;

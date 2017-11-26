@@ -1,8 +1,8 @@
 package org.geometrycommands;
 
-import com.vividsolutions.jts.awt.FontGlyphReader;
-import com.vividsolutions.jts.geom.Geometry;
-import com.vividsolutions.jts.geom.GeometryFactory;
+import org.locationtech.jts.awt.FontGlyphReader;
+import org.locationtech.jts.geom.Geometry;
+import org.locationtech.jts.geom.GeometryFactory;
 import java.io.Reader;
 import java.io.Writer;
 import org.geometrycommands.TextCommand.TextOptions;

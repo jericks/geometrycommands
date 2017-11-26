@@ -1,6 +1,6 @@
 package org.geometrycommands;
 
-import com.vividsolutions.jts.geom.Geometry;
+import org.locationtech.jts.geom.Geometry;
 import java.awt.image.BufferedImage;
 import java.io.*;
 import javax.imageio.ImageIO;

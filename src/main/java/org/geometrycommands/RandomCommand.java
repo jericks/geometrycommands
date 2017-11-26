@@ -1,9 +1,9 @@
 package org.geometrycommands;
 
-import com.vividsolutions.jts.geom.Geometry;
-import com.vividsolutions.jts.geom.Polygonal;
-import com.vividsolutions.jts.shape.random.RandomPointsBuilder;
-import com.vividsolutions.jts.shape.random.RandomPointsInGridBuilder;
+import org.locationtech.jts.geom.Geometry;
+import org.locationtech.jts.geom.Polygonal;
+import org.locationtech.jts.shape.random.RandomPointsBuilder;
+import org.locationtech.jts.shape.random.RandomPointsInGridBuilder;
 import java.io.Reader;
 import java.io.Writer;
 import org.geometrycommands.RandomCommand.RandomOptions;

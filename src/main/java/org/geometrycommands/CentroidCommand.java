@@ -1,7 +1,7 @@
 package org.geometrycommands;
 
 import org.geometrycommands.CentroidCommand.CentroidOptions;
-import com.vividsolutions.jts.geom.Geometry;
+import org.locationtech.jts.geom.Geometry;
 import java.io.Reader;
 import java.io.Writer;
 

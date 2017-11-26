@@ -1,8 +1,8 @@
 package org.geometrycommands;
 
-import com.vividsolutions.jts.geom.Coordinate;
-import com.vividsolutions.jts.geom.Geometry;
-import com.vividsolutions.jts.util.UniqueCoordinateArrayFilter;
+import org.locationtech.jts.geom.Coordinate;
+import org.locationtech.jts.geom.Geometry;
+import org.locationtech.jts.util.UniqueCoordinateArrayFilter;
 import org.geometrycommands.CoordinatesCommand.CoordinatesOptions;
 import org.kohsuke.args4j.Option;
 

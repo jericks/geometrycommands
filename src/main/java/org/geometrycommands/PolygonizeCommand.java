@@ -1,7 +1,7 @@
 package org.geometrycommands;
 
-import com.vividsolutions.jts.geom.*;
-import com.vividsolutions.jts.operation.polygonize.Polygonizer;
+import org.locationtech.jts.geom.*;
+import org.locationtech.jts.operation.polygonize.Polygonizer;
 import org.kohsuke.args4j.Option;
 import org.geometrycommands.PolygonizeCommand.PolygonizeOptions;
 import java.io.Reader;

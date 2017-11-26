@@ -1,3 +1,6 @@
+.. image:: https://travis-ci.org/jericks/geometrycommands.svg?branch=master
+    :target: https://travis-ci.org/jericks/geometrycommands
+
 Geometry command line library.
 ==============================
 Geometry commands is a command line library for processing geometry that follows the unix philosophy. Each command does one thing well (buffer, centroid, envelope) by reading in a geometry, processing the geometry, and writing the geometry out as WKT.  Individual commands can be connected with unix pipes.  For more information please visit the `web site <http://jericks.github.com/geometrycommands/index.html>`_.
@@ -5,7 +8,7 @@ Geometry commands is a command line library for processing geometry that follows
 Libraries
 ---------
 JTS: 
-    http://tsusiatsoftware.net/jts/javadoc/com/vividsolutions/jts/geom/Geometry.html
+    https://locationtech.github.io/jts/
 Proj4j: 
     http://trac.osgeo.org/proj4j/
 Args4J: 
@@ -98,6 +101,3 @@ Presentations
 License
 -------
 Geometry Commands is open source and licensed under the MIT License.
-
-.. image:: https://travis-ci.org/jericks/geometrycommands.svg?branch=master
-    :target: https://travis-ci.org/jericks/geometrycommands

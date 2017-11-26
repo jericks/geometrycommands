@@ -1,10 +1,10 @@
 package org.geometrycommands;
 
 import org.geometrycommands.LineMergeCommand.LineMergeOptions;
-import com.vividsolutions.jts.geom.Geometry;
-import com.vividsolutions.jts.geom.LineString;
-import com.vividsolutions.jts.geom.MultiLineString;
-import com.vividsolutions.jts.operation.linemerge.LineMerger;
+import org.locationtech.jts.geom.Geometry;
+import org.locationtech.jts.geom.LineString;
+import org.locationtech.jts.geom.MultiLineString;
+import org.locationtech.jts.operation.linemerge.LineMerger;
 import java.io.Reader;
 import java.io.Writer;
 import java.util.Collection;

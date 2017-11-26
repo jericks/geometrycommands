@@ -1,10 +1,10 @@
 package org.geometrycommands;
 
 import org.geometrycommands.SquircleCommand.SquircleOptions;
-import com.vividsolutions.jts.geom.Coordinate;
-import com.vividsolutions.jts.geom.Geometry;
-import com.vividsolutions.jts.geom.Point;
-import com.vividsolutions.jts.util.GeometricShapeFactory;
+import org.locationtech.jts.geom.Coordinate;
+import org.locationtech.jts.geom.Geometry;
+import org.locationtech.jts.geom.Point;
+import org.locationtech.jts.util.GeometricShapeFactory;
 import java.io.Reader;
 import java.io.Writer;
 

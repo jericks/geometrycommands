@@ -1,8 +1,8 @@
 package org.geometrycommands;
 
 import org.geometrycommands.MinimumBoundingCircleCommand.MinimumBoundingCircleOptions;
-import com.vividsolutions.jts.algorithm.MinimumBoundingCircle;
-import com.vividsolutions.jts.geom.Geometry;
+import org.locationtech.jts.algorithm.MinimumBoundingCircle;
+import org.locationtech.jts.geom.Geometry;
 import java.io.Reader;
 import java.io.Writer;
 

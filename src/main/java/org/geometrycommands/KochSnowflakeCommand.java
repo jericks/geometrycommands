@@ -1,8 +1,8 @@
 package org.geometrycommands;
 
-import com.vividsolutions.jts.geom.Geometry;
-import com.vividsolutions.jts.geom.GeometryFactory;
-import com.vividsolutions.jts.shape.fractal.KochSnowflakeBuilder;
+import org.locationtech.jts.geom.Geometry;
+import org.locationtech.jts.geom.GeometryFactory;
+import org.locationtech.jts.shape.fractal.KochSnowflakeBuilder;
 import java.io.Reader;
 import java.io.Writer;
 import org.geometrycommands.KochSnowflakeCommand.KochSnowflakeOptions;

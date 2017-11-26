@@ -1,9 +1,9 @@
 package org.geometrycommands;
 
-import com.vividsolutions.jts.geom.Geometry;
-import com.vividsolutions.jts.geom.LineString;
-import com.vividsolutions.jts.geom.PrecisionModel;
-import com.vividsolutions.jts.noding.snapround.GeometryNoder;
+import org.locationtech.jts.geom.Geometry;
+import org.locationtech.jts.geom.LineString;
+import org.locationtech.jts.geom.PrecisionModel;
+import org.locationtech.jts.noding.snapround.GeometryNoder;
 import java.io.Reader;
 import java.io.Writer;
 import java.util.ArrayList;

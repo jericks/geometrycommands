@@ -1,8 +1,8 @@
 package org.geometrycommands;
 
 import org.geometrycommands.IsCounterClockwiseCommand.IsCounterClockwiseOptions;
-import com.vividsolutions.jts.algorithm.CGAlgorithms;
-import com.vividsolutions.jts.geom.Geometry;
+import org.locationtech.jts.algorithm.CGAlgorithms;
+import org.locationtech.jts.geom.Geometry;
 
 import java.io.Reader;
 import java.io.Writer;

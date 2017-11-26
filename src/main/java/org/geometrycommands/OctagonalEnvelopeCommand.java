@@ -1,8 +1,8 @@
 package org.geometrycommands;
 
 import org.geometrycommands.OctagonalEnvelopeCommand.OctagonalEnvelopeOptions;
-import com.vividsolutions.jts.geom.Geometry;
-import com.vividsolutions.jts.geom.OctagonalEnvelope;
+import org.locationtech.jts.geom.Geometry;
+import org.locationtech.jts.geom.OctagonalEnvelope;
 import java.io.Reader;
 import java.io.Writer;
 
