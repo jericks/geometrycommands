@@ -93,6 +93,18 @@ Geometry Commands depends on the Java Topology Suite (JTS) and Proj4j and uses M
     cd /geometrycommands
     mvn clean install
 
+Build Native App
+----------------
+You can build a native app using Graalvm for MacOS or Linux.  Download `Graalvm <http://www.graalvm.org/downloads/>`_ and export a GRAALVM_HOME variable::
+
+     export GRAALVM_HOME=/Users/you/Applications/graalvm-ce-1.0.0-rc6/Contents/Home
+
+Then you can run::
+
+    ./build.sh
+
+This will create a native geom executable.  Currently, the geom draw command does not work because Java2D is not supported by GraalVM.
+
 Presentations
 -------------
 
