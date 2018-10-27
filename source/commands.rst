@@ -4,6 +4,7 @@ Commands
 .. toctree::
 
     commands/list.rst
+    commands/version.rst
     commands/angle.rst
     commands/arc.rst
     commands/arcpoly.rst
