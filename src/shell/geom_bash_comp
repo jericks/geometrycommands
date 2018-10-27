@@ -5,7 +5,7 @@ _geom()
     local line=${COMP_LINE}
     COMPREPLY=()
     if [[ "$line" == *"geom " ]]; then
-        COMPREPLY=($(compgen -W 'angle arc arcpoly area asciiart boundary buffer centroid closelinestring combine contains convexHull coordinates count countpoints coveredby covers crosses delaunay densify difference dimension disjoint distance distanceline draw drawbase64 dump ellipse endpoint envelope equals fromwkb get grid hausdorffdistance interiorpoint interpolatepoint intersection intersects isccw isclosed isempty isrectangle isring issimple isvalid iswithindistance kochsnowflake linedissolve linemerge list locatepoint mincircle minclearance mindiameter minrect narrow nearestpoints node normalize octagonalenvelope overlaps placepoint pointatangle polygonize project random randomwalk rectangle reduceprecision reflect relate reverse rotate scale shear sierpinskicarpet similarity simplify sinestar slice snap split spoke squircle startpoint subline supercircle symdifference text touches towkb translate type union voronoi within' -- $cur))
+        COMPREPLY=($(compgen -W 'angle arc arcpoly area asciiart boundary buffer centroid closelinestring combine contains convexHull coordinates count countpoints coveredby covers crosses delaunay densify difference dimension disjoint distance distanceline draw drawbase64 dump ellipse endpoint envelope equals fromwkb get grid hausdorffdistance interiorpoint interpolatepoint intersection intersects isccw isclosed isempty isrectangle isring issimple isvalid iswithindistance kochsnowflake linedissolve linemerge list locatepoint mincircle minclearance mindiameter minrect narrow nearestpoints node normalize octagonalenvelope overlaps placepoint pointatangle polygonize project random randomwalk rectangle reduceprecision reflect relate reverse rotate scale shear sierpinskicarpet similarity simplify sinestar slice snap split spoke squircle startpoint subline supercircle symdifference text touches towkb translate type union version voronoi within' -- $cur))
     elif [[ "$line" == *"geom angle "* ]]; then
         COMPREPLY=($(compgen -W '--help --web-help -g --geometry -o --otherGeometry -t --type' -- $cur))
     elif [[ "$line" == *"geom arc "* ]]; then
@@ -198,6 +198,8 @@ _geom()
         COMPREPLY=($(compgen -W '--help --web-help -g --geometry' -- $cur))
     elif [[ "$line" == *"geom union "* ]]; then
         COMPREPLY=($(compgen -W '--help --web-help -g --geometry -o --otherGeometry' -- $cur))
+    elif [[ "$line" == *"geom version "* ]]; then
+        COMPREPLY=($(compgen -W '--help --web-help' -- $cur))
     elif [[ "$line" == *"geom voronoi "* ]]; then
         COMPREPLY=($(compgen -W '--help --web-help -g --geometry' -- $cur))
     elif [[ "$line" == *"geom within "* ]]; then
@@ -491,6 +493,9 @@ _geom()
         fi
         if [[ "union" == "$nm"* ]]; then
             COMPREPLY=("${COMPREPLY[@]}" $(compgen -W 'union'))
+        fi
+        if [[ "version" == "$nm"* ]]; then
+            COMPREPLY=("${COMPREPLY[@]}" $(compgen -W 'version'))
         fi
         if [[ "voronoi" == "$nm"* ]]; then
             COMPREPLY=("${COMPREPLY[@]}" $(compgen -W 'voronoi'))

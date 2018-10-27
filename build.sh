@@ -4,6 +4,7 @@ $GRAALVM_HOME/bin/native-image --verbose \
   -H:ReflectionConfigurationFiles=src/config/config_geom.json \
   -H:ReflectionConfigurationFiles=src/config/config_args4j.json \
   -H:IncludeResources=META-INF/services/*.* \
+  -H:IncludeResources=application.properties \
   -H:IncludeResourceBundles=org.kohsuke.args4j.Messages \
   -H:IncludeResourceBundles=org.kohsuke.args4j.spi.Messages \
   -H:+JNI \
