@@ -18,6 +18,24 @@
     "allDeclaredFields": true
   },
   {
+    "name": "org.geometrycommands.HelpCommand",
+    "allDeclaredConstructors": true,
+    "allPublicConstructors": true,
+    "allDeclaredMethods": true,
+    "allPublicMethods": true,
+    "allPublicFields": true,
+    "allDeclaredFields": true
+  },
+  {
+    "name": "org.geometrycommands.HelpCommand$HelpOptions",
+    "allDeclaredConstructors": true,
+    "allPublicConstructors": true,
+    "allDeclaredMethods": true,
+    "allPublicMethods": true,
+    "allPublicFields": true,
+    "allDeclaredFields": true
+  },
+  {
     "name": "org.geometrycommands.VersionCommand",
     "allDeclaredConstructors": true,
     "allPublicConstructors": true,

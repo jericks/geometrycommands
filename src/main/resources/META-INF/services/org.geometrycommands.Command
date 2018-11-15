@@ -97,3 +97,4 @@ org.geometrycommands.UnionCommand
 org.geometrycommands.VoronoiDiagramCommand
 org.geometrycommands.WithinCommand
 org.geometrycommands.VersionCommand
+org.geometrycommands.HelpCommand
