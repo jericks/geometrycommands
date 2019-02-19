@@ -52,6 +52,8 @@ Commands
     commands/isvalid.rst
     commands/iswithindistance.rst
     commands/kochsnowflake.rst
+    commands/hilbertcurve.rst
+    commands/mortoncurve.rst
     commands/linedissolve.rst
     commands/linemerge.rst
     commands/locatepoint.rst
