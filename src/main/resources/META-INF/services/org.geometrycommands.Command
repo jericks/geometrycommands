@@ -98,3 +98,5 @@ org.geometrycommands.VoronoiDiagramCommand
 org.geometrycommands.WithinCommand
 org.geometrycommands.VersionCommand
 org.geometrycommands.HelpCommand
+org.geometrycommands.HilbertCurveCommand
+org.geometrycommands.MortonCurveCommand
