@@ -5,7 +5,7 @@ _geom()
     local line=${COMP_LINE}
     COMPREPLY=()
     if [[ "$line" == *"geom " ]]; then
-        COMPREPLY=($(compgen -W 'angle arc arcpoly area asciiart boundary buffer centroid closelinestring combine contains convexHull coordinates count countpoints coveredby covers crosses delaunay densify difference dimension disjoint distance distanceline draw drawbase64 dump ellipse endpoint envelope equals fromwkb get grid hausdorffdistance help hilbertcurve interiorpoint interpolatepoint intersection intersects isccw isclosed isempty isrectangle isring issimple isvalid iswithindistance kochsnowflake linedissolve linemerge list locatepoint mincircle minclearance mindiameter minrect mortoncurve narrow nearestpoints node normalize octagonalenvelope overlaps placepoint pointatangle polygonize project random randomwalk rectangle reduceprecision reflect relate reverse rotate scale shear sierpinskicarpet similarity simplify sinestar slice snap split spoke squircle startpoint subline supercircle symdifference text touches towkb translate type union version voronoi within' -- $cur))
+        COMPREPLY=($(compgen -W 'angle arc arcpoly area asciiart boundary buffer centroid closelinestring combine contains convexHull coordinates count countpoints coveredby covers crosses delaunay densify difference dimension disjoint distance distanceline draw drawbase64 dump ellipse endpoint envelope equals fromwkb get grid hausdorffdistance help hilbertcurve interiorpoint interpolatepoint intersection intersects isccw isclosed isempty isrectangle isring issimple isvalid iswithindistance kochsnowflake linedissolve linemerge list locatepoint mincircle minclearance mindiameter minrect mortoncurve narrow nearestpoints node normalize octagonalenvelope overlaps placepoint pointatangle pointsalong polygonize project random randomwalk rectangle reduceprecision reflect relate reverse rotate scale shear sierpinskicarpet similarity simplify sinestar slice snap split spoke squircle startpoint subline supercircle symdifference text touches towkb translate type union version voronoi within' -- $cur))
     elif [[ "$line" == *"geom angle "* ]]; then
         COMPREPLY=($(compgen -W '--help --web-help -g --geometry -o --otherGeometry -t --type' -- $cur))
     elif [[ "$line" == *"geom arc "* ]]; then
@@ -142,6 +142,8 @@ _geom()
         COMPREPLY=($(compgen -W '--help --web-help -g --geometry -o --otherGeometry' -- $cur))
     elif [[ "$line" == *"geom pointatangle "* ]]; then
         COMPREPLY=($(compgen -W '--help --web-help -a --angle -d --distance -g --geometry' -- $cur))
+    elif [[ "$line" == *"geom pointsalong "* ]]; then
+        COMPREPLY=($(compgen -W '--help --web-help -d --distance -g --geometry' -- $cur))
     elif [[ "$line" == *"geom polygonize "* ]]; then
         COMPREPLY=($(compgen -W '--help --web-help -f --full -g --geometry' -- $cur))
     elif [[ "$line" == *"geom project "* ]]; then
@@ -415,6 +417,9 @@ _geom()
         fi
         if [[ "pointatangle" == "$nm"* ]]; then
             COMPREPLY=("${COMPREPLY[@]}" $(compgen -W 'pointatangle'))
+        fi
+        if [[ "pointsalong" == "$nm"* ]]; then
+            COMPREPLY=("${COMPREPLY[@]}" $(compgen -W 'pointsalong'))
         fi
         if [[ "polygonize" == "$nm"* ]]; then
             COMPREPLY=("${COMPREPLY[@]}" $(compgen -W 'polygonize'))
