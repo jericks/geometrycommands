@@ -105,4 +105,5 @@ Commands
     commands/union.rst
     commands/voronoi.rst
     commands/within.rst
+    commands/pointsalong.rst
 

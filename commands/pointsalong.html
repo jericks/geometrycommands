@@ -7,7 +7,7 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>symdifference &mdash; Geometry Commands 0.6 documentation</title>
+  <title>pointsalong &mdash; Geometry Commands 0.6 documentation</title>
   
 
   
@@ -30,8 +30,7 @@
   
     <link rel="top" title="Geometry Commands 0.6 documentation" href="../index.html"/>
         <link rel="up" title="Commands" href="../commands.html"/>
-        <link rel="next" title="text" href="text.html"/>
-        <link rel="prev" title="supercircle" href="supercircle.html"/> 
+        <link rel="prev" title="within" href="within.html"/> 
 
   
   <script src="https://cdnjs.cloudflare.com/ajax/libs/modernizr/2.6.2/modernizr.min.js"></script>
@@ -156,7 +155,7 @@
 <li class="toctree-l2"><a class="reference internal" href="squircle.html">squircle</a></li>
 <li class="toctree-l2"><a class="reference internal" href="subline.html">subline</a></li>
 <li class="toctree-l2"><a class="reference internal" href="supercircle.html">supercircle</a></li>
-<li class="toctree-l2 current"><a class="current reference internal" href="">symdifference</a></li>
+<li class="toctree-l2"><a class="reference internal" href="symdifference.html">symdifference</a></li>
 <li class="toctree-l2"><a class="reference internal" href="text.html">text</a></li>
 <li class="toctree-l2"><a class="reference internal" href="touches.html">touches</a></li>
 <li class="toctree-l2"><a class="reference internal" href="towkb.html">towkb</a></li>
@@ -164,7 +163,7 @@
 <li class="toctree-l2"><a class="reference internal" href="union.html">union</a></li>
 <li class="toctree-l2"><a class="reference internal" href="voronoi.html">voronoi</a></li>
 <li class="toctree-l2"><a class="reference internal" href="within.html">within</a></li>
-<li class="toctree-l2"><a class="reference internal" href="pointsalong.html">pointsalong</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="">pointsalong</a></li>
 </ul>
 </li>
 </ul>
@@ -192,10 +191,10 @@
       
           <li><a href="../commands.html">Commands</a> &raquo;</li>
       
-    <li>symdifference</li>
+    <li>pointsalong</li>
       <li class="wy-breadcrumbs-aside">
         
-          <a href="../_sources/commands/symdifference.txt" rel="nofollow"> View page source</a>
+          <a href="../_sources/commands/pointsalong.txt" rel="nofollow"> View page source</a>
         
       </li>
   </ul>
@@ -203,23 +202,23 @@
 </div>
           <div role="main">
             
-  <div class="section" id="symdifference">
-<h1>symdifference<a class="headerlink" href="#symdifference" title="Permalink to this headline">¶</a></h1>
+  <div class="section" id="pointsalong">
+<h1>pointsalong<a class="headerlink" href="#pointsalong" title="Permalink to this headline">¶</a></h1>
 <p><strong>Name</strong>:</p>
-<p>geom symdifference</p>
+<p>geom pointsalong</p>
 <p><strong>Description</strong>:</p>
-<p>Calculate the symetric difference between two geometries</p>
+<p>Place points along a line</p>
 <p><strong>Arguments</strong>:</p>
 <blockquote>
 <div><ul class="simple">
-<li>-o &#8211;otherGeometry: The other geometry</li>
+<li>-d &#8211;distance: The distance between points</li>
 <li>-g &#8211;geometry: The input geometry</li>
 <li>&#8211;help : Print help message</li>
 <li>&#8211;web-help : Open help in a web browser</li>
 </ul>
 </div></blockquote>
 <p><strong>Example</strong>:</p>
-<div class="highlight-python"><div class="highlight"><pre>geom symdifference -g &quot;POLYGON ((0 0, 0 10, 10 10, 10 0, 0 0))&quot; -o &quot;POLYGON ((5 5, 5 20, 20 20, 20 5, 5 5))&quot;
+<div class="highlight-python"><div class="highlight"><pre>geom pointsalong -g &quot;LINESTRING (0 0, 10 10)&quot; -d 1
 </pre></div>
 </div>
 </div>
@@ -230,10 +229,8 @@
   
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
       
-        <a href="text.html" class="btn btn-neutral float-right" title="text"/>Next <span class="fa fa-arrow-circle-right"></span></a>
       
-      
-        <a href="supercircle.html" class="btn btn-neutral" title="supercircle"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+        <a href="within.html" class="btn btn-neutral" title="within"><span class="fa fa-arrow-circle-left"></span> Previous</a>
       
     </div>
   
