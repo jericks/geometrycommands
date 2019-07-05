@@ -24,3 +24,7 @@ Place points along a line
 **Example**::
 
     geom pointsalong -g "LINESTRING (0 0, 10 10)" -d 1
+
+.. image:: pointsalong.png
+
+
