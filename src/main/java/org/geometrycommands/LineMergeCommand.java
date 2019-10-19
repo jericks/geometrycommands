@@ -30,7 +30,7 @@ public class LineMergeCommand extends GeometryCommand<LineMergeOptions> {
      */
     @Override
     public String getDescription() {
-        return "Merge lines of the input geoemtry together.";
+        return "Merge lines of the input geometry together.";
     }
 
     /**

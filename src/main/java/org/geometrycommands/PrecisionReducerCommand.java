@@ -66,9 +66,9 @@ public class PrecisionReducerCommand extends GeometryCommand<PrecisionReducerOpt
         GeometryPrecisionReducer reducer = new GeometryPrecisionReducer(precisionModel);
         reducer.setPointwise(options.isPointwise());
         reducer.setRemoveCollapsedComponents(options.isRemoveCollapsed());
-        Geometry reducedGeoemtry = reducer.reduce(geometry);
+        Geometry reducedGeometry = reducer.reduce(geometry);
 
-        writer.write(writeGeometry(reducedGeoemtry, options));
+        writer.write(writeGeometry(reducedGeometry, options));
     }
 
     /**
