@@ -7,7 +7,7 @@ geom linemerge
 
 **Description**:
 
-Merge lines of the input geoemtry together.
+Merge lines of the input geometry together.
 
 **Arguments**:
 
