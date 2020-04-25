@@ -2,3 +2,5 @@
 /.idea/
 geometrycommands.iml
 dependency-reduced-pom.xml
+src/website/build
+src/website/source/commands/*.rst

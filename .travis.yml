@@ -1,6 +1,20 @@
-dist: trusty
-
+dist: bionic
 language: java
-
-jdk:
-    - oraclejdk8
+jdk: openjdk8
+before_install:
+    - sudo apt-key adv --keyserver keyserver.ubuntu.com --recv-keys 762E3157
+    - sudo apt-get update
+    - sudo apt-get install python3
+    - sudo apt-get install python3-pip
+script:
+    - pip3 install --upgrade -r src/website/requirements.txt
+    - ./mvnw clean install -P website
+    - touch src/website/build/html/.nojekyll
+deploy:
+    provider: pages
+    skip_cleanup: true
+    github_token: $GEOM_GITHUB_OAUTH_TOKEN
+    keep-history: true
+    on:
+        branch: master
+    local_dir: src/website/build/html
