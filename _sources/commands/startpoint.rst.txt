@@ -1,0 +1,25 @@
+startpoint
+==========
+
+**Name**:
+
+geom startpoint
+
+**Description**:
+
+geom Get the start point of a LineString or MultiLineString.
+
+**Arguments**:
+
+   * -g --geometry: The input geometry
+
+   * --help: Print help message
+
+   * --web-help: Open help in a web browser
+
+
+
+**Example**::
+
+    geom startpoint -g "LINESTRING (1 1, 5 5, 10 10)"
+

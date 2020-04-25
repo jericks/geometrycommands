@@ -1,0 +1,27 @@
+isvalid
+=======
+
+**Name**:
+
+geom isvalid
+
+**Description**:
+
+geom Determine if the input geometry is valid or not.
+
+**Arguments**:
+
+   * -t --type: The flag to show the validation error message, the error location, or validity (msg, loc, or val)
+
+   * -g --geometry: The input geometry
+
+   * --help: Print help message
+
+   * --web-help: Open help in a web browser
+
+
+
+**Example**::
+
+    geom isvalid -g "POLYGON ((0 0, 0 10, 10 10, 10 0, 0 0))"
+

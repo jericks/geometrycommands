@@ -1,0 +1,55 @@
+drawbase64
+==========
+
+**Name**:
+
+geom drawbase64
+
+**Description**:
+
+geom Draw the input geometry to a base 64 encoded string.
+
+**Arguments**:
+
+   * -y --type: The image type (png or jpeg)
+
+   * -p --prefix: The flag to include the prefix (data:image/png;base64,) or not
+
+   * -w --width: The image width
+
+   * -h --height: The image height
+
+   * -b --background: The background color
+
+   * -i --backgroundImage: The background image url or file
+
+   * -s --stroke: The stroke Color
+
+   * -t --strokeOpacity: The stroke opacity
+
+   * -r --strokeWidth: The stroke width
+
+   * -l --fill: The fill Color
+
+   * -o --fillOpacity: The fill opacity
+
+   * -m --shape: The marker shape (circle, square, ect..)
+
+   * -z --size: The marker size
+
+   * -c --drawCoords: The flag for drawing coordinates or not
+
+   * -e --envelope: The geographical bounds (minx, miny, maxx, maxy)
+
+   * -g --geometry: The input geometry
+
+   * --help: Print help message
+
+   * --web-help: Open help in a web browser
+
+
+
+**Example**::
+
+    geom drawbase64 -g "POLYGON ((5 5, 5 15, 15 15, 15 5, 5 5))"
+

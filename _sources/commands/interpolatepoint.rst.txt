@@ -1,0 +1,27 @@
+interpolatepoint
+================
+
+**Name**:
+
+geom interpolatepoint
+
+**Description**:
+
+geom Interpolate the location of a point on the input linear geometry given a percentage position.
+
+**Arguments**:
+
+   * -p --position: The position between 0 and 1
+
+   * -g --geometry: The input geometry
+
+   * --help: Print help message
+
+   * --web-help: Open help in a web browser
+
+
+
+**Example**::
+
+    geom interpolatepoint -g "LINESTRING (0 0, 5 5, 10 10)" -p 0.25
+

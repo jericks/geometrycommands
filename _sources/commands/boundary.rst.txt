@@ -1,0 +1,26 @@
+boundary
+========
+
+**Name**:
+
+geom boundary
+
+**Description**:
+
+geom Calculate the boundary of a Geometry.
+
+**Arguments**:
+
+   * -g --geometry: The input geometry
+
+   * --help: Print help message
+
+   * --web-help: Open help in a web browser
+
+
+
+**Example**::
+
+    geom boundary -g "POLYGON ((1 1, 1 10, 10 10, 10 1, 1 1))"
+
+.. image:: boundary.png

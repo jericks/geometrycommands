@@ -1,0 +1,27 @@
+polygonize
+==========
+
+**Name**:
+
+geom polygonize
+
+**Description**:
+
+geom Creates polygons from lines.
+
+**Arguments**:
+
+   * -f --full: Whether to include a full report (polygons, cutEdges, dangles, and invalidRingLines)
+
+   * -g --geometry: The input geometry
+
+   * --help: Print help message
+
+   * --web-help: Open help in a web browser
+
+
+
+**Example**::
+
+    geom polygonize -g "MULTILINESTRING ((-5.5 45, -4.5 46.5), (-4.5 46.5, 1 52), (1 52, 2.5 54), (-1 54, 1 52), (1 52, 5.5 48.5), (5.5 48.5, 9 46), (0.5 42.5, 2 44), (2 44, 5.5 48.5), (5.5 48.5, 7 50.5), (-6 47, -4.5 46.5), (-4.5 46.5, 2 44), (2 44, 4.5 43))"
+

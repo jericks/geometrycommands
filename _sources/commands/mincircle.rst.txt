@@ -1,0 +1,26 @@
+mincircle
+=========
+
+**Name**:
+
+geom mincircle
+
+**Description**:
+
+geom Calculate the minimum bounding circle of the input geometry.
+
+**Arguments**:
+
+   * -g --geometry: The input geometry
+
+   * --help: Print help message
+
+   * --web-help: Open help in a web browser
+
+
+
+**Example**::
+
+    geom mincircle -g "POLYGON ((0 0, 0 10, 10 10, 10 0, 0 0))"
+
+.. image:: mincircle.png

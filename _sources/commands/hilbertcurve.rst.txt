@@ -1,0 +1,28 @@
+hilbertcurve
+============
+
+**Name**:
+
+geom hilbertcurve
+
+**Description**:
+
+geom Create a hilbert curve.
+
+**Arguments**:
+
+   * -n --number: The number of points.
+
+   * -g --geometry: The input geometry
+
+   * --help: Print help message
+
+   * --web-help: Open help in a web browser
+
+
+
+**Example**::
+
+    geom hilbertcurve -g "POLYGON ((0 0, 0 10, 10 10, 10 0, 0 0))" -n 18
+
+.. image:: hilbertcurve.png

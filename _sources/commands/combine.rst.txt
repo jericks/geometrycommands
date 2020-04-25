@@ -1,0 +1,24 @@
+combine
+=======
+
+**Name**:
+
+geom combine
+
+**Description**:
+
+geom Combine geometries on separate lines to create a GeometryCollection.
+
+**Arguments**:
+
+   * --help: Print help message
+
+   * --web-help: Open help in a web browser
+
+
+
+**Example**::
+
+    echo -e "POINT(1 1)
+POINT(2 2)" | geom combine
+

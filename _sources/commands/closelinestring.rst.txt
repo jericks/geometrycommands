@@ -1,0 +1,25 @@
+closelinestring
+===============
+
+**Name**:
+
+geom closelinestring
+
+**Description**:
+
+geom Close an open LineString.
+
+**Arguments**:
+
+   * -g --geometry: The input geometry
+
+   * --help: Print help message
+
+   * --web-help: Open help in a web browser
+
+
+
+**Example**::
+
+    geom closelinestring -g "LINESTRING (0 0, 4 0, 4 4, 0 4)"
+

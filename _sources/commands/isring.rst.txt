@@ -1,0 +1,25 @@
+isring
+======
+
+**Name**:
+
+geom isring
+
+**Description**:
+
+geom Determine if the input geometry is a ring or not.
+
+**Arguments**:
+
+   * -g --geometry: The input geometry
+
+   * --help: Print help message
+
+   * --web-help: Open help in a web browser
+
+
+
+**Example**::
+
+    geom isring -g "LINESTRING (1 1, 1 5, 5 5, 5 1, 1 1)"
+

@@ -1,0 +1,27 @@
+crosses
+=======
+
+**Name**:
+
+geom crosses
+
+**Description**:
+
+geom Determine whether the first geometry crosses the other geometry.
+
+**Arguments**:
+
+   * -o --otherGeometry: The other geometry
+
+   * -g --geometry: The input geometry
+
+   * --help: Print help message
+
+   * --web-help: Open help in a web browser
+
+
+
+**Example**::
+
+    geom crosses -g "LINESTRING (1 1, 10 10)" -o "LINESTRING (1 10, 10 1)"
+
