@@ -106,4 +106,5 @@ Commands
     commands/voronoi.rst
     commands/within.rst
     commands/pointsalong.rst
+    commands/largestemptycircle.rst
 

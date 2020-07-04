@@ -101,3 +101,4 @@ org.geometrycommands.HelpCommand
 org.geometrycommands.HilbertCurveCommand
 org.geometrycommands.MortonCurveCommand
 org.geometrycommands.PointsAlongLineCommand
+org.geometrycommands.LargestEmptyCircleCommand
