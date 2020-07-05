@@ -107,4 +107,5 @@ Commands
     commands/within.rst
     commands/pointsalong.rst
     commands/largestemptycircle.rst
+    commands/maximuminscribedcircle.rst
 
