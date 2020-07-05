@@ -8,7 +8,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>split &mdash; geom 0.7.0 documentation</title>
+  <title>largestemptycircle &mdash; geom 0.7.0 documentation</title>
   
 
   
@@ -35,8 +35,7 @@
   <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="spoke" href="spoke.html" />
-    <link rel="prev" title="slice" href="slice.html" /> 
+    <link rel="prev" title="pointsalong" href="pointsalong.html" /> 
 </head>
 
 <body class="wy-body-for-nav">
@@ -172,7 +171,7 @@
 <li class="toctree-l2"><a class="reference internal" href="simplify.html">simplify</a></li>
 <li class="toctree-l2"><a class="reference internal" href="sinestar.html">sinestar</a></li>
 <li class="toctree-l2"><a class="reference internal" href="slice.html">slice</a></li>
-<li class="toctree-l2 current"><a class="current reference internal" href="#">split</a></li>
+<li class="toctree-l2"><a class="reference internal" href="split.html">split</a></li>
 <li class="toctree-l2"><a class="reference internal" href="spoke.html">spoke</a></li>
 <li class="toctree-l2"><a class="reference internal" href="snap.html">snap</a></li>
 <li class="toctree-l2"><a class="reference internal" href="squircle.html">squircle</a></li>
@@ -187,7 +186,7 @@
 <li class="toctree-l2"><a class="reference internal" href="voronoi.html">voronoi</a></li>
 <li class="toctree-l2"><a class="reference internal" href="within.html">within</a></li>
 <li class="toctree-l2"><a class="reference internal" href="pointsalong.html">pointsalong</a></li>
-<li class="toctree-l2"><a class="reference internal" href="largestemptycircle.html">largestemptycircle</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">largestemptycircle</a></li>
 </ul>
 </li>
 </ul>
@@ -237,13 +236,13 @@
         
           <li><a href="../commands.html">Commands</a> &raquo;</li>
         
-      <li>split</li>
+      <li>largestemptycircle</li>
     
     
       <li class="wy-breadcrumbs-aside">
         
             
-            <a href="../_sources/commands/split.rst.txt" rel="nofollow"> View page source</a>
+            <a href="../_sources/commands/largestemptycircle.rst.txt" rel="nofollow"> View page source</a>
           
         
       </li>
@@ -256,23 +255,23 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
            <div itemprop="articleBody">
             
-  <div class="section" id="split">
-<h1>split<a class="headerlink" href="#split" title="Permalink to this headline">¶</a></h1>
+  <div class="section" id="largestemptycircle">
+<h1>largestemptycircle<a class="headerlink" href="#largestemptycircle" title="Permalink to this headline">¶</a></h1>
 <p><strong>Name</strong>:</p>
-<p>geom split</p>
+<p>geom largestemptycircle</p>
 <p><strong>Description</strong>:</p>
-<p>geom Split a Geometry by another Geometry</p>
+<p>geom Calculate the largest empty circle.</p>
 <p><strong>Arguments</strong>:</p>
 <blockquote>
 <div><ul class="simple">
-<li><p>-o –otherGeometry: The other geometry</p></li>
+<li><p>-t –tolerance: The tolerance</p></li>
 <li><p>-g –geometry: The input geometry</p></li>
 <li><p>–help: Print help message</p></li>
 <li><p>–web-help: Open help in a web browser</p></li>
 </ul>
 </div></blockquote>
 <p><strong>Example</strong>:</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">geom</span> <span class="n">split</span> <span class="o">-</span><span class="n">g</span> <span class="s2">&quot;POLYGON ((0 0, 0 10, 10 10, 10 0, 0 0))&quot;</span> <span class="o">-</span><span class="n">o</span> <span class="s2">&quot;LINESTRING (0 0, 10 10)&quot;</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">geom</span> <span class="n">largestemptycircle</span> <span class="o">-</span><span class="n">g</span> <span class="s2">&quot;MULTIPOINT ((-122.3935317993164 47.57571508225466),(-122.38838195800781 47.57444120741259),(-122.39061355590819 47.5823155737249))&quot;</span>
 </pre></div>
 </div>
 </div>
@@ -285,10 +284,8 @@
   
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
       
-        <a href="spoke.html" class="btn btn-neutral float-right" title="spoke" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
       
-      
-        <a href="slice.html" class="btn btn-neutral float-left" title="slice" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+        <a href="pointsalong.html" class="btn btn-neutral float-left" title="pointsalong" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
       
     </div>
   

@@ -1,0 +1,27 @@
+largestemptycircle
+==================
+
+**Name**:
+
+geom largestemptycircle
+
+**Description**:
+
+geom Calculate the largest empty circle.
+
+**Arguments**:
+
+   * -t --tolerance: The tolerance
+
+   * -g --geometry: The input geometry
+
+   * --help: Print help message
+
+   * --web-help: Open help in a web browser
+
+
+
+**Example**::
+
+    geom largestemptycircle -g "MULTIPOINT ((-122.3935317993164 47.57571508225466),(-122.38838195800781 47.57444120741259),(-122.39061355590819 47.5823155737249))"
+
