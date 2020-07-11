@@ -108,4 +108,5 @@ Commands
     commands/pointsalong.rst
     commands/largestemptycircle.rst
     commands/maximuminscribedcircle.rst
+    commands/variablebuffer.rst
 
