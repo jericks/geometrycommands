@@ -32,7 +32,7 @@ release = '0.7.0'
 # ones.
 extensions = ["rst2pdf.pdfbuilder"]
 
-pdf_documents = [('index',u'geom',u'geoc',u'Jared Erickson'),]
+pdf_documents = [('index',u'geom',u'geom',u'Jared Erickson'),]
 
 # Add any paths that contain templates here, relative to this directory.
 templates_path = ['_templates']
