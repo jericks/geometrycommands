@@ -1,0 +1,25 @@
+pipe
+====
+
+**Name**:
+
+geom pipe
+
+**Description**:
+
+geom Combine multiple commands together with a pipe.
+
+**Arguments**:
+
+   * -c --commands: Commands separate by pipe
+
+   * --help: Print help message
+
+   * --web-help: Open help in a web browser
+
+
+
+**Example**::
+
+    geom pipe -c "buffer -g 'POINT(1 1)' -d 10 | centroid"
+

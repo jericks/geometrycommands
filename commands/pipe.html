@@ -8,7 +8,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>isempty &mdash; geom 0.8.0 documentation</title>
+  <title>pipe &mdash; geom 0.8.0 documentation</title>
   
 
   
@@ -35,8 +35,7 @@
   <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="isrectangle" href="isrectangle.html" />
-    <link rel="prev" title="isclosed" href="isclosed.html" /> 
+    <link rel="prev" title="variablebuffer" href="variablebuffer.html" /> 
 </head>
 
 <body class="wy-body-for-nav">
@@ -126,7 +125,7 @@
 <li class="toctree-l2"><a class="reference internal" href="intersects.html">intersects</a></li>
 <li class="toctree-l2"><a class="reference internal" href="isccw.html">isccw</a></li>
 <li class="toctree-l2"><a class="reference internal" href="isclosed.html">isclosed</a></li>
-<li class="toctree-l2 current"><a class="current reference internal" href="#">isempty</a></li>
+<li class="toctree-l2"><a class="reference internal" href="isempty.html">isempty</a></li>
 <li class="toctree-l2"><a class="reference internal" href="isrectangle.html">isrectangle</a></li>
 <li class="toctree-l2"><a class="reference internal" href="isring.html">isring</a></li>
 <li class="toctree-l2"><a class="reference internal" href="issimple.html">issimple</a></li>
@@ -190,7 +189,7 @@
 <li class="toctree-l2"><a class="reference internal" href="largestemptycircle.html">largestemptycircle</a></li>
 <li class="toctree-l2"><a class="reference internal" href="maximuminscribedcircle.html">maximuminscribedcircle</a></li>
 <li class="toctree-l2"><a class="reference internal" href="variablebuffer.html">variablebuffer</a></li>
-<li class="toctree-l2"><a class="reference internal" href="pipe.html">pipe</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">pipe</a></li>
 </ul>
 </li>
 </ul>
@@ -240,13 +239,13 @@
         
           <li><a href="../commands.html">Commands</a> &raquo;</li>
         
-      <li>isempty</li>
+      <li>pipe</li>
     
     
       <li class="wy-breadcrumbs-aside">
         
             
-            <a href="../_sources/commands/isempty.rst.txt" rel="nofollow"> View page source</a>
+            <a href="../_sources/commands/pipe.rst.txt" rel="nofollow"> View page source</a>
           
         
       </li>
@@ -259,22 +258,22 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
            <div itemprop="articleBody">
             
-  <div class="section" id="isempty">
-<h1>isempty<a class="headerlink" href="#isempty" title="Permalink to this headline">¶</a></h1>
+  <div class="section" id="pipe">
+<h1>pipe<a class="headerlink" href="#pipe" title="Permalink to this headline">¶</a></h1>
 <p><strong>Name</strong>:</p>
-<p>geom isempty</p>
+<p>geom pipe</p>
 <p><strong>Description</strong>:</p>
-<p>geom Determine if the input geometry is empty or not.</p>
+<p>geom Combine multiple commands together with a pipe.</p>
 <p><strong>Arguments</strong>:</p>
 <blockquote>
 <div><ul class="simple">
-<li><p>-g –geometry: The input geometry</p></li>
+<li><p>-c –commands: Commands separate by pipe</p></li>
 <li><p>–help: Print help message</p></li>
 <li><p>–web-help: Open help in a web browser</p></li>
 </ul>
 </div></blockquote>
 <p><strong>Example</strong>:</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">geom</span> <span class="n">isempty</span> <span class="o">-</span><span class="n">g</span> <span class="s2">&quot;POINT EMPTY&quot;</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">geom</span> <span class="n">pipe</span> <span class="o">-</span><span class="n">c</span> <span class="s2">&quot;buffer -g &#39;POINT(1 1)&#39; -d 10 | centroid&quot;</span>
 </pre></div>
 </div>
 </div>
@@ -287,10 +286,8 @@
   
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
       
-        <a href="isrectangle.html" class="btn btn-neutral float-right" title="isrectangle" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
       
-      
-        <a href="isclosed.html" class="btn btn-neutral float-left" title="isclosed" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+        <a href="variablebuffer.html" class="btn btn-neutral float-left" title="variablebuffer" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
       
     </div>
   
