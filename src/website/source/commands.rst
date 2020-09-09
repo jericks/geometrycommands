@@ -109,4 +109,5 @@ Commands
     commands/largestemptycircle.rst
     commands/maximuminscribedcircle.rst
     commands/variablebuffer.rst
+    commands/pipe.rst
 
