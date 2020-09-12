@@ -50,17 +50,6 @@ public class PipeCommand implements Command<PipeOptions> {
         writer.write("\n");
     }
 
-    public static void main(String[] args) throws Exception {
-        PipeCommand cmd = new PipeCommand();
-        PipeOptions options = new PipeOptions();
-        options.setCommands("buffer -d 5 -g \"POINT(1 1)\" | centroid");//
-
-        StringReader reader = new StringReader("");
-        StringWriter writer = new StringWriter();
-        cmd.execute(options, reader, writer);
-        System.out.println(writer.toString());
-    }
-
     /**
      * From Ant
      */
