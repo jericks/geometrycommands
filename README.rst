@@ -1,6 +1,9 @@
 .. image:: https://travis-ci.org/jericks/geometrycommands.svg?branch=master
     :target: https://travis-ci.org/jericks/geometrycommands
 
+.. image:: https://github.com/jericks/geometrycommands/workflows/Maven%20Build/badge.svg
+    :target: https://github.com/jericks/geometrycommands/actions
+
 Geometry command line library.
 ==============================
 Geometry commands is a command line library for processing geometry that follows the unix philosophy. Each command does one thing well (buffer, centroid, envelope) by reading in a geometry, processing the geometry, and writing the geometry out as WKT.  Individual commands can be connected with unix pipes.  For more information please visit the `web site <http://jericks.github.com/geometrycommands/index.html>`_.
