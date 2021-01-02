@@ -154,7 +154,22 @@
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">geom</span> <span class="nb">list</span>
 </pre></div>
 </div>
+<p>Get help for a command:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">geom</span> <span class="n">buffer</span> <span class="o">--</span><span class="n">help</span>
+<span class="n">geom</span> <span class="n">buffer</span><span class="p">:</span> <span class="n">Buffer</span> <span class="n">a</span> <span class="n">geometry</span> <span class="n">by</span> <span class="n">a</span> <span class="n">distance</span><span class="o">.</span>
+<span class="o">--</span><span class="n">help</span>                    <span class="p">:</span> <span class="n">Print</span> <span class="n">help</span> <span class="n">message</span>
+<span class="o">-</span><span class="n">c</span> <span class="p">(</span><span class="o">--</span><span class="n">endCapStyle</span><span class="p">)</span> <span class="n">VAL</span>    <span class="p">:</span> <span class="n">The</span> <span class="n">end</span> <span class="n">cap</span> <span class="n">style</span> <span class="p">(</span><span class="nb">round</span><span class="p">,</span> <span class="n">flat</span><span class="o">/</span><span class="n">butt</span><span class="p">,</span> <span class="n">square</span><span class="p">)</span>
+<span class="o">-</span><span class="n">d</span> <span class="p">(</span><span class="o">--</span><span class="n">distance</span><span class="p">)</span> <span class="n">N</span>         <span class="p">:</span> <span class="n">The</span> <span class="n">buffer</span> <span class="n">distance</span>
+<span class="o">-</span><span class="n">g</span> <span class="p">(</span><span class="o">--</span><span class="n">geometry</span><span class="p">)</span> <span class="n">VAL</span>       <span class="p">:</span> <span class="n">The</span> <span class="nb">input</span> <span class="n">geometry</span>
+<span class="o">-</span><span class="n">q</span> <span class="p">(</span><span class="o">--</span><span class="n">quadrantSegments</span><span class="p">)</span> <span class="n">N</span> <span class="p">:</span> <span class="n">The</span> <span class="n">number</span> <span class="n">of</span> <span class="n">quadrant</span> <span class="n">segments</span>
+<span class="o">-</span><span class="n">s</span> <span class="p">(</span><span class="o">--</span><span class="n">singleSided</span><span class="p">)</span>        <span class="p">:</span> <span class="n">The</span> <span class="n">flag</span> <span class="k">for</span> <span class="n">whether</span> <span class="n">the</span> <span class="n">buffer</span> <span class="n">should</span> <span class="n">be</span> <span class="n">single</span> <span class="n">sided</span>
+</pre></div>
+</div>
 <p>Buffer a geometry:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">echo</span> <span class="s2">&quot;POINT (1 1)&quot;</span> <span class="o">|</span> <span class="n">geom</span> <span class="n">buffer</span> <span class="o">-</span><span class="n">g</span> <span class="s2">&quot;POINT(1 1)&quot;</span> <span class="o">-</span><span class="n">d</span> <span class="mi">10</span>
+</pre></div>
+</div>
+<p>Or buffer a geometry by piping in text:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">echo</span> <span class="s2">&quot;POINT (1 1)&quot;</span> <span class="o">|</span> <span class="n">geom</span> <span class="n">buffer</span> <span class="o">-</span><span class="n">d</span> <span class="mi">10</span>
 </pre></div>
 </div>
