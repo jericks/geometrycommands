@@ -25,3 +25,14 @@ jobs:
         with:
           name: geom.jar
           path: target/geom-*.jar
+      - name: Sphinx build
+        uses: ammaraskar/sphinx-action@0.4
+        with:
+          docs-folder: "src/website"
+      - name: Deploy website
+        uses: JamesIves/github-pages-deploy-action@3.7.1
+        with:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          BRANCH: gh-pages
+          FOLDER: src/website/build/html
+          CLEAN: false

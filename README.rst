@@ -1,6 +1,3 @@
-.. image:: https://travis-ci.org/jericks/geometrycommands.svg?branch=master
-    :target: https://travis-ci.org/jericks/geometrycommands
-
 .. image:: https://github.com/jericks/geometrycommands/workflows/Maven%20Build/badge.svg
     :target: https://github.com/jericks/geometrycommands/actions
 
