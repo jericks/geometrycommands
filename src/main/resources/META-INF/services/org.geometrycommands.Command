@@ -105,3 +105,4 @@ org.geometrycommands.LargestEmptyCircleCommand
 org.geometrycommands.MaximumInscribedCircleCommand
 org.geometrycommands.VariableBufferCommand
 org.geometrycommands.PipeCommand
+org.geometrycommands.FixCommand

@@ -26,19 +26,24 @@ Commands
     commands/crosses.rst
     commands/delaunay.rst
     commands/densify.rst
+    commands/difference.rst
+    commands/dimension.rst
+    commands/disjoint.rst
+    commands/distance.rst
+    commands/distanceline.rst
     commands/draw.rst
     commands/drawbase64.rst
     commands/dump.rst
     commands/ellipse.rst
-    commands/difference.rst
-    commands/dimension.rst
-    commands/hausdorffdistance.rst
-    commands/disjoint.rst
-    commands/distance.rst
-    commands/distanceline.rst
+    commands/endpoint.rst
     commands/envelope.rst
     commands/equals.rst
+    commands/fix.rst
     commands/fromwkb.rst
+    commands/get.rst
+    commands/grid.rst
+    commands/hausdorffdistance.rst
+    commands/hilbertcurve.rst
     commands/interiorpoint.rst
     commands/interpolatepoint.rst
     commands/intersection.rst
@@ -52,34 +57,32 @@ Commands
     commands/isvalid.rst
     commands/iswithindistance.rst
     commands/kochsnowflake.rst
-    commands/hilbertcurve.rst
-    commands/mortoncurve.rst
+    commands/largestemptycircle.rst
     commands/linedissolve.rst
     commands/linemerge.rst
     commands/locatepoint.rst
-    commands/type.rst
-    commands/grid.rst
-    commands/endpoint.rst
-    commands/get.rst
-    commands/startpoint.rst
+    commands/maximuminscribedcircle.rst
     commands/mincircle.rst
     commands/minclearance.rst
     commands/mindiameter.rst
     commands/minrect.rst
+    commands/mortoncurve.rst
     commands/narrow.rst
     commands/nearestpoints.rst
     commands/node.rst
     commands/normalize.rst
     commands/octagonalenvelope.rst
     commands/overlaps.rst
+    commands/pipe.rst
     commands/placepoint.rst
     commands/pointatangle.rst
+    commands/pointsalong.rst
     commands/polygonize.rst
-    commands/reduceprecision.rst
     commands/project.rst
     commands/random.rst
     commands/randomwalk.rst
     commands/rectangle.rst
+    commands/reduceprecision.rst
     commands/reflect.rst
     commands/relate.rst
     commands/reverse.rst
@@ -91,10 +94,11 @@ Commands
     commands/simplify.rst
     commands/sinestar.rst
     commands/slice.rst
+    commands/snap.rst
     commands/split.rst
     commands/spoke.rst
-    commands/snap.rst
     commands/squircle.rst
+    commands/startpoint.rst
     commands/subline.rst
     commands/supercircle.rst
     commands/symdifference.rst
@@ -102,12 +106,9 @@ Commands
     commands/touches.rst
     commands/towkb.rst
     commands/translate.rst
+    commands/type.rst
     commands/union.rst
+    commands/variablebuffer.rst
     commands/voronoi.rst
     commands/within.rst
-    commands/pointsalong.rst
-    commands/largestemptycircle.rst
-    commands/maximuminscribedcircle.rst
-    commands/variablebuffer.rst
-    commands/pipe.rst
 
