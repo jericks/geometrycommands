@@ -9,7 +9,7 @@
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>closelinestring &mdash; geom 0.8.0 documentation</title>
+  <title>fix &mdash; geom 0.8.0 documentation</title>
   
 
   
@@ -36,8 +36,8 @@
   <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="combine" href="combine.html" />
-    <link rel="prev" title="centroid" href="centroid.html" /> 
+    <link rel="next" title="fromwkb" href="fromwkb.html" />
+    <link rel="prev" title="equals" href="equals.html" /> 
 </head>
 
 <body class="wy-body-for-nav">
@@ -96,7 +96,7 @@
 <li class="toctree-l2"><a class="reference internal" href="boundary.html">boundary</a></li>
 <li class="toctree-l2"><a class="reference internal" href="buffer.html">buffer</a></li>
 <li class="toctree-l2"><a class="reference internal" href="centroid.html">centroid</a></li>
-<li class="toctree-l2 current"><a class="current reference internal" href="#">closelinestring</a></li>
+<li class="toctree-l2"><a class="reference internal" href="closelinestring.html">closelinestring</a></li>
 <li class="toctree-l2"><a class="reference internal" href="combine.html">combine</a></li>
 <li class="toctree-l2"><a class="reference internal" href="contains.html">contains</a></li>
 <li class="toctree-l2"><a class="reference internal" href="convexHull.html">convexHull</a></li>
@@ -120,7 +120,7 @@
 <li class="toctree-l2"><a class="reference internal" href="endpoint.html">endpoint</a></li>
 <li class="toctree-l2"><a class="reference internal" href="envelope.html">envelope</a></li>
 <li class="toctree-l2"><a class="reference internal" href="equals.html">equals</a></li>
-<li class="toctree-l2"><a class="reference internal" href="fix.html">fix</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">fix</a></li>
 <li class="toctree-l2"><a class="reference internal" href="fromwkb.html">fromwkb</a></li>
 <li class="toctree-l2"><a class="reference internal" href="get.html">get</a></li>
 <li class="toctree-l2"><a class="reference internal" href="grid.html">grid</a></li>
@@ -242,13 +242,13 @@
         
           <li><a href="../commands.html">Commands</a> &raquo;</li>
         
-      <li>closelinestring</li>
+      <li>fix</li>
     
     
       <li class="wy-breadcrumbs-aside">
         
             
-            <a href="../_sources/commands/closelinestring.rst.txt" rel="nofollow"> View page source</a>
+            <a href="../_sources/commands/fix.rst.txt" rel="nofollow"> View page source</a>
           
         
       </li>
@@ -261,12 +261,12 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
            <div itemprop="articleBody">
             
-  <section id="closelinestring">
-<h1>closelinestring<a class="headerlink" href="#closelinestring" title="Permalink to this headline">¶</a></h1>
+  <section id="fix">
+<h1>fix<a class="headerlink" href="#fix" title="Permalink to this headline">¶</a></h1>
 <p><strong>Name</strong>:</p>
-<p>geom closelinestring</p>
+<p>geom fix</p>
 <p><strong>Description</strong>:</p>
-<p>geom Close an open LineString.</p>
+<p>geom Fix an invalid Geometry.</p>
 <p><strong>Arguments</strong>:</p>
 <blockquote>
 <div><ul class="simple">
@@ -276,7 +276,7 @@
 </ul>
 </div></blockquote>
 <p><strong>Example</strong>:</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">geom</span> <span class="n">closelinestring</span> <span class="o">-</span><span class="n">g</span> <span class="s2">&quot;LINESTRING (0 0, 4 0, 4 4, 0 4)&quot;</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">geom</span> <span class="n">fix</span> <span class="o">-</span><span class="n">g</span> <span class="s2">&quot;LINESTRING (0 0, 0 0, 0 0, 0 0, 1 1)&quot;</span>
 </pre></div>
 </div>
 </section>
@@ -289,10 +289,10 @@
   
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
       
-        <a href="combine.html" class="btn btn-neutral float-right" title="combine" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+        <a href="fromwkb.html" class="btn btn-neutral float-right" title="fromwkb" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
       
       
-        <a href="centroid.html" class="btn btn-neutral float-left" title="centroid" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+        <a href="equals.html" class="btn btn-neutral float-left" title="equals" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
       
     </div>
   

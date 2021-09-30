@@ -1,0 +1,25 @@
+fix
+===
+
+**Name**:
+
+geom fix
+
+**Description**:
+
+geom Fix an invalid Geometry.
+
+**Arguments**:
+
+   * -g --geometry: The input geometry
+
+   * --help: Print help message
+
+   * --web-help: Open help in a web browser
+
+
+
+**Example**::
+
+    geom fix -g "LINESTRING (0 0, 0 0, 0 0, 0 0, 1 1)"
+
