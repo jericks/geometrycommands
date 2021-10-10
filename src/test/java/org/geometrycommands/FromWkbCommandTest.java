@@ -1,12 +1,12 @@
 package org.geometrycommands;
 
-import org.junit.Test;
+import org.junit.jupiter.api.Test;
 
 import java.io.Reader;
 import java.io.StringReader;
 import java.io.StringWriter;
 import org.geometrycommands.FromWkbCommand.FromWkbOptions;
-import static org.junit.Assert.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertEquals;
 
 /**
  * The FromWkbCommand Unit Test

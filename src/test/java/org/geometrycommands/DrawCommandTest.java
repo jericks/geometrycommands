@@ -5,9 +5,9 @@ import java.io.Reader;
 import java.io.StringReader;
 import java.io.StringWriter;
 import org.geometrycommands.DrawCommand.DrawOptions;
-import org.junit.Test;
+import org.junit.jupiter.api.Test;
 
-import static org.junit.Assert.assertTrue;
+import static org.junit.jupiter.api.Assertions.assertTrue;
 
 /**
  * The DrawCommand UnitTest

@@ -1,11 +1,9 @@
 package org.geometrycommands;
 
-import static junit.framework.Assert.assertEquals;
 
-import org.junit.Assert;
-import org.junit.Test;
+import org.junit.jupiter.api.Test;
 import org.geometrycommands.NearestPointsCommand.NearestPointsOptions;
-
+import static org.junit.jupiter.api.Assertions.*;
 import java.io.StringReader;
 import java.io.StringWriter;
 
@@ -44,7 +42,7 @@ public class NearestPointsCommandTest extends BaseTest {
                 "198.81383362021836 -108.04193427198595, 179.6353481269556 -113.71517798125049, " +
                 "173.96210441769105 -94.53669248798772))"
         }, null);
-        Assert.assertEquals("MULTIPOINT ((110 90), (173.96210441769105 -94.53669248798772))", result);
+        assertEquals("MULTIPOINT ((110 90), (173.96210441769105 -94.53669248798772))", result);
 
         // Geometry from input stream
         result = runApp(new String[]{
@@ -53,7 +51,7 @@ public class NearestPointsCommandTest extends BaseTest {
                 "198.81383362021836 -108.04193427198595, 179.6353481269556 -113.71517798125049, " +
                 "173.96210441769105 -94.53669248798772))"
         }, "POLYGON ((90 90, 90 110, 110 110, 110 90, 90 90))");
-        Assert.assertEquals("MULTIPOINT ((110 90), (173.96210441769105 -94.53669248798772))", result);
+        assertEquals("MULTIPOINT ((110 90), (173.96210441769105 -94.53669248798772))", result);
     }
 
 }

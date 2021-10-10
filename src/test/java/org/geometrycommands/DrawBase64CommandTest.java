@@ -1,14 +1,14 @@
 package org.geometrycommands;
 
 import org.geometrycommands.DrawBase64Command.DrawOptions;
-import org.junit.Test;
+import org.junit.jupiter.api.Test;
 
 import java.io.Reader;
 import java.io.StringReader;
 import java.io.StringWriter;
 
-import static org.junit.Assert.assertFalse;
-import static org.junit.Assert.assertTrue;
+import static org.junit.jupiter.api.Assertions.assertFalse;
+import static org.junit.jupiter.api.Assertions.assertTrue;
 
 /**
  * The DrawBase64Command UnitTest

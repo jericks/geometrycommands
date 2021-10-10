@@ -3,8 +3,8 @@ package org.geometrycommands;
 import java.io.Reader;
 import java.io.StringReader;
 import java.io.StringWriter;
-import org.junit.Test;
-import static org.junit.Assert.assertEquals;
+import org.junit.jupiter.api.Test;
+import static org.junit.jupiter.api.Assertions.assertEquals;
 import org.geometrycommands.InteriorPointCommand.InteriorPointOptions;
 
 /**

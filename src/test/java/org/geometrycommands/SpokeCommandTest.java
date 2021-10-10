@@ -3,8 +3,8 @@ package org.geometrycommands;
 import org.locationtech.jts.geom.Geometry;
 import org.locationtech.jts.geom.MultiLineString;
 import org.locationtech.jts.io.WKTReader;
-import org.junit.Test;
-import static org.junit.Assert.*;
+import org.junit.jupiter.api.Test;
+import static org.junit.jupiter.api.Assertions.*;
 import org.geometrycommands.SpokeCommand.SpokeOptions;
 
 import java.io.StringReader;

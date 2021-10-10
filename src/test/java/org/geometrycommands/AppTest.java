@@ -1,11 +1,12 @@
 package org.geometrycommands;
 
-import org.junit.After;
-import org.junit.Before;
 import java.security.Permission;
 import java.util.Map;
-import org.junit.Test;
-import static org.junit.Assert.*;
+
+import org.junit.jupiter.api.AfterEach;
+import org.junit.jupiter.api.BeforeEach;
+import org.junit.jupiter.api.Test;
+import static org.junit.jupiter.api.Assertions.*;
 
 /**
  * The App UnitTest
@@ -15,12 +16,12 @@ public class AppTest {
 
     private static final String NEW_LINE = System.getProperty("line.separator");
 
-    @Before
+    @BeforeEach
     public void before() throws Exception {
         System.setSecurityManager(new OverrideExitSecurityManager());
     }
 
-    @After
+    @AfterEach
     public void after() throws Exception {
         System.setSecurityManager(null);
     }

@@ -1,6 +1,6 @@
 package org.geometrycommands;
 
-import org.junit.Test;
+import org.junit.jupiter.api.Test;
 import org.kohsuke.args4j.CmdLineParser;
 import org.kohsuke.args4j.ExampleMode;
 

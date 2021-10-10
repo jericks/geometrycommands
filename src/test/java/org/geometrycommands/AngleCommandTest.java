@@ -1,6 +1,6 @@
 package org.geometrycommands;
 
-import org.junit.Test;
+import org.junit.jupiter.api.Test;
 
 import java.io.Reader;
 import java.io.StringReader;
@@ -9,7 +9,7 @@ import java.io.Writer;
 
 import org.geometrycommands.AngleCommand.AngleOptions;
 
-import static org.junit.Assert.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertEquals;
 
 /**
  * The AngleCommand Unit Test

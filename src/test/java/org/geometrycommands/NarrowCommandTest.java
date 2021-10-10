@@ -1,7 +1,7 @@
 package org.geometrycommands;
 
-import org.junit.Test;
-import static org.junit.Assert.assertEquals;
+import org.junit.jupiter.api.Test;
+import static org.junit.jupiter.api.Assertions.assertEquals;
 import org.geometrycommands.NarrowCommand.NarrowOptions;
 import java.io.Reader;
 import java.io.StringReader;

@@ -1,6 +1,6 @@
 package org.geometrycommands;
 
-import org.junit.Test;
+import org.junit.jupiter.api.Test;
 
 import java.io.Reader;
 import java.io.StringReader;
@@ -8,7 +8,7 @@ import java.io.StringWriter;
 import java.util.Map;
 
 import org.geometrycommands.CloseLineStringCommand.CloseLineStringOptions;
-import static org.junit.Assert.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertEquals;
 
 /**
  * The CloseLineStringCommand Unit Test

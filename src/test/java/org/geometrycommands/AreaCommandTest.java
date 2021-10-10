@@ -4,8 +4,8 @@ import org.geometrycommands.AreaCommand.AreaOptions;
 import java.io.Reader;
 import java.io.StringReader;
 import java.io.StringWriter;
-import org.junit.Test;
-import static org.junit.Assert.*;
+import org.junit.jupiter.api.Test;
+import static org.junit.jupiter.api.Assertions.*;
 
 /**
  * The AreaCommand UnitTest
