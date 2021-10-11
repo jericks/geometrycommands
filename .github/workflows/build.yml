@@ -9,11 +9,6 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
-      - name: install dependencies
-        run: |
-          sudo apt update
-          sudo apt install gcc-10 g++-10
-        shell: bash
       - name: Set up JDK 1.8
         uses: actions/setup-java@v1
         with:
@@ -34,6 +29,7 @@ jobs:
         uses: ammaraskar/sphinx-action@0.4
         with:
           docs-folder: "src/website"
+          pre-build-command: "apt-get update -y && apt-get install -y gcc and-build-dependencies"
       - name: Deploy website
         uses: JamesIves/github-pages-deploy-action@3.7.1
         with:
