@@ -29,7 +29,7 @@ jobs:
         uses: ammaraskar/sphinx-action@0.4
         with:
           docs-folder: "src/website"
-          pre-build-command: "apt-get update -y && apt-get install -y gcc and-build-dependencies"
+          pre-build-command: "apt-get update -y && apt-get install -y gcc"
       - name: Deploy website
         uses: JamesIves/github-pages-deploy-action@3.7.1
         with:
