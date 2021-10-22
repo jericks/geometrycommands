@@ -18,7 +18,7 @@
 # -- Project information -----------------------------------------------------
 
 project = 'geom'
-copyright = '2020, Jared Erickson'
+copyright = '2021, Jared Erickson'
 author = 'Jared Erickson'
 
 # The full version, including alpha/beta/rc tags
