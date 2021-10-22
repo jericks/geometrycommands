@@ -43,7 +43,7 @@ public class CreateManPagesTest {
         DateFormat dateFormat = new SimpleDateFormat("d MMMM yyyy");
         String date = dateFormat.format(new Date());
 
-        String version = "0.8.0";
+        String version = "0.9.0";
 
         boolean overwrite = false;
 
