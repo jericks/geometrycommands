@@ -97,13 +97,13 @@ Build Native App
 ----------------
 You can build a native app using Graalvm for MacOS or Linux.  Download `Graalvm <http://www.graalvm.org/downloads/>`_ and export a GRAALVM_HOME variable::
 
-     export GRAALVM_HOME=/Users/you/Applications/graalvm-ce-1.0.0-rc6/Contents/Home
+     export GRAALVM_HOME=/Users/you/Applications/graalvm-ce-21.3.0/Contents/Home
 
 Then you can run::
 
-    ./build.sh
+    ./mvnw clean install -DskipTests -Pnative
 
-This will create a native geom executable.  Currently, the geom draw command does not work because Java2D is not supported by GraalVM.
+This will create a native geom executable.
 
 Presentations
 -------------
