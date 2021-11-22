@@ -1,8 +1,16 @@
 package org.geometrycommands;
 
+import org.locationtech.jts.geom.Geometry;
+import org.locationtech.jts.geom.PrecisionModel;
+import org.locationtech.jts.io.ParseException;
+import org.locationtech.jts.io.WKTReader;
+import org.locationtech.jts.precision.GeometryPrecisionReducer;
+
 import java.io.*;
 import java.util.HashMap;
 import java.util.Map;
+
+import static org.junit.jupiter.api.Assertions.assertEquals;
 
 /**
  * The Base Test class
@@ -60,5 +68,14 @@ public abstract class BaseTest {
         outputs.put("out", out.toString("UTF-8").trim());
         outputs.put("err", err.toString("UTF-8").trim());
         return outputs;
+    }
+
+    public void assertGeometriesSimilar(String expectedWKT, String actualWKT) throws ParseException {
+        WKTReader reader = new WKTReader();
+        PrecisionModel precisionModel = new PrecisionModel(100000);
+        GeometryPrecisionReducer precisionReducer = new GeometryPrecisionReducer(precisionModel);
+        Geometry expected = precisionReducer.reduce(reader.read(expectedWKT));
+        Geometry actual = precisionReducer.reduce(reader.read(actualWKT));
+        assertEquals(expected, actual);
     }
 }

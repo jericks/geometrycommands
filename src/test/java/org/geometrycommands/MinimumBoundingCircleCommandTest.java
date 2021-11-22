@@ -6,6 +6,11 @@ import java.io.StringWriter;
 import org.junit.jupiter.api.Test;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import org.geometrycommands.MinimumBoundingCircleCommand.MinimumBoundingCircleOptions;
+import org.locationtech.jts.geom.Geometry;
+import org.locationtech.jts.geom.PrecisionModel;
+import org.locationtech.jts.io.ParseException;
+import org.locationtech.jts.io.WKTReader;
+import org.locationtech.jts.precision.GeometryPrecisionReducer;
 
 /**
  * The MinimumBoundingCircleCommand UnitTest
@@ -47,7 +52,7 @@ public class MinimumBoundingCircleCommandTest extends BaseTest {
 
         MinimumBoundingCircleCommand command = new MinimumBoundingCircleCommand();
         command.execute(options, reader, writer);
-        assertEquals(resultGeometry, writer.getBuffer().toString());
+        assertGeometriesSimilar(resultGeometry, writer.getBuffer().toString());
     }
 
     @Test
@@ -57,12 +62,13 @@ public class MinimumBoundingCircleCommandTest extends BaseTest {
                 "mincircle",
                 "-g", inputGeometry,
         }, null);
-        assertEquals(resultGeometry, result);
+        assertGeometriesSimilar(resultGeometry, result);
 
         // Geometry from input stream
         result = runApp(new String[]{
                 "mincircle"
         }, inputGeometry);
-        assertEquals(resultGeometry, result);
+        assertGeometriesSimilar(resultGeometry, result);
     }
+
 }
