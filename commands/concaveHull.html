@@ -4,7 +4,7 @@
   <meta charset="utf-8" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>rotate &mdash; geom 0.9.0 documentation</title>
+  <title>concaveHull &mdash; geom 0.9.0 documentation</title>
       <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
       <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
   <!--[if lt IE 9]>
@@ -18,8 +18,8 @@
     <script src="../_static/js/theme.js"></script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="scale" href="scale.html" />
-    <link rel="prev" title="reverse" href="reverse.html" /> 
+    <link rel="next" title="convexHull" href="convexHull.html" />
+    <link rel="prev" title="contains" href="contains.html" /> 
 </head>
 
 <body class="wy-body-for-nav"> 
@@ -55,7 +55,7 @@
 <li class="toctree-l2"><a class="reference internal" href="closelinestring.html">closelinestring</a></li>
 <li class="toctree-l2"><a class="reference internal" href="combine.html">combine</a></li>
 <li class="toctree-l2"><a class="reference internal" href="contains.html">contains</a></li>
-<li class="toctree-l2"><a class="reference internal" href="concaveHull.html">concaveHull</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">concaveHull</a></li>
 <li class="toctree-l2"><a class="reference internal" href="convexHull.html">convexHull</a></li>
 <li class="toctree-l2"><a class="reference internal" href="coordinates.html">coordinates</a></li>
 <li class="toctree-l2"><a class="reference internal" href="count.html">count</a></li>
@@ -125,7 +125,7 @@
 <li class="toctree-l2"><a class="reference internal" href="reflect.html">reflect</a></li>
 <li class="toctree-l2"><a class="reference internal" href="relate.html">relate</a></li>
 <li class="toctree-l2"><a class="reference internal" href="reverse.html">reverse</a></li>
-<li class="toctree-l2 current"><a class="current reference internal" href="#">rotate</a></li>
+<li class="toctree-l2"><a class="reference internal" href="rotate.html">rotate</a></li>
 <li class="toctree-l2"><a class="reference internal" href="scale.html">scale</a></li>
 <li class="toctree-l2"><a class="reference internal" href="shear.html">shear</a></li>
 <li class="toctree-l2"><a class="reference internal" href="sierpinskicarpet.html">sierpinskicarpet</a></li>
@@ -169,9 +169,9 @@
   <ul class="wy-breadcrumbs">
       <li><a href="../index.html" class="icon icon-home"></a> &raquo;</li>
           <li><a href="../commands.html">Commands</a> &raquo;</li>
-      <li>rotate</li>
+      <li>concaveHull</li>
       <li class="wy-breadcrumbs-aside">
-            <a href="../_sources/commands/rotate.rst.txt" rel="nofollow"> View page source</a>
+            <a href="../_sources/commands/concaveHull.rst.txt" rel="nofollow"> View page source</a>
       </li>
   </ul>
   <hr/>
@@ -179,27 +179,24 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
            <div itemprop="articleBody">
              
-  <section id="rotate">
-<h1>rotate<a class="headerlink" href="#rotate" title="Permalink to this headline"></a></h1>
+  <section id="concavehull">
+<h1>concaveHull<a class="headerlink" href="#concavehull" title="Permalink to this headline"></a></h1>
 <p><strong>Name</strong>:</p>
-<p>geom rotate</p>
+<p>geom concaveHull</p>
 <p><strong>Description</strong>:</p>
-<p>geom Create a new geometry by rotating the input geometry</p>
+<p>geom Calculate the concave hull of a Geometry.</p>
 <p><strong>Arguments</strong>:</p>
 <blockquote>
 <div><ul class="simple">
-<li><p>-t –theta: The rotation angle, in radians</p></li>
-<li><p>-x –xCoordinate: The x-ordinate of the rotation point</p></li>
-<li><p>-y –yCoordinate: The y-ordinate of the rotation point</p></li>
-<li><p>-s –sine: The sine of the rotation angle</p></li>
-<li><p>-c –cosine: The cosine of the rotation angle</p></li>
+<li><p>-m –max-edge-length: The maximum edge length</p></li>
+<li><p>-a –holes-allowed: Whether holes are allowed or not</p></li>
 <li><p>-g –geometry: The input geometry</p></li>
 <li><p>–help: Print help message</p></li>
 <li><p>–web-help: Open help in a web browser</p></li>
 </ul>
 </div></blockquote>
 <p><strong>Example</strong>:</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">geom</span> <span class="n">rotate</span> <span class="o">-</span><span class="n">g</span> <span class="s2">&quot;POLYGON ((0 0, 0 10, 10 10, 10 0, 0 0))&quot;</span> <span class="o">-</span><span class="n">t</span> <span class="mf">0.785398163</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">geom</span> <span class="n">concavehull</span> <span class="o">-</span><span class="n">g</span> <span class="s2">&quot;MULTIPOINT ((-122.38657951354979 47.58451555263637),(-122.38649368286131 47.5772205307505),(-122.39078521728516 47.58167872046887),(-122.38177299499512 47.5823155737249),(-122.3876953125 47.5828366297174),(-122.38494873046875 47.58301031389572),(-122.3876953125 47.58121554959838),(-122.38486289978027 47.5812734461813))&quot;</span>
 </pre></div>
 </div>
 </section>
@@ -208,8 +205,8 @@
            </div>
           </div>
           <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
-        <a href="reverse.html" class="btn btn-neutral float-left" title="reverse" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
-        <a href="scale.html" class="btn btn-neutral float-right" title="scale" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+        <a href="contains.html" class="btn btn-neutral float-left" title="contains" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="convexHull.html" class="btn btn-neutral float-right" title="convexHull" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
     </div>
 
   <hr/>

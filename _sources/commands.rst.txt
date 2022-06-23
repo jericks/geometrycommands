@@ -17,6 +17,7 @@ Commands
     commands/closelinestring.rst
     commands/combine.rst
     commands/contains.rst
+    commands/concaveHull.rst
     commands/convexHull.rst
     commands/coordinates.rst
     commands/count.rst

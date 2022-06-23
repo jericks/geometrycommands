@@ -1,0 +1,29 @@
+concaveHull
+===========
+
+**Name**:
+
+geom concaveHull
+
+**Description**:
+
+geom Calculate the concave hull of a Geometry.
+
+**Arguments**:
+
+   * -m --max-edge-length: The maximum edge length
+
+   * -a --holes-allowed: Whether holes are allowed or not
+
+   * -g --geometry: The input geometry
+
+   * --help: Print help message
+
+   * --web-help: Open help in a web browser
+
+
+
+**Example**::
+
+    geom concavehull -g "MULTIPOINT ((-122.38657951354979 47.58451555263637),(-122.38649368286131 47.5772205307505),(-122.39078521728516 47.58167872046887),(-122.38177299499512 47.5823155737249),(-122.3876953125 47.5828366297174),(-122.38494873046875 47.58301031389572),(-122.3876953125 47.58121554959838),(-122.38486289978027 47.5812734461813))"
+
