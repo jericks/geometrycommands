@@ -1,0 +1,39 @@
+offsetCurve
+===========
+
+**Name**:
+
+geom offsetCurve
+
+**Description**:
+
+geom Calculate the offsetCurve of a Geometry.
+
+**Arguments**:
+
+   * -d --distance: The buffer distance
+
+   * -q --quadrantSegments: The number of quadrant segments
+
+   * -c --endCapStyle: The end cap style (round, flat/butt, square)
+
+   * -s --singleSided: The flag for whether the buffer should be single sided
+
+   * -f --simplifyFactor: The simplify factor
+
+   * -m --mitreLimit: The mitre limit
+
+   * -j --joinStyle: The join style (round, mitre, bevel)
+
+   * -g --geometry: The input geometry
+
+   * --help: Print help message
+
+   * --web-help: Open help in a web browser
+
+
+
+**Example**::
+
+    geom offsetcurve -g "LINESTRING (-122.38774895668028 47.579341113135314, -122.38665461540221 47.57931940112287, -122.38654732704164 47.58122278667477, -122.38340377807616 47.58118660128292, -122.38322138786316 47.581939252282744)" -d 0.001
+

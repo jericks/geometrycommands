@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>offsetCurve &mdash; geom 0.9.0 documentation</title>
+      <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+      <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  <!--[if lt IE 9]>
+    <script src="../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
+        <script src="../_static/jquery.js"></script>
+        <script src="../_static/underscore.js"></script>
+        <script src="../_static/doctools.js"></script>
+    <script src="../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+            <a href="../index.html" class="icon icon-home"> geom
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <ul>
+<li class="toctree-l1"><a class="reference internal" href="../install.html">Install</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../usage.html">Usage</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../commands.html">Commands</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">geom</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../index.html" class="icon icon-home"></a> &raquo;</li>
+      <li>offsetCurve</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="../_sources/commands/offsetCurve.rst.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="offsetcurve">
+<h1>offsetCurve<a class="headerlink" href="#offsetcurve" title="Permalink to this headline"></a></h1>
+<p><strong>Name</strong>:</p>
+<p>geom offsetCurve</p>
+<p><strong>Description</strong>:</p>
+<p>geom Calculate the offsetCurve of a Geometry.</p>
+<p><strong>Arguments</strong>:</p>
+<blockquote>
+<div><ul class="simple">
+<li><p>-d –distance: The buffer distance</p></li>
+<li><p>-q –quadrantSegments: The number of quadrant segments</p></li>
+<li><p>-c –endCapStyle: The end cap style (round, flat/butt, square)</p></li>
+<li><p>-s –singleSided: The flag for whether the buffer should be single sided</p></li>
+<li><p>-f –simplifyFactor: The simplify factor</p></li>
+<li><p>-m –mitreLimit: The mitre limit</p></li>
+<li><p>-j –joinStyle: The join style (round, mitre, bevel)</p></li>
+<li><p>-g –geometry: The input geometry</p></li>
+<li><p>–help: Print help message</p></li>
+<li><p>–web-help: Open help in a web browser</p></li>
+</ul>
+</div></blockquote>
+<p><strong>Example</strong>:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">geom</span> <span class="n">offsetcurve</span> <span class="o">-</span><span class="n">g</span> <span class="s2">&quot;LINESTRING (-122.38774895668028 47.579341113135314, -122.38665461540221 47.57931940112287, -122.38654732704164 47.58122278667477, -122.38340377807616 47.58118660128292, -122.38322138786316 47.581939252282744)&quot;</span> <span class="o">-</span><span class="n">d</span> <span class="mf">0.001</span>
+</pre></div>
+</div>
+</section>
+
+
+           </div>
+          </div>
+          <footer>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2021, Jared Erickson.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>
