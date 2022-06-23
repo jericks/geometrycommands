@@ -1,0 +1,28 @@
+.TH "geom-offsetCurve" "1" "4 May 2012" "version 0.1"
+.SH NAME
+geom offsetCurve
+.SH DESCRIPTION
+Calculate the offsetCurve of a Geometry.
+.SH USAGE
+geom offsetcurve -g "LINESTRING (-122.38774895668028 47.579341113135314, -122.38665461540221 47.57931940112287, -122.38654732704164 47.58122278667477, -122.38340377807616 47.58118660128292, -122.38322138786316 47.581939252282744)" -d 0.001
+.SH OPTIONS
+-d --distance: The buffer distance
+.PP
+-q --quadrantSegments: The number of quadrant segments
+.PP
+-c --endCapStyle: The end cap style (round, flat/butt, square)
+.PP
+-s --singleSided: The flag for whether the buffer should be single sided
+.PP
+-f --simplifyFactor: The simplify factor
+.PP
+-m --mitreLimit: The mitre limit
+.PP
+-j --joinStyle: The join style (round, mitre, bevel)
+.PP
+-g --geometry: The input geometry
+.PP
+--help: Print help message
+.PP
+--web-help: Open help in a web browser
+.PP

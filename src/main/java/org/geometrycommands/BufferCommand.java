@@ -51,6 +51,14 @@ public class BufferCommand extends GeometryCommand<BufferOptions> {
      */
     @Override
     protected void processGeometry(Geometry geometry, BufferOptions options, Reader reader, Writer writer) throws Exception {
+        BufferParameters params = getBufferParametersg(options);
+        BufferOp bufferOp = new BufferOp(geometry, params);
+        Geometry bufferedGeometry = bufferOp.getResultGeometry(options.getDistance());
+
+        writer.write(writeGeometry(bufferedGeometry, options));
+    }
+
+    protected static BufferParameters getBufferParametersg(BufferOptions options) {
         int capStyle;
         if (options.getEndCapStyle().equalsIgnoreCase("butt")
                 || options.getEndCapStyle().equalsIgnoreCase("flat")) {
@@ -77,11 +85,8 @@ public class BufferCommand extends GeometryCommand<BufferOptions> {
         params.setSimplifyFactor(options.getSimplifyFactor());
         params.setMitreLimit(options.getMitreLimit());
         params.setJoinStyle(joinStyle);
-        
-        BufferOp bufferOp = new BufferOp(geometry, params);
-        Geometry bufferedGeometry = bufferOp.getResultGeometry(options.getDistance());
 
-        writer.write(writeGeometry(bufferedGeometry, options));
+        return params;
     }
 
     /**
