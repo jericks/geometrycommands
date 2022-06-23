@@ -5,7 +5,7 @@ _geom()
     local line=${COMP_LINE}
     COMPREPLY=()
     if [[ "$line" == *"geom " ]]; then
-        COMPREPLY=($(compgen -W 'angle arc arcpoly area asciiart boundary buffer centroid closelinestring combine contains convexHull coordinates count countpoints coveredby covers crosses delaunay densify difference dimension disjoint distance distanceline draw drawbase64 dump ellipse endpoint envelope equals fix fromwkb get grid hausdorffdistance help hilbertcurve interiorpoint interpolatepoint intersection intersects isccw isclosed isempty isrectangle isring issimple isvalid iswithindistance kochsnowflake largestemptycircle linedissolve linemerge list locatepoint maximuminscribedcircle mincircle minclearance mindiameter minrect mortoncurve narrow nearestpoints node normalize octagonalenvelope overlaps pipe placepoint pointatangle pointsalong polygonize project random randomwalk rectangle reduceprecision reflect relate reverse rotate scale shear sierpinskicarpet similarity simplify sinestar slice snap split spoke squircle startpoint subline supercircle symdifference text touches towkb translate type union variablebuffer version voronoi within' -- $cur))
+        COMPREPLY=($(compgen -W 'angle arc arcpoly area asciiart boundary buffer centroid closelinestring combine concaveHull contains convexHull coordinates count countpoints coveredby covers crosses delaunay densify difference dimension disjoint distance distanceline draw drawbase64 dump ellipse endpoint envelope equals fix fromwkb get grid hausdorffdistance help hilbertcurve interiorpoint interpolatepoint intersection intersects isccw isclosed isempty isrectangle isring issimple isvalid iswithindistance kochsnowflake largestemptycircle linedissolve linemerge list locatepoint maximuminscribedcircle mincircle minclearance mindiameter minrect mortoncurve narrow nearestpoints node normalize octagonalenvelope overlaps pipe placepoint pointatangle pointsalong polygonize project random randomwalk rectangle reduceprecision reflect relate reverse rotate scale shear sierpinskicarpet similarity simplify sinestar slice snap split spoke squircle startpoint subline supercircle symdifference text touches towkb translate type union variablebuffer version voronoi within' -- $cur))
     elif [[ "$line" == *"geom angle "* ]]; then
         COMPREPLY=($(compgen -W '--help --web-help -g --geometry -o --otherGeometry -t --type' -- $cur))
     elif [[ "$line" == *"geom arc "* ]]; then
@@ -26,6 +26,8 @@ _geom()
         COMPREPLY=($(compgen -W '--help --web-help -g --geometry' -- $cur))
     elif [[ "$line" == *"geom combine "* ]]; then
         COMPREPLY=($(compgen -W '--help --web-help' -- $cur))
+    elif [[ "$line" == *"geom concaveHull "* ]]; then
+        COMPREPLY=($(compgen -W '--help --web-help -a --holes-allowed -g --geometry -m --max-edge-length' -- $cur))
     elif [[ "$line" == *"geom contains "* ]]; then
         COMPREPLY=($(compgen -W '--help --web-help -g --geometry -o --otherGeometry' -- $cur))
     elif [[ "$line" == *"geom convexHull "* ]]; then
@@ -253,6 +255,9 @@ _geom()
         fi
         if [[ "combine" == "$nm"* ]]; then
             COMPREPLY=("${COMPREPLY[@]}" $(compgen -W 'combine'))
+        fi
+        if [[ "concaveHull" == "$nm"* ]]; then
+            COMPREPLY=("${COMPREPLY[@]}" $(compgen -W 'concaveHull'))
         fi
         if [[ "contains" == "$nm"* ]]; then
             COMPREPLY=("${COMPREPLY[@]}" $(compgen -W 'contains'))

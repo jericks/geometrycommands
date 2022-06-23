@@ -106,3 +106,4 @@ org.geometrycommands.MaximumInscribedCircleCommand
 org.geometrycommands.VariableBufferCommand
 org.geometrycommands.PipeCommand
 org.geometrycommands.FixCommand
+org.geometrycommands.ConcaveHullCommand
