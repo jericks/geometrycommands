@@ -73,6 +73,7 @@ Commands
     commands/node.rst
     commands/normalize.rst
     commands/octagonalenvelope.rst
+    commands/offsetCurve.rst
     commands/overlaps.rst
     commands/pipe.rst
     commands/placepoint.rst
