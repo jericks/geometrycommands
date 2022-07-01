@@ -18,6 +18,7 @@ Commands
     commands/combine.rst
     commands/contains.rst
     commands/concaveHull.rst
+    commands/concaveHullOfPolygons.rst
     commands/convexHull.rst
     commands/coordinates.rst
     commands/count.rst

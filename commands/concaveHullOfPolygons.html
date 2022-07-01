@@ -4,7 +4,7 @@
   <meta charset="utf-8" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>fix &mdash; geom 0.9.0 documentation</title>
+  <title>concaveHullOfPolygons &mdash; geom 0.9.0 documentation</title>
       <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
       <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
   <!--[if lt IE 9]>
@@ -18,8 +18,8 @@
     <script src="../_static/js/theme.js"></script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="fromwkb" href="fromwkb.html" />
-    <link rel="prev" title="equals" href="equals.html" /> 
+    <link rel="next" title="convexHull" href="convexHull.html" />
+    <link rel="prev" title="concaveHull" href="concaveHull.html" /> 
 </head>
 
 <body class="wy-body-for-nav"> 
@@ -56,7 +56,7 @@
 <li class="toctree-l2"><a class="reference internal" href="combine.html">combine</a></li>
 <li class="toctree-l2"><a class="reference internal" href="contains.html">contains</a></li>
 <li class="toctree-l2"><a class="reference internal" href="concaveHull.html">concaveHull</a></li>
-<li class="toctree-l2"><a class="reference internal" href="concaveHullOfPolygons.html">concaveHullOfPolygons</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">concaveHullOfPolygons</a></li>
 <li class="toctree-l2"><a class="reference internal" href="convexHull.html">convexHull</a></li>
 <li class="toctree-l2"><a class="reference internal" href="coordinates.html">coordinates</a></li>
 <li class="toctree-l2"><a class="reference internal" href="count.html">count</a></li>
@@ -78,7 +78,7 @@
 <li class="toctree-l2"><a class="reference internal" href="endpoint.html">endpoint</a></li>
 <li class="toctree-l2"><a class="reference internal" href="envelope.html">envelope</a></li>
 <li class="toctree-l2"><a class="reference internal" href="equals.html">equals</a></li>
-<li class="toctree-l2 current"><a class="current reference internal" href="#">fix</a></li>
+<li class="toctree-l2"><a class="reference internal" href="fix.html">fix</a></li>
 <li class="toctree-l2"><a class="reference internal" href="fromwkb.html">fromwkb</a></li>
 <li class="toctree-l2"><a class="reference internal" href="get.html">get</a></li>
 <li class="toctree-l2"><a class="reference internal" href="grid.html">grid</a></li>
@@ -171,9 +171,9 @@
   <ul class="wy-breadcrumbs">
       <li><a href="../index.html" class="icon icon-home"></a> &raquo;</li>
           <li><a href="../commands.html">Commands</a> &raquo;</li>
-      <li>fix</li>
+      <li>concaveHullOfPolygons</li>
       <li class="wy-breadcrumbs-aside">
-            <a href="../_sources/commands/fix.rst.txt" rel="nofollow"> View page source</a>
+            <a href="../_sources/commands/concaveHullOfPolygons.rst.txt" rel="nofollow"> View page source</a>
       </li>
   </ul>
   <hr/>
@@ -181,22 +181,25 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
            <div itemprop="articleBody">
              
-  <section id="fix">
-<h1>fix<a class="headerlink" href="#fix" title="Permalink to this headline"></a></h1>
+  <section id="concavehullofpolygons">
+<h1>concaveHullOfPolygons<a class="headerlink" href="#concavehullofpolygons" title="Permalink to this headline"></a></h1>
 <p><strong>Name</strong>:</p>
-<p>geom fix</p>
+<p>geom concaveHullOfPolygons</p>
 <p><strong>Description</strong>:</p>
-<p>geom Fix an invalid Geometry.</p>
+<p>geom Calculate the concave hull of Polygons.</p>
 <p><strong>Arguments</strong>:</p>
 <blockquote>
 <div><ul class="simple">
+<li><p>-l –max-edge-length: The maximum edge length</p></li>
+<li><p>-a –holes-allowed: Whether holes are allowed or not</p></li>
+<li><p>-t –tight: Whether it should be tight or now</p></li>
 <li><p>-g –geometry: The input geometry</p></li>
 <li><p>–help: Print help message</p></li>
 <li><p>–web-help: Open help in a web browser</p></li>
 </ul>
 </div></blockquote>
 <p><strong>Example</strong>:</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">geom</span> <span class="n">fix</span> <span class="o">-</span><span class="n">g</span> <span class="s2">&quot;LINESTRING (0 0, 0 0, 0 0, 0 0, 1 1)&quot;</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">geom</span> <span class="n">concaveHullOfPolygons</span> <span class="o">-</span><span class="n">l</span> <span class="mf">0.5</span> <span class="o">-</span><span class="n">g</span> <span class="s2">&quot;MULTIPOLYGON (((-122.38889694213867 47.57595031143529, -122.3895299434662 47.57526633442543, -122.38845705986023 47.57515414686724, -122.38857507705688 47.57558480102301, -122.38889694213867 47.57595031143529)),((-122.38868772983551 47.57478501191467, -122.38879501819609 47.574224066564, -122.38778114318846 47.5742566377487, -122.38817274570465 47.574600443462614, -122.38868772983551 47.57478501191467)),((-122.3868852853775 47.57554137387374, -122.38756120204926 47.57528442917038, -122.38598942756653 47.575132433118526, -122.38690674304961 47.57534957020037, -122.3868852853775 47.57554137387374)))&quot;</span>
 </pre></div>
 </div>
 </section>
@@ -205,8 +208,8 @@
            </div>
           </div>
           <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
-        <a href="equals.html" class="btn btn-neutral float-left" title="equals" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
-        <a href="fromwkb.html" class="btn btn-neutral float-right" title="fromwkb" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+        <a href="concaveHull.html" class="btn btn-neutral float-left" title="concaveHull" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="convexHull.html" class="btn btn-neutral float-right" title="convexHull" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
     </div>
 
   <hr/>
