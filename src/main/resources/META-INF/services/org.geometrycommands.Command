@@ -108,3 +108,4 @@ org.geometrycommands.PipeCommand
 org.geometrycommands.FixCommand
 org.geometrycommands.ConcaveHullCommand
 org.geometrycommands.OffsetCurveCommand
+org.geometrycommands.ConcaveHullOfPolygonsCommand
